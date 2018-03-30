@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/ivBackGroundTop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/ivCircle"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="12dp"
+                android:background="@android:color/holo_blue_light"
+
+                />
+
+            <ImageView
+                android:id="@+id/ivCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/circle" />
+
+            <TextView
+                android:id="@+id/tvNameSurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name Surname"
+                android:layout_toRightOf="@+id/ivCircle"
+                android:layout_alignTop="@+id/ivCircle"
+                android:layout_marginLeft="15dp"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNameSurname"
+                android:layout_alignLeft="@+id/tvNameSurname"
+                android:text="Two minutes ago"
+                android:textSize="8dp" />
+
+            <ImageView
+                android:id="@+id/ivCircle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ivCircle"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/circle" />
+
+        </RelativeLayout>
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Title"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/tile"
+                        />
+                </LinearLayout>>
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingRight="15dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Comments:"
+                        android:layout_gravity="end"
+                        android:textAlignment="textEnd"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment"
+                        android:layout_marginTop="15dp"
+                        />
+                </LinearLayout>>
+
+            </LinearLayout>>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                >
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="HIDE"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="COMMENT"
+                    android:textColor="@android:color/white"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="SHARE"
+                    />
+            </LinearLayout>>
+        </LinearLayout>>
+    </LinearLayout>>
+</RelativeLayout>
