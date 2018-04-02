@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">W1 - View and View Group</string>
-    <string name="tile">A user interface element that displays text to the user. To provide user-editable text</string>>
+    <string name="tile">A user interface element that displays text to the user. To provide user-editable text</string>
+    >
     <string name="comment">A single string that can be referenced from the application.</string>>
+    <string name="menu">MENU</string>>
+    <string name="view">VIEW AND VIEW GROUP</string>>
+    <string name="intent">INTENT</string>>
+    <string name="activity">ACTIVITY</string>
+    <string name="fragmentandactivity">FRAGMENT AND ACTIVITY</string>>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="TestFragment">Test Fragment</string>>
 </resources>

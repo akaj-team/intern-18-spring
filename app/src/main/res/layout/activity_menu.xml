@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="@string/menu"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <Button
+            android:id="@+id/btnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view"
+            android:textSize="25dp"
+            tools:ignore="SpUsage" />
+
+        <Button
+            android:id="@+id/btnIntent"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/intent"
+            android:textSize="25dp"
+            tools:ignore="SpUsage" />
+
+        <Button
+            android:id="@+id/btnActivity"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/activity"
+            android:textSize="25dp"
+            tools:ignore="SpUsage" />
+
+        <Button
+            android:id="@+id/btnFragmentAndActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragmentandactivity"
+            android:textSize="25dp"
+            tools:ignore="SpUsage" />
+
+    </LinearLayout>>
+</RelativeLayout>
