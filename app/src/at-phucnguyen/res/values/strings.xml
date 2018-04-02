@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">intern-18-spring</string>
+    <string name="send_data">Send Data</string>
 </resources>

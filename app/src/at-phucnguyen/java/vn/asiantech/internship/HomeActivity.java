@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Button btnW1View = (Button) findViewById(R.id.btnW1View);
         Button btnW1Intent = (Button) findViewById(R.id.btnW1Intent);
+        Button btnW2Fragment=(Button)findViewById(R.id.btnFragment);
 
         btnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,14 @@ public class HomeActivity extends AppCompatActivity {
                 intent.putExtra("keyMessegeI", "Đây là dữ liệu từ ActivityHome được gửi bằng Intent!");
 
                 //khởi động Intent
+                startActivity(intent);
+            }
+        });
+
+        btnW2Fragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeActivity.this,FragmentActivity.class);
                 startActivity(intent);
             }
         });

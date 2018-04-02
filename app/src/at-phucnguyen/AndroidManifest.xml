@@ -17,9 +17,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="W1 - View and View Group"></activity>
-        <activity android:name=".IntentActivity"
+        <activity
+            android:name=".IntentActivity"
             android:label="W1 - Intent "></activity>
+        <activity
+            android:name=".FragmentActivity"
+            android:label="W2 - Activity and Fragment">
+        </activity>
     </application>
 </manifest>
