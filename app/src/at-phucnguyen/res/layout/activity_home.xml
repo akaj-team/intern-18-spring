@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_rectangle_white"
-        android:text="W1-View" />
+        android:text="@string/w1_view" />
 
     <Button
         android:id="@+id/btnW1Intent"
@@ -18,6 +18,6 @@
         android:layout_below="@id/btnW1View"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_rectangle_white"
-        android:text="W1-Intent" />
+        android:text="@string/w1_intent" />
 
 </RelativeLayout>
