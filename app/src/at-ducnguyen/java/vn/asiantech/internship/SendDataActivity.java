@@ -1,38 +1,48 @@
 package vn.asiantech.internship;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
-public class SendDataActivity extends AppCompatActivity implements FirstFragment.SendStringFragment {
-    public static final String KEY_INPUT = "201706387";
+public class SendDataActivity extends AppCompatActivity implements FirstFragment.SendStringOfFirstFragment, SecondFragment.SendStringOfSecondFragment {
+    public static final String KEY_MESSAGE = "201706387";
     private FirstFragment firstFragment;
     private SecondFragment secondFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Android Example");
         setContentView(R.layout.activity_send_data);
         firstFragment = new FirstFragment();
-        showFragment(firstFragment);
-    }
-
-    private void showFragment(Fragment fragment) {
+        Log.e("TAG", "onCreate: " + firstFragment.toString());
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.flFragment, fragment);
-        transaction.addToBackStack(null);
+        transaction.replace(R.id.flFragment, firstFragment);
         transaction.commit();
     }
 
     @Override
-    public void sendString(String str) {
+//      first fragment
+    public void sendMessage(String message) {
         secondFragment = new SecondFragment();
-        showFragment(secondFragment);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.flFragment, secondFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
         Bundle bundle = new Bundle();
-        bundle.putString(KEY_INPUT, str);
+        bundle.putString(KEY_MESSAGE, message);
         secondFragment.setArguments(bundle);
+    }
+
+    //      second fragment
+    @Override
+    public void sendMessageBack(String message) {
+        FragmentManager fragmentManager = getFragmentManager();
+        firstFragment.setMessage(message);
+        fragmentManager.popBackStack();
     }
 }
