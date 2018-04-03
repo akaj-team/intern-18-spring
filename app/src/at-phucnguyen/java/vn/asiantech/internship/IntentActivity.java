@@ -13,13 +13,16 @@ public class IntentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intent);
 
         //Anh xa
-        TextView tvData = (TextView) findViewById(R.id.tvExtraData);
-        TextView tvDataI = (TextView) findViewById(R.id.tvExtraDataI);
+        TextView tvData = findViewById(R.id.tvExtraData);
+        TextView tvDataI = findViewById(R.id.tvExtraDataI);
 
         //Lấy dữ liệu được gửi về bằng bundle đã tạo ở nơi gửi
         Bundle extrasBundle = this.getIntent().getExtras();
-        String dataExtras = extrasBundle.getString("keyTitle") +
-                extrasBundle.getString("keyMessege");
+        String dataExtras = null;
+        if (extrasBundle != null) {
+            dataExtras = extrasBundle.getString("keyTitle") +
+                    extrasBundle.getString("keyMessege");
+        }
         tvData.setText(dataExtras);
 
         //Lấy dữ liệu được gửi về bằng Intent đã tạo ở nơi gửi

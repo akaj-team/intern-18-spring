@@ -25,8 +25,8 @@ public class FirstFragment extends Fragment {
         edData = view.findViewById(R.id.edData);
         tvDataFragment1 = view.findViewById(R.id.tvExtraDataFragment1);
 
-        if(this.getArguments()!=null){
-            String pareDataFragment2=getArguments().getString("keyDataFragment2");
+        if (this.getArguments() != null) {
+            String pareDataFragment2 = getArguments().getString("keyDataFragment2");
             tvDataFragment1.setText(pareDataFragment2);
         }
         btnSendData.setOnClickListener(new View.OnClickListener() {
