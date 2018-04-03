@@ -13,9 +13,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btnW1View = (Button) findViewById(R.id.btnW1View);
-        Button btnW1Intent = (Button) findViewById(R.id.btnW1Intent);
         Button btnW2Fragment=(Button)findViewById(R.id.btnFragment);
+        Button btnW1View = findViewById(R.id.btnW1View);
+        Button btnW1Intent = findViewById(R.id.btnW1Intent);
 
         btnW1View.setOnClickListener(new View.OnClickListener() {
             @Override

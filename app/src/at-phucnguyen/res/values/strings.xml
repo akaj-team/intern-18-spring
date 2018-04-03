@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">intern-18-spring</string>
     <string name="send_data">Send Data</string>
+    <string name="w1_intent">W1-Intent</string>
+    <string name="w1_view">W1-View</string>
+    <string name="tvextradata">tvExtraData</string>
+    <string name="tvextradataintent">tvExtraDataIntent</string>
+
 </resources>
