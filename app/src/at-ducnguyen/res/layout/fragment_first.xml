@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
+
     <EditText
         android:id="@+id/edtInput"
         android:layout_width="match_parent"
@@ -11,9 +17,15 @@
         android:hint="@string/edtHint" />
 
     <Button
-        android:id="@+id/btnPass"
+        android:id="@+id/btnSend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnPass" />
+        android:text="@string/btnSend" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/firstFragment"
+        android:textAlignment="center" />
 
 </LinearLayout>
