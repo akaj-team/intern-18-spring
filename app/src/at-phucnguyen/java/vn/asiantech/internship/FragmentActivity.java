@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-public class FragmentActivity extends AppCompatActivity implements FirstFragment.OnFragmentManager{
+public class FragmentActivity extends AppCompatActivity implements FirstFragment.OnFragmentManager,SecondFragment.OnFragment2Manager{
     FragmentManager fmfirst;
 
     @Override
@@ -23,19 +23,25 @@ public class FragmentActivity extends AppCompatActivity implements FirstFragment
         FragmentTransaction ft_add = fmfirst.beginTransaction();
         ft_add.replace(R.id.fragmentLayoutFirst, fragmentClass);
         ft_add.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);//Hieu ung khi chuyen tiep cac fragment
-        ft_add.addToBackStack(null);//Cho fragment vao stack
+        //ft_add.addToBackStack(null);//Cho fragment vao stack
         ft_add.commit();
     }
 
     @Override
     public void onDataSelected(String data) {
         Bundle bundle=new Bundle();
-        bundle.putString("keyData",data);
+        bundle.putString("keyDataFragment1",data);
         SecondFragment fragmentB= new SecondFragment();
         fragmentStore(fragmentB);
         fragmentB.setArguments(bundle);//Truyen du lieu qua fragment Second
     }
 
-
-
+    @Override
+    public void onSendToData(String data) {
+        Bundle bundle=new Bundle();
+        bundle.putString("keyDataFragment2",data);
+        FirstFragment fragmentA=new FirstFragment();
+        fragmentStore(fragmentA);
+        fragmentA.setArguments(bundle);
+    }
 }
