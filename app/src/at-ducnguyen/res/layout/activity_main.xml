@@ -18,6 +18,12 @@
             android:layout_height="wrap_content"
             android:text="@string/w1_view_viewgroup" />
 
+        <Button
+            android:id="@+id/btnActivityAndFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/w2_activity_and_fragment" />
+
     </LinearLayout>
 
 </ScrollView>
