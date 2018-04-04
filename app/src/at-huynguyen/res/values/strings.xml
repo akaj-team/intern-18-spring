@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">intern-18-spring</string>
+    <string name="app_name">W1-D1</string>
+    <string name="Name_username">Name_username</string>
+    <string name="two_minutes">Two minutes ago</string>
+    <string name="title">Title</string>
+    <string name="comment">Comment</string>
+    <string name="nd1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ornare purus. Vestibulum vestibulu</string>
+    <string name="nd2">Consectetur adipiscing elit..!
+        Vestibulum vestibulum
+        dlgnissim metus!..
+    </string>
+    <string name="Hide">HIDE</string>
+    <string name="comment2">COMMENT</string>
+    <string name="share">Share</string>
 </resources>
