@@ -30,7 +30,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ViewActivity.class);
-                intent.putExtra("345","XXXXX");
+                intent.putExtra("345","Comment");
                 Bundle bundle = new Bundle();
                 bundle.putString("123","123456789");
                 intent.putExtras(bundle);
@@ -38,18 +38,7 @@ public class MenuActivity extends Activity {
             }
         });
 
-        Button btnFragment = (Button)(findViewById(R.id.btnFragmentAndActivity));
-        btnFragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this,FragmentAndActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
-
 
     @Override
     protected void onStart() {

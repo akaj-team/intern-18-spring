@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,6 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
         android:orientation="vertical"
         tools:ignore="ExtraText,UselessParent">
 
@@ -19,18 +19,28 @@
             <ImageView
                 android:id="@+id/ivBackGroundTop"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/ivCircle"
+                android:layout_height="179dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginBottom="12dp"
                 android:background="@android:color/holo_blue_light"
                 tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivCircle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivBackGroundTop"
+                android:layout_alignRight="@+id/ivBackGroundTop"
+                android:layout_marginBottom="-25dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/circle"
+                tools:ignore="ContentDescription,RtlHardcoded" />
 
             <ImageView
                 android:id="@+id/ivCircle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_alignBottom="@id/ivCircle2"
+                android:layout_marginBottom="-50dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/circle"
                 tools:ignore="ContentDescription,RtlHardcoded" />
@@ -39,10 +49,10 @@
                 android:id="@+id/tvNameSurname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/name_surname"
-                android:layout_toRightOf="@+id/ivCircle"
                 android:layout_alignTop="@+id/ivCircle"
                 android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/ivCircle"
+                android:text="@string/name_surname"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="15dp"
@@ -51,30 +61,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvNameSurname"
                 android:layout_alignLeft="@+id/tvNameSurname"
+                android:layout_below="@+id/tvNameSurname"
                 android:text="Two minutes ago"
                 android:textSize="8dp"
                 tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
 
-            <ImageView
-                android:id="@+id/ivCircle2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/ivCircle"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/circle"
-                tools:ignore="ContentDescription,RtlHardcoded" />
         </RelativeLayout>>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:paddingTop="15dp"
+            android:orientation="vertical"
             android:paddingBottom="15dp"
-            android:orientation="vertical">
+            android:paddingTop="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,20 +97,20 @@
                         android:layout_height="wrap_content"
                         android:text="Title"
                         android:textAllCaps="true"
-                        android:textStyle="bold"
                         android:textColor="@android:color/black"
+                        android:textStyle="bold"
                         tools:ignore="HardcodedText" />
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="@string/tile" />
                 </LinearLayout>>
 
                 <LinearLayout
-                    android:layout_height="match_parent"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingRight="15dp"
@@ -119,8 +120,8 @@
                         android:id="@+id/tvComment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Comments:"
                         android:layout_gravity="end"
+                        android:text="Comments:"
                         android:textAlignment="textEnd"
                         tools:ignore="HardcodedText" />
 
@@ -128,12 +129,13 @@
                         android:id="@+id/etCommentText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/comment"
                         android:layout_marginTop="15dp"
+                        android:text="@string/comment"
                         tools:ignore="LabelFor,TextFields" />
                 </LinearLayout>>
 
             </LinearLayout>>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
