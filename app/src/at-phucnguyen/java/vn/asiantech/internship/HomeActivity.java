@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
+    Button btnResrouce;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +18,8 @@ public class HomeActivity extends AppCompatActivity {
         Button btnW2Fragment=(Button)findViewById(R.id.btnFragment);
         Button btnW1View = findViewById(R.id.btnW1View);
         Button btnW1Intent = findViewById(R.id.btnW1Intent);
+        btnResrouce=findViewById(R.id.btnResource);
+
 
         btnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,5 +56,18 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnResrouce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicResrouce();
+            }
+        });
     }
+
+    public void practicResrouce(){
+        Intent intent =new Intent(HomeActivity.this,ResourceActivity.class);
+        startActivity(intent);
+    }
+
 }

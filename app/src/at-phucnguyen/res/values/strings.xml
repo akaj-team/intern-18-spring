@@ -5,5 +5,7 @@
     <string name="w1_view">W1-View</string>
     <string name="tvextradata">tvExtraData</string>
     <string name="tvextradataintent">tvExtraDataIntent</string>
-
+    <string name="w2_fragment">W2 - Fragment</string>
+    <string name="w2_resource">W2 - Resrouce</string>
+    <string name="share">Share</string>
 </resources>

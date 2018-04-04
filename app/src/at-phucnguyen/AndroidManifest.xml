@@ -25,7 +25,9 @@
             android:label="W1 - Intent "></activity>
         <activity
             android:name=".FragmentActivity"
-            android:label="W2 - Activity and Fragment">
-        </activity>
+            android:label="W2 - Activity and Fragment"></activity>
+        <activity
+            android:name=".ResourceActivity"
+            android:label="W2 - Resource "></activity>
     </application>
 </manifest>
