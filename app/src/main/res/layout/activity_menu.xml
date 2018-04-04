@@ -55,6 +55,13 @@
             android:text="@string/fragmentandactivity"
             android:textSize="25dp"
             tools:ignore="SpUsage" />
+        <Button
+            android:id="@+id/btnResources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resources"
+            android:textSize="25dp"
+            tools:ignore="SpUsage"/>
 
     </LinearLayout>>
 </RelativeLayout>

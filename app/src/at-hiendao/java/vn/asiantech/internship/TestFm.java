@@ -9,9 +9,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class TestFm extends Fragment {
+public class TestFm extends Fragment implements FragmentAndActivity.SubmitChat{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +30,17 @@ public class TestFm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Log.e("CreateView", "Fragment CreateView");
-
-        return inflater.inflate(R.layout.fragment2,container,false);
+        View view =  inflater.inflate(R.layout.fragment1,container,false);
+        Button btnClick = (Button)view.findViewById(R.id.btnSubmit1);
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.w("a","Clickkkkkkkkkkkkk");
+                EditText etText = (EditText)getView().findViewById(R.id.etFragment1);
+                SendData(etText.getText().toString(), true);
+            }
+        });
+        return view;
 
     }
 
@@ -81,5 +92,18 @@ public class TestFm extends Fragment {
         super.onDestroy();
         Log.e("CreateView", "Fragment Destroy");
     }
+
+    @Override
+    public  void ReceviedData(String data)
+    {
+        TextView tvText = (TextView)getView().findViewById(R.id.tvFragment1);
+        tvText.setText(data);
+    }
+
+    @Override
+    public void SendData(String data, boolean isFm1) {
+        FragmentAndActivity.Instance.OnChatFragment(data,isFm1);
+    }
+
 
 }

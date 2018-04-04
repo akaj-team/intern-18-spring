@@ -8,7 +8,8 @@
     <string name="intent">INTENT</string>>
     <string name="activity">ACTIVITY</string>
     <string name="fragmentandactivity">FRAGMENT AND ACTIVITY</string>>
-
+    <string name="resources">RESOURCES</string>>
+    <string name="typemessage">Type your message</string>>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="TestFragment">Test Fragment</string>>
 </resources>

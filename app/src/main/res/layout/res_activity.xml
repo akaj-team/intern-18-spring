@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/tvLeft"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="15dp"
+            android:background="@drawable/bg1"
+            android:layout_gravity="left"
+            android:text="Sent 1234434343434343434343fsdfdss " />
+        <TextView
+            android:id="@+id/tvRight"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="15dp"
+            android:layout_gravity="right"
+            android:background="@drawable/bg2"
+            android:text="Sent 12345678 " />
+        >
+    </LinearLayout>>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:hint="@string/typemessage" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle"
+                android:rotation="180"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_send_white"
+                android:layout_gravity="center"
+                />
+        </FrameLayout>>
+
+    </LinearLayout>>
+</LinearLayout>
