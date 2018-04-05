@@ -6,12 +6,9 @@ import android.widget.TextView;
 
 public class TestActivity extends AppCompatActivity {
 
-    private TextView MYTEXTVIEW;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MYTEXTVIEW.setText("VINH");
     }
 }
