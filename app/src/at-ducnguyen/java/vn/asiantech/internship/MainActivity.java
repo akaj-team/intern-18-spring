@@ -7,27 +7,25 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mBtnViewAndViewGroup;
-    private Button mBtnActivityAndFragment;
-    public static String KEY_TITLE = "KEY_TITLE";
+    public final static String KEY_TITLE = "KEY_TITLE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setTitle("Android Training");
         setContentView(R.layout.activity_main);
-        mBtnViewAndViewGroup = (Button) findViewById(R.id.btnViewAndViewGroup);
-        mBtnViewAndViewGroup.setOnClickListener(new View.OnClickListener() {
+        final Button btnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
+        btnViewAndViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, UserActivity.class);
-                String result = mBtnViewAndViewGroup.getText().toString();
+                String result = btnViewAndViewGroup.getText().toString();
                 intent.putExtra(KEY_TITLE, result);
                 startActivity(intent);
             }
         });
-        mBtnActivityAndFragment = (Button) findViewById(R.id.btnActivityAndFragment);
-        mBtnActivityAndFragment.setOnClickListener(new View.OnClickListener() {
+        Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
+        btnActivityAndFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SendDataActivity.class);

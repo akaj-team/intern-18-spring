@@ -14,14 +14,14 @@
 
         <Button
             android:id="@+id/btnViewAndViewGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/w1_view_viewgroup" />
 
         <Button
             android:id="@+id/btnActivityAndFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/w2_activity_and_fragment" />
 
     </LinearLayout>
