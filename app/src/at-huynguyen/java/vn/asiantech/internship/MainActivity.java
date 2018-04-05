@@ -8,20 +8,11 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btncomment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btncomment = (Button) findViewById(R.id.btn_comment);
-        btncomment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View view){
-                Intent intent = new Intent(MainActivity.this, ChatActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
 //    @Nullable
