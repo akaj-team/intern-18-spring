@@ -11,19 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by nmduc on 03/04/2018.
- */
-
 public class FirstFragment extends Fragment {
     private EditText mEdtInput;
-    private Button mBtnSend;
-    private TextView mTvMessage;
     private SendStringOfFirstFragment data;
     private String message;
 
     public interface SendStringOfFirstFragment {
-        public void sendMessage(String message);
+        void sendMessage(String message);
     }
 
     @Override
@@ -41,14 +35,14 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-        mTvMessage = (TextView) view.findViewById(R.id.tvMessage);
-        mEdtInput = (EditText) view.findViewById(R.id.edtInput);
+        TextView tvMessage = view.findViewById(R.id.tvMessage);
+        mEdtInput = view.findViewById(R.id.edtInput);
         if (null != message) {
-            mTvMessage.setText(message);
+            tvMessage.setText(message);
             mEdtInput.setText("");
         }
-        mBtnSend = (Button) view.findViewById(R.id.btnSend);
-        mBtnSend.setOnClickListener(new View.OnClickListener() {
+        Button btnSend = view.findViewById(R.id.btnSend);
+        btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 data.sendMessage(mEdtInput.getText().toString());
