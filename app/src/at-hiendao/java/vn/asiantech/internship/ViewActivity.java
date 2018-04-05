@@ -14,27 +14,24 @@ public class ViewActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_and_viewgroup);
+        setContentView(R.layout.view_activity);
         getIntentData();
         settingButtonHomeClick();
         Log.e("Create", "View Create");
     }
 
-    private void getIntentData()
-    {
+    private void getIntentData() {
         Intent intent = getIntent();
-        String xxx = intent.getStringExtra("xxx");
         Bundle bundle = intent.getExtras();
-        EditText editText = (EditText)findViewById(R.id.etCommentText);
-        editText.setText(bundle.getString("123"));
-        TextView comment = (TextView)findViewById(R.id.tvComment);
+        EditText editText = findViewById(R.id.etCommentText);
+        editText.setText(bundle != null ? bundle.getString("123") : null);
+        TextView comment = findViewById(R.id.tvComment);
         comment.setText(intent.getStringExtra("345"));
 
     }
 
-    private void settingButtonHomeClick()
-    {
-        Button button = (Button)findViewById(R.id.btnHome);
+    private void settingButtonHomeClick() {
+        Button button = findViewById(R.id.btnHome);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +58,7 @@ public class ViewActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e("Pause","View Pause");
+        Log.e("Pause", "View Pause");
     }
 
     @Override
@@ -73,12 +70,12 @@ public class ViewActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e("Resume" , "View Resume");
+        Log.e("Resume", "View Resume");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.e("Restart","View Restart");
+        Log.e("Restart", "View Restart");
     }
 }
