@@ -58,5 +58,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
 
-//apply from: "https://raw.githubusercontent.com/tientun/gradle-android-ci-check/master/ci.gradle"
 apply from: "../ci-java.gradle"
