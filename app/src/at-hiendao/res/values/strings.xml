@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">intern-18-spring</string>
+    <string name="app_name">W1 - VIEW AND VIEWGROUP</string>
+    <string name="comment">A flexible view for providing a limited window into a large data set.
+    </string>>
+    <string name="tile">completed with 9 local objects.</string>>
+    <string name="name_surname">Title</string>>
+    <string name="view">VIEW</string>
+    <string name="menu">MENU</string>>
+
 </resources>
