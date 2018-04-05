@@ -16,10 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"
-            android:label="W1 - View and View Group"></activity>
-        <activity android:name=".IntentActivity"
-            android:label="W1 - Intent "></activity>
+        <activity android:name=".ViewActivity" android:label="W1 - View and View Group"></activity>
+        <activity android:name=".IntentActivity" android:label="W1 - Intent "></activity>
     </application>
 </manifest>

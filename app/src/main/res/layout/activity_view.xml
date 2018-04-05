@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="2"
-    tools:context="vn.asiantech.internship.MainActivity">
+    tools:context="vn.asiantech.internship.ViewActivity">
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval" >
+        <gradient android:startColor="#FFFF0000" android:endColor="#80FF00FF"
+            android:angle="270"/>
+    </shape>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +25,7 @@
             android:layout_above="@id/img1"
             android:layout_alignParentTop="true"
             android:layout_marginBottom="25dp"
-            android:background="@color/colorPrimaryDark"/>
+            android:background="@color/colorPrimaryDark" />
 
 
         <ImageView
@@ -28,13 +33,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="20dp"
             android:background="@drawable/circle"
-
-
-            />
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp" />
 
         <ImageView
             android:id="@+id/star"
@@ -43,9 +45,7 @@
             android:layout_above="@id/img1"
             android:layout_alignParentRight="true"
             android:layout_marginRight="25dp"
-            android:background="@drawable/circle_red"
-
-            />
+            android:background="@drawable/circle_red" />
 
         <TextView
             android:id="@+id/txtName"
@@ -56,18 +56,16 @@
             android:layout_marginRight="200dp"
             android:layout_toRightOf="@id/img1"
             android:text="Name Surname"
-
-
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txtCount"
+            android:text="Tow minutes ago"
             android:layout_below="@id/txtName"
-            android:layout_toRightOf="@id/img1"
-            android:text="Tow minutes ago" />
+            android:layout_toRightOf="@id/img1" />
 
 
     </RelativeLayout>
@@ -81,7 +79,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="horizontal">
 
             <TextView
@@ -90,19 +87,15 @@
                 android:layout_weight="1"
                 android:text="Title"
                 android:textColor="@android:color/background_dark"
-
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Comment:"
-                android:textAlignment="textEnd"
+                android:layout_weight="1"
                 android:textSize="20dp"
-
-                />
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
@@ -110,25 +103,21 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:weightSum="2">
-
             <TextView
                 android:id="@+id/txt3"
+                android:text="Lorem ipsuum dolor sit amet, consectetur adipiscing elit.Nam sed ornare purus. Vestibulum vestibulu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Lorem ipsuum dolor sit amet, consectetur adipiscing elit.Nam sed ornare purus. Vestibulum vestibulu"
-
-                />
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="Consectetur adipiscing elit..! Vestubulum vestibulum deignissm metus!..."
-                android:textAlignment="textEnd" />
-
+                android:textAlignment="textEnd"
+                android:layout_gravity="center" />
 
         </LinearLayout>
 
@@ -142,15 +131,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/btnB"
-                android:text="Hide"
-                android:background="@drawable/button_rectangle_white"/>
+                android:text="Hide" />
 
             <Button
                 android:id="@+id/btnB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/button_square"
+                android:background="@android:color/holo_blue_bright"
                 android:text="Comment"
                 android:textColor="@android:color/background_light" />
 
@@ -159,8 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_toRightOf="@id/btnB"
-                android:text="Share"
-                android:background="@drawable/button_rectangle_white"/>
+                android:text="Share" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

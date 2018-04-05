@@ -4,4 +4,18 @@
     <string name="w1_view">W1-View</string>
     <string name="tvextradata">tvExtraData</string>
     <string name="tvextradataintent">tvExtraDataIntent</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="share">Share</string>
+    <string name="title">Title</string>
+    <string name="comment">Comment</string>
+    <string name="hide">Hide</string>
+    <string name="commentt">Comment:</string>
+    <string name="bodyComment">
+        Consectetur adipiscing elit..! Vestubulum vestibulum deignissm metus!…
+    </string>
+    <string name="bodyTitle">
+        Lorem ipsuum dolor sit amet, consectetur adipiscing elit.Nam sed ornare purus.
+        Vestibulum vestibulu />
+    </string>
+    <string name="txtCount">Tow minutes ago</string>
 </resources>
