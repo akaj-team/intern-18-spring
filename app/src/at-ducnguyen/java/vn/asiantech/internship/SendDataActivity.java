@@ -8,26 +8,24 @@ import android.util.Log;
 
 public class SendDataActivity extends AppCompatActivity implements FirstFragment.SendStringOfFirstFragment, SecondFragment.SendStringOfSecondFragment {
     public static final String KEY_MESSAGE = "201706387";
-    private FirstFragment firstFragment;
-    private SecondFragment secondFragment;
+    private FirstFragment mFirstFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Android Example");
         setContentView(R.layout.activity_send_data);
-        firstFragment = new FirstFragment();
-        Log.e("TAG", "onCreate: " + firstFragment.toString());
+        mFirstFragment = new FirstFragment();
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.flFragment, firstFragment);
+        transaction.replace(R.id.flFragment, mFirstFragment);
         transaction.commit();
     }
 
     @Override
 //      first fragment
     public void sendMessage(String message) {
-        secondFragment = new SecondFragment();
+        SecondFragment secondFragment = new SecondFragment();
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.flFragment, secondFragment);
@@ -42,7 +40,7 @@ public class SendDataActivity extends AppCompatActivity implements FirstFragment
     @Override
     public void sendMessageBack(String message) {
         FragmentManager fragmentManager = getFragmentManager();
-        firstFragment.setMessage(message);
+        mFirstFragment.setMessage(message);
         fragmentManager.popBackStack();
     }
 }
