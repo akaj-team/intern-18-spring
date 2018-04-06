@@ -5,7 +5,7 @@
 
     <Button
         android:id="@+id/btnW1View"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_rectangle_white"
@@ -13,20 +13,11 @@
 
     <Button
         android:id="@+id/btnW1Intent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnW1View"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_rectangle_white"
         android:text="@string/w1_intent" />
-
-    <Button
-        android:id="@+id/btnFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnW1Intent"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button_rectangle_white"
-        android:text="Fragment" />
 
 </RelativeLayout>
