@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp">
@@ -7,7 +8,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        tools:ignore="UselessParent">
 
         <EditText
             android:id="@+id/edMessage"
@@ -16,8 +18,9 @@
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@id/btnSendChatView"
             android:background="@drawable/bg_ed_message"
-            android:hint="Type your message"
-            android:padding="10dp" />
+            android:hint="@string/type_your_message"
+            android:padding="10dp"
+            android:inputType="text" />
 
         <ImageButton
             android:id="@+id/btnSendChatView"
@@ -35,7 +38,7 @@
             android:layout_above="@id/btnSendChatView"
             android:layout_alignParentRight="true"
             android:background="@drawable/bg_message_green"
-            android:text="Hello" />
+            android:text="@string/hello" />
 
         <TextView
             android:id="@+id/yourMessage"
@@ -43,8 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/myMessage"
             android:background="@drawable/bg_message_blue"
-            android:text="Hi" />
+            android:text="@string/hi" />
 
     </RelativeLayout>
-
 </RelativeLayout>

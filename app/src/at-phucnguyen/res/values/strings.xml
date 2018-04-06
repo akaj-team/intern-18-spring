@@ -8,7 +8,6 @@
     <string name="w2_fragment">W2 - Fragment</string>
     <string name="w2_resource">W2 - Resrouce</string>
     <string name="share">Share</string>
-    <string name="name_surname">Name Surname</string>
     <string name="title">Title</string>
     <string name="comment">Comment</string>
     <string name="hide">Hide</string>
@@ -21,4 +20,9 @@
         Vestibulum vestibulu />
     </string>
     <string name="txtCount">Tow minutes ago</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="tow_minutes_ago">Tow minutes ago</string>
+    <string name="hi">Hi</string>
+    <string name="hello">Hello</string>
+    <string name="type_your_message">Type your message</string>
 </resources>
