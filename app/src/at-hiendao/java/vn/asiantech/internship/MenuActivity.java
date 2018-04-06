@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +15,6 @@ public class MenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_activity);
         settingButtonsClick();
-        Log.w("Create", "Create");
     }
 
     private void settingButtonsClick() {
@@ -34,42 +32,5 @@ public class MenuActivity extends Activity {
         });
 
     }
-
-    @Override
-    protected void onStart() {
-        Log.w("Start", "Menu Start");
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.w("Stop", "Menu Stop");
-        super.onStop();
-    }
-
-    @Override
-    protected void onResume() {
-        Log.w("Menu Pause", "Menu Pause");
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.w("Pause", "Menu Pause");
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.w("Destroy", "Menu Destroy");
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onRestart() {
-        Log.w("Restart", "Menu Restart");
-        super.onRestart();
-    }
-
 
 }
