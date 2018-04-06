@@ -86,6 +86,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:text="@string/title"
                 android:textColor="@android:color/background_dark"
@@ -96,6 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:text="@string/commentt"
                 android:textAlignment="textEnd"
@@ -113,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:text="@string/bodyTitle" />
 
@@ -120,6 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:text="@string/bodyComment"
                 android:textAlignment="textEnd"
