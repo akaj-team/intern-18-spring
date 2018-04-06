@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SignUpTextView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_marginRight">@dimen/spacing_huge</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_huge</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_normal</item>
+    </style>
+
+    <style name="SwitchStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:switchMinWidth">@dimen/switch_min_width</item>
+        <item name="android:track">@drawable/switch_track_custom</item>
+        <item name="android:thumb">@drawable/switch_thumb_custom</item>
+        <item name="android:textOn">@string/sw_on</item>
+        <item name="android:textOff">@string/sw_off</item>
+    </style>
 </resources>
