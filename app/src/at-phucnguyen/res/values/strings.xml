@@ -18,4 +18,7 @@
         Vestibulum vestibulu />
     </string>
     <string name="txtCount">Tow minutes ago</string>
+    <string name="btnSendData">send data</string>
+    <string name="textBtnIntent">W1 - Fragment</string>
+    <string name="send_data">Send Data</string>
 </resources>

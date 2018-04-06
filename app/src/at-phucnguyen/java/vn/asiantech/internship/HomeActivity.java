@@ -13,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btnW2Fragment = (Button) findViewById(R.id.btnFragment);
+        Button btnW2Fragment = findViewById(R.id.btnFragment);
         Button btnW1View = findViewById(R.id.btnW1View);
         Button btnW1Intent = findViewById(R.id.btnW1Intent);
 

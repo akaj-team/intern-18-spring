@@ -20,4 +20,12 @@
         android:background="@drawable/button_rectangle_white"
         android:text="@string/w1_intent" />
 
+    <Button
+        android:id="@+id/btnFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnW1Intent"
+        android:background="@drawable/button_rectangle_white"
+        android:text="@string/textBtnIntent" />
+
 </RelativeLayout>

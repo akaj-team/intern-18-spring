@@ -21,6 +21,6 @@
         android:id="@+id/btnSendDataFrangment2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/send_data" />
+        android:text="@string/btnSendData" />
 
 </LinearLayout>
