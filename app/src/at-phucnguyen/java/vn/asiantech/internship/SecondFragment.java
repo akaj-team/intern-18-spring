@@ -44,8 +44,9 @@ public class SecondFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof OnFragment2Manager) {
             listenerFragment2 = (OnFragment2Manager) context;
-        } else
+        } else {
             throw new RuntimeException(context.toString() + "Fragment 2 chua khoi tao");
+        }
     }
 
     public void sendDataToFragment1() {
