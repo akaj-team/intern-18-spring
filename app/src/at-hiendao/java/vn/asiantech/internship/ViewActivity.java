@@ -50,37 +50,38 @@ public class ViewActivity extends Activity {
 
     @Override
     protected void onStart() {
-        super.onStart();
         Log.e("Start", "View Start");
+        super.onStart();
+
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         Log.e("Stop", "View Stop");
+        super.onStop();
     }
 
     @Override
     protected void onPause() {
-        super.onPause();
         Log.e("Pause", "View Pause");
+        super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         Log.e("Destroy", "View Destroy");
+        super.onDestroy();
     }
 
     @Override
     protected void onResume() {
-        super.onResume();
         Log.e("Resume", "View Resume");
+        super.onResume();
     }
 
     @Override
     protected void onRestart() {
-        super.onRestart();
         Log.e("Restart", "View Restart");
+        super.onRestart();
     }
 }

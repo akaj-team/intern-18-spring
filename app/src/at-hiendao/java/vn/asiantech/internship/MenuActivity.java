@@ -37,38 +37,38 @@ public class MenuActivity extends Activity {
 
     @Override
     protected void onStart() {
-        super.onStart();
         Log.w("Start", "Menu Start");
+        super.onStart();
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         Log.w("Stop", "Menu Stop");
+        super.onStop();
     }
 
     @Override
     protected void onResume() {
-        super.onResume();
         Log.w("Menu Pause", "Menu Pause");
+        super.onResume();
     }
 
     @Override
     protected void onPause() {
-        super.onPause();
         Log.w("Pause", "Menu Pause");
+        super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         Log.w("Destroy", "Menu Destroy");
+        super.onDestroy();
     }
 
     @Override
     protected void onRestart() {
-        super.onRestart();
         Log.w("Restart", "Menu Restart");
+        super.onRestart();
     }
 
 
