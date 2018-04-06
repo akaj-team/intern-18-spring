@@ -7,9 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:orientation="vertical"
-        tools:ignore="ExtraText,UselessParent">
+        tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -21,8 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="179dp"
                 android:layout_alignParentTop="true"
-                android:background="@android:color/holo_blue_light"
-                tools:ignore="ContentDescription" />
+                android:background="@android:color/holo_blue_light" />
 
             <ImageView
                 android:id="@+id/ivCircle2"
@@ -32,8 +30,7 @@
                 android:layout_alignRight="@+id/ivBackGroundTop"
                 android:layout_marginBottom="-25dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/circle"
-                tools:ignore="ContentDescription,RtlHardcoded" />
+                android:background="@drawable/circle" />
 
             <ImageView
                 android:id="@+id/ivCircle"
@@ -42,8 +39,7 @@
                 android:layout_alignBottom="@id/ivCircle2"
                 android:layout_marginBottom="-50dp"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/circle"
-                tools:ignore="ContentDescription,RtlHardcoded" />
+                android:background="@drawable/circle" />
 
             <TextView
                 android:id="@+id/tvNameSurname"
@@ -55,21 +51,19 @@
                 android:text="@string/name_surname"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
-                android:textSize="15dp"
-                tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
+                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvNameSurname"
                 android:layout_below="@+id/tvNameSurname"
-                android:text="Two minutes ago"
-                android:textSize="8dp"
-                tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
+                android:text="@string/text_surname"
+                android:textSize="8dp" />
 
-        </RelativeLayout>>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -77,98 +71,104 @@
             android:paddingBottom="15dp"
             android:paddingTop="15dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                tools:ignore="DisableBaselineAlignment,NestedWeights">
+                android:layout_above="@id/llButtonBar"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/llTitleBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="@string/name_title"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/comment_title"
+                        android:textAlignment="gravity"
+                        android:textSize="25dp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingLeft="15dp"
-                    tools:ignore="NestedWeights,RtlHardcoded,RtlSymmetry">
+                    android:layout_below="@id/llTitleBar"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:id="@+id/tvTextTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/tile"
+                        android:textAlignment="gravity"
+                        android:textSize="20dp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Title"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/tile" />
-                </LinearLayout>>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingRight="15dp"
-                    tools:ignore="RtlHardcoded,RtlSymmetry">
-
-                    <TextView
-                        android:id="@+id/tvComment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:text="Comments:"
-                        android:textAlignment="textEnd"
-                        tools:ignore="HardcodedText" />
-
-                    <EditText
-                        android:id="@+id/etCommentText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right"
                         android:text="@string/comment"
-                        tools:ignore="LabelFor,TextFields" />
-                </LinearLayout>>
+                        android:textAlignment="gravity"
+                        android:textSize="15dp" />
+                </LinearLayout>
 
-            </LinearLayout>>
+            </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/llButtonBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:orientation="horizontal"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp">
 
                 <Button
                     android:id="@+id/btnHide"
+                    style="@style/AppTheme"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="HIDE"
-                    tools:ignore="ButtonStyle,HardcodedText" />
+                    android:text="@string/text_button_hidde" />
 
                 <Button
                     android:id="@+id/btnHome"
+                    style="@style/Base.TextAppearance.AppCompat.Title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="HOME"
-                    android:textColor="@android:color/white"
-                    tools:ignore="ButtonStyle,HardcodedText" />
+                    android:text="@string/text_button_home"
+                    android:textColor="@android:color/white" />
 
                 <Button
                     android:id="@+id/btnShare"
+                    style="@style/AppTheme"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="SHARE"
-                    tools:ignore="ButtonStyle,HardcodedText" />
-            </LinearLayout>>
-        </LinearLayout>>
-    </LinearLayout>>
+                    android:text="@string/text_button_share" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

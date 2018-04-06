@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">W1 - VIEW AND VIEWGROUP</string>
     <string name="comment">A flexible view for providing a limited window into a large data set.
-    </string>>
-    <string name="tile">completed with 9 local objects.</string>>
-    <string name="name_surname">Title</string>>
+    </string>
+    <string name="tile">completed with 9 local objects.</string>
+    <string name="name_title">Title</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="text_surname">nothing to commit</string>
     <string name="view">VIEW</string>
-    <string name="menu">MENU</string>>
+    <string name="menu">MENU</string>
+    <string name="comment_title">Comments</string>
+    <string name="text_button_home">Home</string>
+    <string name="text_button_share">Share</string>
+    <string name="text_button_hidde">Hide</string>
 
 </resources>
