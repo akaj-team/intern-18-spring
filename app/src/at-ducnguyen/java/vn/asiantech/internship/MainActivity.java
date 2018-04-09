@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnResource = findViewById(R.id.btnResource);
         Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
         btnActivityAndFragment.setOnClickListener(this);
-        btnResource.setOnClickListener(this);
         mBtnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
         mBtnViewAndViewGroup.setOnClickListener(this);
         btnListener.setOnClickListener(this);
+        btnResource.setOnClickListener(this);
     }
 
     @Override
