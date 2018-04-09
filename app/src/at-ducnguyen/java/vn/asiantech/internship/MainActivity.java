@@ -15,14 +15,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         this.setTitle("Android Training");
         setContentView(R.layout.activity_begin);
-        Button btnListeners = findViewById(R.id.btnListeners);
+        Button btnListener = findViewById(R.id.btnListener);
         Button btnResource = findViewById(R.id.btnResource);
         Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
         btnActivityAndFragment.setOnClickListener(this);
         btnResource.setOnClickListener(this);
         mBtnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
         mBtnViewAndViewGroup.setOnClickListener(this);
-        btnListeners.setOnClickListener(this);
+        btnListener.setOnClickListener(this);
     }
 
     @Override
@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             }
-            case R.id.btnResource: {
-                Intent intent = new Intent(MainActivity.this, UserActivity.class);
+            case R.id.btnListener: {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.btnListeners: {
-                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            case R.id.btnResource: {
+                Intent intent = new Intent(MainActivity.this, UserActivity.class);
                 startActivity(intent);
                 break;
             }
