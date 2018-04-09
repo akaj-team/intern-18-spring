@@ -17,27 +17,27 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/ivBackGroundTop"
+                android:id="@+id/imgBackGroundTop"
                 android:layout_width="match_parent"
                 android:layout_height="179dp"
                 android:layout_alignParentTop="true"
                 android:background="@android:color/holo_blue_light" />
 
             <ImageView
-                android:id="@+id/ivCircle2"
+                android:id="@+id/imgCircle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ivBackGroundTop"
-                android:layout_alignRight="@+id/ivBackGroundTop"
+                android:layout_alignBottom="@+id/imgBackGroundTop"
+                android:layout_alignRight="@+id/imgBackGroundTop"
                 android:layout_marginBottom="-25dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/custom_circle" />
 
             <ImageView
-                android:id="@+id/ivCircle"
+                android:id="@+id/imgCircle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/ivCircle2"
+                android:layout_alignBottom="@id/imgCircle2"
                 android:layout_marginBottom="-50dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/custom_circle" />
@@ -46,9 +46,9 @@
                 android:id="@+id/tvNameSurname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/ivCircle"
+                android:layout_alignTop="@+id/imgCircle"
                 android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@+id/ivCircle"
+                android:layout_toRightOf="@+id/imgCircle"
                 android:text="@string/name_surname"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
