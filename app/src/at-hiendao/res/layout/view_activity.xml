@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/llViewAndViewGroup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -30,7 +31,7 @@
                 android:layout_alignRight="@+id/ivBackGroundTop"
                 android:layout_marginBottom="-25dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/circle" />
+                android:background="@drawable/custom_circle" />
 
             <ImageView
                 android:id="@+id/ivCircle"
@@ -39,7 +40,7 @@
                 android:layout_alignBottom="@id/ivCircle2"
                 android:layout_marginBottom="-50dp"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/circle" />
+                android:background="@drawable/custom_circle" />
 
             <TextView
                 android:id="@+id/tvNameSurname"
@@ -159,7 +160,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/text_button_home"
-                    android:textColor="@android:color/white" />
+                    android:background="@drawable/custom_press_button_home"
+                    android:textColor="@color/custom_color_text_button_home" />
 
                 <Button
                     android:id="@+id/btnShare"
