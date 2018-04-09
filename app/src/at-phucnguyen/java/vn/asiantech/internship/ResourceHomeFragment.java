@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class ResourceHomeFragment extends Fragment {
-    OnFragmentResoureHome listenes;
+    OnFragmentResoureHome onFmListenesHome;
     Button btnComment;
 
     @Nullable
@@ -31,7 +31,7 @@ public class ResourceHomeFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentResoureHome) {
-            listenes = (OnFragmentResoureHome) context;
+            onFmListenesHome = (OnFragmentResoureHome) context;
         } else {
             throw new RuntimeException(context.toString() + ":Fragment home chua hoat dong");
         }
@@ -43,7 +43,7 @@ public class ResourceHomeFragment extends Fragment {
     }
 
     public void openChatView() {
-        listenes.onSendEventBtnClick();
-        listenes.onSendEvent("Message on Resource Home");
+        onFmListenesHome.onSendEventBtnClick();
+        onFmListenesHome.onSendEvent("Message on Resource Home");
     }
 }

@@ -12,7 +12,7 @@
         tools:ignore="UselessParent">
 
         <EditText
-            android:id="@+id/edMessage"
+            android:id="@+id/edtMessage"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_alignParentBottom="true"
@@ -28,24 +28,24 @@
             android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/circle_red"
+            android:background="@drawable/bg_circle_red"
             android:src="@drawable/ic_send_pink_500_24dp" />
 
         <TextView
-            android:id="@+id/myMessage"
+            android:id="@+id/tvMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/btnSendChatView"
             android:layout_alignParentRight="true"
-            android:background="@drawable/bg_message_green"
+            android:background="@drawable/img_message_green"
             android:text="@string/hello" />
 
         <TextView
-            android:id="@+id/yourMessage"
+            android:id="@+id/tvYourMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/myMessage"
-            android:background="@drawable/bg_message_blue"
+            android:layout_above="@id/tvMessage"
+            android:background="@drawable/img_message_blue"
             android:text="@string/hi" />
 
     </RelativeLayout>

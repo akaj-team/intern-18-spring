@@ -9,29 +9,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class ResourceActivity extends AppCompatActivity implements ResourceHomeFragment.OnFragmentResoureHome {
-    FragmentManager fm;
+    FragmentManager fmManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource);
 
-        fm = getSupportFragmentManager();
+        fmManager = getSupportFragmentManager();
         fragMentStore(new ResourceHomeFragment());
     }
 
     public void fragMentStore(Fragment fragment) {
-        FragmentTransaction ft_add = fm.beginTransaction();
-        ft_add.replace(R.id.fragmentLayoutResource, fragment);
+        FragmentTransaction ft_add = fmManager.beginTransaction();
+        ft_add.replace(R.id.flResource, fragment);
         ft_add.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);//Hieu ung khi chuyen tiep cac fragment
         ft_add.addToBackStack(null);
         ft_add.commit();
     }
 
-
     @Override
     public void onSendEvent(String data) {
-        //fragMentStore(new ChatViewFragment());
         Log.e("Message",data);
     }
 

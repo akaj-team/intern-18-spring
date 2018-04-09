@@ -32,27 +32,27 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
             android:layout_marginStart="15dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/bg_circle"
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:id="@+id/star"
+            android:id="@+id/imgStar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_above="@id/img1"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="25dp"
-            android:background="@drawable/circle_red"
+            android:background="@drawable/bg_circle_red"
             tools:ignore="ContentDescription,RtlHardcoded" />
 
         <TextView
-            android:id="@+id/txtName"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/star"
+            android:layout_below="@id/imgStar"
             android:layout_marginEnd="200dp"
             android:layout_marginRight="200dp"
             android:layout_toEndOf="@id/img1"
@@ -62,10 +62,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtCount"
+            android:id="@+id/tvCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtName"
+            android:layout_below="@id/tvName"
             android:layout_toEndOf="@id/img1"
             android:layout_toRightOf="@id/img1"
             android:text="@string/txtCount" />
@@ -111,7 +111,7 @@
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/txt3"
+                android:id="@+id/tv3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -143,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/btnCommentResrouce"
                 android:layout_toStartOf="@id/btnCommentResrouce"
-                android:background="@drawable/button_rectangle_white"
+                android:background="@drawable/bg_button_rectangle_white"
                 android:text="@string/hide"
                 tools:ignore="RelativeOverlap" />
 
@@ -152,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/bg_btn_custom"
+                android:background="@drawable/custom_button"
                 android:text="@string/comment"
                 android:textColor="@drawable/txt_btn_custom" />
 
@@ -161,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_toRightOf="@id/btnCommentResrouce"
-                android:background="@drawable/button_rectangle_white"
+                android:background="@drawable/bg_button_rectangle_white"
                 android:text="@string/share"
                 tools:ignore="RelativeOverlap,RtlHardcoded" />
         </RelativeLayout>

@@ -12,20 +12,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Message2Fragment extends Fragment {
-    TextView edData;
+    TextView tvData;
     OnFragment2Manager listenerFragment2;
     Button btnSendDataFragment2;
-    EditText edDataFragment2;
+    EditText edtData;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_message_2, container, false);
-        String pareDataFragmentA = getArguments().getString("keyDataFragment1");//Day la du lieu tu Fragment A
-        edData = view.findViewById(R.id.tvPareDataFragment2);
-        edData.setText(pareDataFragmentA);
+        String mPareDataFragmentA = getArguments().getString("keyDataFragment1");//Day la du lieu tu Fragment A
+        tvData = view.findViewById(R.id.tvPareDataFragment2);
+        tvData.setText(mPareDataFragmentA);
         btnSendDataFragment2 = view.findViewById(R.id.btnSendDataFrangment2);
-        edDataFragment2 = view.findViewById(R.id.edDataFragment2);
+        edtData = view.findViewById(R.id.edtDataFragment2);
         btnSendDataFragment2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +35,9 @@ public class Message2Fragment extends Fragment {
         return view;
     }
 
+    /**
+     * Interface used is send data to activity
+     */
     public interface OnFragment2Manager {
         void onSendToData(String data);
     }
@@ -50,6 +53,6 @@ public class Message2Fragment extends Fragment {
     }
 
     public void sendDataToFragment1() {
-        listenerFragment2.onSendToData(edDataFragment2.getText().toString());
+        listenerFragment2.onSendToData(edtData.getText().toString());
     }
 }

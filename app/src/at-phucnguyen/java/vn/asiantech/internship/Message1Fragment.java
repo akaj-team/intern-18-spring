@@ -12,8 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Message1Fragment extends Fragment {
-    OnFragmentManager listener;
-    EditText edData;
+    OnFragmentManager onFmListener;
+    EditText sdtData;
     TextView tvDataFragment1;
 
     @Nullable
@@ -21,7 +21,7 @@ public class Message1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_message_1, container, false);
         Button btnSendData = view.findViewById(R.id.btnSendDataFragment1);
-        edData = view.findViewById(R.id.edData);
+        sdtData = view.findViewById(R.id.edtData);
         tvDataFragment1 = view.findViewById(R.id.tvExtraDataFragment1);
 
         if (this.getArguments() != null) {
@@ -34,10 +34,12 @@ public class Message1Fragment extends Fragment {
                 startFragmentSecond();
             }
         });
-
         return view;
     }
 
+    /**
+     * Interface used is send data to activity
+     */
     public interface OnFragmentManager {
         void onDataSelected(String data);
     }
@@ -46,13 +48,13 @@ public class Message1Fragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentManager) {
-            listener = (OnFragmentManager) context;
+            onFmListener = (OnFragmentManager) context;
         } else {
             throw new RuntimeException(context.toString() + "Fragment 1 is null");
         }
     }
 
     public void startFragmentSecond() {
-        listener.onDataSelected(edData.getText().toString());
+        onFmListener.onDataSelected(sdtData.getText().toString());
     }
 }

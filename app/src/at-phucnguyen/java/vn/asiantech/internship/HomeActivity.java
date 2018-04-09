@@ -36,12 +36,12 @@ public class HomeActivity extends AppCompatActivity {
                 //Sử dụng bundle để gửi dữ liệu
                 Bundle bundle = new Bundle();
                 bundle.putString("keyTitle", "Bundle: ");
-                bundle.putString("keyMessege", "Đây là dữ liệu từ ActivityHome được gửi bằng Bundle!");
+                bundle.putString("keyMessege", "This is data to ActivityHome from by Bundle!");
                 intent.putExtras(bundle);
 
                 //Sử dụng intent để gửi dữ liệu
                 intent.putExtra("keyTitleI", "Intent: ");
-                intent.putExtra("keyMessegeI", "Đây là dữ liệu từ ActivityHome được gửi bằng Intent!");
+                intent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
 
                 //khởi động Intent
                 startActivity(intent);

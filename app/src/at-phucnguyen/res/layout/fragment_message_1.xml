@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edData"
+        android:id="@+id/edtData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/type_your_message"

@@ -22,7 +22,7 @@
         android:layout_marginBottom="@dimen/spacing_large"
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginRight="@dimen/spacing_large"
-        android:background="@drawable/circle"
+        android:background="@drawable/bg_circle"
         android:contentDescription="@string/btnHide" />
 
     <TextView
@@ -40,7 +40,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtName"
+        android:layout_below="@id/tvName"
         android:layout_toEndOf="@+id/imgAvatar"
         android:layout_toRightOf="@+id/imgAvatar"
         android:text="@string/time_has_left"
@@ -57,7 +57,7 @@
         android:layout_marginEnd="@dimen/spacing_large"
         android:layout_marginRight="@dimen/spacing_large"
         android:layout_marginBottom="-25dp"
-        android:background="@drawable/circle"
+        android:background="@drawable/bg_circle"
         android:contentDescription="@string/btnHide" />
 
     <LinearLayout

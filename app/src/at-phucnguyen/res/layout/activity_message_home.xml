@@ -5,13 +5,13 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/fragmentLayoutFirst"
+        android:id="@+id/flFirst"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"></FrameLayout>
 
     <FrameLayout
-        android:id="@+id/fragmentLayoutSecond"
+        android:id="@+id/flSecond"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"></FrameLayout>
