@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class SecondFragment extends Fragment {
     private EditText mEdtInput;
-    private SendStringOfSecondFragment data;
+    private SendStringOfSecondFragment mData;
 
     public interface SendStringOfSecondFragment {
         void sendMessageBack(String message);
@@ -23,7 +23,7 @@ public class SecondFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            data = (SendStringOfSecondFragment) context;
+            mData = (SendStringOfSecondFragment) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + "must Implement SendStringOfSecondFragment ");
         }
@@ -42,7 +42,7 @@ public class SecondFragment extends Fragment {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                data.sendMessageBack(mEdtInput.getText().toString());
+                mData.sendMessageBack(mEdtInput.getText().toString());
             }
         });
         return view;
