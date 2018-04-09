@@ -5,23 +5,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvPareDataFragment2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp" />
-
     <EditText
-        android:id="@+id/edDataFragment2"
+        android:id="@+id/edData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/type_your_message"
         android:inputType="text"
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/btnSendDataFrangment2"
+        android:id="@+id/btnSendDataFragment1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_data" />
 
+    <TextView
+        android:id="@+id/tvExtraDataFragment1"
+        android:layout_width="match_parent"
+        android:layout_height="30sp" />
 </LinearLayout>

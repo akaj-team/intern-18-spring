@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class FirstFragment extends Fragment {
+public class Message1Fragment extends Fragment {
     OnFragmentManager listener;
     EditText edData;
     TextView tvDataFragment1;
@@ -19,13 +19,13 @@ public class FirstFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_first, container, false);
+        final View view = inflater.inflate(R.layout.fragment_message_1, container, false);
         Button btnSendData = view.findViewById(R.id.btnSendDataFragment1);
         edData = view.findViewById(R.id.edData);
         tvDataFragment1 = view.findViewById(R.id.tvExtraDataFragment1);
 
-        if(this.getArguments()!=null){
-            String pareDataFragment2=getArguments().getString("keyDataFragment2");
+        if (this.getArguments() != null) {
+            String pareDataFragment2 = getArguments().getString("keyDataFragment2");
             tvDataFragment1.setText(pareDataFragment2);
         }
         btnSendData.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class FirstFragment extends Fragment {
         if (context instanceof OnFragmentManager) {
             listener = (OnFragmentManager) context;
         } else {
-            throw new RuntimeException(context.toString() + "Fragment 1 chua khoi tao");
+            throw new RuntimeException(context.toString() + "Fragment 1 is null");
         }
     }
 

@@ -8,16 +8,12 @@
         android:id="@+id/fragmentLayoutFirst"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-
-    </FrameLayout>
+        android:layout_weight="1"></FrameLayout>
 
     <FrameLayout
         android:id="@+id/fragmentLayoutSecond"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-
-    </FrameLayout>
+        android:layout_weight="1"></FrameLayout>
 
 </LinearLayout>

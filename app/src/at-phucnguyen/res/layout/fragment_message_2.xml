@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tvPareDataFragment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp" />
+
     <EditText
-        android:id="@+id/edData"
+        android:id="@+id/edDataFragment2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/input_message"
-        android:inputType="text" />
+        android:inputType="text"
+        tools:ignore="LabelFor,TextFields" />
 
     <Button
-        android:id="@+id/btnSendDataFragment1"
+        android:id="@+id/btnSendDataFrangment2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_data" />
-
-    <TextView
-        android:id="@+id/tvExtraDataFragment1"
-        android:layout_width="match_parent"
-        android:layout_height="30sp" />
 
 </LinearLayout>

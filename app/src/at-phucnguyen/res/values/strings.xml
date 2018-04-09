@@ -25,5 +25,4 @@
     <string name="hi">Hi</string>
     <string name="hello">Hello</string>
     <string name="type_your_message">Type your message</string>
-    <string name="input_message">input message</string>
 </resources>

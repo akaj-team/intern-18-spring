@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class SecondFragment extends Fragment {
+public class Message2Fragment extends Fragment {
     TextView edData;
     OnFragment2Manager listenerFragment2;
     Button btnSendDataFragment2;
@@ -20,7 +20,7 @@ public class SecondFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        View view = inflater.inflate(R.layout.fragment_message_2, container, false);
         String pareDataFragmentA = getArguments().getString("keyDataFragment1");//Day la du lieu tu Fragment A
         edData = view.findViewById(R.id.tvPareDataFragment2);
         edData.setText(pareDataFragmentA);
@@ -45,7 +45,7 @@ public class SecondFragment extends Fragment {
         if (context instanceof OnFragment2Manager) {
             listenerFragment2 = (OnFragment2Manager) context;
         } else {
-            throw new RuntimeException(context.toString() + "Fragment 2 chua khoi tao");
+            throw new RuntimeException(context.toString() + "Fragment 2 is null");
         }
     }
 

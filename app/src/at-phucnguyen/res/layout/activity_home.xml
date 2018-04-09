@@ -25,7 +25,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnW1Intent"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/button_rectangle_white"
         android:text="@string/w2_fragment" />
 
