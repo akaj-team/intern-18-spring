@@ -7,7 +7,9 @@
     <EditText
         android:id="@+id/edData"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/input_message"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btnSendDataFragment1"
