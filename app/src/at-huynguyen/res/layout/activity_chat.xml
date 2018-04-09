@@ -4,52 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="vn.asiantech.internship.ChatActivity">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:ignore="UselessParent">
 
-    <EditText
-        android:id="@+id/edtmsg"
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:hint="@string/Typename"
-        tools:ignore="TextFields" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
-    <ImageButton
-        android:id="@+id/imgbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/circle2"
-        android:src="@drawable/ic_send"
-        tools:ignore="ContentDescription" />
+        <EditText
+            android:id="@+id/edtmsg"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:hint="@string/Typename"
+            android:inputType="text"/>
 
-    <TextView
-        android:id="@+id/textchat1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textchat2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/text_chat1"
-        android:text="@string/Msg" />
-    <TextView
-        android:id="@+id/textchat2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edtmsg"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/text_chat2"
-        android:text="@string/Sent" />
+        <ImageButton
+            android:id="@+id/imgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/circle2"
+            android:src="@drawable/ic_send" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvchat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvchat2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/text_chat1"
+            android:text="@string/Msg" />
+
+        <TextView
+            android:id="@+id/tvchat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/edtmsg"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/text_chat2"
+            android:text="@string/Sent" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
