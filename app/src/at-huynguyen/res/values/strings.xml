@@ -16,4 +16,7 @@
     <string name="Typename">Type your message</string>
     <string name="Msg">Message received</string>
     <string name="Sent">Sent</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
 </resources>
