@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-public class FragmentActivity extends AppCompatActivity implements FirstFragment.OnFragmentManager, SecondFragment.OnFragment2Manager {
+public class MessageHomeActivity extends AppCompatActivity implements Message1Fragment.OnFragmentManager, Message2Fragment.OnFragment2Manager {
     FragmentManager fmfirst;
 
     @Override
@@ -16,7 +16,7 @@ public class FragmentActivity extends AppCompatActivity implements FirstFragment
         setContentView(R.layout.activity_fragment);
 
         fmfirst = getSupportFragmentManager();//Khai bao quan li Fragment
-        fragmentStore(new FirstFragment());
+        fragmentStore(new Message1Fragment());
     }
 
     public void fragmentStore(Fragment fragmentClass) {
@@ -31,7 +31,7 @@ public class FragmentActivity extends AppCompatActivity implements FirstFragment
     public void onDataSelected(String data) {
         Bundle bundle = new Bundle();
         bundle.putString("keyDataFragment1", data);
-        SecondFragment fragmentB = new SecondFragment();
+        Message2Fragment fragmentB = new Message2Fragment();
         fragmentStore(fragmentB);
         fragmentB.setArguments(bundle);//Truyen du lieu qua fragment Second
     }
@@ -40,7 +40,7 @@ public class FragmentActivity extends AppCompatActivity implements FirstFragment
     public void onSendToData(String data) {
         Bundle bundle = new Bundle();
         bundle.putString("keyDataFragment2", data);
-        FirstFragment fragmentA = new FirstFragment();
+        Message1Fragment fragmentA = new Message1Fragment();
         fragmentStore(fragmentA);
         fragmentA.setArguments(bundle);
     }

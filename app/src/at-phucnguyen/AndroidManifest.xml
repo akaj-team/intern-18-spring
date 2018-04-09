@@ -18,6 +18,6 @@
         </activity>
         <activity android:name=".ViewActivity" android:label="W1 - View and View Group"/>
         <activity android:name=".IntentActivity" android:label="W1 - Intent "/>
-        <activity android:name=".FragmentActivity" />
+        <activity android:name=".MessageHomeActivity" android:label="W2 - Activity and Fragment"/>
     </application>
 </manifest>

@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
         btnW2Fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, FragmentActivity.class);
+                Intent intent = new Intent(HomeActivity.this, MessageHomeActivity.class);
                 startActivity(intent);
             }
         });

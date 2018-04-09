@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class SecondFragment extends Fragment {
+public class Message2Fragment extends Fragment {
     TextView edData;
     OnFragment2Manager listenerFragment2;
     Button btnSendDataFragment2;
