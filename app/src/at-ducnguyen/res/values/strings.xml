@@ -14,4 +14,9 @@
     <string name="btnComment">COMMENT</string>
     <string name="btnShare">SHARE</string>
     <string name="w1_view_viewgroup">W1 View and View Group</string>
+    <string name="resource">W2 D2 Resource</string>
+    <string name="edtChatHint">Type your message</string>
+    <string name="sent">Sent</string>
+    <string name="message_receive">Message Received</string>
+    <string name="time_receive">11:53 am</string>
 </resources>
