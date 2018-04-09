@@ -24,7 +24,7 @@
         android:contentDescription="@string/btnHide" />
 
     <TextView
-        android:id="@+id/txtName"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imgCover"
@@ -38,7 +38,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtName"
+        android:layout_below="@id/tvName"
         android:layout_toEndOf="@+id/imgAvatar"
         android:layout_toRightOf="@+id/imgAvatar"
         android:text="@string/time_has_left"
