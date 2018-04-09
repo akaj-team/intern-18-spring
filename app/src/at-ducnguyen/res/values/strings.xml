@@ -18,4 +18,5 @@
     <string name="edtChatHint">Type your message</string>
     <string name="sent">Sent</string>
     <string name="message_receive">Message Received</string>
+    <string name="time_receive">11:53 am</string>
 </resources>
