@@ -1,28 +1,28 @@
 <resources>
     <string name="app_name">intern-18-spring</string>
-    <string name="send_data">Send Data</string>
-    <string name="w1_intent">W1-Intent</string>
-    <string name="w1_view">W1-View</string>
+    <string name="btn_send_data">Send Data</string>
+    <string name="btn_w1_intent">W1-Intent</string>
+    <string name="btn_w1_view">W1-View</string>
     <string name="tvextradata">tvExtraData</string>
     <string name="tvextradataintent">tvExtraDataIntent</string>
-    <string name="w2_fragment">W2 - Fragment</string>
-    <string name="w2_resource">W2 - Resrouce</string>
-    <string name="share">Share</string>
-    <string name="title">Title</string>
-    <string name="comment">Comment</string>
-    <string name="hide">Hide</string>
-    <string name="commentt">Comment:</string>
-    <string name="bodyComment">
+    <string name="btn_w2_fragment">W2 - Fragment</string>
+    <string name="btn_Reasource">W2 - Resrouce</string>
+    <string name="btn_share">Share</string>
+    <string name="tv_title">Title</string>
+    <string name="btn_comment">Comment</string>
+    <string name="btn_hide">Hide</string>
+    <string name="btn_commentt">Comment:</string>
+    <string name="tv_bodyComment">
         Consectetur adipiscing elit..! Vestubulum vestibulum deignissm metus!…
     </string>
-    <string name="bodyTitle">
+    <string name="tv_bodyTitle">
         Lorem ipsuum dolor sit amet, consectetur adipiscing elit.Nam sed ornare purus.
         Vestibulum vestibulu />
     </string>
-    <string name="txtCount">Tow minutes ago</string>
-    <string name="name_surname">Name Surname</string>
-    <string name="tow_minutes_ago">Tow minutes ago</string>
-    <string name="hi">Hi</string>
-    <string name="hello">Hello</string>
-    <string name="type_your_message">Type your message</string>
+    <string name="tv_Count">Tow minutes ago</string>
+    <string name="tvName_surname">Name Surname</string>
+    <string name="tvTow_minutes_ago">Tow minutes ago</string>
+    <string name="tvHi">Hi</string>
+    <string name="tvHello">Hello</string>
+    <string name="tvHintType_your_message">Type your message</string>
 </resources>

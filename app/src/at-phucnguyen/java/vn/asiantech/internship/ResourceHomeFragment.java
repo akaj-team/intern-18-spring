@@ -10,40 +10,40 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class ResourceHomeFragment extends Fragment {
-    OnFragmentResoureHome onFmListenesHome;
-    Button btnComment;
+    OnFragmentResoureHome mOnFmListenesHome;
+    Button mBtnComment;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home_resource, container, false);
-        btnComment = view.findViewById(R.id.btnCommentResrouce);
-        btnComment.setOnClickListener(new View.OnClickListener() {
+        View mView = inflater.inflate(R.layout.fragment_home_resource, container, false);
+        mBtnComment = mView.findViewById(R.id.btnCommentResrouce);
+        mBtnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openChatView();
             }
         });
-        return view;
+        return mView;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentResoureHome) {
-            onFmListenesHome = (OnFragmentResoureHome) context;
+            mOnFmListenesHome = (OnFragmentResoureHome) context;
         } else {
             throw new RuntimeException(context.toString() + ":Fragment home chua hoat dong");
         }
     }
 
     public interface OnFragmentResoureHome {
-        void onSendEvent(String data);
+        void onSendEvent(String mData);
         void onSendEventBtnClick();
     }
 
     public void openChatView() {
-        onFmListenesHome.onSendEventBtnClick();
-        onFmListenesHome.onSendEvent("Message on Resource Home");
+        mOnFmListenesHome.onSendEventBtnClick();
+        mOnFmListenesHome.onSendEvent("Message on Resource Home");
     }
 }

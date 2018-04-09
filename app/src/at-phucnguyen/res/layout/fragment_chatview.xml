@@ -18,7 +18,7 @@
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@id/btnSendChatView"
             android:background="@drawable/bg_ed_message"
-            android:hint="@string/type_your_message"
+            android:hint="@string/tvHintType_your_message"
             android:padding="10dp"
             android:inputType="text" />
 
@@ -38,7 +38,7 @@
             android:layout_above="@id/btnSendChatView"
             android:layout_alignParentRight="true"
             android:background="@drawable/img_message_green"
-            android:text="@string/hello" />
+            android:text="@string/tvHello" />
 
         <TextView
             android:id="@+id/tvYourMessage"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/tvMessage"
             android:background="@drawable/img_message_blue"
-            android:text="@string/hi" />
+            android:text="@string/tvHi" />
 
     </RelativeLayout>
 </RelativeLayout>

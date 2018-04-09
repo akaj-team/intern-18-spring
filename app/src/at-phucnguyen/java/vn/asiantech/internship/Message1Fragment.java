@@ -12,29 +12,29 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Message1Fragment extends Fragment {
-    OnFragmentManager onFmListener;
-    EditText sdtData;
-    TextView tvDataFragment1;
+    OnFragmentManager mOnFmListener;
+    EditText mEdtData;
+    TextView mTvDataFragment1;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_message_1, container, false);
-        Button btnSendData = view.findViewById(R.id.btnSendDataFragment1);
-        sdtData = view.findViewById(R.id.edtData);
-        tvDataFragment1 = view.findViewById(R.id.tvExtraDataFragment1);
+        final View mView = inflater.inflate(R.layout.fragment_message_1, container, false);
+        Button mBtnSendData = mView.findViewById(R.id.btnSendDataFragment1);
+        mEdtData = mView.findViewById(R.id.edtData);
+        mTvDataFragment1 = mView.findViewById(R.id.tvExtraDataFragment1);
 
         if (this.getArguments() != null) {
             String pareDataFragment2 = getArguments().getString("keyDataFragment2");
-            tvDataFragment1.setText(pareDataFragment2);
+            mTvDataFragment1.setText(pareDataFragment2);
         }
-        btnSendData.setOnClickListener(new View.OnClickListener() {
+        mBtnSendData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startFragmentSecond();
             }
         });
-        return view;
+        return mView;
     }
 
     /**
@@ -48,13 +48,13 @@ public class Message1Fragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentManager) {
-            onFmListener = (OnFragmentManager) context;
+            mOnFmListener = (OnFragmentManager) context;
         } else {
             throw new RuntimeException(context.toString() + "Fragment 1 is null");
         }
     }
 
     public void startFragmentSecond() {
-        onFmListener.onDataSelected(sdtData.getText().toString());
+        mOnFmListener.onDataSelected(mEdtData.getText().toString());
     }
 }

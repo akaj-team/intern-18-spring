@@ -13,22 +13,22 @@ public class IntentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intent);
 
         //Anh xa
-        TextView tvData = findViewById(R.id.tvExtraData);
-        TextView tvDataI = findViewById(R.id.tvExtraDataI);
+        TextView mTvData = findViewById(R.id.tvExtraData);
+        TextView mTvDataI = findViewById(R.id.tvExtraDataI);
 
         //Lấy dữ liệu được gửi về bằng bundle đã tạo ở nơi gửi
-        Bundle extrasBundle = this.getIntent().getExtras();
-        String dataExtras = null;
-        if (extrasBundle != null) {
-            dataExtras = extrasBundle.getString("keyTitle") +
-                    extrasBundle.getString("keyMessege");
+        Bundle mExtrasBundle = this.getIntent().getExtras();
+        String mDataExtras = null;
+        if (mExtrasBundle != null) {
+            mDataExtras = mExtrasBundle.getString("keyTitle") +
+                    mExtrasBundle.getString("keyMessege");
         }
-        tvData.setText(dataExtras);
+        mTvData.setText(mDataExtras);
 
         //Lấy dữ liệu được gửi về bằng Intent đã tạo ở nơi gửi
-        Intent extrasIntent = this.getIntent();
-        String dataExtrasIntent = extrasIntent.getStringExtra("keyTitleI") +
-                extrasIntent.getStringExtra("keyMessegeI");
-        tvDataI.setText(dataExtrasIntent);
+        Intent mExtrasIntent = this.getIntent();
+        String mDataExtrasIntent = mExtrasIntent.getStringExtra("keyTitleI") +
+                mExtrasIntent.getStringExtra("keyMessegeI");
+        mTvDataI.setText(mDataExtrasIntent);
     }
 }

@@ -12,47 +12,47 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Message2Fragment extends Fragment {
-    TextView tvData;
-    OnFragment2Manager listenerFragment2;
-    Button btnSendDataFragment2;
-    EditText edtData;
+    TextView mTvData;
+    OnFragment2Manager mListenerFragment2;
+    Button mBtnSendDataFragment2;
+    EditText mEdtData;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_message_2, container, false);
+        View mView = inflater.inflate(R.layout.fragment_message_2, container, false);
         String mPareDataFragmentA = getArguments().getString("keyDataFragment1");//Day la du lieu tu Fragment A
-        tvData = view.findViewById(R.id.tvPareDataFragment2);
-        tvData.setText(mPareDataFragmentA);
-        btnSendDataFragment2 = view.findViewById(R.id.btnSendDataFrangment2);
-        edtData = view.findViewById(R.id.edtDataFragment2);
-        btnSendDataFragment2.setOnClickListener(new View.OnClickListener() {
+        mTvData = mView.findViewById(R.id.tvPareDataFragment2);
+        mTvData.setText(mPareDataFragmentA);
+        mBtnSendDataFragment2 = mView.findViewById(R.id.btnSendDataFrangment2);
+        mEdtData = mView.findViewById(R.id.edtDataFragment2);
+        mBtnSendDataFragment2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendDataToFragment1();
             }
         });
-        return view;
+        return mView;
     }
 
     /**
      * Interface used is send data to activity
      */
     public interface OnFragment2Manager {
-        void onSendToData(String data);
+        void onSendToData(String mData);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragment2Manager) {
-            listenerFragment2 = (OnFragment2Manager) context;
+            mListenerFragment2 = (OnFragment2Manager) context;
         } else {
             throw new RuntimeException(context.toString() + "Fragment 2 is null");
         }
     }
 
     public void sendDataToFragment1() {
-        listenerFragment2.onSendToData(edtData.getText().toString());
+        mListenerFragment2.onSendToData(mEdtData.getText().toString());
     }
 }

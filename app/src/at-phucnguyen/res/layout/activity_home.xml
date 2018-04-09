@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
-        android:text="@string/w1_view" />
+        android:text="@string/btn_w1_view" />
 
     <Button
         android:id="@+id/btnW1Intent"
@@ -18,7 +18,7 @@
         android:layout_below="@id/btnW1View"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
-        android:text="@string/w1_intent" />
+        android:text="@string/btn_w1_intent" />
 
     <Button
         android:id="@+id/btnFragment"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnW1Intent"
         android:background="@drawable/bg_button_rectangle_white"
-        android:text="@string/w2_fragment" />
+        android:text="@string/btn_w2_fragment" />
 
     <Button
         android:id="@+id/btnResource"
@@ -35,6 +35,6 @@
         android:layout_below="@id/btnFragment"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
-        android:text="@string/w2_resource" />
+        android:text="@string/btn_Reasource" />
 
 </RelativeLayout>

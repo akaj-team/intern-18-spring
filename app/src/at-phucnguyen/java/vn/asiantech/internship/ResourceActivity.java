@@ -9,28 +9,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class ResourceActivity extends AppCompatActivity implements ResourceHomeFragment.OnFragmentResoureHome {
-    FragmentManager fmManager;
+    FragmentManager mFmManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource);
 
-        fmManager = getSupportFragmentManager();
+        mFmManager = getSupportFragmentManager();
         fragMentStore(new ResourceHomeFragment());
     }
 
     public void fragMentStore(Fragment fragment) {
-        FragmentTransaction ft_add = fmManager.beginTransaction();
-        ft_add.replace(R.id.flResource, fragment);
-        ft_add.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);//Hieu ung khi chuyen tiep cac fragment
-        ft_add.addToBackStack(null);
-        ft_add.commit();
+        FragmentTransaction mFmTransaction = mFmManager.beginTransaction();
+        mFmTransaction.replace(R.id.flResource, fragment);
+        mFmTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);//Hieu ung khi chuyen tiep cac fragment
+        mFmTransaction.addToBackStack(null);
+        mFmTransaction.commit();
     }
 
     @Override
-    public void onSendEvent(String data) {
-        Log.e("Message",data);
+    public void onSendEvent(String mData) {
+        Log.e("Message",mData);
     }
 
     @Override
