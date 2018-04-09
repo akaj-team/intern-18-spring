@@ -20,4 +20,5 @@
             android:label="@string/app1_name"/>
 
     </application>
+
 </manifest>
