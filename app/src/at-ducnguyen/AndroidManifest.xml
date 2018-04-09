@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserActivity" />
-        <activity android:name=".SendDataActivity"></activity>
+        <activity android:name=".SendDataActivity" />
     </application>
 
 </manifest>

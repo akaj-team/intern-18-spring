@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnViewAndViewGroup;
     public final static String KEY_TITLE = "KEY_TITLE";
 
@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setTitle("Android Training");
         setContentView(R.layout.activity_begin);
-        final Button btnResource = findViewById(R.id.btnResource);
+        Button btnResource = findViewById(R.id.btnResource);
+        Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
+        btnActivityAndFragment.setOnClickListener(this);
         btnResource.setOnClickListener(this);
         mBtnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
         mBtnViewAndViewGroup.setOnClickListener(this);
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.btnResource: {
                 Intent intent = new Intent(MainActivity.this, UserActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btnActivityAndFragment: {
+                Intent intent = new Intent(MainActivity.this, SendDataActivity.class);
                 startActivity(intent);
                 break;
             }
