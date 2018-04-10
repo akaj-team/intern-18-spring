@@ -28,7 +28,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/circle2"
+            android:background="@drawable/custom_circle2"
             android:src="@drawable/ic_send" />
 
         <TextView

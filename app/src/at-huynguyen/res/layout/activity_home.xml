@@ -33,7 +33,7 @@
                 android:layout_marginBottom="-25dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginRight="25dp"
-                android:background="@drawable/circle"/>
+                android:background="@drawable/custom_circle"/>
 
             <ImageView
                 android:id="@+id/imgCircle2"
@@ -45,7 +45,7 @@
                 android:layout_marginBottom="-60dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginStart="25dp"
-                android:background="@drawable/circle" />
+                android:background="@drawable/custom_circle" />
 
             <TextView
                 android:id="@+id/tvName"
@@ -151,7 +151,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/custom_selector"
                     android:text="@string/comment2"
-                    android:textColor="@color/selector_comment"
+                    android:textColor="@color/color_SelectorComment"
                     android:textSize="15sp"
                     style="@style/AppTheme"/>
 
