@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/custom_icon_person" />
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgUser"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:hint="@string/username_hint"
+            android:inputType="none" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/edtUserName"
+            android:layout_alignRight="@id/edtUserName"
+            android:layout_below="@+id/edtUserName"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/edtUserName"
+            android:layout_alignRight="@+id/edtUserName"
+            android:layout_below="@+id/edtPassword"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress" />
+
+        <RadioGroup
+            android:id="@+id/rgSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/edtEmail"
+            android:layout_below="@id/edtEmail"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/male"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/female"
+                android:textSize="20sp" />
+
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/swEmailSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/swEmailAlow"
+            android:layout_alignRight="@id/swEmailAlow"
+            android:layout_below="@id/rgSex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="@string/email_subcriptions"
+            android:showText="true"
+            android:textSize="17sp"
+            android:thumb="@drawable/custom_thumb_switch"
+            android:track="@drawable/custom_track_switch"
+            android:switchPadding="15dp"/>
+
+        <Switch
+            android:id="@+id/swEmailAlow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swEmailSub"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:showText="true"
+            android:text="@string/alow_email"
+            android:textSize="17sp"
+            android:thumb="@drawable/custom_thumb_switch"
+            android:track="@drawable/custom_track_switch"
+            android:switchPadding="15dp"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
