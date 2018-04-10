@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatActivity"
-            android:label="@string/app1_name"/>
+        <activity android:name=".UserActivity"
+            android:label="@string/app2_name"/>
 
     </application>
 </manifest>
