@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">intern-18-spring</string>
+    <string name="app_name">W1-D1</string>
+    <string name="app1_name">Android ChatView Simple</string>
+    <string name="Name_username">Name_username</string>
+    <string name="two_minutes">Two minutes ago</string>
+    <string name="title">Title</string>
+    <string name="comment">Comment</string>
+    <string name="tvTextTitle">Lorem ipsum dolor sit\namet, consectetur\nadipiscing elit. Nam\nsed ornare purus.\nVestibulum vestibulu</string>
+    <string name="tvTextCmt">Consectetur adipiscing elit.!\nVestibulum vestibulum\ndlgnissim metus!...
+    </string>
+    <string name="Hide">HIDE</string>
+    <string name="comment2">COMMENT</string>
+    <string name="share">Share</string>
+    <string name="Typename">Type your message</string>
+    <string name="Msg">Message received</string>
+    <string name="Sent">Sent</string>
+    <string name="lefthour">06:50 pm.</string>
+    <string name="righthour">06:51 p.m.</string>
 </resources>
