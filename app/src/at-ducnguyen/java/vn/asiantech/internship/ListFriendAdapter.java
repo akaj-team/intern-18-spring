@@ -1,5 +1,7 @@
 package vn.asiantech.internship;
 
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +31,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Li
     @Override
     public void onBindViewHolder(ListFriendViewHolder holder, int position) {
         Friend friend = mListFriends.get(position);
+        holder.mImgAvatar.setImageResource(friend.getAvatar());
         holder.mTvName.setText(friend.getName());
         holder.mTvNumberOfFriends.setText(friend.getNumberOfFriend() + "Friends");
         if (friend.isFriend()) {

@@ -9,7 +9,7 @@
         android:layout_height="@dimen/avatar_list_friend"
         android:layout_centerVertical="true"
         android:layout_marginHorizontal="@dimen/spacing_normal"
-        android:background="@color/colorBlue" />
+        android:background="@color/colorBlue"/>
 
     <TextView
         android:id="@+id/tvName"

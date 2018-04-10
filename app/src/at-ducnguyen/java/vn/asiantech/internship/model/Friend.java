@@ -4,18 +4,30 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+import vn.asiantech.internship.R;
 
 public class Friend {
     private String mName;
     private int mNumberOfFriend;
-    private boolean isFriend;
+    private boolean mIsFriend;
+    private int mAvatar;
+
+    public int getAvatar() {
+        return mAvatar;
+    }
+
+    public void setAvatar(int avatar) {
+        this.mAvatar = avatar;
+    }
 
     public boolean isFriend() {
-        return isFriend;
+        return mIsFriend;
     }
 
     public void setFriend(boolean friend) {
-        isFriend = friend;
+        mIsFriend = friend;
     }
 
     public String getName() {
@@ -38,12 +50,24 @@ public class Friend {
         List<Friend> listFriend = new ArrayList();
         for (int i = 1; i <= sum; i++) {
             Friend friend = new Friend();
-            friend.setName("Duc Nguyen " + i);
+            Random random = new Random();
+            int position = random.nextInt(4);
+            List<Integer> listAvatar = new ArrayList();
+            List<String> listName = new ArrayList();
+            listAvatar.add(R.drawable.ducnguyen);
+            listAvatar.add(R.drawable.phucnguyen);
+            listAvatar.add(R.drawable.hiendao);
+            listAvatar.add(R.drawable.huynguyen);
+            listName.add("Duc Nguyen");
+            listName.add("Phuc Nguyen");
+            listName.add("Hien Dao");
+            listName.add("Huy Nguyen");
+            friend.setName(listName.get(position) + " " + i);
             friend.setNumberOfFriend(i * 2);
-            friend.setFriend(i%4 == 0);
+            friend.setFriend(i % 4 == 0);
+            friend.setAvatar(listAvatar.get(position));
             listFriend.add(friend);
         }
-        Log.d("AAA", "createListFriend: ");
         return listFriend;
     }
 }
