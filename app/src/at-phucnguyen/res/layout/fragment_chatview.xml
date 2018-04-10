@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/edtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/btnSendChatView"
+            android:background="@drawable/bg_ed_message"
+            android:hint="@string/tvHintType_your_message"
+            android:padding="10dp"
+            android:inputType="text" />
+
+        <ImageButton
+            android:id="@+id/btnSendChatView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_circle_red"
+            android:src="@drawable/ic_send_pink_500_24dp" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnSendChatView"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_message_green"
+            android:text="@string/tvHello" />
+
+        <TextView
+            android:id="@+id/tvYourMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tvMessage"
+            android:background="@drawable/img_message_blue"
+            android:text="@string/tvHi" />
+
+    </RelativeLayout>
+</RelativeLayout>
