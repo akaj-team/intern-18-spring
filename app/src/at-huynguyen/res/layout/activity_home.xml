@@ -151,7 +151,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/custom_selector"
                     android:text="@string/comment2"
-                    android:textColor="@color/color_SelectorComment"
+                    android:textColor="@color/color_selectorcomment"
                     android:textSize="15sp"
                     style="@style/AppTheme"/>
 
