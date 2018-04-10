@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorSelected">#7e7e7d</color>
     <color name="colorUnselected">#29c611</color>
+    <color name="colorThumb">#838383</color>
+    <color name="colorTrack">#d1d2d1</color>
 </resources>
