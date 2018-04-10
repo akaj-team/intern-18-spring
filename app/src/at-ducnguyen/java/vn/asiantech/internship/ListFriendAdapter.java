@@ -1,7 +1,5 @@
 package vn.asiantech.internship;
 
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +14,9 @@ import java.util.List;
 import vn.asiantech.internship.model.Friend;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.ListFriendViewHolder> {
-    List<Friend> mListFriends = new ArrayList();
+    private List<Friend> mListFriends = new ArrayList<>();
 
-    public ListFriendAdapter(List<Friend> listFriend) {
+    ListFriendAdapter(List<Friend> listFriend) {
         this.mListFriends = listFriend;
     }
 
@@ -31,13 +29,14 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Li
     @Override
     public void onBindViewHolder(ListFriendViewHolder holder, int position) {
         Friend friend = mListFriends.get(position);
+        String numOfFriend = friend.getNumberOfFriend() + "Friends";
         holder.mImgAvatar.setImageResource(friend.getAvatar());
         holder.mTvName.setText(friend.getName());
-        holder.mTvNumberOfFriends.setText(friend.getNumberOfFriend() + "Friends");
+        holder.mTvNumberOfFriends.setText(numOfFriend);
         if (friend.isFriend()) {
-            holder.mBtnFriends.setText("Unfriends");
+            holder.mBtnFriends.setText(R.string.unfriends);
         } else {
-            holder.mBtnFriends.setText("Add Friends");
+            holder.mBtnFriends.setText(R.string.add_friends);
         }
     }
 
@@ -52,7 +51,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Li
         private TextView mTvName;
         private Button mBtnFriends;
 
-        public ListFriendViewHolder(View itemView) {
+        private ListFriendViewHolder(View itemView) {
             super(itemView);
             mImgAvatar = itemView.findViewById(R.id.imgAvatar);
             mTvNumberOfFriends = itemView.findViewById(R.id.tvNumOfFriends);

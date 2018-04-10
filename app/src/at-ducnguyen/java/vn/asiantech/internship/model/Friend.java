@@ -1,7 +1,5 @@
 package vn.asiantech.internship.model;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,7 +16,7 @@ public class Friend {
         return mAvatar;
     }
 
-    public void setAvatar(int avatar) {
+    private void setAvatar(int avatar) {
         this.mAvatar = avatar;
     }
 
@@ -42,18 +40,18 @@ public class Friend {
         return mNumberOfFriend;
     }
 
-    public void setNumberOfFriend(int numberOfFriend) {
+    private void setNumberOfFriend(int numberOfFriend) {
         this.mNumberOfFriend = numberOfFriend;
     }
 
-    public List<Friend> createListFriend(int sum) {
-        List<Friend> listFriend = new ArrayList();
-        for (int i = 1; i <= sum; i++) {
+    public List<Friend> createListFriend() {
+        List<Friend> listFriend = new ArrayList<>();
+        for (int i = 1; i <= 100; i++) {
             Friend friend = new Friend();
             Random random = new Random();
             int position = random.nextInt(4);
-            List<Integer> listAvatar = new ArrayList();
-            List<String> listName = new ArrayList();
+            List<Integer> listAvatar = new ArrayList<>();
+            List<String> listName = new ArrayList<>();
             listAvatar.add(R.drawable.ducnguyen);
             listAvatar.add(R.drawable.phucnguyen);
             listAvatar.add(R.drawable.hiendao);

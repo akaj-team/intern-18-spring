@@ -36,4 +36,6 @@
     <string name="sw_off">OFF</string>
     <string name="recycler_view">W3 List Friend With Recycler View</string>
     <string name="number_of_friends">Number Of Friends</string>
+    <string name="unfriends">Unfriends</string>
+    <string name="add_friends">Add Friends</string>
 </resources>
