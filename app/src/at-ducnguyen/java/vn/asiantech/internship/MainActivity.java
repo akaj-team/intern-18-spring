@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnResource = findViewById(R.id.btnResource);
         Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
         btnActivityAndFragment.setOnClickListener(this);
+        btnResource.setOnClickListener(this);
+        Button btnListFriend = findViewById(R.id.btnListFriend);
+        btnListFriend.setOnClickListener(this);
         mBtnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
         mBtnViewAndViewGroup.setOnClickListener(this);
         btnListener.setOnClickListener(this);
@@ -42,6 +45,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btnResource: {
                 Intent intent = new Intent(MainActivity.this, UserActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btnListFriend: {
+                Intent intent = new Intent(MainActivity.this, ListFriendActivity.class);
                 startActivity(intent);
                 break;
             }
