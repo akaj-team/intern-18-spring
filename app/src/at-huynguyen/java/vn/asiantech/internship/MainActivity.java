@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mBtncomment = findViewById(R.id.btn_comment);
+    private Button mBtncomment = findViewById(R.id.btnComment);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

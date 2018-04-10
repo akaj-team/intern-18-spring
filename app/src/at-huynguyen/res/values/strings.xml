@@ -5,8 +5,8 @@
     <string name="two_minutes">Two minutes ago</string>
     <string name="title">Title</string>
     <string name="comment">Comment</string>
-    <string name="nd1">Lorem ipsum dolor sit\namet, consectetur\nadipiscing elit. Nam\<n></n>sed ornare purus.\nVestibulum vestibulu</string>
-    <string name="nd2">Consectetur adipiscing elit.!\nVestibulum vestibulum\ndlgnissim metus!...
+    <string name="tvTextTitle">Lorem ipsum dolor sit\namet, consectetur\nadipiscing elit. Nam\nsed ornare purus.\nVestibulum vestibulu</string>
+    <string name="tvTextCmt">Consectetur adipiscing elit.!\nVestibulum vestibulum\ndlgnissim metus!...
     </string>
     <string name="Hide">HIDE</string>
     <string name="comment2">COMMENT</string>
