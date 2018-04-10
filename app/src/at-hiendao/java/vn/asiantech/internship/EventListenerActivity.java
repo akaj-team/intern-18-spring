@@ -101,7 +101,6 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
                 break;
 
             default:
-                Log.e("Error", "id click error");
                 break;
         }
     }
@@ -138,7 +137,6 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
                 break;
 
             default:
-                Log.e("Error", "id longclick error");
                 break;
         }
         return false;
@@ -169,7 +167,6 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
                 break;
 
             default:
-                Log.e("Error", "id FocusChange error");
                 break;
         }
     }
@@ -199,7 +196,6 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
                 break;
 
             default:
-                Log.e("Error", "id onKey error");
                 break;
         }
         return false;
@@ -231,7 +227,7 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
                 break;
 
             default:
-                Log.e("Error", "id touch error");
+                Log.e("Touch Error", "id touch error");
                 break;
         }
         return false;
