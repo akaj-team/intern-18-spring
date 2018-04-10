@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button mBtnResrouce;
+    Button mBtnResrouce,mBbtnEventAndListenes;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         Button mBtnW1View = findViewById(R.id.btnW1View);
         Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce =findViewById(R.id.btnResource);
+        mBbtnEventAndListenes=findViewById(R.id.btnEventAndListenes);
 
         mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,13 @@ public class HomeActivity extends AppCompatActivity {
                 practicResrouce();
             }
         });
+
+        mBbtnEventAndListenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicEventAndListenes();
+            }
+        });
     }
 
     public void practicResrouce(){
@@ -69,4 +77,8 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(mIntent);
     }
 
+    public void practicEventAndListenes(){
+        Intent mIntent =new Intent(HomeActivity.this,SignupActivity.class);
+        startActivity(mIntent);
+    }
 }
