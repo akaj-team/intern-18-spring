@@ -141,26 +141,26 @@
                 android:id="@+id/btnA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/btnB"
-                android:layout_toStartOf="@id/btnB"
+                android:layout_toLeftOf="@id/btnCommentResrouce"
+                android:layout_toStartOf="@id/btnCommentResrouce"
                 android:background="@drawable/bg_button_rectangle_white"
                 android:text="@string/btn_hide"
                 tools:ignore="RelativeOverlap" />
 
             <Button
-                android:id="@+id/btnB"
+                android:id="@+id/btnCommentResrouce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/bg_button_square"
+                android:background="@drawable/custom_button"
                 android:text="@string/btn_comment"
-                android:textColor="@android:color/background_light" />
+                android:textColor="@drawable/custom_btn_preed" />
 
             <Button
                 android:id="@+id/btnC"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_toRightOf="@id/btnB"
+                android:layout_toRightOf="@id/btnCommentResrouce"
                 android:background="@drawable/bg_button_rectangle_white"
                 android:text="@string/btn_share"
                 tools:ignore="RelativeOverlap,RtlHardcoded" />

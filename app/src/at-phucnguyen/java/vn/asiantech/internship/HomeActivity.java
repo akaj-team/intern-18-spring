@@ -8,40 +8,65 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
+    Button mBtnResrouce;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btnW1View = findViewById(R.id.btnW1View);
-        Button btnW1Intent = findViewById(R.id.btnW1Intent);
+        Button mBtnW2Fragment = findViewById(R.id.btnFragment);
+        Button mBtnW1View = findViewById(R.id.btnW1View);
+        Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
+        mBtnResrouce =findViewById(R.id.btnResource);
 
-        btnW1View.setOnClickListener(new View.OnClickListener() {
+        mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ViewActivity.class);
-                startActivity(intent);
+                Intent mIntent = new Intent(HomeActivity.this, ViewActivity.class);
+                startActivity(mIntent);
             }
         });
 
-        btnW1Intent.setOnClickListener(new View.OnClickListener() {
+        mBtnW1Intent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, IntentActivity.class);
+                Intent mIntent = new Intent(HomeActivity.this, IntentActivity.class);
 
-                //Sử dụng bundle để gửi dữ liệu
-                Bundle bundle = new Bundle();
-                bundle.putString("keyTitle", "Bundle: ");
-                bundle.putString("keyMessege", "Đây là dữ liệu từ ActivityHome được gửi bằng Bundle!");
-                intent.putExtras(bundle);
+                //Sử dụng mBundle để gửi dữ liệu
+                Bundle mBundle = new Bundle();
+                mBundle.putString("keyTitle", "Bundle: ");
+                mBundle.putString("keyMessege", "This is data to ActivityHome from by Bundle!");
+                mIntent.putExtras(mBundle);
 
                 //Sử dụng intent để gửi dữ liệu
-                intent.putExtra("keyTitleI", "Intent: ");
-                intent.putExtra("keyMessegeI", "Đây là dữ liệu từ ActivityHome được gửi bằng Intent!");
+                mIntent.putExtra("keyTitleI", "Intent: ");
+                mIntent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
 
                 //khởi động Intent
-                startActivity(intent);
+                startActivity(mIntent);
+            }
+        });
+
+        mBtnW2Fragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(HomeActivity.this, MessageHomeActivity.class);
+                startActivity(mIntent);
+            }
+        });
+
+        mBtnResrouce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicResrouce();
             }
         });
     }
+
+    public void practicResrouce(){
+        Intent mIntent =new Intent(HomeActivity.this,ResourceActivity.class);
+        startActivity(mIntent);
+    }
+
 }

@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ResourceActivity" android:label="W2 - Resource "/>
         <activity android:name=".ViewActivity" android:label="W1 - View and View Group"/>
         <activity android:name=".IntentActivity" android:label="W1 - Intent "/>
+        <activity android:name=".MessageHomeActivity" android:label="W2 - Activity and Fragment"/>
     </application>
 </manifest>
