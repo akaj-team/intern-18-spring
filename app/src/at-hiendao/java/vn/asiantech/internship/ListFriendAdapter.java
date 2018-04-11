@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.lang.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
