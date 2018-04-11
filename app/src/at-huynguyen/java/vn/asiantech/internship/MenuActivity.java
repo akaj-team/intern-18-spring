@@ -7,15 +7,24 @@ import android.view.View;
 import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
-    Button mBtnViewViewGroup = findViewById(R.id.btnViewViewGroup);
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        mBtnViewViewGroup.setOnClickListener(new View.OnClickListener() {
+        Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
+        btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
                 Intent intent = new Intent(MenuActivity.this, ViewViewGroupActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btnResources = findViewById(R.id.btnResources);
+        btnResources.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
