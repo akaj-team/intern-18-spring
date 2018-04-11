@@ -44,7 +44,7 @@ public class Friend {
         this.mNumberOfFriend = numberOfFriend;
     }
 
-    public List<Friend> createListFriend() {
+    public static List<Friend> createListFriend() {
         List<Friend> listFriend = new ArrayList<>();
         for (int i = 1; i <= 100; i++) {
             Friend friend = new Friend();

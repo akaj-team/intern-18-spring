@@ -29,14 +29,14 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Li
     @Override
     public void onBindViewHolder(ListFriendViewHolder holder, int position) {
         Friend friend = mListFriends.get(position);
-        String numOfFriend = friend.getNumberOfFriend() + "Friends";
         holder.mImgAvatar.setImageResource(friend.getAvatar());
         holder.mTvName.setText(friend.getName());
-        holder.mTvNumberOfFriends.setText(numOfFriend);
+        String numOfFriend = friend.getNumberOfFriend() + "Friends";
+        holder.mTvNumberOfFriend.setText(numOfFriend);
         if (friend.isFriend()) {
-            holder.mBtnFriends.setText(R.string.unfriends);
+            holder.mBtnFriend.setText(R.string.unfriends);
         } else {
-            holder.mBtnFriends.setText(R.string.add_friends);
+            holder.mBtnFriend.setText(R.string.add_friends);
         }
     }
 
@@ -46,26 +46,27 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Li
     }
 
     class ListFriendViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private ImageView mImgAvatar;
-        private TextView mTvNumberOfFriends;
-        private TextView mTvName;
-        private Button mBtnFriends;
+        private final ImageView mImgAvatar;
+        private final TextView mTvNumberOfFriend;
+        private final TextView mTvName;
+        private final Button mBtnFriend;
 
         private ListFriendViewHolder(View itemView) {
             super(itemView);
             mImgAvatar = itemView.findViewById(R.id.imgAvatar);
-            mTvNumberOfFriends = itemView.findViewById(R.id.tvNumOfFriends);
+            mTvNumberOfFriend = itemView.findViewById(R.id.tvNumOfFriend);
             mTvName = itemView.findViewById(R.id.tvName);
-            mBtnFriends = itemView.findViewById(R.id.btnFriends);
-            mBtnFriends.setOnClickListener(this);
+            mBtnFriend = itemView.findViewById(R.id.btnFriend);
+            mBtnFriend.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.btnFriends: {
+                case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
                     friend.setFriend(!friend.isFriend());
+                    ListFriendAdapter.this.notifyDataSetChanged();
                     break;
                 }
             }

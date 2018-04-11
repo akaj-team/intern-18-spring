@@ -12,9 +12,8 @@ public class ListFriendActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_friend);
-        Friend friend = new Friend();
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new ListFriendAdapter(friend.createListFriend()));
+        recyclerView.setAdapter(new ListFriendAdapter(Friend.createListFriend()));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

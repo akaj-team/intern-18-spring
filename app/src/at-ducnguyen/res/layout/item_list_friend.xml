@@ -16,7 +16,7 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/btnFriends"
+        android:layout_toLeftOf="@+id/btnFriend"
         android:layout_toRightOf="@id/imgAvatar"
         android:text="@string/name_surname"
         android:textColor="@color/colorBlack"
@@ -24,7 +24,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvNumOfFriends"
+        android:id="@+id/tvNumOfFriend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvName"
@@ -35,7 +35,7 @@
 
     <Button
         android:textColor="@color/button_friend_text"
-        android:id="@+id/btnFriends"
+        android:id="@+id/btnFriend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
