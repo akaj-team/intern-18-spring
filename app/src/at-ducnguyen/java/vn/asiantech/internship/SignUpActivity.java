@@ -17,7 +17,7 @@ public class SignUpActivity extends AppCompatActivity
         View.OnFocusChangeListener, TextView.OnEditorActionListener, RadioGroup.OnCheckedChangeListener,
         CompoundButton.OnCheckedChangeListener {
 
-    private final String TAG = "LOG";
+    private final String TAG = "SignUpActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
