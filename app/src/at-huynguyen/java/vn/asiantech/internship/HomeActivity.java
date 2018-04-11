@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class HomeActivity extends AppCompatActivity {
-    private Button mBtnComment = findViewById(R.id.btnComment);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        mBtnComment.setOnClickListener(new View.OnClickListener() {
+        Button btnComment = findViewById(R.id.btnComment);
+        btnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
                 Intent intent = new Intent(HomeActivity.this, ChatActivity.class);
