@@ -21,36 +21,36 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.event_listener_activity);
+        setContentView(R.layout.activity_event_listener);
         initViewListener();
     }
 
     private void initViewListener() {
-        ImageView ImgUser = findViewById(R.id.imgUser);
-        EditText EdtUser = findViewById(R.id.edtUserName);
-        EditText EdtPassword = findViewById(R.id.edtPassword);
-        EditText EdtEmail = findViewById(R.id.edtEmail);
-        RadioGroup RgSex = findViewById(R.id.rgSex);
-        Switch SwMailSub = findViewById(R.id.swEmailSub);
-        Switch SwMailAlow = findViewById(R.id.swEmailAlow);
-        ImgUser.setOnClickListener(this);
-        ImgUser.setOnLongClickListener(this);
-        EdtUser.setOnClickListener(this);
-        EdtUser.setOnLongClickListener(this);
-        EdtPassword.setOnClickListener(this);
-        EdtPassword.setOnLongClickListener(this);
-        EdtEmail.setOnClickListener(this);
-        EdtEmail.setOnLongClickListener(this);
-        RgSex.setOnClickListener(this);
-        RgSex.setOnLongClickListener(this);
-        RgSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ImageView imgUser = findViewById(R.id.imgUser);
+        EditText edtUser = findViewById(R.id.edtUserName);
+        EditText edtPassword = findViewById(R.id.edtPassword);
+        EditText edtEmail = findViewById(R.id.edtEmail);
+        RadioGroup rgSex = findViewById(R.id.rgSex);
+        Switch swMailSub = findViewById(R.id.swEmailSub);
+        Switch swMailAlow = findViewById(R.id.swEmailAlow);
+        imgUser.setOnClickListener(this);
+        imgUser.setOnLongClickListener(this);
+        edtUser.setOnClickListener(this);
+        edtUser.setOnLongClickListener(this);
+        edtPassword.setOnClickListener(this);
+        edtPassword.setOnLongClickListener(this);
+        edtEmail.setOnClickListener(this);
+        edtEmail.setOnLongClickListener(this);
+        rgSex.setOnClickListener(this);
+        rgSex.setOnLongClickListener(this);
+        rgSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 Toast.makeText(EventListenerActivity.this, "RadioGroup Checked Change",
                         Toast.LENGTH_SHORT).show();
             }
         });
-        RgSex.setOnHierarchyChangeListener(new ViewGroup.OnHierarchyChangeListener() {
+        rgSex.setOnHierarchyChangeListener(new ViewGroup.OnHierarchyChangeListener() {
             @Override
             public void onChildViewAdded(View parent, View child) {
                 Toast.makeText(EventListenerActivity.this, "RadioGroup Hierarchy Change",
@@ -63,10 +63,10 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
                         Toast.LENGTH_SHORT).show();
             }
         });
-        SwMailAlow.setOnClickListener(this);
-        SwMailAlow.setOnLongClickListener(this);
-        SwMailSub.setOnClickListener(this);
-        SwMailSub.setOnLongClickListener(this);
+        swMailAlow.setOnClickListener(this);
+        swMailAlow.setOnLongClickListener(this);
+        swMailSub.setOnClickListener(this);
+        swMailSub.setOnLongClickListener(this);
     }
 
     @Override
