@@ -14,6 +14,11 @@
     <string name="btnComment">COMMENT</string>
     <string name="btnShare">SHARE</string>
     <string name="w1_view_viewgroup">W1 View and View Group</string>
+    <string name="w2_activity_and_fragment">W2 Activity and Fragment</string>
+    <string name="btnSend">Send</string>
+    <string name="edtHint">Input something</string>
+    <string name="firstFragment">First Fragment</string>
+    <string name="secondFragment">Second Fragment</string>
     <string name="resource">W2 D2 Resource</string>
     <string name="edtChatHint">Type your message</string>
     <string name="sent">Sent</string>
