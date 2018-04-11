@@ -1,55 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="vn.asiantech.internship.ListFriendActivity">
 
-    <ImageView
-        android:id="@+id/imgAvatar"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@color/colorPrimary"/>
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/btnFriends"
-        android:layout_toRightOf="@id/imgAvatar"
-        android:text=""
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize=""
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvNumOfFriends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvName"
-        android:layout_toRightOf="@id/imgAvatar"
-        android:text=""
-        android:textSize=""
-        android:textStyle="bold" />
-
-    <Button
-        android:textColor=""
-        android:id="@+id/btnFriends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft=""
-        android:layout_marginRight=""
-        android:background="@drawable/button_friend"
-        android:textAllCaps="false" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/imgAvatar"
-        android:layout_marginTop=""
-        android:background="@color/colorAccent" />
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
