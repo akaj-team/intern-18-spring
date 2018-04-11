@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgFriends"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tvNameFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgFriends"
+        android:text="@string/nameFriend"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:id="@+id/tvCountFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNameFriends"
+        android:layout_toRightOf="@id/imgFriends"
+        android:text="@string/countFriend" />
+
+    <Button
+        android:id="@+id/btnUnFriends"
+        android:layout_width="75dp"
+        android:layout_height="42dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/btn_UnFriends"
+        android:textColor="@color/colorFriends" />
+
+</RelativeLayout>
