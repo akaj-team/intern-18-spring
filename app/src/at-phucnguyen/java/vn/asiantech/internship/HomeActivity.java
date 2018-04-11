@@ -8,16 +8,20 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button mBtnResrouce,mBbtnEventAndListenes;
+    private Button mBtnResrouce;
+    private Button mBbtnEventAndListenes;
+    private Button mBtnW2Fragment;
+    private Button mBtnW1View;
+    private Button mBtnW1Intent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button mBtnW2Fragment = findViewById(R.id.btnFragment);
-        Button mBtnW1View = findViewById(R.id.btnW1View);
-        Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
+        mBtnW2Fragment = findViewById(R.id.btnFragment);
+        mBtnW1View = findViewById(R.id.btnW1View);
+        mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce =findViewById(R.id.btnResource);
         mBbtnEventAndListenes=findViewById(R.id.btnEventAndListenes);
 
@@ -52,8 +56,8 @@ public class HomeActivity extends AppCompatActivity {
         mBtnW2Fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(HomeActivity.this, MessageHomeActivity.class);
-                startActivity(mIntent);
+                Intent intent = new Intent(HomeActivity.this, MessageHomeActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -73,12 +77,12 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void practicResrouce(){
-        Intent mIntent =new Intent(HomeActivity.this,ResourceActivity.class);
-        startActivity(mIntent);
+        Intent intent =new Intent(HomeActivity.this,ResourceActivity.class);
+        startActivity(intent);
     }
 
     public void practicEventAndListenes(){
-        Intent mIntent =new Intent(HomeActivity.this,SignupActivity.class);
-        startActivity(mIntent);
+        Intent intent =new Intent(HomeActivity.this,SignupActivity.class);
+        startActivity(intent);
     }
 }

@@ -35,8 +35,8 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
      * method is used to mapping view by id
      */
     public void mapIdForView(View mView) {
-        mEdtUseName = mView.findViewById(R.id.edtUsername);
-        mEdtPasswork = mView.findViewById(R.id.edtPasswork);
+        mEdtUseName = mView.findViewById(R.id.edtUserName);
+        mEdtPasswork = mView.findViewById(R.id.edtPassword);
         mEdtEmail = mView.findViewById(R.id.edtEmail);
         mRadioGroup = mView.findViewById(R.id.rgGroup);
         mSwEmail = mView.findViewById(R.id.swEmail);
@@ -68,11 +68,11 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.edtUsername: {
+            case R.id.edtUserName: {
                 mListenes.onInputEditText("You input your UseName");
                 break;
             }
-            case R.id.edtPasswork: {
+            case R.id.edtPassword: {
                 mListenes.onInputEditText("You input your Passwork");
                 break;
             }
