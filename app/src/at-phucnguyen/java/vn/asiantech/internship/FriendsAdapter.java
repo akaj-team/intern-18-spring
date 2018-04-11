@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import vn.asiantech.internship.Model.Friends;
+import vn.asiantech.internship.model.Friends;
 
 public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder> {
     private List<Friends> mFriendsList;
@@ -26,8 +26,10 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
     @Override
     public void onBindViewHolder(FriendsViewHolder friends, int position) {
         Friends mFriends = mFriendsList.get(position);
-        friends.mTvNameFriends.setText(mFriends.getmNameFriend().toString());
-        friends.mTvCountFriends.setText(mFriends.getmCountFriend() + " Friends");
+        String mNameTemp=mFriends.getmNameFriend().toString();
+        String mCountFriendsTemp=mFriends.getmCountFriend() + " Friends";
+        friends.mTvNameFriends.setText(mNameTemp);
+        friends.mTvCountFriends.setText(mCountFriendsTemp);
         friends.mImgFriend.setImageResource(mFriends.getmUrlImage());
     }
 
@@ -44,6 +46,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
         private TextView mTvCountFriends;
         private ImageView mImgFriend;
         private Button mBtnUnFriend;
+        private String mStatus="Friends";
 
         FriendsViewHolder(View mView) {
             super(mView);
@@ -54,11 +57,12 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
             mBtnUnFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mBtnUnFriend.getText() == "Friends") {
-                        mBtnUnFriend.setText("UnFriend");
+                    if (mBtnUnFriend.getText().equals("Friends")) {
+                        mStatus="UnFriends";
                     } else {
-                        mBtnUnFriend.setText("Friends");
+                        mStatus="Friends";
                     }
+                    mBtnUnFriend.setText(mStatus);
                 }
             });
         }

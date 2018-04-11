@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import vn.asiantech.internship.Model.Friends;
+import vn.asiantech.internship.model.Friends;
 
 public class RecyclerViewExampleActivity extends AppCompatActivity {
     private List<Friends> mFriendsList = new ArrayList<>();

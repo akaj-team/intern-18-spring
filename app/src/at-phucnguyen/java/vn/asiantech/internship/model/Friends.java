@@ -1,4 +1,4 @@
-package vn.asiantech.internship.Model;
+package vn.asiantech.internship.model;
 
 public class Friends {
     private String mNameFriend;
