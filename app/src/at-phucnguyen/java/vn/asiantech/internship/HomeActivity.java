@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button mBtnResrouce,mBbtnEventAndListenes;
+    Button mBtnResrouce, mBbtnEventAndListenes, mBtnRecylerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -18,8 +18,9 @@ public class HomeActivity extends AppCompatActivity {
         Button mBtnW2Fragment = findViewById(R.id.btnFragment);
         Button mBtnW1View = findViewById(R.id.btnW1View);
         Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
-        mBtnResrouce =findViewById(R.id.btnResource);
-        mBbtnEventAndListenes=findViewById(R.id.btnEventAndListenes);
+        mBtnResrouce = findViewById(R.id.btnResource);
+        mBbtnEventAndListenes = findViewById(R.id.btnEventAndListenes);
+        mBtnRecylerView = findViewById(R.id.btnRecyclerView);
 
         mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,15 +71,28 @@ public class HomeActivity extends AppCompatActivity {
                 practicEventAndListenes();
             }
         });
+
+        mBtnRecylerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicRecyclerView();
+            }
+        });
+
     }
 
-    public void practicResrouce(){
-        Intent mIntent =new Intent(HomeActivity.this,ResourceActivity.class);
+    public void practicResrouce() {
+        Intent mIntent = new Intent(HomeActivity.this, ResourceActivity.class);
         startActivity(mIntent);
     }
 
-    public void practicEventAndListenes(){
-        Intent mIntent =new Intent(HomeActivity.this,SignupActivity.class);
+    public void practicEventAndListenes() {
+        Intent mIntent = new Intent(HomeActivity.this, SignupActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void practicRecyclerView() {
+        Intent mIntent = new Intent(HomeActivity.this, RecyclerViewExampleActivity.class);
         startActivity(mIntent);
     }
 }
