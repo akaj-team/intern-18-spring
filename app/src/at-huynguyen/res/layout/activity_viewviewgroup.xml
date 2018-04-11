@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2"
     tools:context="vn.asiantech.internship.HomeActivity">
 
     <LinearLayout
@@ -21,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:background="#000080"
-                tools:ignore="ContentDescription" />
+                />
 
             <ImageView
                 android:id="@+id/imgCircle1"
@@ -68,8 +70,7 @@
                 android:layout_alignStart="@+id/tvName"
                 android:layout_below="@+id/tvName"
                 android:text="@string/two_minutes"
-                android:textSize="10sp"
-                tools:ignore="SmallSp" />
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -132,9 +133,10 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/tvViewTitle"
                 android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -168,4 +170,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -19,7 +19,7 @@
         <activity android:name=".ChatActivity"
             android:label="@string/app1_name"/>
         <activity android:name=".ViewViewGroupActivity"/>
-
+        <activity android:name=".MenuActivity"/>
     </application>
 
 </manifest>
