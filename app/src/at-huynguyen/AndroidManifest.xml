@@ -12,18 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ListFriendActivity">
+
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ChatActivity"
-            android:label="@string/app1_name" />
         <activity android:name=".HomeActivity"/>
-
+        <activity android:name=".ChatActivity"
+            android:label="@string/app1_name"/>
+        <activity android:name=".ViewViewGroupActivity"/>
+        <activity android:name=".ListFriendActivity"/>
     </application>
-
 </manifest>

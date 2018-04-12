@@ -12,8 +12,8 @@ public class HomeActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Button mBtnComment = findViewById(R.id.btnComment);
-        mBtnComment.setOnClickListener(new View.OnClickListener() {
+        Button btnComment = findViewById(R.id.btnComment);
+        btnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
                 Intent intent = new Intent(HomeActivity.this, ChatActivity.class);
