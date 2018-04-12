@@ -58,7 +58,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
             switch (view.getId()) {
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
-                    friend.setFriend(!friend.getFriend());
+                    friend.setFriend(!friend.isFriend());
                     ListFriendAdapter.this.notifyDataSetChanged();
                     break;
                 }

@@ -44,7 +44,8 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/custom_button_friend_main"
         android:text="@string/friends"
-        android:textColor="@color/colorPrimary" />
+        android:textAllCaps="false"
+        android:textColor="@color/custom_color_text_button_friend" />
 
     <View
         android:layout_width="match_parent"
