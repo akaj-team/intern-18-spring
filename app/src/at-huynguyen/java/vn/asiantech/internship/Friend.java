@@ -8,7 +8,7 @@ public class Friend {
     private String mName;
     private int mNumberOfFriend;
     private int mAvatar;
-    private boolean isFriend;
+    private boolean mIsFriend;
 
 
     public String getName() {
@@ -42,11 +42,11 @@ public class Friend {
     }
 
     public boolean isFriend() {
-        return isFriend;
+        return mIsFriend;
     }
 
     public void setFriend(boolean friend) {
-        isFriend = friend;
+        this.mIsFriend = friend;
     }
 
     public static List<Friend> createListFriend() {
