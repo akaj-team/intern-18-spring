@@ -9,19 +9,31 @@ import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
     Button mBtnResrouce, mBbtnEventAndListenes, mBtnRecylerView;
+    private Button mBtnViewPage;
+    private Button mBtnW2Fragment;
+    private Button mBtnW1View;
+    private Button mBtnW1Intent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button mBtnW2Fragment = findViewById(R.id.btnFragment);
-        Button mBtnW1View = findViewById(R.id.btnW1View);
-        Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
+        mappingView();
+        setEvent();
+    }
+
+    public void mappingView(){
+        mBtnW2Fragment = findViewById(R.id.btnFragment);
+        mBtnW1View = findViewById(R.id.btnW1View);
+        mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce = findViewById(R.id.btnResource);
         mBbtnEventAndListenes = findViewById(R.id.btnEventAndListenes);
         mBtnRecylerView = findViewById(R.id.btnRecyclerView);
+        mBtnViewPage=findViewById(R.id.btnLeanViewPage);
+    }
 
+    public void setEvent(){
         mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +91,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        mBtnViewPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                learningViewPage();
+            }
+        });
     }
 
     public void practicResrouce() {
@@ -93,6 +111,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void practicRecyclerView() {
         Intent mIntent = new Intent(HomeActivity.this, RecyclerViewExampleActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void learningViewPage(){
+        Intent mIntent = new Intent(HomeActivity.this, UseViewPageAcativity.class);
         startActivity(mIntent);
     }
 }

@@ -1,6 +1,7 @@
 package vn.asiantech.internship;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
 
     @Override
     public void onBindViewHolder(FriendsViewHolder friends, int position) {
+        Log.e("My Log","onBindViewHolder"+position);
         Friends mFriends = mFriendsList.get(position);
         String mNameTemp=mFriends.getmNameFriend().toString();
         String mCountFriendsTemp=mFriends.getmCountFriend() + " Friends";

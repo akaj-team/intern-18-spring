@@ -22,5 +22,6 @@
         <activity android:name=".MessageHomeActivity" android:label="W2 - Activity and Fragment"/>
         <activity android:name=".SignupActivity" android:label="W2 - Event and Listenes"/>
         <activity android:name=".RecyclerViewExampleActivity" android:label="W3-D1-RecyclerView"/>
+        <activity android:name=".UseViewPageAcativity" android:label="Learning View Page"/>
     </application>
 </manifest>

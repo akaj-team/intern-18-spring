@@ -53,4 +53,12 @@
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_recyclerview_text" />
 
+    <Button
+        android:id="@+id/btnLeanViewPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRecyclerView"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/btn_viewpage_text" />
+
 </RelativeLayout>

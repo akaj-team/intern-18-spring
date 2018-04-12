@@ -39,4 +39,5 @@
     <string name="nameFriend">Nguyen Van Phuc</string>
     <string name="countFriend">Friends</string>
     <string name="btn_UnFriends">Friends</string>
+    <string name="btn_viewpage_text">Learn View Page</string>
 </resources>
