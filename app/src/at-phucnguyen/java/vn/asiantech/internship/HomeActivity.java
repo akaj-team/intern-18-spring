@@ -13,7 +13,8 @@ public class HomeActivity extends AppCompatActivity {
     private Button mBtnW1View;
     private Button mBtnW1Intent;
     private Button mBtnViewPage;
-
+    private Button mBtnRecylerView;
+    private Button mBtnEventAndListenes;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,17 +24,14 @@ public class HomeActivity extends AppCompatActivity {
         setEvent();
     }
 
-    public void practicResrouce() {
-        Intent mIntent = new Intent(HomeActivity.this, ResourceActivity.class);
-        startActivity(mIntent);
-    }
-
     public void mappingView() {
         mBtnW2Fragment = findViewById(R.id.btnFragment);
         mBtnW1View = findViewById(R.id.btnW1View);
         mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce = findViewById(R.id.btnResource);
         mBtnViewPage = findViewById(R.id.btnViewPage);
+        mBtnRecylerView=findViewById(R.id.btnRecyclerView);
+        mBtnEventAndListenes=findViewById(R.id.btnEventAndListenes);
     }
 
     public void setEvent() {
@@ -85,10 +83,39 @@ public class HomeActivity extends AppCompatActivity {
                 practicViewPage();
             }
         });
+
+        mBtnEventAndListenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicEventAndListenes();
+            }
+        });
+
+        mBtnRecylerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicRecyclerView();
+            }
+        });
     }
 
     public void practicViewPage() {
         Intent intent = new Intent(HomeActivity.this, PracticViewPageActivity.class);
         startActivity(intent);
+    }
+
+    public void practicResrouce() {
+        Intent mIntent = new Intent(HomeActivity.this, ResourceActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void practicEventAndListenes() {
+        Intent mIntent = new Intent(HomeActivity.this, SignupActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void practicRecyclerView() {
+        Intent mIntent = new Intent(HomeActivity.this, RecyclerViewExampleActivity.class);
+        startActivity(mIntent);
     }
 }

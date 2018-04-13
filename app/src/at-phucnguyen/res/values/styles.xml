@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SwitchStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:switchMinWidth">20dp</item>
+        <item name="android:track">@drawable/custom_switch_track</item>
+        <item name="android:thumb">@drawable/custom_switch_thumb</item>
+        <item name="android:textOn">@string/on</item>
+        <item name="android:textOff">@string/off</item>
+    </style>
+
 </resources>
