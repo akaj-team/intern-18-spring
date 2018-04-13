@@ -14,8 +14,10 @@ public class PagerActivity extends FragmentActivity {
         setContentView(R.layout.activity_viewpage);
         ViewPager viewPager = findViewById(R.id.viewPage);
         TabLayout tabLayout = findViewById(R.id.tlHeader);
-        final PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 }

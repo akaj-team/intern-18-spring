@@ -8,10 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class FavoriteFragment extends Fragment {
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_listfriend,container,false);
-        return view;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_listfriend,container,false);
     }
 }

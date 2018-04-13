@@ -17,12 +17,10 @@ public class ListFriendFragment extends Fragment {
 //        mPosition = getArguments().getInt(KEY_POSITION);
 //    }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_listfriend,container,false);
-//        TextView tvListFriend = view.findViewById(R.id.tvListFriend);
+    public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
+        //        TextView tvListFriend = view.findViewById(R.id.tvListFriend);
 //        tvListFriend.setText("Page " + mPosition);
-        return view;
+        return inflater.inflate(R.layout.fragment_listfriend,container,false);
     }
 }
