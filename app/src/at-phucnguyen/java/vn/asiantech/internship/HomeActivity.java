@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
     private Button mBtnResrouce;
-    private Button mBbtnEventAndListenes;
+    private Button mBtnEventAndListenes;
     private Button mBtnW2Fragment;
     private Button mBtnW1View;
     private Button mBtnW1Intent;
@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         mBtnW1View = findViewById(R.id.btnW1View);
         mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce =findViewById(R.id.btnResource);
-        mBbtnEventAndListenes=findViewById(R.id.btnEventAndListenes);
+        mBtnEventAndListenes =findViewById(R.id.btnEventAndListenes);
 
         mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        mBbtnEventAndListenes.setOnClickListener(new View.OnClickListener() {
+        mBtnEventAndListenes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 practicEventAndListenes();

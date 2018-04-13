@@ -30,7 +30,12 @@ public class SignupActivity extends AppCompatActivity implements SignupFragment.
     }
 
     @Override
-    public void onInputEditText(String mMessage) {
-        Toast.makeText(SignupActivity.this,mMessage,Toast.LENGTH_SHORT).show();
+    public void onInputEditText(int idString) {
+        Toast.makeText(SignupActivity.this,idString,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onViewChecked(int idString) {
+        Toast.makeText(SignupActivity.this,idString,Toast.LENGTH_SHORT).show();
     }
 }

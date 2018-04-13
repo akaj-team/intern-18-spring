@@ -69,15 +69,15 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.edtUserName: {
-                mListenes.onInputEditText("You input your UseName");
+                mListenes.onInputEditText(R.string.toast_message_input);
                 break;
             }
             case R.id.edtPassword: {
-                mListenes.onInputEditText("You input your Passwork");
+                mListenes.onInputEditText(R.string.toast_you_input_your_passwork);
                 break;
             }
             case R.id.edtEmail: {
-                mListenes.onInputEditText("You input your Email");
+                mListenes.onInputEditText(R.string.toast_you_input_your_email);
                 break;
             }
         }
@@ -87,11 +87,11 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
             case R.id.rbFemale: {
-                mListenes.onViewChecked("You is checked Female");
+                mListenes.onViewChecked(R.string.toast_you_is_checked_female);
                 break;
             }
             case R.id.rbMale: {
-                mListenes.onViewChecked("You is checked Male");
+                mListenes.onViewChecked(R.string.toast_you_is_checked_male);
                 break;
             }
         }
@@ -125,6 +125,8 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     interface OnListenesEventSignUpFragment {
         void onViewChecked(String mMessage);
 
-        void onInputEditText(String mMessage);
+        void onViewChecked(int idString);
+
+        void onInputEditText(int idString);
     }
 }
