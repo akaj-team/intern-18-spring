@@ -22,44 +22,44 @@ public class UserActivity extends Activity implements View.OnClickListener,View.
         initSetIdAndEvent();
     }
     private void initSetIdAndEvent(){
-        ImageView ImgUser = findViewById(R.id.imgUser);
-        EditText EdtUsername = findViewById(R.id.edtUsername);
-        EditText EdtPassword = findViewById(R.id.edtPassword);
-        EditText EdtEmail = findViewById(R.id.edtEmail);
-        RadioGroup RgMaleFemale = findViewById(R.id.rgMaleFemale);
-        RadioButton RbMale = findViewById(R.id.rbMale);
-        RadioButton RbFemale = findViewById(R.id.rbFemale);
-        Switch SwMailSubs = findViewById(R.id.swEmail);
-        Switch SwAllowEmail = findViewById(R.id.swAllowEmail);
+        ImageView imgUser = findViewById(R.id.imgUser);
+        EditText edtUsername = findViewById(R.id.edtUsername);
+        EditText edtPassword = findViewById(R.id.edtPassword);
+        EditText edtEmail = findViewById(R.id.edtEmail);
+        RadioGroup rgMaleFemale = findViewById(R.id.rgMaleFemale);
+        RadioButton rbMale = findViewById(R.id.rbMale);
+        RadioButton rbFemale = findViewById(R.id.rbFemale);
+        Switch swMailSubs = findViewById(R.id.swEmail);
+        Switch swAllowEmail = findViewById(R.id.swAllowEmail);
 
-        ImgUser.setOnClickListener(this);
-        EdtUsername.setOnClickListener(this);
-        EdtPassword.setOnClickListener(this);
-        EdtEmail.setOnClickListener(this);
-        RgMaleFemale.setOnClickListener(this);
-        RbMale.setOnClickListener(this);
-        RbFemale.setOnClickListener(this);
-        SwMailSubs.setOnClickListener(this);
-        SwAllowEmail.setOnClickListener(this);
+        imgUser.setOnClickListener(this);
+        edtUsername.setOnClickListener(this);
+        edtPassword.setOnClickListener(this);
+        edtEmail.setOnClickListener(this);
+        rgMaleFemale.setOnClickListener(this);
+        rbMale.setOnClickListener(this);
+        rbFemale.setOnClickListener(this);
+        swMailSubs.setOnClickListener(this);
+        swAllowEmail.setOnClickListener(this);
 
-        EdtUsername.setOnFocusChangeListener(this);
-        EdtPassword.setOnFocusChangeListener(this);
-        EdtEmail.setOnFocusChangeListener(this);
-        RgMaleFemale.setOnFocusChangeListener(this);
-        RbMale.setOnFocusChangeListener(this);
-        RbFemale.setOnFocusChangeListener(this);
+        edtUsername.setOnFocusChangeListener(this);
+        edtPassword.setOnFocusChangeListener(this);
+        edtEmail.setOnFocusChangeListener(this);
+        rgMaleFemale.setOnFocusChangeListener(this);
+        rbMale.setOnFocusChangeListener(this);
+        rbFemale.setOnFocusChangeListener(this);
 
-        EdtUsername.setOnKeyListener(this);
-        EdtPassword.setOnKeyListener(this);
-        EdtEmail.setOnKeyListener(this);
+        edtUsername.setOnKeyListener(this);
+        edtPassword.setOnKeyListener(this);
+        edtEmail.setOnKeyListener(this);
 
-        RgMaleFemale.setOnCheckedChangeListener(this);
-        RbMale.setOnCheckedChangeListener(this);
-        RbFemale.setOnCheckedChangeListener(this);
-        SwMailSubs.setOnCheckedChangeListener(this);
-        SwAllowEmail.setOnCheckedChangeListener(this);
+        rgMaleFemale.setOnCheckedChangeListener(this);
+        rbMale.setOnCheckedChangeListener(this);
+        rbFemale.setOnCheckedChangeListener(this);
+        swMailSubs.setOnCheckedChangeListener(this);
+        swAllowEmail.setOnCheckedChangeListener(this);
+        }
 
-    }
     @Override
     public void onClick(View view) {
         switch (view.getId()){
