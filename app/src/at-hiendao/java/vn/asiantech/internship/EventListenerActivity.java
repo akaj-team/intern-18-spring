@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Switch;
-import android.widget.Toast;
+
 
 public class EventListenerActivity extends Activity implements View.OnClickListener,
         View.OnLongClickListener, View.OnFocusChangeListener, View.OnKeyListener,
@@ -46,21 +46,18 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
         rgSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                Toast.makeText(EventListenerActivity.this, "RadioGroup Checked Change",
-                        Toast.LENGTH_SHORT).show();
+                Log.e("CheckedChange", "RadioGroup Checked Change: ");
             }
         });
         rgSex.setOnHierarchyChangeListener(new ViewGroup.OnHierarchyChangeListener() {
             @Override
             public void onChildViewAdded(View parent, View child) {
-                Toast.makeText(EventListenerActivity.this, "RadioGroup Hierarchy Change",
-                        Toast.LENGTH_SHORT).show();
+                Log.e("ChildViewAdded", "RadioGroup Hierarchy Change ");
             }
 
             @Override
             public void onChildViewRemoved(View parent, View child) {
-                Toast.makeText(EventListenerActivity.this, "RadioGroup ChildView Removed",
-                        Toast.LENGTH_SHORT).show();
+                Log.e("ChildViewRemoved", "RadioGroup ChildView Removed ");
             }
         });
         swMailAlow.setOnClickListener(this);
@@ -73,31 +70,31 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imgUser:
-                Toast.makeText(this, "imgUser Click", Toast.LENGTH_SHORT).show();
+                Log.e("imgUser Click", "imgUser Click");
                 break;
 
             case R.id.edtUserName:
-                Toast.makeText(this, "Username Click", Toast.LENGTH_SHORT).show();
+                Log.e("Username Click", "Username Click");
                 break;
 
             case R.id.edtPassword:
-                Toast.makeText(this, "Password Click", Toast.LENGTH_SHORT).show();
+                Log.e("Password Click", "Password Click");
                 break;
 
             case R.id.edtEmail:
-                Toast.makeText(this, "Email Click", Toast.LENGTH_SHORT).show();
+                Log.e("Email Click", "Email Click");
                 break;
 
             case R.id.rgSex:
-                Toast.makeText(this, "Sex Click", Toast.LENGTH_SHORT).show();
+                Log.e("Sex Click", "Sex Click");
                 break;
 
             case R.id.swEmailSub:
-                Toast.makeText(this, "Switch Email Sub Click", Toast.LENGTH_SHORT).show();
+                Log.e("Switch Email Sub Click", "Switch Email Sub Click");
                 break;
 
             case R.id.swEmailAlow:
-                Toast.makeText(this, "Switch Email Alow Click", Toast.LENGTH_SHORT).show();
+                Log.e("Switch Email Alow Click", "Switch Email Alow Click");
                 break;
 
             default:
@@ -109,31 +106,31 @@ public class EventListenerActivity extends Activity implements View.OnClickListe
     public boolean onLongClick(View v) {
         switch (v.getId()) {
             case R.id.imgUser:
-                Toast.makeText(this, "imgUser LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("imgUser LongClick", "imgUser LongClick");
                 break;
 
             case R.id.edtUserName:
-                Toast.makeText(this, "Username LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("Username LongClick", "Username LongClick");
                 break;
 
             case R.id.edtPassword:
-                Toast.makeText(this, "Password LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("Password LongClick", "Password LongClick");
                 break;
 
             case R.id.edtEmail:
-                Toast.makeText(this, "Email LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("Email LongClick", "Email LongClick");
                 break;
 
             case R.id.rgSex:
-                Toast.makeText(this, "Sex LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("Sex LongClick", "Sex LongClick");
                 break;
 
             case R.id.swEmailSub:
-                Toast.makeText(this, "Switch Email Sub LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("Email Sub LongClick", "Switch Email Sub LongClick");
                 break;
 
             case R.id.swEmailAlow:
-                Toast.makeText(this, "Switch Email Alow LongClick", Toast.LENGTH_SHORT).show();
+                Log.e("Email Alow LongClick", "Switch Email Alow LongClick");
                 break;
 
             default:
