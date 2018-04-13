@@ -14,5 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnViewViewGroup"
         android:text="@string/resources"/>
+    <Button
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnResources"
+        android:text="@string/viewpager"/>
 
 </RelativeLayout>

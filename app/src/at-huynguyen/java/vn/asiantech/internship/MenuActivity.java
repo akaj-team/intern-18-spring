@@ -28,5 +28,13 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button btnViewPager = findViewById(R.id.viewPager);
+        btnViewPager.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, PagerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
