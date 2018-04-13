@@ -24,4 +24,6 @@
     <string name="emailsubs">Email Subscriptions</string>
     <string name="allowemail">Allow email from other</string>
     <string name="eventandlistener">Event and Listener</string>
+    <string name="viewviewgroup">View and View Group</string>
+    <string name="resources">Resources</string>
 </resources>
