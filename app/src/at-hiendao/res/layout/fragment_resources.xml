@@ -82,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="15dp"
             android:layout_weight="5"
-            android:background="@drawable/edittex_border"
+            android:background="@drawable/custom_edittex_border"
             android:hint="@string/text_edit_text"
             android:inputType="text"
             android:paddingLeft="15dp"
