@@ -17,7 +17,7 @@ public class ResourcesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.resources_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_resources, container, false);
         TextView mTimeLeft = view.findViewById(R.id.tvTimeLeft);
         TextView mTimeRigh = view.findViewById(R.id.tvTimeRight);
         SimpleDateFormat fm = new SimpleDateFormat("HH:mm:ss a", Locale.ENGLISH);

@@ -20,5 +20,14 @@
     <string name="friend_name">Name</string>
     <string name="mutual_friends">Mutual Friends</string>
     <string name="button_friend">Friend</string>
-
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="email_subcriptions">Email subcripstion</string>
+    <string name="alow_email">Alow email from other</string>
+    <string name="switch_on">On</string>
+    <string name="switch_off">Off</string>
+    <string name="event_listener">Event Listener</string>
 </resources>

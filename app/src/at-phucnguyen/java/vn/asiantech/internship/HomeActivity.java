@@ -8,17 +8,22 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button mBtnResrouce;
+    private Button mBtnResrouce;
+    private Button mBtnEventAndListenes;
+    private Button mBtnW2Fragment;
+    private Button mBtnW1View;
+    private Button mBtnW1Intent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button mBtnW2Fragment = findViewById(R.id.btnFragment);
-        Button mBtnW1View = findViewById(R.id.btnW1View);
-        Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
+        mBtnW2Fragment = findViewById(R.id.btnFragment);
+        mBtnW1View = findViewById(R.id.btnW1View);
+        mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce =findViewById(R.id.btnResource);
+        mBtnEventAndListenes =findViewById(R.id.btnEventAndListenes);
 
         mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +56,8 @@ public class HomeActivity extends AppCompatActivity {
         mBtnW2Fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(HomeActivity.this, MessageHomeActivity.class);
-                startActivity(mIntent);
+                Intent intent = new Intent(HomeActivity.this, MessageHomeActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -62,11 +67,22 @@ public class HomeActivity extends AppCompatActivity {
                 practicResrouce();
             }
         });
+
+        mBtnEventAndListenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicEventAndListenes();
+            }
+        });
     }
 
     public void practicResrouce(){
-        Intent mIntent =new Intent(HomeActivity.this,ResourceActivity.class);
-        startActivity(mIntent);
+        Intent intent =new Intent(HomeActivity.this,ResourceActivity.class);
+        startActivity(intent);
     }
 
+    public void practicEventAndListenes(){
+        Intent intent =new Intent(HomeActivity.this,SignupActivity.class);
+        startActivity(intent);
+    }
 }
