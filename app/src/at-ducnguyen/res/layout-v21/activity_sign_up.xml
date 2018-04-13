@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/spacing_normal"
+    android:focusableInTouchMode="true"
+    tools:context="vn.asiantech.internship.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imgUserSignUp"
+        android:layout_width="@dimen/ic_user_width"
+        android:layout_height="@dimen/ic_user_height"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_user_sign_up"
+        android:contentDescription="@string/btnHide" />
+
+    <EditText
+        android:id="@+id/edtUserName"
+        style="@style/SignUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgUserSignUp"
+        android:hint="@string/hint_user_name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        style="@style/SignUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtUserName"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        style="@style/SignUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPassword"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress" />
+
+    <RadioGroup
+        android:id="@+id/rgSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtEmail"
+        android:layout_marginStart="@dimen/spacing_huge"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ratio_male" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ratio_female" />
+
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/swEmailSub"
+        style="@style/SwitchStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgSex"
+        android:showText="true"
+        android:text="@string/switch_email_subscriptions" />
+
+    <Switch
+        android:id="@+id/swEmailOther"
+        style="@style/SwitchStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/swEmailSub"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:showText="true"
+        android:text="@string/switch_allow_email_from_other" />
+
+</RelativeLayout>
