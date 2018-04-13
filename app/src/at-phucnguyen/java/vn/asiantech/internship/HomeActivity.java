@@ -68,5 +68,5 @@ public class HomeActivity extends AppCompatActivity {
         Intent mIntent =new Intent(HomeActivity.this,ResourceActivity.class);
         startActivity(mIntent);
     }
-
+//d
 }
