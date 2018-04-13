@@ -8,18 +8,35 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button mBtnResrouce;
+    private Button mBtnResrouce;
+    private Button mBtnW2Fragment;
+    private Button mBtnW1View;
+    private Button mBtnW1Intent;
+    private Button mBtnViewPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button mBtnW2Fragment = findViewById(R.id.btnFragment);
-        Button mBtnW1View = findViewById(R.id.btnW1View);
-        Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
-        mBtnResrouce =findViewById(R.id.btnResource);
+        mappingView();
+        setEvent();
+    }
 
+    public void practicResrouce() {
+        Intent mIntent = new Intent(HomeActivity.this, ResourceActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void mappingView() {
+        mBtnW2Fragment = findViewById(R.id.btnFragment);
+        mBtnW1View = findViewById(R.id.btnW1View);
+        mBtnW1Intent = findViewById(R.id.btnW1Intent);
+        mBtnResrouce = findViewById(R.id.btnResource);
+        mBtnViewPage = findViewById(R.id.btnViewPage);
+    }
+
+    public void setEvent() {
         mBtnW1View.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,11 +79,16 @@ public class HomeActivity extends AppCompatActivity {
                 practicResrouce();
             }
         });
+        mBtnViewPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicViewPage();
+            }
+        });
     }
 
-    public void practicResrouce(){
-        Intent mIntent =new Intent(HomeActivity.this,ResourceActivity.class);
-        startActivity(mIntent);
+    public void practicViewPage() {
+        Intent intent = new Intent(HomeActivity.this, PracticViewPageActivity.class);
+        startActivity(intent);
     }
-
 }

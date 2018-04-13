@@ -37,4 +37,13 @@
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_Reasource" />
 
+    <Button
+        android:id="@+id/btnViewPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnResource"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/btn_Reasource" />
+
 </RelativeLayout>
