@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class EditTextFragment extends Fragment {
+public class EnterTextFragment extends Fragment {
     private EditText mEdtName;
     private EditText mEdtSex;
-    private MainFragment mainFragment;
+    private MainFragmentActivity mMainFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,8 +38,8 @@ public class EditTextFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        if (context instanceof MainFragment) {
-            this.mainFragment = (MainFragment) context;
+        if (context instanceof MainFragmentActivity) {
+            this.mMainFragment = (MainFragmentActivity) context;
         }
     }
 
@@ -48,6 +48,6 @@ public class EditTextFragment extends Fragment {
         String topText = this.mEdtName.getText().toString();
         String bottomText = this.mEdtSex.getText().toString();
 
-        this.mainFragment.showText(topText, bottomText);
+        this.mMainFragment.showText(topText, bottomText);
     }
 }

@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="vn.asiantech.internship.MainFragment">
+    tools:context="vn.asiantech.internship.MainFragmentActivity">
 
     <fragment
         android:id="@+id/fragmentEditText"
-        android:name="vn.asiantech.internship.EditTextFragment"
+        android:name="vn.asiantech.internship.EnterTextFragment"
         android:layout_width="match_parent"
         android:layout_height="222dp"
         android:layout_alignParentTop="true"
