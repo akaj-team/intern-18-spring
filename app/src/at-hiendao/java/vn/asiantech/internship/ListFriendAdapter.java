@@ -69,7 +69,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
             String name = "Friend" + i;
             int minRandom = 15;
             int maxRandom = 1000;
-            Friend friend = new Friend(name, randomNumber(minRandom, maxRandom));
+            Friend friend = new Friend(name, randomNumber(minRandom, maxRandom), false);
             mListFriend.add(friend);
         }
     }

@@ -8,12 +8,19 @@
         android:id="@+id/tlTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabMode="fixed"/>
+        app:tabMode="fixed" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vpViewPage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tlTabLayout" />
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/cpiIndicator"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
