@@ -19,4 +19,6 @@
     <string name="viewviewgroup">View and View Group</string>
     <string name="resources">Resources</string>
     <string name="viewpager">View Pager</string>
+    <string name="friendsmutual">Number Of Friends Mutual</string>
+    <string name="favorite">Favorite</string>
 </resources>

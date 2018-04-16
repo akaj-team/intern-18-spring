@@ -11,13 +11,13 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return new ListFriendFragment();
             case 1:
                 return new FavoriteFragment();
             default:
-                    return null;
+                return null;
         }
     }
 
@@ -29,7 +29,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        if(position == 0){
+        if (position == 0) {
             return "Friends";
         } else {
             return "Favorite Friends";
