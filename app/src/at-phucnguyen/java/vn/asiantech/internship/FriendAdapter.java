@@ -48,12 +48,12 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendsVie
         private final Button mBtnUnFriend;
         private String mStatus = "Friend";
 
-        FriendsViewHolder(View mView) {
-            super(mView);
-            mTvNameFriends = mView.findViewById(R.id.tvNameFriends);
-            mTvCountFriends = mView.findViewById(R.id.tvCountFriends);
-            mImgFriend = mView.findViewById(R.id.imgFriends);
-            mBtnUnFriend = mView.findViewById(R.id.btnUnFriends);
+        FriendsViewHolder(View view) {
+            super(view);
+            mTvNameFriends = view.findViewById(R.id.tvNameFriends);
+            mTvCountFriends = view.findViewById(R.id.tvCountFriends);
+            mImgFriend = view.findViewById(R.id.imgFriends);
+            mBtnUnFriend = view.findViewById(R.id.btnUnFriends);
             mBtnUnFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

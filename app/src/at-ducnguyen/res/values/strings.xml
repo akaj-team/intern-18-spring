@@ -14,9 +14,24 @@
     <string name="btnComment">COMMENT</string>
     <string name="btnShare">SHARE</string>
     <string name="w1_view_viewgroup">W1 View and View Group</string>
+    <string name="w2_activity_and_fragment">W2 Activity and Fragment</string>
+    <string name="btnSend">Send</string>
+    <string name="edtHint">Input something</string>
+    <string name="firstFragment">First Fragment</string>
+    <string name="secondFragment">Second Fragment</string>
     <string name="resource">W2 D2 Resource</string>
     <string name="edtChatHint">Type your message</string>
     <string name="sent">Sent</string>
     <string name="message_receive">Message Received</string>
     <string name="time_receive">11:53 am</string>
+    <string name="w2_d2_listeners">W2 D2 Listeners</string>
+    <string name="hint_user_name">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="ratio_male">Male</string>
+    <string name="ratio_female">Female</string>
+    <string name="switch_email_subscriptions">Email Subscriptions</string>
+    <string name="switch_allow_email_from_other">Allow email from other</string>
+    <string name="sw_on">ON</string>
+    <string name="sw_off">OFF</string>
 </resources>

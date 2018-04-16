@@ -14,22 +14,22 @@ import java.util.Random;
 import vn.asiantech.internship.model.Friend;
 
 public class RecyclerViewExampleActivity extends AppCompatActivity {
-    private List<Friend> mFriendList = new ArrayList<>();
+    private final List<Friend> mFriendList = new ArrayList<>();
     private FriendAdapter mApdapter;
-    private List<Integer> mUrlImage = new ArrayList<>();
+    private final List<Integer> mUrlImage = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview_example);
 
-        RecyclerView mRecyclerView;
+        RecyclerView recyclerView;
         mApdapter = new FriendAdapter(mFriendList);
-        mRecyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mApdapter);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mApdapter);
         setUrlImage();
         setList();
     }

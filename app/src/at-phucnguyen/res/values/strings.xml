@@ -39,4 +39,11 @@
     <string name="nameFriend">Nguyen Van Phuc</string>
     <string name="countFriend">Friends</string>
     <string name="btn_UnFriends">Friends</string>
+    <string name="toast_message_input">"You input your UseName"</string>
+    <string name="toast_you_input_your_passwork">You input your Passwork</string>
+    <string name="toast_you_input_your_email">You input your Email"</string>
+    <string name="toast_you_is_checked_female">You is checked Female</string>
+    <string name="toast_you_is_checked_male">You is checked Male</string>
+    <string name="is_on"> is On</string>
+    <string name="is_off"> is On</string>
 </resources>

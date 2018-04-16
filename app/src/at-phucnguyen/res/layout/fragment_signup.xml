@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="5dp">
 
     <ImageView
@@ -15,7 +14,7 @@
         tools:ignore="ContentDescription" />
 
     <EditText
-        android:id="@+id/edtUsername"
+        android:id="@+id/edtUserName"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/imgUser"
@@ -24,10 +23,10 @@
         tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/edtPasswork"
+        android:id="@+id/edtPassword"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtUsername"
+        android:layout_below="@id/edtUserName"
         android:layout_centerHorizontal="true"
         android:hint="@string/hintPasswork"
         android:inputType="textPassword" />
@@ -36,7 +35,7 @@
         android:id="@+id/edtEmail"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtPasswork"
+        android:layout_below="@id/edtPassword"
         android:layout_centerHorizontal="true"
         android:hint="@string/hintEmail"
         android:inputType="textEmailSubject" />

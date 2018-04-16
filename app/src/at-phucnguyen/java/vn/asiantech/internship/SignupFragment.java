@@ -15,10 +15,12 @@ import android.widget.Switch;
 public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChangeListener, View.OnClickListener,
         CompoundButton.OnCheckedChangeListener {
 
-    OnListenesEventSignUpFragment mListenes;
-    EditText mEdtUseName, mEdtPasswork, mEdtEmail;
-    RadioGroup mRadioGroup;
-    Switch mSwEmail, mSwEmailSub;
+    private OnListenesEventSignUpFragment mListenes;
+    private EditText mEdtUseName;
+    private EditText mEdtPasswork;
+    private EditText mEdtEmail;
+    private RadioGroup mRadioGroup;
+    private Switch mSwEmail, mSwEmailSub;
 
     @Nullable
     @Override
@@ -35,8 +37,8 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
      * method is used to mapping view by id
      */
     public void mapIdForView(View mView) {
-        mEdtUseName = mView.findViewById(R.id.edtUsername);
-        mEdtPasswork = mView.findViewById(R.id.edtPasswork);
+        mEdtUseName = mView.findViewById(R.id.edtUserName);
+        mEdtPasswork = mView.findViewById(R.id.edtPassword);
         mEdtEmail = mView.findViewById(R.id.edtEmail);
         mRadioGroup = mView.findViewById(R.id.rgGroup);
         mSwEmail = mView.findViewById(R.id.swEmail);
@@ -68,16 +70,16 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.edtUsername: {
-                mListenes.onInputEditText("You input your UseName");
+            case R.id.edtUserName: {
+                mListenes.onInputEditText(R.string.toast_message_input);
                 break;
             }
-            case R.id.edtPasswork: {
-                mListenes.onInputEditText("You input your Passwork");
+            case R.id.edtPassword: {
+                mListenes.onInputEditText(R.string.toast_you_input_your_passwork);
                 break;
             }
             case R.id.edtEmail: {
-                mListenes.onInputEditText("You input your Email");
+                mListenes.onInputEditText(R.string.toast_you_input_your_email);
                 break;
             }
         }
@@ -87,11 +89,11 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
             case R.id.rbFemale: {
-                mListenes.onViewChecked("You is checked Female");
+                mListenes.onViewChecked(R.string.toast_you_is_checked_female);
                 break;
             }
             case R.id.rbMale: {
-                mListenes.onViewChecked("You is checked Male");
+                mListenes.onViewChecked(R.string.toast_you_is_checked_male);
                 break;
             }
         }
@@ -125,6 +127,8 @@ public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChan
     interface OnListenesEventSignUpFragment {
         void onViewChecked(String mMessage);
 
-        void onInputEditText(String mMessage);
+        void onViewChecked(int idString);
+
+        void onInputEditText(int idString);
     }
 }

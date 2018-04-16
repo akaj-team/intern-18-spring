@@ -11,7 +11,7 @@ public class MenuActivity extends Activity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_activity);
+        setContentView(R.layout.activity_menu);
         settingButtonsClick();
     }
 
