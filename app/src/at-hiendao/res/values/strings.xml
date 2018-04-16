@@ -27,5 +27,10 @@
     <string name="switch_on">On</string>
     <string name="switch_off">Off</string>
     <string name="event_listener">Event Listener</string>
+    <string name="friend_name">Name</string>
+    <string name="mutual_friends">Mutual Friends</string>
+    <string name="button_friend">Friend</string>
+    <string name="button_friend_text">Friend</string>
+    <string name="button_unfriend_text">Unfriend</string>
 
 </resources>
