@@ -4,9 +4,16 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment"
+            />
+        <Button
             android:id="@+id/btnViewViewGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/btnFragment"
             android:text="@string/viewviewgroup" />
 
         <Button
