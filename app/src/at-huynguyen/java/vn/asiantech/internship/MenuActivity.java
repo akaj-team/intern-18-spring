@@ -11,6 +11,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.internship);
         setContentView(R.layout.activity_menu);
 
         Button btnEventAndListener = findViewById(R.id.btnEventAndListener);

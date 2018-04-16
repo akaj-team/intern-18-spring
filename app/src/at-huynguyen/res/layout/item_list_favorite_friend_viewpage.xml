@@ -17,7 +17,7 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/btnFriend"
+        android:layout_toLeftOf="@+id/btnUnFriend"
         android:layout_toRightOf="@id/imgAvatar"
         android:text="@string/Name_username"
         android:textColor="@color/colorBlack"
@@ -35,7 +35,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnFriend"
+        android:id="@+id/btnUnFriend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -43,7 +43,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/custom_button_friend_main"
-        android:text="@string/favorite"
+        android:text="@string/unfavorite"
         android:textAllCaps="false"
         android:textColor="@color/custom_color_text_button_friend" />
 

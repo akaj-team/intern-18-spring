@@ -1,4 +1,5 @@
 <resources>
+    <string name="internship">Android Internship</string>
     <string name="app_name">W1-D1</string>
     <string name="app1_name">Android ChatView Simple</string>
     <string name="Name_username">Name_username</string>
@@ -28,4 +29,5 @@
     <string name="viewpager">View Pager</string>
     <string name="friendsmutual">Number Of Friends Mutual</string>
     <string name="favorite">Favorite</string>
+    <string name="unfavorite">Unfavorite</string>
 </resources>

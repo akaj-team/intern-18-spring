@@ -58,9 +58,14 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
             switch (view.getId()) {
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
-                    friend.setFriend(!friend.isFriend());
-                    ListFriendAdapter.this.notifyDataSetChanged();
-                    break;
+                    mListFriends.remove(getAdapterPosition());
+                    if (friend.isFriend()){
+                        ListFriendFragment.unFavoriteFriend(friend);
+                        FavoriteFragment.favoriteFriend(friend);
+                    } else {
+                        FavoriteFragment.removeFriend(friend);
+                        ListFriendFragment.favoriteFriend(friend);
+                    }
                 }
             }
         }

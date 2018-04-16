@@ -42,16 +42,18 @@ public class Friend {
     }
 
     public boolean isFriend() {
+
         return mIsFriend;
     }
 
     public void setFriend(boolean friend) {
+
         this.mIsFriend = friend;
     }
 
-    public static List<Friend> createListFriend() {
+    public static List<Friend> createListFriend(int sum, boolean isFriend) {
         List<Friend> listFriend = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= sum; i++) {
             Friend friend = new Friend();
             Random random = new Random();
             int position = random.nextInt(3);
