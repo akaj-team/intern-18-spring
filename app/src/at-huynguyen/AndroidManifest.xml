@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +22,11 @@
         <activity android:name=".HomeActivity"/>
         <activity android:name=".ChatActivity"
             android:label="@string/app1_name"/>
+        <activity
+            android:name=".UserActivity"
+            android:label="SignUpActivity" />
         <activity android:name=".ViewViewGroupActivity"/>
         <activity android:name=".ListFriendActivity"/>
     </application>
+
 </manifest>

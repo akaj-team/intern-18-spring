@@ -25,4 +25,21 @@
     <string name="tvHi">Hi</string>
     <string name="tvHello">Hello</string>
     <string name="tvHintType_your_message">Type your message</string>
+    <string name="on">on</string>
+    <string name="off">off</string>
+    <string name="email_subscriptions">Email Subscriptions</string>
+    <string name="alow_email_from_other">Alow email from other</string>
+    <string name="w2_event_and_listenes">W2 - Event And listenes</string>
+    <string name="hintUsername">Username</string>
+    <string name="hintPasswork">Passwork</string>
+    <string name="hintEmail">Email</string>
+    <string name="sexMale">male</string>
+    <string name="sexFamale">famale</string>
+    <string name="toast_message_input">"You input your UseName"</string>
+    <string name="toast_you_input_your_passwork">You input your Passwork</string>
+    <string name="toast_you_input_your_email">You input your Email"</string>
+    <string name="toast_you_is_checked_female">You is checked Female</string>
+    <string name="toast_you_is_checked_male">You is checked Male</string>
+    <string name="is_on"> is On</string>
+    <string name="is_off"> is On</string>
 </resources>

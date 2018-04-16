@@ -7,19 +7,27 @@
         android:id="@+id/btnViewViewGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/viewviewgroup"/>
+        android:text="@string/viewviewgroup" />
 
     <Button
         android:id="@+id/btnResources"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnViewViewGroup"
-        android:text="@string/resources"/>
+        android:text="@string/resources" />
+
+    <Button
+        android:id="@+id/btnEventAndListener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnResources"
+        android:gravity="center"
+        android:text="@string/eventandlistener" />
 
     <Button
         android:id="@+id/btnRecycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnResources"
+        android:layout_below="@+id/btnEventAndListener"
         android:text="@string/recycleview"/>
 </RelativeLayout>
