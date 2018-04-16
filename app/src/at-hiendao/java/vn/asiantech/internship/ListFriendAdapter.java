@@ -13,7 +13,7 @@ import java.util.Locale;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.ViewHolder> {
 
-    private List<Friend> mListFriend = new ArrayList<>();
+    private final List<Friend> mListFriend = new ArrayList<>();
 
     /*
         class viewholder of listview in recycleview
@@ -21,7 +21,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
     class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView mTvName;
         private final TextView mTvMutualFriends;
-        private final String mMUTUAL_FRIENDS = "mutual friends";
+        private static final String MUTUAL_FRIENDS = "mutual friends";
         private final ImageView mImgAvatar;
 
         ViewHolder(View itemView) {
@@ -32,7 +32,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
         }
 
         void setMutualFriends(int numbermutual) {
-            mTvMutualFriends.setText(String.format(Locale.US, "%s %d", mMUTUAL_FRIENDS, numbermutual));
+            mTvMutualFriends.setText(String.format(Locale.US, "%s %d", MUTUAL_FRIENDS, numbermutual));
         }
     }
 
@@ -49,9 +49,10 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mImgAvatar.setBackgroundColor(mListFriend.get(position).Avatar);
-        holder.mTvName.setText(mListFriend.get(position).Name);
-        holder.setMutualFriends(mListFriend.get(position).MutualFriends);
+        Friend friend = mListFriend.get(position);
+        holder.mTvName.setText(friend.getmName());
+        holder.setMutualFriends(friend.getmNumOfMutualFriends());
+        holder.mImgAvatar.setBackgroundColor(friend.getmAvatar());
     }
 
     @Override

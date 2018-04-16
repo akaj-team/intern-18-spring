@@ -13,12 +13,12 @@ public class ListFriendActitivy extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycleview);
-        RecyclerView listFriends = findViewById(R.id.recycleViewListFriend);
-        listFriends.setHasFixedSize(true);
+        RecyclerView recyclerViewFriend = findViewById(R.id.recycleViewListFriend);
+        recyclerViewFriend.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        listFriends.setLayoutManager(layoutManager);
+        recyclerViewFriend.setLayoutManager(layoutManager);
         ListFriendAdapter adapter = new ListFriendAdapter();
-        listFriends.setAdapter(adapter);
+        recyclerViewFriend.setAdapter(adapter);
         
     }
 }
