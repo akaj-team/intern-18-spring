@@ -37,5 +37,13 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button btnFragment = findViewById(R.id.btnFragment);
+        btnFragment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
