@@ -41,7 +41,7 @@ public class MenuActivity extends AppCompatActivity {
         btnFragment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, MainFragmentActivity.class);
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

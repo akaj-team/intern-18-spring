@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class EnterTextFragment extends Fragment {
     private EditText mEdtName;
     private EditText mEdtSex;
-    private MainFragmentActivity mMainFragment;
+    private MainActivity mMainFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,8 +38,8 @@ public class EnterTextFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        if (context instanceof MainFragmentActivity) {
-            this.mMainFragment = (MainFragmentActivity) context;
+        if (context instanceof MainActivity) {
+            this.mMainFragment = (MainActivity) context;
         }
     }
 
