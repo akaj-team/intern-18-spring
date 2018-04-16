@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button mBtnViewPage;
     private Button mBtnRecylerView;
     private Button mBtnEventAndListenes;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +31,8 @@ public class HomeActivity extends AppCompatActivity {
         mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce = findViewById(R.id.btnResource);
         mBtnViewPage = findViewById(R.id.btnViewPage);
-        mBtnRecylerView=findViewById(R.id.btnRecyclerView);
-        mBtnEventAndListenes=findViewById(R.id.btnEventAndListenes);
+        mBtnRecylerView = findViewById(R.id.btnRecyclerView);
+        mBtnEventAndListenes = findViewById(R.id.btnEventAndListenes);
     }
 
     public void setEvent() {
@@ -66,8 +67,8 @@ public class HomeActivity extends AppCompatActivity {
         mBtnW2Fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(HomeActivity.this, MessageHomeActivity.class);
-                startActivity(mIntent);
+                Intent intent = new Intent(HomeActivity.this, MessageHomeActivity.class);
+                startActivity(intent);
             }
         });
 

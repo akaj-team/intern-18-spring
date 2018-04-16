@@ -1,10 +1,5 @@
 package vn.asiantech.internship.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import vn.asiantech.internship.R;
-
 public class Friends {
     private String mNameFriend;
     private int mCountFriend;
@@ -23,7 +18,7 @@ public class Friends {
         this.mNameFriend = mNameFriend;
         this.mCountFriend = mCountFriend;
         this.mUrlImage = mUrlImage;
-        this.mStatus=mStatus;
+        this.mStatus = mStatus;
     }
 
     public String getmNameFriend() {

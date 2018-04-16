@@ -9,18 +9,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity implements SignupFragment.OnListenesEventSignUpFragment{
-    FragmentManager fragmentManager;
+    private FragmentManager mFragmentManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        fragmentManager=getSupportFragmentManager();//anh xa
+        mFragmentManager =getSupportFragmentManager();//anh xa
 
         storeFragment(new SignupFragment());
     }
     public void storeFragment(Fragment fragment){
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.singupFragmentLayout,fragment);
+        FragmentTransaction fragmentTransaction= mFragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.frSignUpFragment,fragment);
         fragmentTransaction.commit();
     }
 
@@ -30,7 +30,12 @@ public class SignupActivity extends AppCompatActivity implements SignupFragment.
     }
 
     @Override
-    public void onInputEditText(String mMessage) {
-        Toast.makeText(SignupActivity.this,mMessage,Toast.LENGTH_SHORT).show();
+    public void onInputEditText(int idString) {
+        Toast.makeText(SignupActivity.this,idString,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onViewChecked(int idString) {
+        Toast.makeText(SignupActivity.this,idString,Toast.LENGTH_SHORT).show();
     }
 }
