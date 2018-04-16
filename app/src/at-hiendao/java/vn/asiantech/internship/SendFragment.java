@@ -30,7 +30,7 @@ public class SendFragment extends Fragment {
                 receiveFragment.setArguments(data);
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().remove(SendFragment.this).commit();
-                fragmentManager.beginTransaction().replace(R.id.flParen, receiveFragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.rlParent, receiveFragment).commit();
             }
         });
         return view;

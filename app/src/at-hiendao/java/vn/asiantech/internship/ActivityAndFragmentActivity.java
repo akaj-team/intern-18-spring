@@ -14,7 +14,7 @@ public class ActivityAndFragmentActivity extends Activity {
         SendFragment sendFragment = new SendFragment();
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.flParen, sendFragment);
+        fragmentTransaction.replace(R.id.rlParent, sendFragment);
         fragmentTransaction.commit();
     }
 
