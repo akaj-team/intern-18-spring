@@ -8,15 +8,20 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button mBtnResrouce, mBbtnEventAndListenes, mBtnRecylerView;
+    private Button mBtnResrouce;
+    private Button mBbtnEventAndListenes;
+    private Button mBtnRecylerView;
+    private Button mBtnW2Fragment;
+    private Button mBtnW1View;
+    private Button mBtnW1Intent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button mBtnW2Fragment = findViewById(R.id.btnFragment);
-        Button mBtnW1View = findViewById(R.id.btnW1View);
+        mBtnW2Fragment = findViewById(R.id.btnFragment);
+        mBtnW1View = findViewById(R.id.btnW1View);
         Button mBtnW1Intent = findViewById(R.id.btnW1Intent);
         mBtnResrouce = findViewById(R.id.btnResource);
         mBbtnEventAndListenes = findViewById(R.id.btnEventAndListenes);

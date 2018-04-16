@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import vn.asiantech.internship.model.Friends;
+import vn.asiantech.internship.model.Friend;
 
 public class RecyclerViewExampleActivity extends AppCompatActivity {
-    private List<Friends> mFriendsList = new ArrayList<>();
-    private FriendsAdapter mApdapter;
+    private List<Friend> mFriendList = new ArrayList<>();
+    private FriendAdapter mApdapter;
     private List<Integer> mUrlImage = new ArrayList<>();
 
     @Override
@@ -24,9 +24,9 @@ public class RecyclerViewExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recyclerview_example);
 
         RecyclerView mRecyclerView;
-        mApdapter = new FriendsAdapter(mFriendsList);
+        mApdapter = new FriendAdapter(mFriendList);
         mRecyclerView = findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mApdapter);
@@ -44,7 +44,7 @@ public class RecyclerViewExampleActivity extends AppCompatActivity {
 
     public void setList() {
         for (int i = 0; i < 100; i++) {
-            mFriendsList.add(new Friends("Nguyen Van phuc " + i, i * 4,
+            mFriendList.add(new Friend("Nguyen Van phuc " + i, i * 4,
                     mUrlImage.get(new Random().nextInt(4))));
             mApdapter.notifyDataSetChanged();
         }

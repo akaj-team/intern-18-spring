@@ -10,43 +10,43 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import vn.asiantech.internship.model.Friends;
+import vn.asiantech.internship.model.Friend;
 
-public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder> {
-    private List<Friends> mFriendsList;
+public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendsViewHolder> {
+    private final List<Friend> mFriendList;
 
     @Override
     public FriendsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View mItemsFriendView = LayoutInflater.from(parent.getContext())
+        View itemLayout = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.itemrecycler_friend, parent, false);
 
-        return new FriendsViewHolder(mItemsFriendView);
+        return new FriendsViewHolder(itemLayout);
     }
 
     @Override
     public void onBindViewHolder(FriendsViewHolder friends, int position) {
-        Friends mFriends = mFriendsList.get(position);
-        String mNameTemp=mFriends.getmNameFriend().toString();
-        String mCountFriendsTemp=mFriends.getmCountFriend() + " Friends";
-        friends.mTvNameFriends.setText(mNameTemp);
-        friends.mTvCountFriends.setText(mCountFriendsTemp);
-        friends.mImgFriend.setImageResource(mFriends.getmUrlImage());
+        Friend friend = mFriendList.get(position);
+        String nameFriend = friend.getNameFriend();
+        String countfriendstemp = friend.getCountFriend() + " Friend";
+        friends.mTvNameFriends.setText(nameFriend);
+        friends.mTvCountFriends.setText(countfriendstemp);
+        friends.mImgFriend.setImageResource(friend.getUrlImage());
     }
 
     @Override
     public int getItemCount() {
-        return mFriendsList.size();
+        return mFriendList.size();
     }
 
     /**
      * Class is used to set ViewHolder to each row
      */
-    public class FriendsViewHolder extends RecyclerView.ViewHolder {
-        private TextView mTvNameFriends;
-        private TextView mTvCountFriends;
-        private ImageView mImgFriend;
-        private Button mBtnUnFriend;
-        private String mStatus="Friends";
+    class FriendsViewHolder extends RecyclerView.ViewHolder {
+        private final TextView mTvNameFriends;
+        private final TextView mTvCountFriends;
+        private final ImageView mImgFriend;
+        private final Button mBtnUnFriend;
+        private String mStatus = "Friend";
 
         FriendsViewHolder(View mView) {
             super(mView);
@@ -57,10 +57,10 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
             mBtnUnFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mBtnUnFriend.getText().equals("Friends")) {
-                        mStatus="UnFriends";
+                    if (mBtnUnFriend.getText().equals("Friend")) {
+                        mStatus = "UnFriends";
                     } else {
-                        mStatus="Friends";
+                        mStatus = "Friend";
                     }
                     mBtnUnFriend.setText(mStatus);
                 }
@@ -68,7 +68,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
         }
     }
 
-    public FriendsAdapter(List<Friends> friendsList) {
-        this.mFriendsList = friendsList;
+    FriendAdapter(List<Friend> friendList) {
+        this.mFriendList = friendList;
     }
 }
