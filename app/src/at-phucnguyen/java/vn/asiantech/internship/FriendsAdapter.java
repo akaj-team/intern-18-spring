@@ -26,10 +26,10 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
 
     @Override
     public void onBindViewHolder(FriendsViewHolder friends, int position) {
-        Log.e("FriendsAdapter: ","onBindViewHolder is "+position);
+        Log.e("FriendsAdapter: ", "onBindViewHolder is " + position);
         Friends friendTemp = mFriendsList.get(position);
-        String nameTemp=friendTemp.getmNameFriend().toString();
-        String countFriendsTemp=friendTemp.getmCountFriend() + " Friends";
+        String nameTemp = friendTemp.getmNameFriend();
+        String countFriendsTemp = friendTemp.getmCountFriend() + " Friends";
         friends.mTvNameFriends.setText(nameTemp);
         friends.mTvCountFriends.setText(countFriendsTemp);
         friends.mImgFriend.setImageResource(friendTemp.getmUrlImage());
@@ -43,14 +43,14 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
     /**
      * Class is used to set ViewHolder to each row
      */
-    public class FriendsViewHolder extends RecyclerView.ViewHolder {
+    class FriendsViewHolder extends RecyclerView.ViewHolder {
         private TextView mTvNameFriends;
         private TextView mTvCountFriends;
         private ImageView mImgFriend;
         private Button mBtnUnFriend;
-        private String mStatus="Friends";
+        private String mStatus = "Friends";
 
-        FriendsViewHolder(View mView){
+        FriendsViewHolder(View mView) {
             super(mView);
             mTvNameFriends = mView.findViewById(R.id.tvNameFriends);
             mTvCountFriends = mView.findViewById(R.id.tvCountFriends);
@@ -60,9 +60,9 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
                 @Override
                 public void onClick(View v) {
                     if (mBtnUnFriend.getText().equals("Friends")) {
-                        mStatus="UnFriends";
+                        mStatus = "UnFriends";
                     } else {
-                        mStatus="Friends";
+                        mStatus = "Friends";
                     }
                     mBtnUnFriend.setText(mStatus);
                 }
@@ -70,7 +70,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
         }
     }
 
-    public FriendsAdapter(List<Friends> friendsList) {
+    FriendsAdapter(List<Friends> friendsList) {
         this.mFriendsList = friendsList;
     }
 }

@@ -1,14 +1,29 @@
 package vn.asiantech.internship.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import vn.asiantech.internship.R;
+
 public class Friends {
     private String mNameFriend;
     private int mCountFriend;
     private int mUrlImage;
+    private String mStatus;
 
-    public Friends(String mNameFriend, int mCountFriend, int mUrlImage) {
+    public String getmStatus() {
+        return mStatus;
+    }
+
+    public void setmStatus(String mStatus) {
+        this.mStatus = mStatus;
+    }
+
+    public Friends(String mNameFriend, int mCountFriend, int mUrlImage, String mStatus) {
         this.mNameFriend = mNameFriend;
         this.mCountFriend = mCountFriend;
         this.mUrlImage = mUrlImage;
+        this.mStatus=mStatus;
     }
 
     public String getmNameFriend() {

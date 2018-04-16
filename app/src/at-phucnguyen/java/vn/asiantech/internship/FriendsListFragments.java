@@ -16,22 +16,23 @@ import java.util.List;
 
 import vn.asiantech.internship.model.Friends;
 
-public class FriendsListFragments extends Fragment{
+public class FriendsListFragments extends Fragment {
     FriendsAdapter mAdapter;
-    List<Friends> mListFriend=new ArrayList<>();
+    List<Friends> mListFriend = new ArrayList<>();
     RecyclerView mRvListFriend;
     RecyclerView.LayoutManager mLayoutManager;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAdapter=new FriendsAdapter(mListFriend);
+        mAdapter = new FriendsAdapter(mListFriend);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_friend_list,container,false);
-        Log.e("FriendsListFragments",getArguments().getString("key"));
+        View view = inflater.inflate(R.layout.fragment_friend_list, container, false);
+        Log.e("FriendsListFragments", getArguments().getString("key"));
 
         mappingView(view);
         setRecycleView();
@@ -41,17 +42,18 @@ public class FriendsListFragments extends Fragment{
     }
 
     private void setListFriend() {
-        for(int i=0;i<500;i++){
-            mListFriend.add(new Friends("Phuc"+i,10+i,R.drawable.ic_people_black_48dp));
+        for(int i=0;i<10;i++){
+            mListFriend.add(new Friends("Nguyen Van Phuc "+i,10+i, R.drawable.ic_people_black_48dp,
+                    "Friend"));
         }
     }
 
-    public void mappingView(View view){
-        mRvListFriend=view.findViewById(R.id.recylerViewFrag);
+    public void mappingView(View view) {
+        mRvListFriend = view.findViewById(R.id.recylerViewFrag);
     }
 
-    public void setRecycleView(){
-        mLayoutManager=new LinearLayoutManager(getActivity());
+    public void setRecycleView() {
+        mLayoutManager = new LinearLayoutManager(getActivity());
         mRvListFriend.setLayoutManager(mLayoutManager);
         mRvListFriend.setAdapter(mAdapter);
         mRvListFriend.setItemAnimator(new DefaultItemAnimator());

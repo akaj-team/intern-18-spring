@@ -46,7 +46,7 @@ public class RecyclerViewExampleActivity extends AppCompatActivity {
     public void setList() {
         for (int i = 0; i < 100; i++) {
             mFriendsList.add(new Friends("Nguyen Van phuc " + i, i * 4,
-                    mUrlImage.get(new Random().nextInt(4))));
+                    mUrlImage.get(new Random().nextInt(4)),"Friends"));
         }
     }
 }
