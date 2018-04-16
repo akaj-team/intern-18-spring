@@ -37,4 +37,12 @@
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_Reasource" />
 
+    <Button
+        android:id="@+id/btnEventAndListenes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnResource"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/w2_event_and_listenes" />
+
 </RelativeLayout>

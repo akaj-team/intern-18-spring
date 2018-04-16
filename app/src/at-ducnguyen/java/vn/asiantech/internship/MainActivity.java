@@ -15,12 +15,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         this.setTitle("Android Training");
         setContentView(R.layout.activity_begin);
+        Button btnListener = findViewById(R.id.btnListener);
         Button btnResource = findViewById(R.id.btnResource);
         Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
         btnActivityAndFragment.setOnClickListener(this);
-        btnResource.setOnClickListener(this);
         mBtnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
         mBtnViewAndViewGroup.setOnClickListener(this);
+        btnListener.setOnClickListener(this);
+        btnResource.setOnClickListener(this);
     }
 
     @Override
@@ -30,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(MainActivity.this, UserActivity.class);
                 String result = mBtnViewAndViewGroup.getText().toString();
                 intent.putExtra(KEY_TITLE, result);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btnListener: {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
                 break;
             }

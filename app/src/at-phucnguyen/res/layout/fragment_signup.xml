@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_people_black_48dp"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/edtUserName"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgUser"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/hintUsername"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtUserName"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/hintPasswork"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtPassword"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/hintEmail"
+        android:inputType="textEmailSubject" />
+
+    <RadioGroup
+        android:id="@+id/rgGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtEmail"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/sexMale" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:text="@string/sexFamale" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rgGroup"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <Switch
+            android:id="@+id/swEmailSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showText="true"
+            android:switchMinWidth="10dp"
+            android:text="@string/email_subscriptions"
+            android:textOff="@string/off"
+            android:textOn="@string/on"
+            android:thumb="@drawable/custom_switch_thumb"
+            android:track="@drawable/custom_switch_track"
+            tools:ignore="UnusedAttribute" />
+
+        <Switch
+            android:id="@+id/swEmail"
+            style="@style/SwitchStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showText="true"
+            android:switchPadding="20dp"
+            android:text="@string/alow_email_from_other"
+            android:textOff="@string/off"
+            android:textOn="@string/on"
+            tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+</RelativeLayout>
