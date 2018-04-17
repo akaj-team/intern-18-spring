@@ -25,6 +25,24 @@ public class MenuActivity extends Activity {
             }
         });
 
+        Button btnActivity = findViewById(R.id.btnActivityAndFragment);
+        btnActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, SendDataActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnViewPager = findViewById(R.id.btnViewPage);
+        btnViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ViewPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }

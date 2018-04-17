@@ -12,10 +12,19 @@ public class MenuActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        Button btnEventAndListener = findViewById(R.id.btnEventAndListener);
+        btnEventAndListener.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
         Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
         btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, ViewViewGroupActivity.class);
                 startActivity(intent);
             }
@@ -25,6 +34,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btnFragment = findViewById(R.id.btnFragment);
+        btnFragment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,9 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
-        android:fullBackupContent="true">
-        <activity android:name=".ViewPageActivity">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ViewActivity" />
-        <activity android:name=".EventListenerActivity"/>
+        <activity android:name=".SendDataActivity" />
+        <activity android:name=".ViewPageActivity"/>
     </application>
 </manifest>
