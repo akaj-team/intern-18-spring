@@ -9,12 +9,14 @@ class Friend {
     private final String mName;
     private final int mNumOfMutualFriends;
     private final int mAvatar;
+    private boolean mIsFriend;
 
-    Friend(String name, int mutualFriends) {
+    Friend(String name, int mutualFriends, boolean isfriend) {
 
         mName = name;
         mNumOfMutualFriends = mutualFriends;
         Random random = new Random();
+        mIsFriend = isfriend;
         int valueColor = random.nextInt(4);
         switch (valueColor) {
             case 0:
@@ -50,5 +52,15 @@ class Friend {
 
     public int getAvatar() {
         return mAvatar;
+    }
+
+    public boolean getIsFriend()
+    {
+        return  mIsFriend;
+    }
+
+    public void setIsFriend(boolean isFriend)
+    {
+        mIsFriend = isFriend;
     }
 }

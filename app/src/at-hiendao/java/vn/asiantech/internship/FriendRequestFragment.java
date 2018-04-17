@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class FriendRequestFragment extends Fragment {
+    private  ListFriendAdapter mAdapter;
+    private IEventClick mEventClick;
 
     @Nullable
     @Override
@@ -19,8 +21,22 @@ public class FriendRequestFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        ListFriendAdapter adapter = new ListFriendAdapter();
-        recyclerView.setAdapter(adapter);
+        mAdapter = new ListFriendAdapter(mEventClick, getActivity(), false);
+        recyclerView.setAdapter(mAdapter);
         return view;
+    }
+
+
+    void settingEventClickButtonFriend(IEventClick eventClick) {
+        mEventClick = eventClick;
+    }
+
+    void changeRecycleView(Friend friend, boolean isfriend, int position) {
+        if (!isfriend) {
+            friend.setIsFriend(false);
+            mAdapter.addFriend(friend);
+        } else {
+            mAdapter.removeFriend(position);
+        }
     }
 }

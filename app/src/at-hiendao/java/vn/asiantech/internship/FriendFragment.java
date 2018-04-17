@@ -5,13 +5,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
 
 public class FriendFragment extends Fragment {
-    private Button mBtnFriend;
+    private ListFriendAdapter mAdapter;
+    private IEventClick mEventClick;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -20,8 +23,23 @@ public class FriendFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        ListFriendAdapter adapter = new ListFriendAdapter(0);
-        recyclerView.setAdapter(adapter);
+        mAdapter = new ListFriendAdapter(mEventClick, getActivity());
+        recyclerView.setAdapter(mAdapter);
         return view;
     }
+
+
+    void settingEventClickButtonFriend(IEventClick eventClick) {
+        mEventClick = eventClick;
+    }
+
+    void changeRecycleView(Friend friend, boolean isfriend, int position) {
+        if (isfriend) {
+            friend.setIsFriend(true);
+            mAdapter.addFriend(friend);
+        } else {
+            mAdapter.removeFriend(position);
+        }
+    }
+
 }
