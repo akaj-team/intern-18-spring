@@ -13,8 +13,9 @@ public class SendDataActivity extends Activity {
         SendFragment sendFragment = new SendFragment();
         ReceiveFragment receiveFragment = new ReceiveFragment();
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.llParent, sendFragment).add(R.id.llParent, receiveFragment)
+        fragmentManager.beginTransaction().add(R.id.llParent, sendFragment)
                 .commit();
+        fragmentManager.beginTransaction().add(R.id.llParent, receiveFragment).addToBackStack(null).commit();
         sendFragment.setListener(receiveFragment);
 
     }
