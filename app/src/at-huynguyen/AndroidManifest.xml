@@ -27,6 +27,7 @@
             android:label="SignUpActivity" />
         <activity android:name=".ViewViewGroupActivity"/>
         <activity android:name=".ListFriendActivity"/>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
