@@ -21,5 +21,6 @@
         </activity>
         <activity android:name=".ViewActivity" />
         <activity android:name=".SendDataActivity" />
+        <activity android:name=".ListFriendActitivy"/>
     </application>
 </manifest>
