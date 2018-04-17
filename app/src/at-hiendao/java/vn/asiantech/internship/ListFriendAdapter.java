@@ -50,9 +50,9 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Friend friend = mListFriend.get(position);
-        holder.mTvName.setText(friend.getmName());
-        holder.setMutualFriends(friend.getmNumOfMutualFriends());
-        holder.mImgAvatar.setBackgroundColor(friend.getmAvatar());
+        holder.mTvName.setText(friend.getName());
+        holder.setMutualFriends(friend.getNumOfMutualFriends());
+        holder.mImgAvatar.setBackgroundColor(friend.getAvatar());
     }
 
     @Override

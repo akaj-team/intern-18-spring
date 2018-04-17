@@ -40,15 +40,15 @@ class Friend {
         }
     }
 
-    public String getmName() {
+    public String getName() {
         return mName;
     }
 
-    public int getmNumOfMutualFriends() {
+    public int getNumOfMutualFriends() {
         return mNumOfMutualFriends;
     }
 
-    public int getmAvatar() {
+    public int getAvatar() {
         return mAvatar;
     }
 }
