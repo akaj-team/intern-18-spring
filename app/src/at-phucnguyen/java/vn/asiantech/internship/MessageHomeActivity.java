@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 public class MessageHomeActivity extends AppCompatActivity implements Message1Fragment.OnFragmentManager, Message2Fragment.OnFragment2Manager {
-    FragmentManager mFmManager;
+    private FragmentManager mFmManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,20 +28,20 @@ public class MessageHomeActivity extends AppCompatActivity implements Message1Fr
     }
 
     @Override
-    public void onDataSelected(String mData) {
-        Bundle mBundle = new Bundle();
-        mBundle.putString("keyDataFragment1", mData);
-        Message2Fragment mFmMessage2 = new Message2Fragment();
-        fragmentStore(mFmMessage2);
-        mFmMessage2.setArguments(mBundle);//Truyen du lieu qua fragment Second
+    public void onDataSelected(String data) {
+        Bundle bundle = new Bundle();
+        bundle.putString("keyDataFragment1", data);
+        Message2Fragment fragment = new Message2Fragment();
+        fragmentStore(fragment);
+        fragment.setArguments(bundle);//Truyen du lieu qua fragment Second
     }
 
     @Override
-    public void onSendToData(String mData) {
-        Bundle mBundle = new Bundle();
-        mBundle.putString("keyDataFragment2", mData);
-        Message1Fragment mFmMessage2 = new Message1Fragment();
-        fragmentStore(mFmMessage2);
-        mFmMessage2.setArguments(mBundle);
+    public void onSendToData(String data) {
+        Bundle bundle = new Bundle();
+        bundle.putString("keyDataFragment2", data);
+        Message1Fragment message1Fragment = new Message1Fragment();
+        fragmentStore(message1Fragment);
+        message1Fragment.setArguments(bundle);
     }
 }
