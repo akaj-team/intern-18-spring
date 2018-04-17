@@ -16,6 +16,18 @@
     <string name="Sent">Sent</string>
     <string name="lefthour">06:50 pm.</string>
     <string name="righthour">06:51 p.m.</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="emailsubs">Email Subscriptions</string>
+    <string name="allowemail">Allow email from other</string>
+    <string name="eventandlistener">Event and Listener</string>
     <string name="viewviewgroup">View and View Group</string>
     <string name="resources">Resources</string>
+    <string name="fragment">Fragment</string>
+    <string name="showtext">Show Text</string>
+    <string name="entername">Enter Name</string>
+    <string name="malefemale">Male or Female</string>
 </resources>

@@ -19,6 +19,6 @@ public class ListFriendActitivy extends Activity {
         recyclerViewFriend.setLayoutManager(layoutManager);
         ListFriendAdapter listFriendAdapter = new ListFriendAdapter();
         recyclerViewFriend.setAdapter(listFriendAdapter);
-        
+
     }
 }
