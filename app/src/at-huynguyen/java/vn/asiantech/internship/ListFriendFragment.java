@@ -19,7 +19,7 @@ public class ListFriendFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            mListFriends = Friend.createListFriend(10, true);
+            mListFriends = Friend.createListFriend(100, true);
             mListFriendAdapter = new ListFriendAdapter(mListFriends);
         }
 

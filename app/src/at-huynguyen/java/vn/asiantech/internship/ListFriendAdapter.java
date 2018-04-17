@@ -8,11 +8,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.FriendViewHolder> {
-    private List<Friend> mListFriends = new ArrayList<>();
+    private List<Friend> mListFriends;
 
     ListFriendAdapter(List<Friend> listFriend) {
         this.mListFriends = listFriend;
@@ -39,10 +38,10 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
     }
 
     public class FriendViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView mTvName;
-        private TextView mTvNumberOfFriend;
-        private Button mBtnFriend;
-        private ImageView mImgAvatar;
+        private final TextView mTvName;
+        private final TextView mTvNumberOfFriend;
+        private final Button mBtnFriend;
+        private final ImageView mImgAvatar;
 
         private FriendViewHolder(View itemView) {
             super(itemView);

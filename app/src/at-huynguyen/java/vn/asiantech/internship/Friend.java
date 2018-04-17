@@ -51,9 +51,9 @@ public class Friend {
         this.mIsFriend = friend;
     }
 
-    public static List<Friend> createListFriend(int sum, boolean isFriend) {
+    public static List<Friend> createListFriend(int tong, boolean isFriend) {
         List<Friend> listFriend = new ArrayList<>();
-        for (int i = 1; i <= sum; i++) {
+        for (int i = 1; i <= tong; i++) {
             Friend friend = new Friend();
             Random random = new Random();
             int position = random.nextInt(3);
@@ -70,7 +70,7 @@ public class Friend {
 
             friend.setName(listName.get(position) + " " + i);
             friend.setNumberOfFriend(i * 5);
-            friend.setFriend(i % 3 == 0);
+            friend.setFriend(isFriend);
             friend.setAvatar(listAvatar.get(position));
             listFriend.add(friend);
         }

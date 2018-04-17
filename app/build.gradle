@@ -58,6 +58,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.android.support:design:26.1.0'
     implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.0'
+
 }
 
 apply from: "../ci-java.gradle"
