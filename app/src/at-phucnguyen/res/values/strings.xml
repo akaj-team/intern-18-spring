@@ -33,8 +33,12 @@
     <string name="hintUsername">Username</string>
     <string name="hintPasswork">Passwork</string>
     <string name="hintEmail">Email</string>
+    <string name="btn_recyclerview_text">W3-D3-RecyclerView</string>
     <string name="sexMale">male</string>
     <string name="sexFamale">famale</string>
+    <string name="nameFriend">Nguyen Van Phuc</string>
+    <string name="countFriend">Friends</string>
+    <string name="btn_UnFriends">Friends</string>
     <string name="toast_message_input">"You input your UseName"</string>
     <string name="toast_you_input_your_passwork">You input your Passwork</string>
     <string name="toast_you_input_your_email">You input your Email"</string>

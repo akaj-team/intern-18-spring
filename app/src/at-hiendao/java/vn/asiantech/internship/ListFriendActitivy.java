@@ -19,7 +19,7 @@ public class ListFriendActitivy extends Activity implements IEventClick{
         recyclerViewFriend.setLayoutManager(layoutManager);
         ListFriendAdapter listFriendAdapter = new ListFriendAdapter(this, this);
         recyclerViewFriend.setAdapter(listFriendAdapter);
-        
+
     }
 
     @Override

@@ -12,17 +12,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Message1Fragment extends Fragment {
-    OnFragmentManager mOnFmListener;
-    EditText mEdtData;
-    TextView mTvDataFragment1;
+    private OnFragmentManager mOnFmListener;
+    private EditText mEdtData;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View mView = inflater.inflate(R.layout.fragment_message_1, container, false);
-        Button mBtnSendData = mView.findViewById(R.id.btnSendDataFragment1);
-        mEdtData = mView.findViewById(R.id.edtData);
-        mTvDataFragment1 = mView.findViewById(R.id.tvExtraDataFragment1);
+        final View view = inflater.inflate(R.layout.fragment_message_1, container, false);
+        Button mBtnSendData = view.findViewById(R.id.btnSendDataFragment1);
+        mEdtData = view.findViewById(R.id.edtData);
+        TextView mTvDataFragment1 = view.findViewById(R.id.tvExtraDataFragment1);
 
         if (this.getArguments() != null) {
             String pareDataFragment2 = getArguments().getString("keyDataFragment2");
@@ -34,7 +33,7 @@ public class Message1Fragment extends Fragment {
                 startFragmentSecond();
             }
         });
-        return mView;
+        return view;
     }
 
     /**

@@ -33,6 +33,14 @@ public class MenuActivity extends Activity {
                 startActivity(intent);
             }
         });
+        Button btnRecycleView = findViewById(R.id.btnRecycleView);
+        btnRecycleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ListFriendActitivy.class);
+                startActivity(intent);
+            }
+        });
 
         Button btnViewPager = findViewById(R.id.btnViewPage);
         btnViewPager.setOnClickListener(new View.OnClickListener() {
