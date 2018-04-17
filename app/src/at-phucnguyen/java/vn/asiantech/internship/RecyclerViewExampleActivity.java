@@ -11,25 +11,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import vn.asiantech.internship.model.Friends;
+import vn.asiantech.internship.model.Friend;
 
 public class RecyclerViewExampleActivity extends AppCompatActivity {
-    private List<Friends> mFriendsList = new ArrayList<>();
-    private FriendsAdapter mApdapter;
-    private List<Integer> mUrlImage = new ArrayList<>();
+    private final List<Friend> mFriendList = new ArrayList<>();
+    private FriendAdapter mApdapter;
+    private final List<Integer> mUrlImage = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview_example);
 
-        RecyclerView mRecyclerView;
-        mApdapter = new FriendsAdapter(mFriendsList);
-        mRecyclerView = findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mApdapter);
+        RecyclerView recyclerView;
+        mApdapter = new FriendAdapter(mFriendList);
+        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mApdapter);
         setUrlImage();
         setList();
         mApdapter.notifyDataSetChanged();
@@ -45,8 +45,9 @@ public class RecyclerViewExampleActivity extends AppCompatActivity {
 
     public void setList() {
         for (int i = 0; i < 100; i++) {
-            mFriendsList.add(new Friends("Nguyen Van phuc " + i, i * 4,
-                    mUrlImage.get(new Random().nextInt(4)),"Friends"));
+            mFriendList.add(new Friend("Nguyen Van phuc " + i, i * 4,
+                    mUrlImage.get(new Random().nextInt(4))));
+            mApdapter.notifyDataSetChanged();
         }
     }
 }

@@ -15,10 +15,12 @@ import android.widget.Switch;
 public class SignupFragment extends Fragment implements RadioGroup.OnCheckedChangeListener, View.OnClickListener,
         CompoundButton.OnCheckedChangeListener {
 
-    OnListenesEventSignUpFragment mListenes;
-    EditText mEdtUseName, mEdtPasswork, mEdtEmail;
-    RadioGroup mRadioGroup;
-    Switch mSwEmail, mSwEmailSub;
+    private OnListenesEventSignUpFragment mListenes;
+    private EditText mEdtUseName;
+    private EditText mEdtPasswork;
+    private EditText mEdtEmail;
+    private RadioGroup mRadioGroup;
+    private Switch mSwEmail, mSwEmailSub;
 
     @Nullable
     @Override

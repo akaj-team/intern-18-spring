@@ -44,7 +44,7 @@
         android:layout_below="@id/btnRecyclerView"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
-        android:text="@string/btn_Reasource" />
+        android:text="@string/w3_d3_viewpage" />
 
     <Button
         android:id="@+id/btnEventAndListenes"

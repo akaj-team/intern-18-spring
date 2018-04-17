@@ -40,6 +40,12 @@
             android:layout_height="wrap_content"
             android:text="@string/w2_d2_listeners" />
 
+        <Button
+            android:id="@+id/btnListFriend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/recycler_view" />
+
     </LinearLayout>
 
 </ScrollView>

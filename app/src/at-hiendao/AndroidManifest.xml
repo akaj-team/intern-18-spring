@@ -5,14 +5,14 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
-        android:fullBackupContent="true">
-        <activity android:name=".EventListenerActivity">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,5 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ViewActivity" />
+        <activity android:name=".SendDataActivity" />
+        <activity android:name=".ListFriendActitivy"/>
     </application>
 </manifest>

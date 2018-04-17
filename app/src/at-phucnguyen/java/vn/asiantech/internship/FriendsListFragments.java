@@ -14,18 +14,18 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.asiantech.internship.model.Friends;
+import vn.asiantech.internship.model.Friend;
 
 public class FriendsListFragments extends Fragment {
-    FriendsAdapter mAdapter;
-    List<Friends> mListFriend = new ArrayList<>();
+    FriendAdapter mAdapter;
+    List<Friend> mListFriend = new ArrayList<>();
     RecyclerView mRvListFriend;
     RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAdapter = new FriendsAdapter(mListFriend);
+        mAdapter = new FriendAdapter(mListFriend);
     }
 
     @Nullable
@@ -42,9 +42,8 @@ public class FriendsListFragments extends Fragment {
     }
 
     private void setListFriend() {
-        for(int i=0;i<10;i++){
-            mListFriend.add(new Friends("Nguyen Van Phuc "+i,10+i, R.drawable.ic_people_black_48dp,
-                    "Friend"));
+        for (int i = 0; i < 10; i++) {
+            mListFriend.add(new Friend("Nguyen Van Phuc " + i, 10 + i, R.drawable.ic_people_black_48dp));
         }
     }
 

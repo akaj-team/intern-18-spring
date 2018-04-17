@@ -12,13 +12,13 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.asiantech.internship.model.Friends;
+import vn.asiantech.internship.model.Friend;
 
 public class FollowListFragment extends Fragment {
     RecyclerView mRecyclerView;
-    FriendsAdapter mAdapter;
+    FriendAdapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
-    List<Friends> mFollowList = new ArrayList<>();
+    List<Friend> mFollowList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -34,14 +34,14 @@ public class FollowListFragment extends Fragment {
 
     private void setFollowList() {
         for (int i = 0; i < 100; i++) {
-            mFollowList.add(new Friends("Phuc Phuc Phuc " + i, 10 + i * 10,
-                    R.drawable.ic_people_outline_black_24dp,"Follow"));
+            mFollowList.add(new Friend("Phuc Phuc Phuc " + i, 10 + i * 10,
+                    R.drawable.ic_people_outline_black_24dp));
         }
     }
 
     private void setRecyclerView() {
         mLayoutManager = new LinearLayoutManager(getActivity());
-        mAdapter=new FriendsAdapter(mFollowList);
+        mAdapter=new FriendAdapter(mFollowList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }

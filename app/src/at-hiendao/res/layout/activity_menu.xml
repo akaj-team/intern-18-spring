@@ -28,5 +28,19 @@
             android:layout_height="wrap_content"
             android:text="@string/view"
             android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btnActivityAndFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_activity_fragment"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btnRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_recycleview"
+            android:textSize="25dp" />
     </LinearLayout>
 </LinearLayout>
