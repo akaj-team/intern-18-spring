@@ -1,45 +1,54 @@
 package vn.asiantech.internship;
 
 import android.graphics.Color;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import java.util.Random;
 
-public class Friend {
-    public final String Name;
-    public final int MutualFriends;
-    public final int Avatar;
-    public boolean IsFriend;
+class Friend {
+    private final String mName;
+    private final int mNumOfMutualFriends;
+    private final int mAvatar;
 
-    Friend(String name, int mutualFriends, boolean isFriend) {
+    Friend(String name, int mutualFriends) {
 
-        Name = name;
-        MutualFriends = mutualFriends;
-        IsFriend = isFriend;
+        mName = name;
+        mNumOfMutualFriends = mutualFriends;
         Random random = new Random();
         int valueColor = random.nextInt(4);
         switch (valueColor) {
             case 0:
-                Avatar = Color.RED;
+                mAvatar = Color.RED;
                 break;
 
             case 1:
-                Avatar = Color.BLUE;
+                mAvatar = Color.BLUE;
                 break;
 
             case 2:
-                Avatar = Color.GREEN;
+                mAvatar = Color.GREEN;
                 break;
 
             case 3:
-                Avatar = Color.GRAY;
+                mAvatar = Color.GRAY;
                 break;
 
             default:
                 Log.e("wrong color", "wrong color");
-                Avatar = Color.BLACK;
+                mAvatar = Color.BLACK;
                 break;
         }
+    }
+
+    public String getName() {
+        return mName;
+    }
+
+    public int getNumOfMutualFriends() {
+        return mNumOfMutualFriends;
+    }
+
+    public int getAvatar() {
+        return mAvatar;
     }
 }

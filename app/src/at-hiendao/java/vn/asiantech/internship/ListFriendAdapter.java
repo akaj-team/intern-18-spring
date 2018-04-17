@@ -13,7 +13,7 @@ import java.util.Locale;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.ViewHolder> {
 
-    private List<Friend> mListFriend = new ArrayList<>();
+    private final List<Friend> mListFriend = new ArrayList<>();
 
     /*
         class viewholder of listview in recycleview
@@ -21,7 +21,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
     class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView mTvName;
         private final TextView mTvMutualFriends;
-        private final String mMUTUAL_FRIENDS = "mutual friends";
+        private static final String MUTUAL_FRIENDS = "mutual friends";
         private final ImageView mImgAvatar;
 
         ViewHolder(View itemView) {
@@ -32,18 +32,13 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
         }
 
         void setMutualFriends(int numbermutual) {
-            mTvMutualFriends.setText(String.format(Locale.US, "%s %d", mMUTUAL_FRIENDS, numbermutual));
+            mTvMutualFriends.setText(String.format(Locale.US, "%s %d", MUTUAL_FRIENDS, numbermutual));
         }
     }
 
     ListFriendAdapter() {
-        createNewListFriends(100);
+        createNewListFriends();
     }
-
-    ListFriendAdapter(int size) {
-        createNewListFriends(size);
-    }
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -54,9 +49,10 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mImgAvatar.setBackgroundColor(mListFriend.get(position).Avatar);
-        holder.mTvName.setText(mListFriend.get(position).Name);
-        holder.setMutualFriends(mListFriend.get(position).MutualFriends);
+        Friend friend = mListFriend.get(position);
+        holder.mTvName.setText(friend.getName());
+        holder.setMutualFriends(friend.getNumOfMutualFriends());
+        holder.mImgAvatar.setBackgroundColor(friend.getAvatar());
     }
 
     @Override
@@ -64,12 +60,13 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
         return mListFriend.size();
     }
 
-    private void createNewListFriends(int size) {
-        for (int i = 0; i < size; i++) {
+    private void createNewListFriends() {
+        int numberOfFriends = 100;
+        for (int i = 0; i < numberOfFriends; i++) {
             String name = "Friend" + i;
             int minRandom = 15;
             int maxRandom = 1000;
-            Friend friend = new Friend(name, randomNumber(minRandom, maxRandom), false);
+            Friend friend = new Friend(name, randomNumber(minRandom, maxRandom));
             mListFriend.add(friend);
         }
     }
