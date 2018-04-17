@@ -54,13 +54,11 @@ class Friend {
         return mAvatar;
     }
 
-    public boolean getIsFriend()
-    {
-        return  mIsFriend;
+    public boolean isFriend() {
+        return mIsFriend;
     }
 
-    public void setIsFriend(boolean isFriend)
-    {
+    public void setIsFriend(boolean isFriend) {
         mIsFriend = isFriend;
     }
 }

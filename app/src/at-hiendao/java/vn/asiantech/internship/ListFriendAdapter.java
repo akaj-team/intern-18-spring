@@ -106,7 +106,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
         holder.mTvName.setText(friend.getName());
         holder.setMutualFriends(friend.getNumOfMutualFriends());
         holder.mImgAvatar.setBackgroundColor(friend.getAvatar());
-        boolean isFriend = friend.getIsFriend();
+        boolean isFriend = friend.isFriend();
         if (!isFriend) {
             holder.mBtnFriend.setText(mContext.getResources().getString(R.string.button_friend));
         } else {
