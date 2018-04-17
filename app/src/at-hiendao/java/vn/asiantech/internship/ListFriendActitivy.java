@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 
-public class ListFriendActitivy extends Activity implements IEventClick{
+public class ListFriendActitivy extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -17,13 +17,9 @@ public class ListFriendActitivy extends Activity implements IEventClick{
         recyclerViewFriend.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerViewFriend.setLayoutManager(layoutManager);
-        ListFriendAdapter listFriendAdapter = new ListFriendAdapter(this, this);
+        ListFriendAdapter listFriendAdapter = new ListFriendAdapter(null, this);
         recyclerViewFriend.setAdapter(listFriendAdapter);
 
     }
 
-    @Override
-    public void onButtonFriendClick(Friend friend, boolean isfriend, int position) {
-
-    }
 }
