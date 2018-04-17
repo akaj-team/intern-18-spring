@@ -27,6 +27,7 @@
         <activity android:name=".HomeActivity"/>
         <activity android:name=".PagerActivity"
             android:label="@string/favorite"/>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>

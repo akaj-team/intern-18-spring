@@ -39,10 +39,19 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
         Button btnViewPager = findViewById(R.id.viewPager);
-        btnViewPager.setOnClickListener(new View.OnClickListener(){
+        btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, PagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnFragment = findViewById(R.id.btnFragment);
+        btnFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
