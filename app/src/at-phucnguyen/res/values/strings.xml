@@ -46,4 +46,5 @@
     <string name="toast_you_is_checked_male">You is checked Male</string>
     <string name="is_on"> is On</string>
     <string name="is_off"> is On</string>
+    <string name="w3_d3_viewpage">w3-d3-viewpage</string>
 </resources>

@@ -32,6 +32,7 @@ public class RecyclerViewExampleActivity extends AppCompatActivity {
         recyclerView.setAdapter(mApdapter);
         setUrlImage();
         setList();
+        mApdapter.notifyDataSetChanged();
     }
 
     public void setUrlImage() {
