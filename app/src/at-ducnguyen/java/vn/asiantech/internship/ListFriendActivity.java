@@ -13,7 +13,8 @@ public class ListFriendActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_friend);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new ListFriendAdapter(Friend.createListFriend(100, Math.random() * 100 % 2 == 0)));
+        final boolean isFriend = Math.random() * 100 % 2 == 0;
+        recyclerView.setAdapter(new ListFriendAdapter(Friend.createListFriend(100, isFriend)));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

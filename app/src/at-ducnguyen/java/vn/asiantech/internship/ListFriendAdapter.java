@@ -8,13 +8,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import vn.asiantech.internship.model.Friend;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.ListFriendViewHolder> {
-    private List<Friend> mListFriends = new ArrayList<>();
+    private List<Friend> mListFriends;
 
     ListFriendAdapter(List<Friend> listFriend) {
         this.mListFriends = listFriend;

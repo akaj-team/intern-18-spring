@@ -14,10 +14,15 @@ import vn.asiantech.internship.model.Friend;
 
 public class ListFriendRequestAdapter extends RecyclerView.Adapter<ListFriendRequestAdapter.ListFriendViewHolder> {
 
-    private List<Friend> mListFriends;
+    private final List<Friend> mListFriends;
+    private ListFriendRequestAdapter mOtherAdapter;
 
     ListFriendRequestAdapter(List<Friend> listFriend) {
-        this.mListFriends = listFriend;
+        mListFriends = listFriend;
+    }
+
+    public void setOtherAdapter(ListFriendRequestAdapter otherAdapter){
+        mOtherAdapter = otherAdapter;
     }
 
     @Override
@@ -66,12 +71,15 @@ public class ListFriendRequestAdapter extends RecyclerView.Adapter<ListFriendReq
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
                     mListFriends.remove(getAdapterPosition());
-                    if (friend.isFriend()){
-                        ListFriendFragment.unFriend(friend);
+                    mOtherAdapter.notifyDataSetChanged();
+                    if (friend.isFriend()) {
+                        friend.setFriend(false);
                         ListFriendRequestFragment.addFriend(friend);
+                        notifyDataSetChanged();
                     } else {
-                        ListFriendRequestFragment.removeFriend(friend);
+                        friend.setFriend(true);
                         ListFriendFragment.addFriend(friend);
+                        notifyDataSetChanged();
                     }
                 }
             }

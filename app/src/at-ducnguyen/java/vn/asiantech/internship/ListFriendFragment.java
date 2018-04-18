@@ -13,15 +13,23 @@ import java.util.List;
 
 import vn.asiantech.internship.model.Friend;
 
-public class ListFriendFragment extends Fragment {
-    private static ListFriendRequestAdapter mListFriendRequestAdapter;
+public class ListFriendFragment extends Fragment implements OnFriendClickListener {
+    private ListFriendRequestAdapter mListFriendRequestAdapter;
+    private ListFriendRequestAdapter mOtherAdapter;
     private static List<Friend> mListFriends;
+
+    OnFriendClickListener mListener;
+
+    public void setOnFriendClickListener(OnFriendClickListener listener) {
+        mListener = listener;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mListFriends = Friend.createListFriend(10, true);
         mListFriendRequestAdapter = new ListFriendRequestAdapter(mListFriends);
+        mListener.onFriendClick(mListFriendRequestAdapter);
     }
 
     @Nullable
@@ -29,20 +37,22 @@ public class ListFriendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_friend, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewListFriend);
-        new ListFriendRequestAdapter(mListFriends);
         recyclerView.setAdapter(mListFriendRequestAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         return view;
     }
-
-    public static void addFriend(Friend friend) {
-        friend.setFriend(true);
-        mListFriends.add(friend);
-        mListFriendRequestAdapter.notifyDataSetChanged();
+    @Override
+    public void onResume() {
+        mListFriendRequestAdapter.setOtherAdapter(mOtherAdapter);
+        super.onResume();
     }
 
-    public static void unFriend(Friend friend) {
-        mListFriends.remove(friend);
-        mListFriendRequestAdapter.notifyDataSetChanged();
+    public static void addFriend(Friend friend) {
+        mListFriends.add(friend);
+    }
+
+    @Override
+    public void onFriendClick(ListFriendRequestAdapter friendAdapter) {
+        mOtherAdapter = friendAdapter;
     }
 }

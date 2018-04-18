@@ -14,8 +14,13 @@ public class ViewPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager);
 
+        ListFriendFragment listFriendFragment = new ListFriendFragment();
+        ListFriendRequestFragment listFriendRequestFragment = new ListFriendRequestFragment();
+        listFriendFragment.setOnFriendClickListener(listFriendRequestFragment);
+        listFriendRequestFragment.setOnFriendClickListener(listFriendFragment);
+
         ViewPager viewPager = findViewById(R.id.viewPager);
-        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), listFriendFragment, listFriendRequestFragment));
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);

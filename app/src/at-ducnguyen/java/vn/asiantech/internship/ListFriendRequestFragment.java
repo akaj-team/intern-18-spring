@@ -13,15 +13,23 @@ import java.util.List;
 
 import vn.asiantech.internship.model.Friend;
 
-public class ListFriendRequestFragment extends Fragment {
-    private static ListFriendRequestAdapter mListFriendRequestAdapter;
+public class ListFriendRequestFragment extends Fragment implements OnFriendClickListener {
+    private ListFriendRequestAdapter mListFriendRequestAdapter;
+    private ListFriendRequestAdapter mOtherAdapter;
     private static List<Friend> mListRequests;
+
+    OnFriendClickListener mListener;
+
+    public void setOnFriendClickListener(OnFriendClickListener listener){
+        mListener = listener;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mListRequests = Friend.createListFriend(10, false);
         mListFriendRequestAdapter = new ListFriendRequestAdapter(mListRequests);
+        mListener.onFriendClick(mListFriendRequestAdapter);
     }
 
     @Nullable
@@ -34,14 +42,18 @@ public class ListFriendRequestFragment extends Fragment {
         return view;
     }
 
-    public static void addFriend(Friend friend){
-        friend.setFriend(false);
-        mListRequests.add(friend);
-        mListFriendRequestAdapter.notifyDataSetChanged();
+    @Override
+    public void onResume() {
+        mListFriendRequestAdapter.setOtherAdapter(mOtherAdapter);
+        super.onResume();
     }
 
-    public static void removeFriend(Friend friend) {
-        mListRequests.remove(friend);
-        mListFriendRequestAdapter.notifyDataSetChanged();
+    public static void addFriend(Friend friend){
+        mListRequests.add(friend);
+    }
+
+    @Override
+    public void onFriendClick(ListFriendRequestAdapter friendAdapter) {
+        mOtherAdapter = friendAdapter;
     }
 }

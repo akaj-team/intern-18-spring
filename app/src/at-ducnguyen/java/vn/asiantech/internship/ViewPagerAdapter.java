@@ -5,18 +5,22 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
+    private final ListFriendRequestFragment mListFriendRequestFragment;
+    private final ListFriendFragment mListFriendFragment;
 
-    ViewPagerAdapter(FragmentManager fm) {
+    ViewPagerAdapter(FragmentManager fm, ListFriendFragment listFriendFragment, ListFriendRequestFragment  listFriendRequestFragment) {
         super(fm);
+        mListFriendFragment = listFriendFragment;
+        mListFriendRequestFragment = listFriendRequestFragment;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ListFriendFragment();
+                return mListFriendFragment;
             case 1:
-                return new ListFriendRequestFragment();
+                return mListFriendRequestFragment;
             default:
                 return null;
         }
