@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class MyPageViewAdapter extends FragmentStatePagerAdapter {
+    public static final String KEY_PAGE_POSITION = "key_page_position";
 
     MyPageViewAdapter(FragmentManager fm) {
         super(fm);
@@ -14,11 +15,10 @@ public class MyPageViewAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Bundle bundle = new Bundle();
-        String sKEY_DATA = "key";
-        bundle.putString(sKEY_DATA, "Page " + position);
+        bundle.putString(KEY_PAGE_POSITION, "Page " + position);
         switch (position) {
             case 0: {
-                Fragment fragment = new FriendsListFragments();
+                Fragment fragment = new FriendListFragment();
                 fragment.setArguments(bundle);
                 return fragment;
             }

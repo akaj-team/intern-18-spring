@@ -15,17 +15,17 @@ import java.util.List;
 import vn.asiantech.internship.model.Friend;
 
 public class FollowListFragment extends Fragment {
-    RecyclerView mRecyclerView;
-    FriendAdapter mAdapter;
-    RecyclerView.LayoutManager mLayoutManager;
-    List<Friend> mFollowList = new ArrayList<>();
+    private RecyclerView mRecyclerView;
+    private FriendAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private List<Friend> mFollowList = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_follow_list, container, false);
 
-        mappingView(view);
+        initView(view);
         setRecyclerView();
         setFollowList();
         mAdapter.notifyDataSetChanged();
@@ -41,12 +41,12 @@ public class FollowListFragment extends Fragment {
 
     private void setRecyclerView() {
         mLayoutManager = new LinearLayoutManager(getActivity());
-        mAdapter=new FriendAdapter(mFollowList);
+        mAdapter = new FriendAdapter(mFollowList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private void mappingView(View view) {
+    private void initView(View view) {
         mRecyclerView = view.findViewById(R.id.rvFollowList);
     }
 }

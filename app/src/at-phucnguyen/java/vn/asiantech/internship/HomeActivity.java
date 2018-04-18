@@ -37,20 +37,20 @@ public class HomeActivity extends AppCompatActivity {
         mBtnPracticW1Intent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(HomeActivity.this, IntentActivity.class);
+                Intent intent = new Intent(HomeActivity.this, IntentActivity.class);
 
                 //Sử dụng mBundle để gửi dữ liệu
                 Bundle mBundle = new Bundle();
                 mBundle.putString("keyTitle", "Bundle: ");
                 mBundle.putString("keyMessege", "This is data to ActivityHome from by Bundle!");
-                mIntent.putExtras(mBundle);
+                intent.putExtras(mBundle);
 
                 //Sử dụng intent để gửi dữ liệu
-                mIntent.putExtra("keyTitleI", "Intent: ");
-                mIntent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
+                intent.putExtra("keyTitleI", "Intent: ");
+                intent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
 
                 //khởi động Intent
-                startActivity(mIntent);
+                startActivity(intent);
             }
         });
 
@@ -65,27 +65,27 @@ public class HomeActivity extends AppCompatActivity {
         mBtnPracticResrouce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                practicResrouce();
+                gotoResrouce();
             }
         });
         mBtnPracticViewPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                practicViewPage();
+                gotoViewPage();
             }
         });
 
         mBtnPracticEventAndListenes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                practicEventAndListenes();
+                gotoEventAndListenes();
             }
         });
 
         mBtnPracticRecylerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                practicRecyclerView();
+                gotoRecyclerView();
             }
         });
     }
@@ -100,22 +100,22 @@ public class HomeActivity extends AppCompatActivity {
         mBtnPracticViewPage = findViewById(R.id.btnViewPage);
     }
 
-    public void practicViewPage() {
+    public void gotoViewPage() {
         Intent intent = new Intent(HomeActivity.this, PracticViewPageActivity.class);
         startActivity(intent);
     }
 
-    public void practicRecyclerView() {
-        Intent mIntent = new Intent(HomeActivity.this, RecyclerViewExampleActivity.class);
-        startActivity(mIntent);
+    public void gotoRecyclerView() {
+        Intent intent = new Intent(HomeActivity.this, RecyclerViewExampleActivity.class);
+        startActivity(intent);
     }
 
-    public void practicResrouce() {
+    public void gotoResrouce() {
         Intent intent = new Intent(HomeActivity.this, ResourceActivity.class);
         startActivity(intent);
     }
 
-    public void practicEventAndListenes() {
+    public void gotoEventAndListenes() {
         Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
         startActivity(intent);
     }
