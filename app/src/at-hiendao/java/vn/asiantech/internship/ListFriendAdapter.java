@@ -20,7 +20,6 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
     private IEventClick mEventClick;
 
     void removeFriend(int position) {
-
         if (mListFriend.size() > 0) {
             mListFriend.remove(position);
             notifyDataSetChanged();
@@ -54,7 +53,6 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
             mBtnFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     String btnFriendText = mBtnFriend.getText().toString();
                     if (btnFriendText.equals(mContext.getResources().getString(R.string.button_friend_text))) {
                         Friend friend = new Friend(mTvName.getText().toString(), mNumOfMutualFriends, false);
@@ -63,8 +61,6 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
                         Friend friend = new Friend(mTvName.getText().toString(), mNumOfMutualFriends, true);
                         mEventButtonFriendClick.onButtonFriendClick(friend, false, getAdapterPosition());
                     }
-
-
                 }
             });
         }
@@ -98,7 +94,6 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
                 parent, false);
         return new ViewHolder(view);
     }
-
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
@@ -141,6 +136,5 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Vi
         int range = max - min + 1;
         return ((int) (Math.random() * range)) + min;
     }
-
 
 }

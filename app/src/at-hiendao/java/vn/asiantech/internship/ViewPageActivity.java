@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentManager;
 
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -16,7 +17,7 @@ public class ViewPageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewpage);
         ViewPager viewPager = findViewById(R.id.vpViewPage);
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         TabLayout tabLayout = findViewById(R.id.tlTabLayout);
         tabLayout.setupWithViewPager(viewPager);
         ViewPageAdater viewPageAdater = new ViewPageAdater(fragmentManager);
@@ -24,7 +25,6 @@ public class ViewPageActivity extends FragmentActivity {
         CirclePageIndicator indicator = findViewById(R.id.cpiIndicator);
         indicator.setViewPager(viewPager);
         indicator.setFillColor(Color.RED);
-
     }
 
 }

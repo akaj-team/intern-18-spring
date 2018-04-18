@@ -14,6 +14,12 @@ public class FriendFragment extends Fragment {
     private ListFriendAdapter mAdapter;
     private IEventClick mEventClick;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new ListFriendAdapter(mEventClick, getActivity());
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,13 +28,11 @@ public class FriendFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        mAdapter = new ListFriendAdapter(mEventClick, getActivity());
         recyclerView.setAdapter(mAdapter);
         return view;
     }
 
-
-    void settingEventClickButtonFriend(IEventClick eventClick) {
+    void setIEventClick(IEventClick eventClick) {
         mEventClick = eventClick;
     }
 

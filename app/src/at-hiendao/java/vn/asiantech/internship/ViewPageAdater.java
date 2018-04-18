@@ -3,29 +3,28 @@ package vn.asiantech.internship;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
 
 public class ViewPageAdater extends FragmentPagerAdapter implements IEventClick {
     private final FriendRequestFragment mFriendRequestFragment;
     private final FriendFragment mFriendFragment;
+    private static final String FRIEND = "Friend";
+    private static final String FRIEND_REQUEST = "Friend Request";
 
     ViewPageAdater(FragmentManager fm) {
         super(fm);
         mFriendFragment = new FriendFragment();
-        mFriendFragment.settingEventClickButtonFriend(this);
+        mFriendFragment.setIEventClick(this);
         mFriendRequestFragment = new FriendRequestFragment();
         mFriendRequestFragment.settingEventClickButtonFriend(this);
     }
 
     @Override
     public Fragment getItem(int position) {
-        Log.e("1", "getItem: ");
         if (position == 0) {
             return mFriendRequestFragment;
         } else {
             return mFriendFragment;
         }
-
     }
 
     @Override
@@ -35,18 +34,16 @@ public class ViewPageAdater extends FragmentPagerAdapter implements IEventClick 
 
     @Override
     public CharSequence getPageTitle(int position) {
-
         if (position == 0) {
-            return "Friend Request";
+            return FRIEND;
         } else {
-            return "Friend";
+            return FRIEND_REQUEST;
         }
     }
 
-
     @Override
     public void onButtonFriendClick(Friend friend, boolean isfriend, int position) {
-        mFriendFragment.changeRecycleView(friend,isfriend,position);
-        mFriendRequestFragment.changeRecycleView(friend,isfriend,position);
+        mFriendFragment.changeRecycleView(friend, isfriend, position);
+        mFriendRequestFragment.changeRecycleView(friend, isfriend, position);
     }
 }
