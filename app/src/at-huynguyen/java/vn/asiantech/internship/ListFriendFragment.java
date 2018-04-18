@@ -36,7 +36,6 @@ public class ListFriendFragment extends Fragment {
     public static void favoriteFriend(Friend friend){
         friend.setFriend(true);
         mListFriends.add(friend);
-        mListFriendAdapter.notifyDataSetChanged();
     }
 
     public static void unFavoriteFriend(Friend friend){
