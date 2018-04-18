@@ -12,14 +12,15 @@ import android.view.ViewGroup;
 import java.util.List;
 
 public class FavoriteFragment extends Fragment {
-    private static ListFriendAdapter mListFriendAdapter;
-    private static List<Friend> mListFriends;
+    private ListFriendAdapter mListFriendAdapter;
+    private List<Friend> mListFriends;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mListFriends = Friend.createListFriend(10, false);
         mListFriendAdapter = new ListFriendAdapter(mListFriends);
+
     }
 
     @Override
@@ -30,14 +31,14 @@ public class FavoriteFragment extends Fragment {
         recycleView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         return view;
     }
-    public static void favoriteFriend(Friend friend){
+    public void favoriteFriend(Friend friend){
         friend.setFriend(false);
         mListFriends.add(friend);
         mListFriendAdapter.notifyDataSetChanged();
     }
 
-    public static void removeFriend(Friend friend){
-        mListFriends.remove(friend);
+    public void removeFriend(int position){
+        mListFriends.remove(position);
         mListFriendAdapter.notifyDataSetChanged();
     }
 }

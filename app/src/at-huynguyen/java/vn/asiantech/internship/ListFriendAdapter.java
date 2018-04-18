@@ -12,6 +12,9 @@ import java.util.List;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.FriendViewHolder> {
     private final List<Friend> mListFriends;
+    private ListFriendFragment mListFriendFragment;
+    private FavoriteFragment mFavoriteFragment;
+
 
     ListFriendAdapter(List<Friend> listFriend) {
         this.mListFriends = listFriend;
@@ -20,6 +23,8 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
     @Override
     public FriendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemListFriend = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend_viewpage, parent, false);
+        mListFriendFragment = new ListFriendFragment();
+        mFavoriteFragment = new FavoriteFragment();
         return new FriendViewHolder(itemListFriend);
     }
 
@@ -58,17 +63,16 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
                     mListFriends.remove(getAdapterPosition());
-                    if (friend.isFriend()){
-                        ListFriendFragment.unFavoriteFriend(friend);
-                        FavoriteFragment.favoriteFriend(friend);
+                    if (friend.isFriend()) {
+                        mListFriendFragment.unFavoriteFriend(getAdapterPosition());
+                        mFavoriteFragment.favoriteFriend(friend);
                     } else {
-                        FavoriteFragment.removeFriend(friend);
-                        ListFriendFragment.favoriteFriend(friend);
+                        mFavoriteFragment.removeFriend(getAdapterPosition());
+                        mListFriendFragment.favoriteFriend(friend);
                     }
-                    friend.setFriend(!friend.isFriend());
-                    ListFriendAdapter.this.notifyDataSetChanged();
                     break;
                 }
+                default:
             }
         }
     }

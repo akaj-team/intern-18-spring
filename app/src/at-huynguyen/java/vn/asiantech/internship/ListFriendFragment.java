@@ -12,9 +12,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 public class ListFriendFragment extends Fragment {
-    private static ListFriendAdapter mListFriendAdapter;
-    private static List<Friend> mListFriends;
-
+    private ListFriendAdapter mListFriendAdapter;
+    private List<Friend> mListFriends;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,19 +26,19 @@ public class ListFriendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_listfriend,container,false);
         RecyclerView recycleView = view.findViewById(R.id.recyclerView);
-        new ListFriendAdapter(mListFriends);
         recycleView.setAdapter(mListFriendAdapter);
         recycleView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         return view;
     }
 
-    public static void favoriteFriend(Friend friend){
+    public void favoriteFriend(Friend friend){
         friend.setFriend(true);
         mListFriends.add(friend);
+        mListFriendAdapter.notifyDataSetChanged();
     }
 
-    public static void unFavoriteFriend(Friend friend){
-        mListFriends.remove(friend);
+    public void unFavoriteFriend(int position){
+        mListFriends.remove(position);
         mListFriendAdapter.notifyDataSetChanged();
     }
 }

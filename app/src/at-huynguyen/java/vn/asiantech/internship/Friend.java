@@ -11,48 +11,40 @@ public class Friend {
     private boolean mIsFriend;
 
     public String getName() {
-
         return mName;
     }
 
     public void setName(String Name) {
-
         this.mName = Name;
     }
 
     public int getNumberOfFriend() {
-
         return mNumberOfFriend;
     }
 
     private void setNumberOfFriend(int NumberOfFriend) {
-
         this.mNumberOfFriend = NumberOfFriend;
     }
 
     public int getAvatar() {
-
         return mAvatar;
     }
 
     private void setAvatar(int Avatar) {
-
         this.mAvatar = Avatar;
     }
 
     public boolean isFriend() {
-
         return mIsFriend;
     }
 
     public void setFriend(boolean friend) {
-
         this.mIsFriend = friend;
     }
 
-    public static List<Friend> createListFriend(int tong, boolean isFriend) {
+    public static List<Friend> createListFriend(int totalOfFriend, boolean isFriend) {
         List<Friend> listFriend = new ArrayList<>();
-        for (int i = 1; i <= tong; i++) {
+        for (int i = 1; i <= totalOfFriend; i++) {
             Friend friend = new Friend();
             Random random = new Random();
             int position = random.nextInt(3);
