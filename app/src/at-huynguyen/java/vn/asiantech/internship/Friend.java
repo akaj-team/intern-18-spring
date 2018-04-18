@@ -10,7 +10,6 @@ public class Friend {
     private int mAvatar;
     private boolean mIsFriend;
 
-
     public String getName() {
 
         return mName;

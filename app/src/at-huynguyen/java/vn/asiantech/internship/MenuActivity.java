@@ -38,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button btnViewPager = findViewById(R.id.viewPager);
+        Button btnViewPager = findViewById(R.id.btnViewPager);
         btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +52,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btnRecycleView = findViewById(R.id.btnRecycleView);
+        btnRecycleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
                 startActivity(intent);
             }
         });

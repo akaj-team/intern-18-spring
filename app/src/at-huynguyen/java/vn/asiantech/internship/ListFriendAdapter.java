@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.FriendViewHolder> {
-    private List<Friend> mListFriends;
+    private final List<Friend> mListFriends;
 
     ListFriendAdapter(List<Friend> listFriend) {
         this.mListFriends = listFriend;
@@ -65,6 +65,9 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
                         FavoriteFragment.removeFriend(friend);
                         ListFriendFragment.favoriteFriend(friend);
                     }
+                    friend.setFriend(!friend.isFriend());
+                    ListFriendAdapter.this.notifyDataSetChanged();
+                    break;
                 }
             }
         }

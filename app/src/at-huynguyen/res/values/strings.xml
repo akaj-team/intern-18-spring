@@ -16,6 +16,8 @@
     <string name="Sent">Sent</string>
     <string name="lefthour">06:50 pm.</string>
     <string name="righthour">06:51 p.m.</string>
+    <string name="friendsmutual">Number Of Friends Mutual</string>
+    <string name="friends">Friends</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="username">Username</string>
@@ -27,12 +29,11 @@
     <string name="viewviewgroup">View and View Group</string>
     <string name="resources">Resources</string>
     <string name="viewpager">View Pager</string>
-    <string name="friendsmutual">Number Of Friends Mutual</string>
     <string name="favorite">Favorite</string>
     <string name="unfavorite">Unfavorite</string>
+    <string name="recycleview">Recycle View</string>
     <string name="fragment">Fragment</string>
     <string name="showtext">Show Text</string>
     <string name="entername">Enter Name</string>
     <string name="malefemale">Male or Female</string>
-
 </resources>
