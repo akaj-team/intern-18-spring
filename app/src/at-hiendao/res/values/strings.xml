@@ -36,6 +36,6 @@
     <string name="activity_fragment_age">Age</string>
     <string name="activity_fragment_email">Email</string>
     <string name="menu_recycleview">RecycleView</string>
-
+    <string name="drawerlayout_email">hien.dao@asiantech.vn</string>
 
 </resources>
