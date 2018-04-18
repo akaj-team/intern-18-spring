@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class IntentActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,18 +18,18 @@ public class IntentActivity extends AppCompatActivity {
         TextView mTvDataI = findViewById(R.id.tvExtraDataI);
 
         //Lấy dữ liệu được gửi về bằng bundle đã tạo ở nơi gửi
-        Bundle mExtrasBundle = this.getIntent().getExtras();
-        String mDataExtras = null;
-        if (mExtrasBundle != null) {
-            mDataExtras = mExtrasBundle.getString("keyTitle") +
-                    mExtrasBundle.getString("keyMessege");
+        Bundle extrasbundle = this.getIntent().getExtras();
+        String dataextras = null;
+        if (extrasbundle != null) {
+            dataextras = extrasbundle.getString("keyTitle") +
+                    extrasbundle.getString("keyMessege");
         }
-        mTvData.setText(mDataExtras);
+        mTvData.setText(dataextras);
 
         //Lấy dữ liệu được gửi về bằng Intent đã tạo ở nơi gửi
-        Intent mExtrasIntent = this.getIntent();
-        String mDataExtrasIntent = mExtrasIntent.getStringExtra("keyTitleI") +
-                mExtrasIntent.getStringExtra("keyMessegeI");
-        mTvDataI.setText(mDataExtrasIntent);
+        Intent extrasIntent = this.getIntent();
+        String dataExtrasIntent = extrasIntent.getStringExtra("keyTitleI") +
+                extrasIntent.getStringExtra("keyMessegeI");
+        mTvDataI.setText(dataExtrasIntent);
     }
 }

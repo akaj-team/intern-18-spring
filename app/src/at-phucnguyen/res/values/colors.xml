@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorFriends">#80000000</color>
+    <color name="buttonFriendsPred">#804aae20</color>
+    <color name="buttonFriendsNorm">#80afc8da</color>
 </resources>

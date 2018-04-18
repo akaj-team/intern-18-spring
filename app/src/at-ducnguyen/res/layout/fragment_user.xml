@@ -142,7 +142,7 @@
         android:layout_marginRight="@dimen/spacing_tiny"
         android:background="@drawable/button_blue"
         android:text="@string/btnComment"
-        android:textColor="@color/btn_comment_text" />
+        android:textColor="@color/button_comment_text" />
 
     <Button
         android:id="@+id/btnShare"
