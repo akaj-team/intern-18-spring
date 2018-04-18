@@ -12,21 +12,27 @@ import java.util.List;
 
 import vn.asiantech.internship.model.Friend;
 
-public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.ListFriendViewHolder> {
-    private List<Friend> mListFriends;
+public class ListFriendRequestAdapter extends RecyclerView.Adapter<ListFriendRequestAdapter.ListFriendViewHolder> {
 
-    ListFriendAdapter(List<Friend> listFriend) {
-        this.mListFriends = listFriend;
+    private final List<Friend> mListFriends;
+    private ListFriendRequestAdapter mOtherAdapter;
+
+    ListFriendRequestAdapter(List<Friend> listFriend) {
+        mListFriends = listFriend;
+    }
+
+    public void setOtherAdapter(ListFriendRequestAdapter otherAdapter){
+        mOtherAdapter = otherAdapter;
     }
 
     @Override
     public ListFriendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemFriend = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend, parent, false);
-        return new ListFriendViewHolder(itemFriend);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend_fragment, parent, false);
+        return new ListFriendViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ListFriendViewHolder holder, int position) {
+    public void onBindViewHolder(ListFriendRequestAdapter.ListFriendViewHolder holder, int position) {
         Friend friend = mListFriends.get(position);
         holder.mImgAvatar.setImageResource(friend.getAvatar());
         holder.mTvName.setText(friend.getName());
@@ -64,9 +70,17 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Li
             switch (view.getId()) {
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
-                    friend.setFriend(!friend.isFriend());
-                    ListFriendAdapter.this.notifyDataSetChanged();
-                    break;
+                    mListFriends.remove(getAdapterPosition());
+                    mOtherAdapter.notifyDataSetChanged();
+                    if (friend.isFriend()) {
+                        friend.setFriend(false);
+                        ListFriendRequestFragment.addFriend(friend);
+                        notifyDataSetChanged();
+                    } else {
+                        friend.setFriend(true);
+                        ListFriendFragment.addFriend(friend);
+                        notifyDataSetChanged();
+                    }
                 }
             }
         }

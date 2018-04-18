@@ -19,7 +19,7 @@
         <Button
             android:id="@+id/btnViewAndViewGroup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/w1_view_viewgroup" />
 
         <Button
@@ -45,6 +45,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/recycler_view" />
+
+        <Button
+            android:id="@+id/btnViewPagerListFriend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/w3_view_pager_list_friend" />
 
     </LinearLayout>
 
