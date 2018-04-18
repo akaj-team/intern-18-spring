@@ -49,4 +49,7 @@
     <string name="button_menu_text">Menu and ToolBar</string>
     <string name="w3_d3_viewpage">w3-d3-viewpage</string>
     <string name="w4_d1_menu_and_toolbar">W4 D1 Menu and ToolBar</string>
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Close</string>
+
 </resources>

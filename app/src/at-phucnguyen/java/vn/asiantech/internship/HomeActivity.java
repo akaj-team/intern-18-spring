@@ -84,7 +84,7 @@ public class HomeActivity extends AppCompatActivity {
         mBtnPracticMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                practicMenuToolBar();
+                gotoMenuToolBar();
             }
         });
         mBtnPracticRecylerView.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +126,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void practicMenuToolBar() {
+    public void gotoMenuToolBar() {
         Intent intent = new Intent(HomeActivity.this, UserMenuActivity.class);
         startActivity(intent);
     }
