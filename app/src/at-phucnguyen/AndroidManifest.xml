@@ -23,5 +23,6 @@
         <activity android:name=".PracticViewPageActivity" android:label="W3 - ViewPage"/>
         <activity android:name=".SignupActivity" android:label="W2 - Event and Listenes"/>
         <activity android:name=".RecyclerViewExampleActivity" android:label="W3-D1-RecyclerView"/>
+        <activity android:name=".UserMenuActivity" android:label="W4 - Memu and ToolBar"/>
     </application>
 </manifest>

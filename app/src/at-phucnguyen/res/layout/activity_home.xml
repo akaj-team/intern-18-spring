@@ -62,4 +62,11 @@
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_recyclerview_text" />
 
+    <Button
+        android:id="@+id/btnMenuToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewPage"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/w4_d1_menu_and_toolbar" />
 </RelativeLayout>

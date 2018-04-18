@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button mBtnPracticW1View;
     private Button mBtnPracticW1Intent;
     private Button mBtnPracticViewPage;
+    private Button mBtnPracticMenu;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,14 +75,18 @@ public class HomeActivity extends AppCompatActivity {
                 practicViewPage();
             }
         });
-
         mBtnPracticEventAndListenes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 practicEventAndListenes();
             }
         });
-
+        mBtnPracticMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                practicMenuToolBar();
+            }
+        });
         mBtnPracticRecylerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +103,7 @@ public class HomeActivity extends AppCompatActivity {
         mBtnPracticResrouce = findViewById(R.id.btnResource);
         mBtnPracticEventAndListenes = findViewById(R.id.btnEventAndListenes);
         mBtnPracticViewPage = findViewById(R.id.btnViewPage);
+        mBtnPracticMenu = findViewById(R.id.btnMenuToolBar);
     }
 
     public void practicViewPage() {
@@ -117,6 +123,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void practicEventAndListenes() {
         Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+        startActivity(intent);
+    }
+
+    public void practicMenuToolBar() {
+        Intent intent = new Intent(HomeActivity.this, UserMenuActivity.class);
         startActivity(intent);
     }
 }
