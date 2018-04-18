@@ -16,7 +16,7 @@ import java.util.List;
 
 import vn.asiantech.internship.model.Friend;
 
-public class FriendsListFragments extends Fragment {
+public class FriendListFragment extends Fragment {
     FriendAdapter mAdapter;
     List<Friend> mListFriend = new ArrayList<>();
     RecyclerView mRvListFriend;
@@ -32,7 +32,7 @@ public class FriendsListFragments extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_friend_list, container, false);
-        Log.e("FriendsListFragments", getArguments().getString("key"));
+        Log.d("FriendListFragment", getArguments().getString(MyPageViewAdapter.KEY_PAGE_POSITION));
 
         mappingView(view);
         setRecycleView();
