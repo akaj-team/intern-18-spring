@@ -11,16 +11,22 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-public class FavoriteFragment extends Fragment {
+public class FavoriteFragment extends Fragment implements OnFriendClickListener {
     private ListFriendAdapter mListFriendAdapter;
-    private List<Friend> mListFriends;
+    private static List<Friend> mListFavoriteFriends;
+    private ListFriendAdapter mSecondListFriendAdapter;
+    OnFriendClickListener mOnFriendClickListener;
+
+    public void setOnFriendCLickListener(OnFriendClickListener onFriendCLickListener) {
+        mOnFriendClickListener = onFriendCLickListener;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mListFriends = Friend.createListFriend(10, false);
-        mListFriendAdapter = new ListFriendAdapter(mListFriends);
-
+        mListFavoriteFriends = Friend.createListFriend(10, false);
+        mListFriendAdapter = new ListFriendAdapter(mListFavoriteFriends);
+        mOnFriendClickListener.onFriendClick(mListFriendAdapter);
     }
 
     @Override
@@ -31,14 +37,19 @@ public class FavoriteFragment extends Fragment {
         recycleView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         return view;
     }
-    public void favoriteFriend(Friend friend){
-        friend.setFriend(false);
-        mListFriends.add(friend);
-        mListFriendAdapter.notifyDataSetChanged();
+
+    @Override
+    public void onResume() {
+        mListFriendAdapter.setSecondListFriendAdapter(mSecondListFriendAdapter);
+        super.onResume();
     }
 
-    public void removeFriend(int position){
-        mListFriends.remove(position);
-        mListFriendAdapter.notifyDataSetChanged();
+    public static void addFriend(Friend friend) {
+        mListFavoriteFriends.add(friend);
+    }
+
+    @Override
+    public void onFriendClick(ListFriendAdapter friendAdapter) {
+        mSecondListFriendAdapter = friendAdapter;
     }
 }

@@ -11,16 +11,25 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-public class ListFriendFragment extends Fragment {
+public class ListFriendFragment extends Fragment implements OnFriendClickListener {
+
     private ListFriendAdapter mListFriendAdapter;
-    private List<Friend> mListFriends;
+    private static List<Friend> mListFriends;
+    private ListFriendAdapter mSecondListFriendAdapter;
+
+    OnFriendClickListener mOnFriendClickListener;
+
+    public void setOnFriendClickListener(OnFriendClickListener onFriendClickListener) {
+        mOnFriendClickListener = onFriendClickListener;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            mListFriends = Friend.createListFriend(100, true);
-            mListFriendAdapter = new ListFriendAdapter(mListFriends);
-        }
+        super.onCreate(savedInstanceState);
+        mListFriends = Friend.createListFriend(100, true);
+        mListFriendAdapter = new ListFriendAdapter(mListFriends);
+        mOnFriendClickListener.onFriendClick(mListFriendAdapter);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
@@ -31,14 +40,18 @@ public class ListFriendFragment extends Fragment {
         return view;
     }
 
-    public void favoriteFriend(Friend friend){
-        friend.setFriend(true);
-        mListFriends.add(friend);
-        mListFriendAdapter.notifyDataSetChanged();
+    @Override
+    public void onResume() {
+        mListFriendAdapter.setSecondListFriendAdapter(mSecondListFriendAdapter);
+        super.onResume();
     }
 
-    public void unFavoriteFriend(int position){
-        mListFriends.remove(position);
-        mListFriendAdapter.notifyDataSetChanged();
+    public static void addFriend(Friend friend) {
+        mListFriends.add(friend);
+    }
+
+    @Override
+    public void onFriendClick(ListFriendAdapter friendAdapter) {
+        mSecondListFriendAdapter = friendAdapter;
     }
 }
