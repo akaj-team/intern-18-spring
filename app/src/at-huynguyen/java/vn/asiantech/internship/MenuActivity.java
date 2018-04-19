@@ -11,6 +11,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.internship);
         setContentView(R.layout.activity_menu);
 
         Button btnEventAndListener = findViewById(R.id.btnEventAndListener);
@@ -29,7 +30,6 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         Button btnResources = findViewById(R.id.btnResources);
         btnResources.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,12 +38,11 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button btnRecycleView = findViewById(R.id.btnRecycleView);
-        btnRecycleView.setOnClickListener(new View.OnClickListener() {
+        Button btnViewPager = findViewById(R.id.btnViewPager);
+        btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
+                Intent intent = new Intent(MenuActivity.this, PagerActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,6 +52,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btnRecycleView = findViewById(R.id.btnRecycleView);
+        btnRecycleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
                 startActivity(intent);
             }
         });

@@ -42,23 +42,26 @@ public class Friend {
         this.mIsFriend = friend;
     }
 
-    public static List<Friend> createListFriend() {
+    public static List<Friend> createListFriend(int totalOfFriend, boolean isFriend) {
         List<Friend> listFriend = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= totalOfFriend; i++) {
             Friend friend = new Friend();
             Random random = new Random();
             int position = random.nextInt(3);
+
             List<Integer> listAvatar = new ArrayList<>();
             listAvatar.add(R.drawable.img_duc);
             listAvatar.add(R.drawable.img_phuc);
             listAvatar.add(R.drawable.img_hien);
+
             List<String> listName = new ArrayList<>();
             listName.add("Duc Nguyen");
             listName.add("Phuc Nguyen");
             listName.add("Hien Dao");
+
             friend.setName(listName.get(position) + " " + i);
             friend.setNumberOfFriend(i * 5);
-            friend.setFriend(i % 3 == 0);
+            friend.setFriend(isFriend);
             friend.setAvatar(listAvatar.get(position));
             listFriend.add(friend);
         }

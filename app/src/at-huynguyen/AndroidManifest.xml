@@ -22,10 +22,11 @@
         <activity android:name=".HomeActivity"/>
         <activity android:name=".ChatActivity"
             android:label="@string/app1_name"/>
-        <activity
-            android:name=".UserActivity"
-            android:label="SignUpActivity" />
+        <activity android:name=".UserActivity"
+            android:label="SignUpActivity"/>
         <activity android:name=".ViewViewGroupActivity"/>
+        <activity android:name=".PagerActivity"
+            android:label="@string/favorite"/>
         <activity android:name=".ListFriendActivity"/>
         <activity android:name=".MainActivity"/>
     </application>

@@ -12,6 +12,9 @@ import java.util.List;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.FriendViewHolder> {
     private final List<Friend> mListFriends;
+    private ListFriendFragment mListFriendFragment;
+    private FavoriteFragment mFavoriteFragment;
+
 
     ListFriendAdapter(List<Friend> listFriend) {
         this.mListFriends = listFriend;
@@ -19,7 +22,9 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
 
     @Override
     public FriendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemListFriend = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend, parent, false);
+        View itemListFriend = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend_viewpage, parent, false);
+        mListFriendFragment = new ListFriendFragment();
+        mFavoriteFragment = new FavoriteFragment();
         return new FriendViewHolder(itemListFriend);
     }
 
@@ -57,10 +62,17 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
             switch (view.getId()) {
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
-                    friend.setFriend(!friend.isFriend());
-                    ListFriendAdapter.this.notifyDataSetChanged();
+                    mListFriends.remove(getAdapterPosition());
+                    if (friend.isFriend()) {
+                        mListFriendFragment.unFavoriteFriend(getAdapterPosition());
+                        mFavoriteFragment.favoriteFriend(friend);
+                    } else {
+                        mFavoriteFragment.removeFriend(getAdapterPosition());
+                        mListFriendFragment.favoriteFriend(friend);
+                    }
                     break;
                 }
+                default:
             }
         }
     }
