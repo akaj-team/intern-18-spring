@@ -17,9 +17,6 @@
     <string name="chat_right">Chat Right</string>
     <string name="time_left">06:00 PM</string>
     <string name="time_right">06:30 PM</string>
-    <string name="friend_name">Name</string>
-    <string name="mutual_friends">Mutual Friends</string>
-    <string name="button_friend">Friend</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="email_hint">Email</string>
@@ -37,5 +34,19 @@
     <string name="activity_fragment_email">Email</string>
     <string name="menu_recycleview">RecycleView</string>
     <string name="drawerlayout_email">hien.dao@asiantech.vn</string>
+    <string name="friend_name">Name</string>
+    <string name="mutual_friends">Mutual Friends</string>
+    <string name="button_friend">Friend</string>
+    <string name="button_friend_text">Friend</string>
+    <string name="button_unfriend_text">Unfriend</string>
+    <string name="menu_viewpage">ViewPage</string>
+    <string name="menu_drawerlayout">DrawerLayout</string>
+    <string name="drawerlayout_inbox">Inbox</string>
+    <string name="drawerlayout_spam">Spam</string>
+    <string name="drawerlayout_outbox">Outbox</string>
+    <string name="drawerlayout_trash">Trash</string>
+    <string name="title_dialog_drawer">Please choose your image</string>
+    <string name="text_dialog_select_image">Choose your image</string>
+    <string name="text_dialog_use_camera">Open camera</string>
 
 </resources>

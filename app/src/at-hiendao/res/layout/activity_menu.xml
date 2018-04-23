@@ -42,5 +42,20 @@
             android:layout_height="wrap_content"
             android:text="@string/menu_recycleview"
             android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btnViewPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_viewpage"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btnDrawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_drawerlayout"
+            android:textSize="25dp" />
+
     </LinearLayout>
 </LinearLayout>

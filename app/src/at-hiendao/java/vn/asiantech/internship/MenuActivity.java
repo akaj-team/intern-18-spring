@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
+import vn.asiantech.drawerlayout.DrawerLayoutActivity;
+
 public class MenuActivity extends Activity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +44,23 @@ public class MenuActivity extends Activity {
             }
         });
 
+        Button btnViewPager = findViewById(R.id.btnViewPage);
+        btnViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ViewPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnDrawerLayout = findViewById(R.id.btnDrawerLayout);
+        btnDrawerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, DrawerLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

@@ -17,7 +17,7 @@ public class ListFriendActitivy extends Activity {
         recyclerViewFriend.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerViewFriend.setLayoutManager(layoutManager);
-        ListFriendAdapter listFriendAdapter = new ListFriendAdapter();
+        ListFriendAdapter listFriendAdapter = new ListFriendAdapter(null,this);
         recyclerViewFriend.setAdapter(listFriendAdapter);
 
     }
