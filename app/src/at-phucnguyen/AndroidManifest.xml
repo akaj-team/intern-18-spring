@@ -20,6 +20,8 @@
         <activity android:name=".ViewActivity" android:label="W1 - View and View Group"/>
         <activity android:name=".IntentActivity" android:label="W1 - Intent "/>
         <activity android:name=".MessageHomeActivity" android:label="W2 - Activity and Fragment"/>
+        <activity android:name=".PracticViewPageActivity" android:label="W3 - ViewPage"/>
         <activity android:name=".SignupActivity" android:label="W2 - Event and Listenes"/>
+        <activity android:name=".RecyclerViewExampleActivity" android:label="W3-D1-RecyclerView"/>
     </application>
 </manifest>

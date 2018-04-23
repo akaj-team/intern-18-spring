@@ -32,6 +32,13 @@
     <string name="activity_fragment_name">Name</string>
     <string name="activity_fragment_age">Age</string>
     <string name="activity_fragment_email">Email</string>
+    <string name="menu_recycleview">RecycleView</string>
 
+    <string name="friend_name">Name</string>
+    <string name="mutual_friends">Mutual Friends</string>
+    <string name="button_friend">Friend</string>
+    <string name="button_friend_text">Friend</string>
+    <string name="button_unfriend_text">Unfriend</string>
+    <string name="menu_viewpage">ViewPage</string>
 
 </resources>

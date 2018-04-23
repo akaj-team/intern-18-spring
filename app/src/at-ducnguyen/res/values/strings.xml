@@ -34,4 +34,9 @@
     <string name="switch_allow_email_from_other">Allow email from other</string>
     <string name="sw_on">ON</string>
     <string name="sw_off">OFF</string>
+    <string name="w3_view_pager_list_friend">W3 View Pager List Friend</string>
+    <string name="number_of_friends">Number Of Friends</string>
+    <string name="unfriends">Unfriends</string>
+    <string name="add_friends">Add Friends</string>
+    <string name="recycler_view">W3 List Friend With Recycler View</string>
 </resources>

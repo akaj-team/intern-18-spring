@@ -11,7 +11,35 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.internship);
         setContentView(R.layout.activity_menu);
+
+        Button btnFragment = findViewById(R.id.btnFragment);
+        btnFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
+        btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ViewViewGroupActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnResources = findViewById(R.id.btnResources);
+        btnResources.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button btnEventAndListener = findViewById(R.id.btnEventAndListener);
         btnEventAndListener.setOnClickListener(new View.OnClickListener() {
@@ -21,30 +49,25 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
-        btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
+
+        Button btnRecycleView = findViewById(R.id.btnRecycleView);
+        btnRecycleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, ViewViewGroupActivity.class);
+                Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
                 startActivity(intent);
             }
         });
-        Button btnResources = findViewById(R.id.btnResources);
-        btnResources.setOnClickListener(new View.OnClickListener() {
+
+        Button btnViewPager = findViewById(R.id.btnViewPager);
+        btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MenuActivity.this, PagerActivity.class);
                 startActivity(intent);
             }
         });
-        Button btnFragment = findViewById(R.id.btnFragment);
-        btnFragment.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
         Button btnDrawerLayout = findViewById(R.id.btnDrawerLayout);
         btnDrawerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
