@@ -31,7 +31,4 @@ public class Friend {
         return urlImage;
     }
 
-    public void setUrlImage(int urlImage) {
-        this.urlImage = urlImage;
-    }
 }

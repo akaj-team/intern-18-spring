@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnPracticResrouce;
     private Button mBtnPracticRecylerView;
     private Button mBtnPracticEventAndListenes;
@@ -27,72 +27,52 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setEventView() {
-        mBtnPracticW1View.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent mIntent = new Intent(HomeActivity.this, ViewActivity.class);
-                startActivity(mIntent);
+        mBtnPracticW1View.setOnClickListener(this);
+        mBtnPracticW1Intent.setOnClickListener(this);
+        mBtnPracticW2Fragment.setOnClickListener(this);
+        mBtnPracticResrouce.setOnClickListener(this);
+        mBtnPracticViewPage.setOnClickListener(this);
+        mBtnPracticEventAndListenes.setOnClickListener(this);
+        mBtnPracticMenu.setOnClickListener(this);
+        mBtnPracticRecylerView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnW1View: {
+                gotoView();
+                break;
             }
-        });
-
-        mBtnPracticW1Intent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, IntentActivity.class);
-
-                //Sử dụng mBundle để gửi dữ liệu
-                Bundle mBundle = new Bundle();
-                mBundle.putString("keyTitle", "Bundle: ");
-                mBundle.putString("keyMessege", "This is data to ActivityHome from by Bundle!");
-                intent.putExtras(mBundle);
-
-                //Sử dụng intent để gửi dữ liệu
-                intent.putExtra("keyTitleI", "Intent: ");
-                intent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
-
-                //khởi động Intent
-                startActivity(intent);
+            case R.id.btnW1Intent: {
+                gotoIntent();
+                break;
             }
-        });
-
-        mBtnPracticW2Fragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MessageHomeActivity.class);
-                startActivity(intent);
+            case R.id.btnFragment: {
+                gotoFragment();
+                break;
             }
-        });
-
-        mBtnPracticResrouce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btnResource: {
                 gotoResrouce();
+                break;
             }
-        });
-        mBtnPracticViewPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btnViewPage: {
                 gotoViewPage();
+                break;
             }
-        });
-        mBtnPracticEventAndListenes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btnEventAndListenes: {
                 gotoEventAndListenes();
+                break;
             }
-        });
-        mBtnPracticMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btnMenuToolBar: {
                 gotoMenuToolBar();
+                break;
             }
-        });
-        mBtnPracticRecylerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btnRecyclerView: {
                 gotoRecyclerView();
+                break;
             }
-        });
+        }
     }
 
     private void mappingView() {
@@ -128,6 +108,33 @@ public class HomeActivity extends AppCompatActivity {
 
     public void gotoMenuToolBar() {
         Intent intent = new Intent(HomeActivity.this, UserMenuActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoFragment() {
+        Intent intent = new Intent(HomeActivity.this, MessageHomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoView() {
+        Intent mIntent = new Intent(HomeActivity.this, ViewActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void gotoIntent() {
+        Intent intent = new Intent(HomeActivity.this, IntentActivity.class);
+
+        //Sử dụng mBundle để gửi dữ liệu
+        Bundle mBundle = new Bundle();
+        mBundle.putString("keyTitle", "Bundle: ");
+        mBundle.putString("keyMessege", "This is data to ActivityHome from by Bundle!");
+        intent.putExtras(mBundle);
+
+        //Sử dụng intent để gửi dữ liệu
+        intent.putExtra("keyTitleI", "Intent: ");
+        intent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
+
+        //khởi động Intent
         startActivity(intent);
     }
 }

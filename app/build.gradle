@@ -60,6 +60,8 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    implementation 'jp.wasabeef:recyclerview-animators:1.2.2'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }
 
 apply from: "../ci-java.gradle"

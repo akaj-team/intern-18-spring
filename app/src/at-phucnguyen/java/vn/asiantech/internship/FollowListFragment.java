@@ -17,7 +17,6 @@ import vn.asiantech.internship.model.Friend;
 public class FollowListFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private FriendAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
     private List<Friend> mFollowList = new ArrayList<>();
 
     @Nullable
@@ -40,7 +39,7 @@ public class FollowListFragment extends Fragment {
     }
 
     private void setRecyclerView() {
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mAdapter = new FriendAdapter(mFollowList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
