@@ -10,5 +10,6 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorSwitchTrack">#dcdcdc</color>
     <color name="colorSwitchThumb">#C1C1C1</color>
+    <color name="colorItemDrawerLayout">#7d7d7d</color>
     <color name="colorRed">#ff0000</color>
 </resources>

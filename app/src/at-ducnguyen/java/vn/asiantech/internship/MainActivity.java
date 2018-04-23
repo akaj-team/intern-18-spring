@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnListener = findViewById(R.id.btnListener);
         btnListener.setOnClickListener(this);
 
+        Button btnDrawerLayout = findViewById(R.id.btnDrawerLayout);
+        btnDrawerLayout.setOnClickListener(this);
+
         Button btnApi = findViewById(R.id.btnApi);
         btnApi.setOnClickListener(this);
 
@@ -74,6 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btnViewPagerListFriend: {
                 Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btnDrawerLayout: {
+                Intent intent = new Intent(MainActivity.this, DrawerActivity.class);
                 startActivity(intent);
                 break;
             }
