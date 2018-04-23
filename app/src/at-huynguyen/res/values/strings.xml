@@ -33,4 +33,13 @@
     <string name="mainscreen">Here is main screen</string>
     <string name="inbox">Inbox</string>
     <string name="trash">Trash</string>
+    <string name="nguyenquanghuy">Huy Nguyen Q.</string>
+    <string name="mailhuy">quanghuy19496@gmail.com</string>
+    <string name="gallery">Gallery</string>
+    <string name="slideshow">Slide Show</string>
+    <string name="tool">Tools</string>
+    <string name="drawopen">Draw Open</string>
+    <string name="drawclose">Draw Close</string>
+    <string name="menu">Menu</string>
+    <string name="drawerlayout">Drawer Layout</string>
 </resources>

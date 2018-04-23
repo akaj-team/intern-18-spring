@@ -7,8 +7,8 @@
             android:id="@+id/btnFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fragment"
-            />
+            android:text="@string/fragment" />
+
         <Button
             android:id="@+id/btnViewViewGroup"
             android:layout_width="match_parent"
@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnViewViewGroup"
             android:text="@string/resources" />
+
         <Button
             android:id="@+id/btnEventAndListener"
             android:layout_width="match_parent"
@@ -29,4 +30,12 @@
             android:text="@string/eventandlistener"
             android:layout_below="@+id/btnResources"
             android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btnDrawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/drawerlayout"
+            android:layout_below="@+id/btnEventAndListener"
+            />
 </RelativeLayout>

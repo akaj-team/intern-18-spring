@@ -27,6 +27,7 @@
         <activity android:name=".ViewViewGroupActivity"/>
         <activity android:name=".HomeActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".LeftMenuActivity"/>
     </application>
 
 </manifest>
