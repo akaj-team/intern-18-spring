@@ -1,4 +1,5 @@
 <resources>
+    <string name="internship">Android Internship</string>
     <string name="app_name">W1-D1</string>
     <string name="app1_name">Android ChatView Simple</string>
     <string name="Name_username">Name_username</string>
@@ -6,8 +7,7 @@
     <string name="title">Title</string>
     <string name="comment">Comment</string>
     <string name="tvTextTitle">Lorem ipsum dolor sit\namet, consectetur\nadipiscing elit. Nam\nsed ornare purus.\nVestibulum vestibulu</string>
-    <string name="tvTextCmt">Consectetur adipiscing elit.!\nVestibulum vestibulum\ndlgnissim metus!...
-    </string>
+    <string name="tvTextCmt">Consectetur adipiscing elit.!\nVestibulum vestibulum\ndlgnissim metus!...</string>
     <string name="Hide">HIDE</string>
     <string name="comment2">COMMENT</string>
     <string name="share">Share</string>
@@ -28,6 +28,9 @@
     <string name="eventandlistener">Event and Listener</string>
     <string name="viewviewgroup">View and View Group</string>
     <string name="resources">Resources</string>
+    <string name="viewpager">View Pager</string>
+    <string name="favorite">Favorite</string>
+    <string name="unfavorite">Unfavorite</string>
     <string name="recycleview">Recycle View</string>
     <string name="fragment">Fragment</string>
     <string name="showtext">Show Text</string>

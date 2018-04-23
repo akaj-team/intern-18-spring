@@ -12,14 +12,20 @@ import java.util.List;
 
 public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.FriendViewHolder> {
     private final List<Friend> mListFriends;
+    private ListFriendAdapter mSecondListFriendAdapter;
+
 
     ListFriendAdapter(List<Friend> listFriend) {
-        this.mListFriends = listFriend;
+        mListFriends = listFriend;
+    }
+
+    public void setSecondListFriendAdapter(ListFriendAdapter secondAdapter) {
+        mSecondListFriendAdapter = secondAdapter;
     }
 
     @Override
     public FriendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemListFriend = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend, parent, false);
+        View itemListFriend = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friend_viewpage, parent, false);
         return new FriendViewHolder(itemListFriend);
     }
 
@@ -37,7 +43,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
         return mListFriends.size();
     }
 
-    public class FriendViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class FriendViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView mTvName;
         private final TextView mTvNumberOfFriend;
         private final Button mBtnFriend;
@@ -45,10 +51,10 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
 
         private FriendViewHolder(View itemView) {
             super(itemView);
-            mTvName = itemView.findViewById(R.id.tvName);
-            mTvNumberOfFriend = itemView.findViewById(R.id.tvNumOfFriend);
-            mBtnFriend = itemView.findViewById(R.id.btnFriend);
             mImgAvatar = itemView.findViewById(R.id.imgAvatar);
+            mTvNumberOfFriend = itemView.findViewById(R.id.tvNumOfFriend);
+            mTvName = itemView.findViewById(R.id.tvName);
+            mBtnFriend = itemView.findViewById(R.id.btnFriend);
             mBtnFriend.setOnClickListener(this);
         }
 
@@ -57,9 +63,17 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
             switch (view.getId()) {
                 case R.id.btnFriend: {
                     Friend friend = mListFriends.get(getAdapterPosition());
-                    friend.setFriend(!friend.isFriend());
-                    ListFriendAdapter.this.notifyDataSetChanged();
-                    break;
+                    mListFriends.remove(getAdapterPosition());
+                    mSecondListFriendAdapter.notifyDataSetChanged();
+                    if (friend.isFriend()) {
+                        friend.setFriend(false);
+                        FavoriteFragment.addFriend(friend);
+                        notifyDataSetChanged();
+                    } else {
+                        friend.setFriend(true);
+                        ListFriendFragment.addFriend(friend);
+                        notifyDataSetChanged();
+                    }
                 }
             }
         }
