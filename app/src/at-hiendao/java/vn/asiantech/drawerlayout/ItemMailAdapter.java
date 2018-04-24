@@ -1,10 +1,14 @@
 package vn.asiantech.drawerlayout;
 
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +28,9 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
     private final List<ItemMail> mListItemMail = new ArrayList<>();
     private final int mNumOfItem = 5;
     private final Context mContext;
+    private UserInfo mUserInfo;
+    private static final String TAG = "test";
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -30,7 +39,8 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
             return new Viewholder(view, this);
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_background_top_drawerlayout, parent, false);
-            return new UserInfo(view);
+            mUserInfo = new UserInfo(view);
+            return mUserInfo;
         }
 
     }
@@ -40,6 +50,17 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         if (position > 0) {
             Viewholder viewholder = (Viewholder) holder;
             viewholder.initViewHolder(mListItemMail.get(position), position);
+        } else {
+            UserInfo userInfo = (UserInfo) holder;
+            ItemMail item = mListItemMail.get(position);
+            if (item.getUri() == null) {
+                Log.e(TAG, "onBindViewHolder: ");
+                userInfo.mImgAvatar.setImageResource(R.drawable.custom_icon_person);
+            } else {
+                Uri uriAvatar = Uri.fromFile(mUserInfo.getAvatarFilePath());
+                Log.e(TAG, "onBindViewHolder: " + uriAvatar.getPath());
+                userInfo.mImgAvatar.setImageURI(uriAvatar);
+            }
         }
     }
 
@@ -78,15 +99,57 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         }
     }
 
-    public void resetDrawerLayout()
-    {
+    public void resetDrawerLayout() {
         resetColorAllItem();
         notifyDataSetChanged();
     }
 
+    public void changeAvatar(Intent data, boolean isCaturePicture) {
+        saveAvatar(data, isCaturePicture);
+        mListItemMail.get(0).setUri(Uri.fromFile(mUserInfo.getAvatarFilePath()));
+        notifyItemChanged(0);
+    }
+
+    private void saveAvatar(Intent data, boolean isCapturePicture) {
+
+        Bitmap bitmap = null;
+        if (isCapturePicture) {
+            if (data.getExtras() != null) {
+                bitmap = (Bitmap) data.getExtras().get("data");
+            }
+        } else {
+            Uri uri = data.getData();
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), uri);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        File path = mUserInfo.getAvatarFilePath();
+        FileOutputStream outputStream = null;
+        try {
+            outputStream = new FileOutputStream(path);
+            if (bitmap != null) {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "saveAvatar: " + e.toString());
+        } finally {
+            try {
+                if (outputStream != null) {
+                    outputStream.flush();
+                    outputStream.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
     /*
-        class viewholder in adapter recycleview
-     */
+            class viewholder in adapter recycleview
+         */
     class Viewholder extends RecyclerView.ViewHolder {
         private final ImageView mImgIcon;
         private final TextView mTvName;
@@ -143,8 +206,14 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
 
     private void createListItemMail() {
         for (int i = 0; i < mNumOfItem; i++) {
-            ItemMail itemMail = new ItemMail(i);
-            mListItemMail.add(itemMail);
+            if (i == 0) {
+                File avatar = new File(mContext.getFilesDir() + File.separator + UserInfo.AVATAR_USER + ".jpg");
+                ItemMail itemMail = new ItemMail(i, Uri.fromFile(avatar));
+                mListItemMail.add(itemMail);
+            } else {
+                ItemMail itemMail = new ItemMail(i, null);
+                mListItemMail.add(itemMail);
+            }
         }
     }
 
@@ -154,6 +223,8 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
     class UserInfo extends RecyclerView.ViewHolder {
         private final ImageView mImgAvatar;
         private final String DIALOG = "Dialog";
+        static final String AVATAR_USER = "Avatar_user";
+
         UserInfo(View itemView) {
             super(itemView);
             mImgAvatar = itemView.findViewById(R.id.imgAvatarUser);
@@ -172,17 +243,45 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
             builder.setNeutralButton(mContext.getResources().getString(R.string.text_dialog_select_image), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Log.e("xxx", "onClick: " );
+                    Intent intent = new Intent();
+                    intent.setType("image/*");
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
+                    if (mContext instanceof DrawerLayoutActivity) {
+                        ((DrawerLayoutActivity) mContext).startActivityForResult(intent, DrawerLayoutActivity.REQUEST_OPEN_GALLERY);
+                    }
                 }
             });
             builder.setPositiveButton(mContext.getResources().getString(R.string.text_dialog_use_camera), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Log.e("xxx", "onClick: " );
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    if (mContext instanceof DrawerLayoutActivity) {
+                        ((DrawerLayoutActivity) mContext).startActivityForResult(intent, DrawerLayoutActivity.REQUEST_CAPTURE_PICTURE);
+                    }
                 }
             });
             AlertDialog dialog = builder.create();
             dialog.show();
+        }
+
+        File getAvatarFilePath() {
+            String path = mContext.getFilesDir() + File.separator + AVATAR_USER + ".jpg";
+            File imgFilePath = new File(path);
+            boolean isCreateFile = false;
+            if (!imgFilePath.exists()) {
+                try {
+                    isCreateFile = imgFilePath.createNewFile();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (!isCreateFile) {
+                return imgFilePath;
+            } else {
+                return null;
+            }
+
         }
     }
 

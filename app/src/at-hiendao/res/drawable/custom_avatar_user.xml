@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/custom_circle"/>
-    <item android:drawable="@drawable/custom_user_icon"/>
+    <item android:drawable="@drawable/custom_circle" />
+    <item
+        android:id="@+id/avatarUser"
+        android:drawable="@drawable/custom_user_icon" />
 </layer-list>

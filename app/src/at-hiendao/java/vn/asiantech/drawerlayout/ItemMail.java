@@ -1,17 +1,21 @@
 package vn.asiantech.drawerlayout;
 
+import android.net.Uri;
+
 class ItemMail {
     private final int mIcon;
     private String mName;
+    private Uri mUri;
     private static final String ITEM_INBOX = "Inbox";
     private static final String ITEM_TRASH = "Trash";
     private static final String ITEM_OUTBOX = "Outbox";
     private static final String ITEM_SPAM = "Spam";
     private boolean mIsSelected = false;
 
-    ItemMail(int icon) {
+    ItemMail(int icon, Uri uri) {
         mIcon = icon;
         initItem();
+        mUri = uri;
     }
 
     public int getIcon() {
@@ -53,6 +57,16 @@ class ItemMail {
     public boolean isSelected()
     {
         return mIsSelected;
+    }
+
+    public Uri getUri()
+    {
+        return  mUri;
+    }
+
+    public void setUri(Uri uri)
+    {
+        mUri = uri;
     }
 
 }

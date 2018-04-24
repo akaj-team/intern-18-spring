@@ -10,13 +10,14 @@
         android:layout_height="150dp"
         android:background="@color/colorDarkGray" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgAvatarUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_avatar_user"
+        android:src="@drawable/custom_user_icon"
+        app:civ_border_color="@color/colorWhite"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
