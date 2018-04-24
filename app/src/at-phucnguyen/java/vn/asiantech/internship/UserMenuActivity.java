@@ -21,9 +21,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import jp.wasabeef.recyclerview.animators.adapters.ScaleInAnimationAdapter;
 import vn.asiantech.internship.model.MyMenu;
@@ -69,7 +69,7 @@ public class UserMenuActivity extends AppCompatActivity implements DrawerLayout.
         initEventOfView();
 
         //Cho hiển thị Button menu hình hambager
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }
 
@@ -224,7 +224,10 @@ public class UserMenuActivity extends AppCompatActivity implements DrawerLayout.
         Log.e("Camera", "Changed Data");
         if (data.getExtras() != null) {
             Bitmap bp = (Bitmap) data.getExtras().get("data");
-            mMyMenuHeaderList.get(0).setBitmapHeader(bp);
+            ByteArrayOutputStream bytes=new ByteArrayOutputStream();
+            bp.compress(Bitmap.CompressFormat.JPEG,100,bytes);
+            String path=MediaStore.Images.Media.insertImage(getContentResolver(),bp,"Title",null);
+            mMyMenuHeaderList.get(0).setUri(Uri.parse(path));
             mMenuAdapter.notifyDataSetChanged();
         }
         mDialog.cancel();

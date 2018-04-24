@@ -23,6 +23,7 @@
         <activity android:name=".ListFriendActivity" />
         <activity android:name=".SendDataActivity" />
         <activity android:name=".SignUpActivity" />
+        <activity android:name=".ViewPagerActivity" />
     </application>
 
 </manifest>

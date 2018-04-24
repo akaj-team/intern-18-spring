@@ -44,9 +44,9 @@ public class Friend {
         this.mNumberOfFriend = numberOfFriend;
     }
 
-    public static List<Friend> createListFriend() {
+    public static List<Friend> createListFriend(int sum, boolean isFriend) {
         List<Friend> listFriend = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= sum; i++) {
             Friend friend = new Friend();
             Random random = new Random();
             int position = random.nextInt(4);
@@ -62,7 +62,7 @@ public class Friend {
             listName.add("Huy Nguyen");
             friend.setName(listName.get(position) + " " + i);
             friend.setNumberOfFriend(i * 2);
-            friend.setFriend(i % 4 == 0);
+            friend.setFriend(isFriend);
             friend.setAvatar(listAvatar.get(position));
             listFriend.add(friend);
         }

@@ -15,17 +15,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         this.setTitle("Android Training");
         setContentView(R.layout.activity_begin);
-        Button btnListener = findViewById(R.id.btnListener);
-        Button btnResource = findViewById(R.id.btnResource);
+
         Button btnActivityAndFragment = findViewById(R.id.btnActivityAndFragment);
         btnActivityAndFragment.setOnClickListener(this);
+
+        Button btnResource = findViewById(R.id.btnResource);
         btnResource.setOnClickListener(this);
+
         Button btnListFriend = findViewById(R.id.btnListFriend);
         btnListFriend.setOnClickListener(this);
+
         mBtnViewAndViewGroup = findViewById(R.id.btnViewAndViewGroup);
         mBtnViewAndViewGroup.setOnClickListener(this);
+
+        Button btnViewPagerListFriend = findViewById(R.id.btnViewPagerListFriend);
+        btnViewPagerListFriend.setOnClickListener(this);
+
+        Button btnListener = findViewById(R.id.btnListener);
         btnListener.setOnClickListener(this);
-        btnResource.setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +62,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btnActivityAndFragment: {
                 Intent intent = new Intent(MainActivity.this, SendDataActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btnViewPagerListFriend: {
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
                 startActivity(intent);
                 break;
             }

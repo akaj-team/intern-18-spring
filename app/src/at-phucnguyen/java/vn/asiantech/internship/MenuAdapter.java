@@ -51,8 +51,6 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Log.e(TAG, "onBindViewHolder: " + myMenuHeader.getUri());
             if (myMenuHeader.getUri() != null) {
                 menuHeaderViewHolder.mImgHeaderManu.setImageURI(myMenuHeader.getUri());
-            } else if (myMenuHeader.getBitmapHeader() != null) {
-                menuHeaderViewHolder.mImgHeaderManu.setImageBitmap(myMenuHeader.getBitmapHeader());
             } else {
                 menuHeaderViewHolder.mImgHeaderManu.setImageResource(myMenuHeader.getUrlImgResource());
             }

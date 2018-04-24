@@ -1,21 +1,11 @@
 package vn.asiantech.internship.model;
 
-import android.graphics.Bitmap;
 import android.net.Uri;
 
 public class MyMenuHeader {
     private String emailHeader;
     private Uri uri;
     private int urlImgResource;
-    private Bitmap bitmapHeader;
-
-    public Bitmap getBitmapHeader() {
-        return bitmapHeader;
-    }
-
-    public void setBitmapHeader(Bitmap bitmapHeader) {
-        this.bitmapHeader = bitmapHeader;
-    }
 
     public int getUrlImgResource() {
         return urlImgResource;
