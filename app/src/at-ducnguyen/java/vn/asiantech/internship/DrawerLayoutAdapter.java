@@ -1,19 +1,30 @@
 package vn.asiantech.internship;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import vn.asiantech.internship.model.HeaderDrawer;
+
 public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext;
+    private OnChangeAvatarListener mListener;
+    private HeaderDrawer mHeaderDrawer;
 
     DrawerLayoutAdapter(Context context) {
         mContext = context;
+        mHeaderDrawer = new HeaderDrawer();
+    }
+
+    public void setOnChangeAvatarListener(OnChangeAvatarListener listener) {
+        mListener = listener;
     }
 
     @Override
@@ -38,45 +49,30 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Drawable image;
         switch (position) {
             case 0: {
                 HeaderHolder headerHolder = (HeaderHolder) holder;
-                headerHolder.mTvEmail.setText(R.string.dummy_email);
-                headerHolder.mImgAvatar.setImageResource(R.drawable.ducnguyen);
-                headerHolder.mImgCover.setImageResource(R.drawable.default_cover_img);
+                if (mHeaderDrawer.getAvatar() == null) {
+                    headerHolder.mImgAvatar.setImageResource(R.drawable.ducnguyen);
+                } else {
+                    headerHolder.mImgAvatar.setImageURI(mHeaderDrawer.getAvatar());
+                }
                 break;
             }
             case 1: {
-                BodyHolder bodyHolder = (BodyHolder) holder;
-                image = mContext.getResources().getDrawable(R.drawable.ic_move_to_inbox_black_24dp);
-                image.setBounds(0, 0, image.getIntrinsicWidth(), image.getIntrinsicHeight());
-                bodyHolder.mTvAction.setCompoundDrawables(image, null, null, null);
-                bodyHolder.mTvAction.setText(R.string.inbox);
+                setView(holder, R.drawable.ic_move_to_inbox_black_24dp, R.string.inbox);
                 break;
             }
             case 2: {
-                BodyHolder bodyHolder = (BodyHolder) holder;
-                image = mContext.getResources().getDrawable(R.drawable.ic_send_black_24dp);
-                image.setBounds(0, 0, image.getIntrinsicWidth(), image.getIntrinsicHeight());
-                bodyHolder.mTvAction.setCompoundDrawables(image, null, null, null);
-                bodyHolder.mTvAction.setText(R.string.outbox);
+                setView(holder, R.drawable.ic_send_black_24dp, R.string.outbox);
                 break;
             }
             case 3: {
-                BodyHolder bodyHolder = (BodyHolder) holder;
-                image = mContext.getResources().getDrawable(R.drawable.ic_delete_black_24dp);
-                image.setBounds(0, 0, image.getIntrinsicWidth(), image.getIntrinsicHeight());
-                bodyHolder.mTvAction.setCompoundDrawables(image, null, null, null);
-                bodyHolder.mTvAction.setText(R.string.trash);
+                setView(holder, R.drawable.ic_delete_black_24dp, R.string.trash);
                 break;
             }
             case 4: {
-                BodyHolder bodyHolder = (BodyHolder) holder;
-                image = mContext.getResources().getDrawable(R.drawable.ic_report_black_24dp);
-                image.setBounds(0, 0, image.getIntrinsicWidth(), image.getIntrinsicHeight());
-                bodyHolder.mTvAction.setCompoundDrawables(image, null, null, null);
-                bodyHolder.mTvAction.setText(R.string.spam);
+                setView(holder, R.drawable.ic_report_black_24dp, R.string.spam);
                 break;
             }
         }
@@ -88,15 +84,17 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private class HeaderHolder extends RecyclerView.ViewHolder {
-        private final ImageView mImgCover;
         private final ImageView mImgAvatar;
-        private final TextView mTvEmail;
 
-        private HeaderHolder(View itemView) {
+        private HeaderHolder(final View itemView) {
             super(itemView);
-            mImgCover = itemView.findViewById(R.id.imgCover);
             mImgAvatar = itemView.findViewById(R.id.imgAvatar);
-            mTvEmail = itemView.findViewById(R.id.tvEmail);
+            mImgAvatar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showDialog();
+                }
+            });
         }
     }
 
@@ -107,5 +105,37 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             super(itemView);
             mTvAction = itemView.findViewById(R.id.tvAction);
         }
+    }
+
+    private void setView(RecyclerView.ViewHolder holder, int drawable, int text) {
+        Drawable image;
+        BodyHolder bodyHolder = (BodyHolder) holder;
+        image = mContext.getResources().getDrawable(drawable);
+        image.setBounds(0, 0, image.getIntrinsicWidth(), image.getIntrinsicHeight());
+        bodyHolder.mTvAction.setCompoundDrawables(image, null, null, null);
+        bodyHolder.mTvAction.setText(text);
+    }
+
+    private void showDialog() {
+        Dialog dialog = new Dialog(mContext);
+        dialog.setTitle(R.string.choose_image);
+        dialog.setContentView(R.layout.fragment_dialog_change_avatar);
+        dialog.show();
+
+        Button btnChooseFromGalery = dialog.findViewById(R.id.btnChooseFromGalery);
+        Button btnTakeAPhoto = dialog.findViewById(R.id.btnTakeAPhoto);
+
+        btnChooseFromGalery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onChooseFromGalery(mHeaderDrawer);
+            }
+        });
+        btnTakeAPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onTakeANewPhoto(mHeaderDrawer);
+            }
+        });
     }
 }

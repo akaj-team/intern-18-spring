@@ -5,6 +5,7 @@
     android:layout_height="170dp">
 
     <ImageView
+        android:src="@drawable/default_cover_img"
         android:id="@+id/imgCover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
+        android:text="@string/dummy_email"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="@id/imgCover"
         app:layout_constraintLeft_toLeftOf="@+id/imgCover" />
