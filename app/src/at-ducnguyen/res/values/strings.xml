@@ -39,6 +39,17 @@
     <string name="unfriends">Unfriends</string>
     <string name="add_friends">Add Friends</string>
     <string name="recycler_view">W3 List Friend With Recycler View</string>
+    <string name="btnSharedPreference">Shared Preference</string>
+    <string name="btnStorage">Storage</string>
+    <string name="btnSqlLite">SqlLite</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="w4_database">W4 Database</string>
+    <string name="btnSaveInternal">Save On Internal Storage </string>
+    <string name="btnSaveExternal">Save On External Storage </string>
+    <string name="internal">Internal</string>
+    <string name="external">External</string>
     <string name="artist_name">Artist Name</string>
     <string name="search">Search</string>
     <string name="btnTrack">Track</string>
