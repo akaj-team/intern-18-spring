@@ -52,22 +52,21 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         switch (getItemViewType(position)) {
             case HEADER:
                 if (holder instanceof HeaderMenuViewHolder) {
-                    HeaderMenuViewHolder headerMenuViewHolder = (HeaderMenuViewHolder) holder;
                     HeaderMenu headerMenu = mListHeaderMenu.get(position);
                     if (headerMenu.getAvatar() != null) {
-                        headerMenuViewHolder.mImgBtnAvatar.setImageURI(headerMenu.getAvatar());
+                        ((HeaderMenuViewHolder) holder).mImgBtnAvatar.setImageURI(headerMenu.getAvatar());
                     } else {
-                        headerMenuViewHolder.mImgBtnAvatar.setImageResource(headerMenu.getImageResource());
+                        ((HeaderMenuViewHolder) holder).mImgBtnAvatar.setImageResource(R.drawable.custom_circle);
+
                     }
-                    headerMenuViewHolder.mTvName.setText(headerMenu.getNameHeader());
-                    headerMenuViewHolder.mTvEmail.setText(headerMenu.getEmailHeader());
+                    ((HeaderMenuViewHolder) holder).mTvName.setText(headerMenu.getNameHeader());
+                    ((HeaderMenuViewHolder) holder).mTvEmail.setText(headerMenu.getEmailHeader());
                 }
                 break;
             case ITEM:
-                final LeftMenuViewHolder leftMenuViewHolder = (LeftMenuViewHolder) holder;
                 LeftMenu leftMenu = mListLeftMenu.get(position - 1);
-                leftMenuViewHolder.mImgItem.setImageResource(leftMenu.getItem());
-                leftMenuViewHolder.mTvItem.setText(leftMenu.getNameItem());
+                ((LeftMenuViewHolder) holder).mImgItem.setImageResource(leftMenu.getItem());
+                ((LeftMenuViewHolder) holder).mTvItem.setText(leftMenu.getNameItem());
                 break;
         }
     }

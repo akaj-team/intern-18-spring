@@ -114,8 +114,6 @@ public class DrawerLayoutActivity extends AppCompatActivity implements Navigatio
         Intent Intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (Intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(Intent, PICK_FROM_CAMERA);
-        } else {
-            throw new RuntimeException();
         }
     }
 
@@ -139,9 +137,9 @@ public class DrawerLayoutActivity extends AppCompatActivity implements Navigatio
     }
 
     private void setOnChangeAvatarFromFile(Intent data) {
-        Uri imgResult;
-        imgResult = data.getData();
-        mListHeaderMenu.get(0).setUri(imgResult);
+        Uri imgChangeAvatar;
+        imgChangeAvatar = data.getData();
+        mListHeaderMenu.get(0).setUri(imgChangeAvatar);
         mDrawerLayoutAdapter.notifyDataSetChanged();
         mDialog.cancel();
     }
