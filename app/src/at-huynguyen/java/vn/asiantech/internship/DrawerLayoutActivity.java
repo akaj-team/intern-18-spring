@@ -41,7 +41,6 @@ public class DrawerLayoutActivity extends AppCompatActivity implements Navigatio
     ActionBarDrawerToggle mDrawerToggle;
     DrawerLayout mDrawerLayout;
     ImageButton mImgBtnAvatar;
-    HeaderMenu mHeaderMenu;
     private Dialog mDialog;
 
     @Override
@@ -112,18 +111,18 @@ public class DrawerLayoutActivity extends AppCompatActivity implements Navigatio
     }
 
     public void onPickFromCamera() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, PICK_FROM_CAMERA);
+        Intent Intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (Intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(Intent, PICK_FROM_CAMERA);
         } else {
             throw new RuntimeException();
         }
     }
 
     public void onPickFromFile() {
-        Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent, PICK_FROM_FILE);
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_FROM_FILE);
     }
 
     private void setOnChangeAvatarFromCamera(Intent data) {
@@ -150,7 +149,6 @@ public class DrawerLayoutActivity extends AppCompatActivity implements Navigatio
     public void showDialog() {
         mDialog = new Dialog(DrawerLayoutActivity.this);
         mDialog.setContentView(R.layout.menu_dialog);
-//        mDialog.setTitle(R.string.chose_a_photo);
         Button btnPickFromCamera = mDialog.findViewById(R.id.btnPickFromCamera);
         Button btnPickFromFile = mDialog.findViewById(R.id.btnPickFromFile);
         btnPickFromCamera.setOnClickListener(this);
