@@ -36,4 +36,8 @@
     <string name="showtext">Show Text</string>
     <string name="entername">Enter Name</string>
     <string name="malefemale">Male or Female</string>
+    <string name="sharepreferences">Share Preferences</string>
+    <string name="savestatus">Save Status</string>
+    <string name="savetext">Save Text</string>
+    <string name="database">Database Table</string>
 </resources>
