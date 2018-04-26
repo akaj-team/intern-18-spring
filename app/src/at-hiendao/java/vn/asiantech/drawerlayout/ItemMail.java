@@ -54,18 +54,15 @@ class ItemMail {
         mIsSelected = isSelected;
     }
 
-    public boolean isSelected()
-    {
+    public boolean isSelected() {
         return mIsSelected;
     }
 
-    public Uri getUri()
-    {
-        return  mUri;
+    public Uri getUri() {
+        return mUri;
     }
 
-    public void setUri(Uri uri)
-    {
+    public void setUri(Uri uri) {
         mUri = uri;
     }
 

@@ -1,24 +1,28 @@
 package vn.asiantech.drawerlayout;
 
-import android.app.Activity;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 
 import vn.asiantech.internship.R;
 
-public class DrawerLayoutActivity extends Activity {
+public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, View.OnClickListener {
     private ItemMailAdapter mAdapter;
     private LinearLayout mMainlayout;
     private RecyclerView mRecyclerViewMenu;
+    private DrawerLayout mDrawerLayout;
     public static final int REQUEST_CAPTURE_PICTURE = 999;
     public static final int REQUEST_OPEN_GALLERY = 666;
 
@@ -33,29 +37,11 @@ public class DrawerLayoutActivity extends Activity {
         mRecyclerViewMenu.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new ItemMailAdapter(this);
         mRecyclerViewMenu.setAdapter(mAdapter);
-        final DrawerLayout drawerLayout = findViewById(R.id.dlDrawerLayout);
-        drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
-            @Override
-            public void onDrawerSlide(View drawerView, float slideOffset) {
-                float widthDrawer = mRecyclerViewMenu.getWidth();
-                float distange = widthDrawer * slideOffset;
-                onOpenMenu((int) distange);
-            }
+        mDrawerLayout = findViewById(R.id.dlDrawerLayout);
+        mDrawerLayout.addDrawerListener(this);
+        Button btnMenu = findViewById(R.id.btnMenu);
+        btnMenu.setOnClickListener(this);
 
-            @Override
-            public void onDrawerOpened(View drawerView) {
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                mAdapter.resetDrawerLayout();
-            }
-
-            @Override
-            public void onDrawerStateChanged(int newState) {
-
-            }
-        });
     }
 
     private void onOpenMenu(int distange) {
@@ -78,4 +64,30 @@ public class DrawerLayoutActivity extends Activity {
 
     }
 
+    @Override
+    public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+        float widthDrawer = mRecyclerViewMenu.getWidth();
+        float distange = widthDrawer * slideOffset;
+        onOpenMenu((int) distange);
+    }
+
+    @Override
+    public void onDrawerOpened(@NonNull View drawerView) {
+
+    }
+
+    @Override
+    public void onDrawerClosed(@NonNull View drawerView) {
+
+    }
+
+    @Override
+    public void onDrawerStateChanged(int newState) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        mDrawerLayout.openDrawer(Gravity.LEFT);
+    }
 }

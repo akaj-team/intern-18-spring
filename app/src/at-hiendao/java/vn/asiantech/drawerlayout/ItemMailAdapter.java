@@ -31,7 +31,6 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
     private UserInfo mUserInfo;
     private static final String TAG = "test";
 
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == 1) {
@@ -64,12 +63,10 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         }
     }
 
-
     ItemMailAdapter(Context context) {
         mContext = context;
         createListItemMail();
     }
-
 
     @Override
     public int getItemViewType(int position) {
@@ -99,11 +96,6 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         }
     }
 
-    public void resetDrawerLayout() {
-        resetColorAllItem();
-        notifyDataSetChanged();
-    }
-
     public void changeAvatar(Intent data, boolean isCaturePicture) {
         saveAvatar(data, isCaturePicture);
         mListItemMail.get(0).setUri(Uri.fromFile(mUserInfo.getAvatarFilePath()));
@@ -122,7 +114,7 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), uri);
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e(TAG, "saveAvatar: " + e.toString());
             }
         }
         File path = mUserInfo.getAvatarFilePath();
@@ -141,11 +133,10 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
                     outputStream.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e(TAG, "saveAvatar: " + e.toString());
             }
         }
     }
-
 
     /*
             class viewholder in adapter recycleview
@@ -201,7 +192,6 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
                 }
             }
         }
-
     }
 
     private void createListItemMail() {
@@ -273,7 +263,7 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
                     isCreateFile = imgFilePath.createNewFile();
 
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    Log.e(TAG, "getAvatarFilePath: " + e.toString());
                 }
             }
             if (!isCreateFile) {
@@ -281,9 +271,7 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
             } else {
                 return null;
             }
-
         }
     }
-
 
 }
