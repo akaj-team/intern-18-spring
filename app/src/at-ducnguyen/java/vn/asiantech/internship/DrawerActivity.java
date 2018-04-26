@@ -16,7 +16,10 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import vn.asiantech.internship.model.BodyDrawer;
 import vn.asiantech.internship.model.HeaderDrawer;
 
 public class DrawerActivity extends AppCompatActivity implements OnChangeAvatarListener {
@@ -29,7 +32,16 @@ public class DrawerActivity extends AppCompatActivity implements OnChangeAvatarL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-        mAdapter = new DrawerLayoutAdapter(this);
+
+        List<BodyDrawer> listItemBody = new ArrayList<>();
+        listItemBody.add(new BodyDrawer(R.drawable.ic_move_to_inbox_black_24dp, R.string.inbox));
+        listItemBody.add(new BodyDrawer(R.drawable.ic_send_black_24dp, R.string.outbox));
+        listItemBody.add(new BodyDrawer(R.drawable.ic_delete_black_24dp, R.string.trash));
+        listItemBody.add(new BodyDrawer(R.drawable.ic_report_black_24dp, R.string.spam));
+
+        mHeaderDrawer = new HeaderDrawer();
+
+        mAdapter = new DrawerLayoutAdapter(this, listItemBody, mHeaderDrawer);
         mAdapter.setOnChangeAvatarListener(this);
 
         final RecyclerView recyclerViewInformation = findViewById(R.id.recyclerViewInformation);
@@ -80,18 +92,16 @@ public class DrawerActivity extends AppCompatActivity implements OnChangeAvatarL
 
 
     @Override
-    public void onChooseFromGalery(HeaderDrawer headerDrawer) {
+    public void onChooseFromGalery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(intent, REQUEST_GALERY);
-        mHeaderDrawer = headerDrawer;
     }
 
     @Override
-    public void onTakeANewPhoto(HeaderDrawer headerDrawer) {
+    public void onTakeANewPhoto() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, DrawerActivity.REQUEST_CAMERA);
-            mHeaderDrawer = headerDrawer;
         }
     }
 
