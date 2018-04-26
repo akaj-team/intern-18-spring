@@ -5,18 +5,33 @@
 
     <ImageView
         android:id="@+id/imgItem"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@color/colorRed"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"/>
+        android:background="@drawable/custom_item_drawer_layout"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
     <TextView
         android:id="@+id/tvItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imgItem"
-        android:text="@string/email"/>
+        android:background="@drawable/custom_item_drawer_layout"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="@string/email"
+        android:textSize="40sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvItem"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorSelected" />
 
 </RelativeLayout>

@@ -72,7 +72,7 @@ public class MenuActivity extends AppCompatActivity {
         btnDrawerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, LeftMenuActivity.class);
+                Intent intent = new Intent(MenuActivity.this, DrawerLayoutActivity.class);
                 startActivity(intent);
             }
         });

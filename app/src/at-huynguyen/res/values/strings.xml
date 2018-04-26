@@ -48,4 +48,6 @@
     <string name="drawclose">Draw Close</string>
     <string name="menu">Menu</string>
     <string name="drawerlayout">Drawer Layout</string>
+    <string name="pickfromcamera">Pick From Camera</string>
+    <string name="pickfromgallery">Pick From Gallery</string>
 </resources>
