@@ -14,14 +14,15 @@ public class MenuActivity extends AppCompatActivity {
         setTitle(R.string.internship);
         setContentView(R.layout.activity_menu);
 
-        Button btnEventAndListener = findViewById(R.id.btnEventAndListener);
-        btnEventAndListener.setOnClickListener(new View.OnClickListener() {
+        Button btnFragment = findViewById(R.id.btnFragment);
+        btnFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, UserActivity.class);
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+
         Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
         btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnResources = findViewById(R.id.btnResources);
         btnResources.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +40,25 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnEventAndListener = findViewById(R.id.btnEventAndListener);
+        btnEventAndListener.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnRecycleView = findViewById(R.id.btnRecycleView);
+        btnRecycleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button btnViewPager = findViewById(R.id.btnViewPager);
         btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,19 +68,11 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        Button btnFragment = findViewById(R.id.btnFragment);
-        btnFragment.setOnClickListener(new View.OnClickListener() {
+        Button btnDrawerLayout = findViewById(R.id.btnDrawerLayout);
+        btnDrawerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-        Button btnRecycleView = findViewById(R.id.btnRecycleView);
-        btnRecycleView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
+                Intent intent = new Intent(MenuActivity.this, DrawerLayoutActivity.class);
                 startActivity(intent);
             }
         });

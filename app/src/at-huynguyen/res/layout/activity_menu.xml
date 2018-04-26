@@ -3,44 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/fragment"
-            />
-        <Button
-            android:id="@+id/btnViewViewGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnFragment"
-            android:text="@string/viewviewgroup" />
+    <Button
+        android:id="@+id/btnFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment" />
 
-        <Button
-            android:id="@+id/btnResources"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnViewViewGroup"
-            android:text="@string/resources" />
-        <Button
-            android:id="@+id/btnEventAndListener"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/eventandlistener"
-            android:layout_below="@+id/btnResources"
-            android:gravity="center" />
+    <Button
+        android:id="@+id/btnViewViewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnFragment"
+        android:text="@string/viewviewgroup" />
 
-        <Button
-            android:id="@+id/btnRecycleView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnEventAndListener"
-            android:text="@string/recycleview" />
+    <Button
+        android:id="@+id/btnResources"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnViewViewGroup"
+        android:text="@string/resources" />
 
-        <Button
-            android:id="@+id/btnViewPager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnRecycleView"
-            android:text="@string/viewpager"/>
+    <Button
+        android:id="@+id/btnEventAndListener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnResources"
+        android:gravity="center"
+        android:text="@string/eventandlistener" />
+
+    <Button
+        android:id="@+id/btnRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEventAndListener"
+        android:text="@string/recycleview" />
+
+    <Button
+        android:id="@+id/btnViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnRecycleView"
+        android:text="@string/viewpager" />
+
+    <Button
+        android:id="@+id/btnDrawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnViewPager"
+        android:text="@string/drawerlayout" />
 </RelativeLayout>

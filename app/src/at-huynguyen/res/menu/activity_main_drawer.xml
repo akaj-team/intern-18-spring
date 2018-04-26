@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navEmail"
+            android:icon="@drawable/ic_email"
+            android:title="@string/inbox" />
+        <item
+            android:id="@+id/navGallery"
+            android:icon="@drawable/ic_gallery"
+            android:title="@string/gallery" />
+        <item
+            android:id="@+id/navSlideshow"
+            android:icon="@drawable/ic_slideshow"
+            android:title="@string/slideshow" />
+        <item
+            android:id="@+id/navTool"
+            android:icon="@drawable/ic_tool"
+            android:title="@string/tool" />
+    </group>
+
+</menu>
