@@ -1,6 +1,7 @@
 package vn.asiantech.internship;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,15 @@ public class SharePreferencesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SharePreferencesActivity.this, ItemSaveStatusActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSaveText = findViewById(R.id.btnSaveText);
+        btnSaveText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SharePreferencesActivity.this, ItemSaveTextActivity.class);
                 startActivity(intent);
             }
         });

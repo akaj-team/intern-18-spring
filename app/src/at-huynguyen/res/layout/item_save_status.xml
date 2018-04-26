@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/colorSelected">
+    android:background="@color/colorSelected"
+    android:gravity="center">
 
     <Switch
         android:id="@+id/swSaveStatus"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="addData"/>
+        android:gravity="center" />
 
 </RelativeLayout>

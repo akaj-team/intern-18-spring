@@ -34,6 +34,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SharePreferencesActivity" />
         <activity android:name=".ItemSaveStatusActivity" />
+        <activity android:name=".ItemSaveTextActivity" />
     </application>
 
 </manifest>
