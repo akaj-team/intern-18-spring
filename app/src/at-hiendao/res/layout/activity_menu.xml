@@ -49,6 +49,12 @@
             android:layout_height="wrap_content"
             android:text="@string/menu_viewpage"
             android:textSize="25dp"/>
+        <Button
+            android:id="@+id/btnDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_database"
+            android:textSize="25dp"/>
 
     </LinearLayout>
 </LinearLayout>

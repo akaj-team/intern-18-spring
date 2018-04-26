@@ -33,6 +33,8 @@
     <string name="activity_fragment_age">Age</string>
     <string name="activity_fragment_email">Email</string>
     <string name="menu_recycleview">RecycleView</string>
+    <string name="database_state_switch">state switch</string>
+    <string name="database_text_save">text save</string>
 
     <string name="friend_name">Name</string>
     <string name="mutual_friends">Mutual Friends</string>
@@ -40,5 +42,10 @@
     <string name="button_friend_text">Friend</string>
     <string name="button_unfriend_text">Unfriend</string>
     <string name="menu_viewpage">ViewPage</string>
+    <string name="menu_database">Database</string>
+    <string name="database_button_switch">State Button</string>
+    <string name="database_save_text">Save Text</string>
+    <string name="database_save_table">Save Table</string>
+    <string name="database_button_save">Save</string>
 
 </resources>

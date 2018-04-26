@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clDatabase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btnSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/database_button_switch"
+        android:textSize="25dp"/>
+    <Button
+        android:id="@+id/btnSaveText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/database_save_text"
+        app:layout_constraintTop_toBottomOf="@id/btnSwitch"
+        android:textSize="25dp"/>
+    <Button
+        android:id="@+id/btnSaveTable"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/database_save_table"
+        android:textSize="25dp"/>
+
+</android.support.constraint.ConstraintLayout>

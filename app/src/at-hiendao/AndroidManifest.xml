@@ -24,5 +24,6 @@
         <activity android:name=".SendDataActivity" />
         <activity android:name=".ListFriendActitivy"/>
         <activity android:name=".ViewPageActivity"/>
+        <activity android:name=".database.DatabaseActivity"/>
     </application>
 </manifest>
