@@ -57,4 +57,17 @@
     <string name="cancle">Cancle</string>
     <string name="items_menu">ItemsMenu</string>
     <string name="chose_a_photo">Chose a photo</string>
+    <string name="w5_d1_database">W5 D1 Database</string>
+    <string name="sharedpreferences">SharedPreferences</string>
+    <string name="sqlite">SQLite</string>
+    <string name="store">storage</string>
+    <string name="click_me">Click Me</string>
+    <string name="click_save">Nhấn để lưu</string>
+    <string name="type_person_name">Type Person Name</string>
+    <string name="type_person_age">Type Person Age</string>
+    <string name="insert">Insert</string>
+    <string name="delete">Delete</string>
+    <string name="list_of_person">List Of Person</string>
+    <string name="personname">PersonName</string>
+    <string name="personage">PersonAge</string>
 </resources>

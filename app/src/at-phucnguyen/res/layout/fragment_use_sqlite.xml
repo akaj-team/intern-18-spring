@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_2dp">
+
+    <EditText
+        android:id="@+id/edtNamePerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:hint="@string/type_person_name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtAgePerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtNamePerson"
+        android:hint="@string/type_person_age"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnInsertPerson"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtAgePerson"
+        android:text="@string/insert" />
+
+    <Button
+        android:id="@+id/btnDeletePerson"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtAgePerson"
+        android:layout_toRightOf="@id/btnInsertPerson"
+        android:text="@string/delete" />
+
+    <TextView
+        android:id="@+id/tvHeaderPersonName"
+        android:layout_width="@dimen/tvperson_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/tvListOfPerson"
+        android:text="@string/personname" />
+
+    <TextView
+        android:id="@+id/tvHeaderPersonAge"
+        android:layout_width="@dimen/tvperson_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tvListOfPerson"
+        android:layout_toRightOf="@id/tvPersonNameItem"
+        android:text="@string/personage" />
+
+    <TextView
+        android:id="@+id/tvListOfPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnInsertPerson"
+        android:text="@string/list_of_person"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvListOfPerson"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvHeaderPersonName"
+        android:background="#80c4ebf1" />
+
+</RelativeLayout>

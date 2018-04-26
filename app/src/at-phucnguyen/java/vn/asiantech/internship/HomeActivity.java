@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnPracticW1Intent;
     private Button mBtnPracticViewPage;
     private Button mBtnPracticMenu;
+    private Button mBtnPracticDatabase;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticEventAndListenes.setOnClickListener(this);
         mBtnPracticMenu.setOnClickListener(this);
         mBtnPracticRecylerView.setOnClickListener(this);
+        mBtnPracticDatabase.setOnClickListener(this);
     }
 
     @Override
@@ -72,6 +74,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 gotoRecyclerView();
                 break;
             }
+            case R.id.btnDatabase: {
+                gotoDatabase();
+                break;
+            }
         }
     }
 
@@ -84,6 +90,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticEventAndListenes = findViewById(R.id.btnEventAndListenes);
         mBtnPracticViewPage = findViewById(R.id.btnViewPage);
         mBtnPracticMenu = findViewById(R.id.btnMenuToolBar);
+        mBtnPracticDatabase = findViewById(R.id.btnDatabase);
     }
 
     public void gotoViewPage() {
@@ -135,6 +142,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
 
         //khởi động Intent
+        startActivity(intent);
+    }
+
+    public void gotoDatabase() {
+        Intent intent = new Intent(HomeActivity.this, MyDatabaseActivity.class);
         startActivity(intent);
     }
 }
