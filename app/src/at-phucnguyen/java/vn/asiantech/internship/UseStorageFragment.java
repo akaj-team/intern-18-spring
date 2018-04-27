@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class UseStorageFragment extends Fragment implements View.OnClickListener {
     private Context mContext;
@@ -29,6 +30,7 @@ public class UseStorageFragment extends Fragment implements View.OnClickListener
     private EditText mEdtInputData;
     private Button mBtnSaveData;
     private TextView mTvStorageData;
+    public static final String CHARSET = "UTF-8";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -91,7 +93,7 @@ public class UseStorageFragment extends Fragment implements View.OnClickListener
             //Mo File
             fOS = new FileOutputStream(mMyInternalFile);
             //Ghi du lieu vao file
-            fOS.write(data.getBytes());
+            fOS.write(data.getBytes(Charset.forName(CHARSET)));
             //Dong file sau khi mo va ghi
             fOS.close();
         } catch (IOException iOE) {
@@ -109,7 +111,7 @@ public class UseStorageFragment extends Fragment implements View.OnClickListener
             //Doc File
             fileInputStream = new FileInputStream(mMyInternalFile);
             dataInputStream = new DataInputStream(fileInputStream);
-            bufferedReader = new BufferedReader(new InputStreamReader(dataInputStream));
+            bufferedReader = new BufferedReader(new InputStreamReader(dataInputStream, Charset.forName(CHARSET)));
 
             //Doc tung dong
             String strLine;
