@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,14 +13,12 @@ public class DatabaseActivity extends Activity {
     Button mBtnSwitch;
     Button mBtnSaveText;
     Button mBtnSaveTable;
-    private static final String TAG = "test";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
         settingButtonListener();
-
     }
 
     private void settingButtonListener() {
@@ -51,15 +48,12 @@ public class DatabaseActivity extends Activity {
         mBtnSaveTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                SaveTableFragment saveTableFragment = new SaveTableFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.clDatabase, saveTableFragment).addToBackStack(null).commit();
+                showDatabaseLayout(false);
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.e(TAG, "onStart: " );
     }
 
     public void showDatabaseLayout(boolean isShow) {
@@ -74,28 +68,5 @@ public class DatabaseActivity extends Activity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Log.e(TAG, "onBackPressed: " );
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.e(TAG, "onResume: " );
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.e(TAG, "onStop: " );
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.e(TAG, "onPause: " );
-    }
 }
 

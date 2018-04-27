@@ -16,6 +16,7 @@ import vn.asiantech.internship.R;
 public class StateButtonFragment extends Fragment {
     private Switch mSwState;
     private SharedPreferences mSharedPreferences;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class StateButtonFragment extends Fragment {
     }
 
     private void loadData() {
-         mSharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        mSharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         if (!mSharedPreferences.contains(getActivity().getString(R.string.database_state_switch))) {
             SharedPreferences.Editor editor = mSharedPreferences.edit();
             editor.putBoolean(getActivity().getString(R.string.database_state_switch), false);
@@ -51,8 +52,7 @@ public class StateButtonFragment extends Fragment {
         mSwState.setChecked(state);
     }
 
-    private void saveData()
-    {
+    private void saveData() {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putBoolean(getActivity().getString(R.string.database_state_switch), mSwState.isChecked());
         editor.apply();

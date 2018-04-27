@@ -47,5 +47,7 @@
     <string name="database_save_text">Save Text</string>
     <string name="database_save_table">Save Table</string>
     <string name="database_button_save">Save</string>
+    <string name="button_insert_database">Insert</string>
+    <string name="button_delete_database">Delete</string>
 
 </resources>

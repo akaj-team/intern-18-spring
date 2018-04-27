@@ -65,7 +65,7 @@ public class SaveTextFragment extends Fragment {
         String key = getActivity().getString(R.string.database_text_save);
         if (!mSharedPreferences.contains(key)) {
             SharedPreferences.Editor editor = mSharedPreferences.edit();
-            editor.putString(key, null);
+            editor.putString(key, "");
             editor.apply();
         }
         mTvTextSave.setText(mSharedPreferences.getString(key, ""));
@@ -79,4 +79,5 @@ public class SaveTextFragment extends Fragment {
             ((DatabaseActivity) mainActivity).showDatabaseLayout(true);
         }
     }
+
 }
