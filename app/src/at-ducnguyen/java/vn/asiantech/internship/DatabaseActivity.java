@@ -10,6 +10,7 @@ import android.widget.Button;
 public class DatabaseActivity extends AppCompatActivity implements View.OnClickListener {
     private FragmentManager mFragmentManager;
     private SharedPreferenceFragment mSharedPreferenceFragment;
+    private StorageFragment mStorageFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,11 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         Button btnStorage = findViewById(R.id.btnStorage);
         btnStorage.setOnClickListener(this);
 
-        Button btnSqlLite = findViewById(R.id.btnSqlLite);
-        btnSqlLite.setOnClickListener(this);
 
         mFragmentManager = getFragmentManager();
 
         mSharedPreferenceFragment = new SharedPreferenceFragment();
+        mStorageFragment = new StorageFragment();
     }
 
 
@@ -39,6 +39,10 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()) {
             case R.id.btnSharedPreference: {
                 fragmentTransaction.replace(R.id.flFragment, mSharedPreferenceFragment);
+                break;
+            }
+            case R.id.btnStorage: {
+                fragmentTransaction.replace(R.id.flFragment, mStorageFragment);
                 break;
             }
         }
