@@ -21,4 +21,10 @@
         <item name="android:textOn">@string/sw_on</item>
         <item name="android:textOff">@string/sw_off</item>
     </style>
+
+    <style name="ColumnNameStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
 </resources>

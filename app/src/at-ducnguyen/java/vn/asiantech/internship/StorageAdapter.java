@@ -1,7 +1,6 @@
 package vn.asiantech.internship;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +52,6 @@ public class StorageAdapter extends RecyclerView.Adapter<StorageAdapter.DataHold
 
         private void bindData(int position) {
             if (position == TITLE_INTERNAL || position == mTitleExternal) {
-                Log.d("AAA", "bindData: " + mTitleExternal);
                 tvData.setTextSize(20);
             }
             if (position < mListInternal.size()) {

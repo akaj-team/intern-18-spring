@@ -53,6 +53,16 @@
     <string name="btnClearInternal">Clear Internal</string>
     <string name="btnClearExternal">Clear External</string>
     <string name="make_new_file">Make new file :</string>
+    <string name="edtName">Input Name</string>
+    <string name="edtAge">Input Age</string>
+    <string name="btnInsert">Insert</string>
+    <string name="options">Options</string>
+    <string name="resetDatabase">Reset Database</string>
+    <string name="warning_empty_name_or_age">Please filling name and age</string>
+    <string name="btnDelete">Delete</string>
+    <string name="id">ID</string>
+    <string name="name">NAME</string>
+    <string name="age">AGE</string>
     <string name="artist_name">Artist Name</string>
     <string name="search">Search</string>
     <string name="btnTrack">Track</string>

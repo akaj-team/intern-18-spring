@@ -27,8 +27,6 @@ import java.util.List;
 public class StorageFragment extends Fragment implements View.OnClickListener {
     public static final String FILE_NAME = "nmduc.txt";
     public static final String CHARSET = "UTF-8";
-    public static final String TAG = "EXCEPTION";
-    public static final String MSG = "OPS! FOUND EXCEPTION";
     private List<String> mListInternal;
     private List<String> mListExternal;
     private StorageAdapter mStorageAdapter;
@@ -75,7 +73,7 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
             inputStream.close();
             bufferedReader.close();
         } catch (Exception e) {
-            Log.e(TAG, MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e );
         }
     }
 
@@ -95,7 +93,7 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
             fileInputStream.close();
             bufferedReader.close();
         } catch (Exception e) {
-            Log.e(TAG, MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e );
         }
     }
 
@@ -108,7 +106,7 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
             mListInternal.add(data);
             mStorageAdapter.notifyDataSetChanged();
         } catch (Exception e) {
-            Log.e(TAG, MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e );
         }
 
     }
@@ -142,7 +140,7 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
             mListExternal.add(data);
             mStorageAdapter.notifyDataSetChanged();
         } catch (Exception e) {
-            Log.e(TAG, MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e );
         }
     }
 

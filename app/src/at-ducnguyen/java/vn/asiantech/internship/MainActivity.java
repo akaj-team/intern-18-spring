@@ -8,8 +8,9 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnViewAndViewGroup;
+    public static final String TAG = "EXCEPTION";
+    public static final String MSG = "OPS! FOUND EXCEPTION";
     public final static String KEY_TITLE = "KEY_TITLE";
-    public static final String TAG = "AAA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
