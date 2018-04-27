@@ -4,10 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,63 +15,72 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import vn.asiantech.internship.R;
 
 public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemMail {
-    private final List<ItemMail> mListItemMail = new ArrayList<>();
+    private List<ItemMail> mListItemMail;
     private final int mNumOfItem = 5;
     private final Context mContext;
-    private UserInfo mUserInfo;
     private static final String TAG = "test";
+    private static final int TYPE_ITEM_MAIL = 1;
+    public static final int TYPE_USER_INFO = 0;
+
+    ItemMailAdapter(Context context, List<ItemMail> itemMails) {
+        mContext = context;
+        mListItemMail = itemMails;
+    }
+
+    private void resetColorAllItem() {
+        for (int i = 0; i < mNumOfItem; i++) {
+            mListItemMail.get(i).setIsSelected(false);
+        }
+    }
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == 1) {
+        if (viewType == TYPE_ITEM_MAIL) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_item_mail, parent, false);
             return new Viewholder(view, this);
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_background_top_drawerlayout, parent, false);
-            mUserInfo = new UserInfo(view);
-            return mUserInfo;
+            return new UserInfo(view);
         }
 
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (position > 0) {
-            Viewholder viewholder = (Viewholder) holder;
-            viewholder.initViewHolder(mListItemMail.get(position), position);
-        } else {
+        onBindView(holder, position);
+    }
+
+    private void onBindView(RecyclerView.ViewHolder holder, int position) {
+        if (position == TYPE_USER_INFO) {
             UserInfo userInfo = (UserInfo) holder;
             ItemMail item = mListItemMail.get(position);
             if (item.getUri() == null) {
                 Log.e(TAG, "onBindViewHolder: ");
                 userInfo.mImgAvatar.setImageResource(R.drawable.custom_icon_person);
             } else {
-                Uri uriAvatar = Uri.fromFile(mUserInfo.getAvatarFilePath());
-                Log.e(TAG, "onBindViewHolder: " + uriAvatar.getPath());
-                userInfo.mImgAvatar.setImageURI(uriAvatar);
+                Log.e(TAG, "onBindViewHolder: " + mListItemMail.get(position).getUri());
+                userInfo.mImgAvatar.setImageURI(mListItemMail.get(position).getUri());
             }
+        } else {
+            Viewholder viewholder = (Viewholder) holder;
+            ItemMail itemMail = mListItemMail.get(position);
+            viewholder.initViewHolder(itemMail, position);
         }
-    }
-
-    ItemMailAdapter(Context context) {
-        mContext = context;
-        createListItemMail();
     }
 
     @Override
     public int getItemViewType(int position) {
         if (position == 0) {
-            return 0;
+            return TYPE_USER_INFO;
         } else {
-            return 1;
+            return TYPE_ITEM_MAIL;
         }
     }
 
@@ -88,54 +95,6 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         resetColorAllItem();
         mListItemMail.get(position).setIsSelected(true);
         notifyDataSetChanged();
-    }
-
-    private void resetColorAllItem() {
-        for (int i = 0; i < mNumOfItem; i++) {
-            mListItemMail.get(i).setIsSelected(false);
-        }
-    }
-
-    public void changeAvatar(Intent data, boolean isCaturePicture) {
-        saveAvatar(data, isCaturePicture);
-        mListItemMail.get(0).setUri(Uri.fromFile(mUserInfo.getAvatarFilePath()));
-        notifyItemChanged(0);
-    }
-
-    private void saveAvatar(Intent data, boolean isCapturePicture) {
-
-        Bitmap bitmap = null;
-        if (isCapturePicture) {
-            if (data.getExtras() != null) {
-                bitmap = (Bitmap) data.getExtras().get("data");
-            }
-        } else {
-            Uri uri = data.getData();
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), uri);
-            } catch (Exception e) {
-                Log.e(TAG, "saveAvatar: " + e.toString());
-            }
-        }
-        File path = mUserInfo.getAvatarFilePath();
-        FileOutputStream outputStream = null;
-        try {
-            outputStream = new FileOutputStream(path);
-            if (bitmap != null) {
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "saveAvatar: " + e.toString());
-        } finally {
-            try {
-                if (outputStream != null) {
-                    outputStream.flush();
-                    outputStream.close();
-                }
-            } catch (Exception e) {
-                Log.e(TAG, "saveAvatar: " + e.toString());
-            }
-        }
     }
 
     /*
@@ -167,11 +126,11 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
 
         private void initListImage() {
             for (int i = 0; i < mNumOfItem; i++) {
-                if (i == 0) {
+                if (i == ItemMail.ItemMailType.Inbox.ordinal()) {
                     mListImage.add(R.drawable.custom_icon_inbox);
-                } else if (i == 1) {
+                } else if (i == ItemMail.ItemMailType.Outbox.ordinal()) {
                     mListImage.add(R.drawable.custom_icon_outbox);
-                } else if (i == 2) {
+                } else if (i == ItemMail.ItemMailType.Trash.ordinal()) {
                     mListImage.add(R.drawable.custom_icon_trash);
                 } else {
                     mListImage.add(R.drawable.custom_icon_spam);
@@ -181,7 +140,7 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
 
         void initViewHolder(ItemMail itemMail, int position) {
             if (position > 0) {
-                mImgIcon.setImageResource(mListImage.get(position - 1));
+                mImgIcon.setImageResource(mListImage.get(position));
                 mTvName.setText(itemMail.getName());
                 if (itemMail.isSelected()) {
                     mTvName.setTextColor(Color.BLUE);
@@ -194,26 +153,13 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         }
     }
 
-    private void createListItemMail() {
-        for (int i = 0; i < mNumOfItem; i++) {
-            if (i == 0) {
-                File avatar = new File(mContext.getFilesDir() + File.separator + UserInfo.AVATAR_USER + ".jpg");
-                ItemMail itemMail = new ItemMail(i, Uri.fromFile(avatar));
-                mListItemMail.add(itemMail);
-            } else {
-                ItemMail itemMail = new ItemMail(i, null);
-                mListItemMail.add(itemMail);
-            }
-        }
-    }
-
     /*
         class viewholder for userinfo
      */
     class UserInfo extends RecyclerView.ViewHolder {
         private final ImageView mImgAvatar;
         private final String DIALOG = "Dialog";
-        static final String AVATAR_USER = "Avatar_user";
+
 
         UserInfo(View itemView) {
             super(itemView);
@@ -254,24 +200,6 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
             dialog.show();
         }
 
-        File getAvatarFilePath() {
-            String path = mContext.getFilesDir() + File.separator + AVATAR_USER + ".jpg";
-            File imgFilePath = new File(path);
-            boolean isCreateFile = false;
-            if (!imgFilePath.exists()) {
-                try {
-                    isCreateFile = imgFilePath.createNewFile();
-
-                } catch (Exception e) {
-                    Log.e(TAG, "getAvatarFilePath: " + e.toString());
-                }
-            }
-            if (!isCreateFile) {
-                return imgFilePath;
-            } else {
-                return null;
-            }
-        }
     }
 
 }
