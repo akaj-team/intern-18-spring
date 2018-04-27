@@ -24,5 +24,6 @@
         <activity android:name=".SendDataActivity" />
         <activity android:name=".ListFriendActitivy"/>
         <activity android:name=".ViewPageActivity"/>
+        <service android:name=".service_and_broadcast_receiver.MusicService"/>
     </application>
 </manifest>
