@@ -1,7 +1,6 @@
 package vn.asiantech.drawerlayout;
 
 import android.net.Uri;
-import android.util.Log;
 
 class ItemMail {
     private final ItemMailType mType;
