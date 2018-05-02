@@ -70,4 +70,6 @@
     <string name="list_of_person">List Of Person</string>
     <string name="personname">PersonName</string>
     <string name="personage">PersonAge</string>
+    <string name="play">Play</string>
+    <string name="_00_00">00:00</string>
 </resources>

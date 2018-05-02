@@ -28,5 +28,6 @@
         <activity android:name=".RecyclerViewExampleActivity" android:label="W3-D1-RecyclerView"/>
         <activity android:name=".UserMenuActivity" android:label="W4 - Memu and ToolBar"/>
         <activity android:name=".MyDatabaseActivity" android:label="Database Example"/>
+        <service android:name=".MusicServices"/>
     </application>
 </manifest>
