@@ -17,7 +17,7 @@ import java.util.List;
 
 import vn.asiantech.internship.R;
 
-public class SaveTableFragment extends Fragment implements IEventChangeData, IEventTable {
+public class SaveTableFragment extends Fragment implements IEventChangeData, IEventTable, IEventViewholderClick {
     private EditText mEdtName;
     private EditText mEdtAge;
     private IEventTable mEventTable;
@@ -41,7 +41,7 @@ public class SaveTableFragment extends Fragment implements IEventChangeData, IEv
         RecyclerView recyclerViewTable = view.findViewById(R.id.recycleViewTable);
         recyclerViewTable.setHasFixedSize(true);
         recyclerViewTable.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAdapter = new TableAdapter(mData);
+        mAdapter = new TableAdapter(mData, this);
         recyclerViewTable.setAdapter(mAdapter);
         initButton(view);
         return view;
@@ -100,5 +100,11 @@ public class SaveTableFragment extends Fragment implements IEventChangeData, IEv
     public void onChangeData() {
         mDatabase.updateListPerson(mData);
         mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onViewholderClick(Person person) {
+        mEdtAge.setText( String.valueOf(person.getAge()));
+        mEdtName.setText(person.getName());
     }
 }
