@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/edtNameDatabase"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/namedatabase"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtAgeDatabse"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtNameDatabase"
+        android:hint="@string/agedatabase"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnInsertDatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/edtNameDatabase"
+        android:text="@string/insertdatabase" />
+
+    <Button
+        android:id="@+id/btnDeleteDatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnInsertDatabase"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/edtAgeDatabse"
+        android:text="@string/deletedabase" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleViewDatabase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edtAgeDatabse"
+        android:layout_marginTop="10dp">
+
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

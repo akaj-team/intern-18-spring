@@ -1,16 +1,24 @@
 package vn.asiantech.internship.model;
 
 public class ItemDatabase {
-    private long mIdDatabase;
+    private int mId;
     private String mNameDatabase;
     private int mAgeDatabase;
 
-    public long getIdDatabase() {
-        return mIdDatabase;
+    public ItemDatabase() {
     }
 
-    public void setIdDatabase(long idDatabase) {
-        this.mIdDatabase = idDatabase;
+    public ItemDatabase(String nameDatabase, int ageDatabase) {
+        this.mNameDatabase = nameDatabase;
+        this.mAgeDatabase = ageDatabase;
+    }
+
+    public int getId() {
+        return mId;
+    }
+
+    public void setId(int id) {
+        this.mId = id;
     }
 
     public String getNameDatabase() {
@@ -25,7 +33,7 @@ public class ItemDatabase {
         return mAgeDatabase;
     }
 
-    public void setAgeDatabase(int ageDatabase) {
-        this.mAgeDatabase = ageDatabase;
+    public void setAgeDatabase(int AgeDatabase) {
+        this.mAgeDatabase = AgeDatabase;
     }
 }

@@ -1,22 +1,18 @@
 package vn.asiantech.internship;
 
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class ItemSaveTextActivity extends AppCompatActivity implements View.OnClickListener {
-    private final String SHARED_PREFERENCES_NAME = "sharepreferencesSaveText";
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
