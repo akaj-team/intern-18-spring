@@ -17,6 +17,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnPracticViewPage;
     private Button mBtnPracticMenu;
     private Button mBtnPracticDatabase;
+    private Button mBtnPracticServices;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticMenu.setOnClickListener(this);
         mBtnPracticRecylerView.setOnClickListener(this);
         mBtnPracticDatabase.setOnClickListener(this);
+        mBtnPracticServices.setOnClickListener(this);
     }
 
     @Override
@@ -78,6 +80,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 gotoDatabase();
                 break;
             }
+            case R.id.btnServices: {
+                gotoServices();
+                break;
+            }
         }
     }
 
@@ -91,6 +97,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticViewPage = findViewById(R.id.btnViewPage);
         mBtnPracticMenu = findViewById(R.id.btnMenuToolBar);
         mBtnPracticDatabase = findViewById(R.id.btnDatabase);
+        mBtnPracticServices = findViewById(R.id.btnServices);
     }
 
     public void gotoViewPage() {
@@ -137,7 +144,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBundle.putString("keyMessege", "This is data to ActivityHome from by Bundle!");
         intent.putExtras(mBundle);
 
-        //Sử dụng intent để gửi dữ liệu
+        //Sử dụng mIntent để gửi dữ liệu
         intent.putExtra("keyTitleI", "Intent: ");
         intent.putExtra("keyMessegeI", "This is data to ActivityHome from by Intent!");
 
@@ -147,6 +154,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void gotoDatabase() {
         Intent intent = new Intent(HomeActivity.this, MyDatabaseActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoServices() {
+        Intent intent = new Intent(HomeActivity.this, PlayMusicActivity.class);
         startActivity(intent);
     }
 }

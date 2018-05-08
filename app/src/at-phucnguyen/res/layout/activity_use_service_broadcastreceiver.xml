@@ -14,19 +14,37 @@
 
     <TextView
         android:id="@+id/tvTimeCount"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/sp_55"
         android:layout_height="wrap_content"
         android:layout_above="@id/btnPlayMusic"
         android:layout_alignParentLeft="true"
-        android:text="@string/_00_00" />
+        android:text="@string/_00_00"
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:id="@+id/tvTimeCountDown"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/sp_55"
         android:layout_height="wrap_content"
         android:layout_above="@id/btnPlayMusic"
         android:layout_alignParentRight="true"
-        android:text="@string/_00_00" />
+        android:text="@string/_00_00"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tvNameSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seekbarTimeMusic"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imgSong"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_music_note_black_24dp" />
 
     <SeekBar
         android:id="@+id/seekbarTimeMusic"

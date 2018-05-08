@@ -3,4 +3,6 @@
     <dimen name="tvperson_width">175dp</dimen>
     <dimen name="padding_1dp">1dp</dimen>
     <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="sp_55">55dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
 </resources>
