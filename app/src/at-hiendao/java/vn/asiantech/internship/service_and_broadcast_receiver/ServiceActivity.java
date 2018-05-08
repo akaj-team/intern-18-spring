@@ -57,7 +57,7 @@ public class ServiceActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ServiceActivity.this, MusicService.class);
-                intent.putExtra(MusicService.PLAY, true);
+                intent.putExtra(MusicService.FILTER_PLAY, true);
                 startService(intent);
             }
         });
@@ -66,7 +66,7 @@ public class ServiceActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ServiceActivity.this, MusicService.class);
-                intent.putExtra(MusicService.PAUSE, true);
+                intent.putExtra(MusicService.FILTER_PAUSE, true);
                 startService(intent);
             }
         });

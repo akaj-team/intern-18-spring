@@ -29,9 +29,9 @@ public class MusicService extends Service implements IEventReceiverData {
     public static final String ACTION = "notification";
     public static final String CURRENT_TIME = "currenttime";
     public static final String TOTAL_TIME = "totaltime";
-    public static final String PAUSE = "ActionPause";
-    public static final String CLOSE = "ActionClose";
-    public static final String PLAY = "ActionPlay";
+    public static final String FILTER_PAUSE = "Filterpause";
+    public static final String FILTER_CLOSE = "Filterclose";
+    public static final String FILTER_PLAY = "Filterplay";
     public static final String ACTION_PAUSE = "android.hdx.action.PauseMusic";
     public static final String ACTION_CLOSE = "android.hdx.action.Close_Notification";
     private MyBroadCastReceiver mBroadCastReceiver = new MyBroadCastReceiver();
@@ -64,12 +64,12 @@ public class MusicService extends Service implements IEventReceiverData {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (intent.getExtras() != null) {
-            if (intent.getExtras().getBoolean(PLAY) && !mMediaPlayer.isPlaying()) {
+            if (intent.getExtras().getBoolean(FILTER_PLAY) && !mMediaPlayer.isPlaying()) {
                 mMediaPlayer.start();
                 play();
-            } else if (intent.getExtras().getBoolean(PAUSE)) {
+            } else if (intent.getExtras().getBoolean(FILTER_PAUSE)) {
                 pause();
-            } else if (intent.getExtras().getBoolean(CLOSE)) {
+            } else if (intent.getExtras().getBoolean(FILTER_CLOSE)) {
                 closeNotification();
             }
         }
