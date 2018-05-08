@@ -30,11 +30,14 @@ public class MusicService extends Service implements IEventReceiverData {
     public static final String CURRENT_TIME = "current_time";
     public static final String TOTAL_TIME = "total_time";
     public static final String PAUSE = "Pause";
+    public static final String CLOSE = "Close";
     public static final String PLAY = "play";
     public static final String ACTION_PAUSE = "android.hdx.action.PauseMusic";
     public static final String ACTION_CLOSE = "android.hdx.action.Close_Notification";
     private MyBroadCastReceiver mBroadCastReceiver = new MyBroadCastReceiver();
     private NotificationManager mManager;
+    private Notification.Builder mNotificationBuilder;
+    private RemoteViews mRemoteViews;
 
     private Runnable mRunnable = new Runnable() {
         @Override
@@ -45,7 +48,7 @@ public class MusicService extends Service implements IEventReceiverData {
                 float totalTime = mMediaPlayer.getDuration();
                 int percent = (int) (currentTime / totalTime * 100);
                 loadMusic(currentTime, totalTime);
-                initNotification(percent);
+                updateNotification(percent);
             } finally {
                 if (mMediaPlayer.getCurrentPosition() == mMediaPlayer.getDuration()) {
                     stopMusic();
@@ -64,8 +67,9 @@ public class MusicService extends Service implements IEventReceiverData {
                 mMediaPlayer.start();
                 play();
             } else if (intent.getExtras().getBoolean(PAUSE)) {
-                mMediaPlayer.pause();
-                mHandler.removeCallbacks(mRunnable);
+                pause();
+            } else if (intent.getExtras().getBoolean(CLOSE)) {
+                closeNotification();
             }
         }
         return START_STICKY;
@@ -75,12 +79,25 @@ public class MusicService extends Service implements IEventReceiverData {
     public void onCreate() {
         super.onCreate();
         initService();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.music);
         loadMusic(0, mMediaPlayer.getDuration());
     }
 
     void play() {
         mRunnable.run();
+    }
+
+    int getProgressMusic() {
+        float currentTime = mMediaPlayer.getCurrentPosition();
+        float totalTime = mMediaPlayer.getDuration();
+        return (int) (currentTime / totalTime * 100);
+    }
+
+    void pause() {
+        Log.e(TAG, "pause: " );
+        mMediaPlayer.pause();
+        mHandler.removeCallbacks(mRunnable);
+        //mRemoteViews.setImageViewResource(R.id.btnPlay, R.drawable.custom_icon_pause);
+        updateNotification(getProgressMusic());
     }
 
     void loadMusic(float currentTime, float totalTime) {
@@ -101,46 +118,78 @@ public class MusicService extends Service implements IEventReceiverData {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(CURRENT_TIME);
         registerReceiver(mBroadCastReceiver, intentFilter);
+        mMediaPlayer = MediaPlayer.create(this, R.raw.music);
+        initNotification();
     }
 
-    void initNotification(int progress) {
-        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notification);
-        remoteViews.setImageViewResource(R.id.imgIconNotify, R.drawable.custom_circle);
-        remoteViews.setProgressBar(R.id.progressBar, 100, progress, false);
-        float currentTime = mMediaPlayer.getCurrentPosition();
-        remoteViews.setTextViewText(R.id.tvCurrentTimeNotify, String.format(Locale.ENGLISH,
-                "%02d:%02d", (int) (currentTime / 1000) / 60, (int) (currentTime / 1000) % 60));
-        remoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
+    void initNotification() {
+        Log.e(TAG, "initNotification: ");
+        mRemoteViews = new RemoteViews(getPackageName(), R.layout.notification);
+        mRemoteViews.setProgressBar(R.id.progressBar, 100, 0, false);
+        mRemoteViews.setTextViewText(R.id.tvCurrentTimeNotify, String.format(Locale.ENGLISH,
+                "%02d:%02d", 0, 0));
+        mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
         float totalTime = mMediaPlayer.getDuration();
-        remoteViews.setTextViewText(R.id.tvTotalTimeNotify, String.format(Locale.ENGLISH,
+        mRemoteViews.setTextViewText(R.id.tvTotalTimeNotify, String.format(Locale.ENGLISH,
                 "%02d:%02d", (int) (totalTime / 1000) / 60, (int) (totalTime / 1000) % 60));
-        remoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
-        remoteViews.setTextColor(R.id.tvTotalTimeNotify, Color.BLACK);
+        mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
+        mRemoteViews.setTextColor(R.id.tvTotalTimeNotify, Color.BLACK);
 
-        Intent intent = new Intent(ACTION_CLOSE);
-        PendingIntent pending = PendingIntent.getBroadcast(this, mNotifyId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        remoteViews.setOnClickPendingIntent(R.id.btnPlay, pending);
+        Intent intentPause = new Intent(ACTION_PAUSE);
+        PendingIntent pendingIntentPause = PendingIntent.getBroadcast(this, mNotifyId, intentPause, 0);
+        mRemoteViews.setOnClickPendingIntent(R.id.btnPlay, pendingIntentPause);
+
+        Intent intentClose = new Intent(ACTION_CLOSE);
+        PendingIntent pendingIntentClose = PendingIntent.getBroadcast(this, mNotifyId, intentClose, 0);
+        mRemoteViews.setOnClickPendingIntent(R.id.btnClose, pendingIntentClose);
 
         Intent notificationIntent = new Intent(this, ServiceActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, mNotifyId, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        Notification.Builder builder = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.custom_icon_person)
-                .setContentTitle(getString(R.string.app_name))
-                .setContent(remoteViews)
-                .setContentText(getString(R.string.notification_text));
-        builder.setContentIntent(pendingIntent);
-
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, mNotifyId,
+                notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            mNotificationBuilder = new Notification.Builder(this)
+                    .setSmallIcon(R.drawable.custom_icon_person)
+                    .setContentTitle(getString(R.string.app_name))
+                    .setContent(mRemoteViews)
+                    .setContentText(getString(R.string.notification_text))
+                    .setContentIntent(pendingIntent);
+        }
         mManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             if (mManager != null) {
-                startForeground(mNotifyId, builder.build());
-                mManager.notify(mNotifyId, builder.build());
+                startForeground(mNotifyId, mNotificationBuilder.build());
+            }
+        }
+    }
+
+    void updateNotification(int progress) {
+        mRemoteViews.setProgressBar(R.id.progressBar, 100, progress, false);
+        float currentTime = mMediaPlayer.getCurrentPosition();
+        mRemoteViews.setTextViewText(R.id.tvCurrentTimeNotify, String.format(Locale.ENGLISH,
+                "%02d:%02d", (int) (currentTime / 1000) / 60, (int) (currentTime / 1000) % 60));
+        mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
+        float totalTime = mMediaPlayer.getDuration();
+        mRemoteViews.setTextViewText(R.id.tvTotalTimeNotify, String.format(Locale.ENGLISH,
+                "%02d:%02d", (int) (totalTime / 1000) / 60, (int) (totalTime / 1000) % 60));
+        mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
+        mRemoteViews.setTextColor(R.id.tvTotalTimeNotify, Color.BLACK);
+        mNotificationBuilder.setContent(mRemoteViews);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            if (mManager != null) {
+                mManager.notify(mNotifyId, mNotificationBuilder.build());
             }
         }
     }
 
     void closeNotification() {
-        mManager.cancel(mNotifyId);
+
+        if (!mMediaPlayer.isPlaying()) {
+            Log.e(TAG, "closeNotification: " );
+            stopForeground(true);
+            mManager.cancel(mNotifyId);
+
+        }
     }
 
     @Override
@@ -148,6 +197,9 @@ public class MusicService extends Service implements IEventReceiverData {
         super.onDestroy();
         mMediaPlayer.stop();
         mHandler.removeCallbacks(mRunnable);
+        if (!mMediaPlayer.isPlaying()) {
+            stopSelf();
+        }
         Log.e(TAG, "onDestroy: ");
     }
 
@@ -182,8 +234,7 @@ public class MusicService extends Service implements IEventReceiverData {
                 play();
             }
         }
-        IntentFilter test = IntentFilter.
-        Log.e(TAG, "onReceive: " + intent.getAction());
+
     }
 
 
