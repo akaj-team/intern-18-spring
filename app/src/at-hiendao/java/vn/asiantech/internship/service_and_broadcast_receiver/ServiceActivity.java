@@ -20,7 +20,7 @@ import vn.asiantech.internship.R;
 
 
 public class ServiceActivity extends Activity {
-    public static String TAG = "123";
+    public static final String TAG = "123";
     private TextView mTvCurrentTime;
     private TextView mTvTotalTime;
     private SeekBar mSeekBar;

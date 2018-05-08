@@ -23,21 +23,22 @@ import vn.asiantech.internship.R;
 
 public class MusicService extends Service implements IEventReceiverData {
     private MediaPlayer mMediaPlayer;
-    public static String TAG = "123";
+    public static final String TAG = "123";
     private Handler mHandler = new Handler();
     private static final int mNotifyId = 3;
     public static final String ACTION = "notification";
     public static final String CURRENT_TIME = "current_time";
     public static final String TOTAL_TIME = "total_time";
-    public static final String PAUSE = "Pause";
-    public static final String CLOSE = "Close";
-    public static final String PLAY = "play";
+    public static final String PAUSE = "Action_Pause";
+    public static final String CLOSE = "Action_Close";
+    public static final String PLAY = "Action_Play";
     public static final String ACTION_PAUSE = "android.hdx.action.PauseMusic";
     public static final String ACTION_CLOSE = "android.hdx.action.Close_Notification";
     private MyBroadCastReceiver mBroadCastReceiver = new MyBroadCastReceiver();
     private NotificationManager mManager;
     private Notification.Builder mNotificationBuilder;
     private RemoteViews mRemoteViews;
+    private final String FORMAT = "%02d:%02d";
 
     private Runnable mRunnable = new Runnable() {
         @Override
@@ -83,6 +84,7 @@ public class MusicService extends Service implements IEventReceiverData {
     }
 
     void play() {
+        mRemoteViews.setImageViewResource(R.id.imgBtnPlay, R.drawable.custom_icon_pause);
         mRunnable.run();
     }
 
@@ -94,9 +96,16 @@ public class MusicService extends Service implements IEventReceiverData {
 
     void pause() {
         Log.e(TAG, "pause: " );
-        mMediaPlayer.pause();
-        mHandler.removeCallbacks(mRunnable);
-        //mRemoteViews.setImageViewResource(R.id.btnPlay, R.drawable.custom_icon_pause);
+        if(mMediaPlayer.isPlaying()) {
+            mMediaPlayer.pause();
+            mHandler.removeCallbacks(mRunnable);
+            mRemoteViews.setImageViewResource(R.id.imgBtnPlay, R.drawable.custom_icon_play);
+        }
+        else
+        {
+            mMediaPlayer.start();
+            play();
+        }
         updateNotification(getProgressMusic());
     }
 
@@ -127,11 +136,11 @@ public class MusicService extends Service implements IEventReceiverData {
         mRemoteViews = new RemoteViews(getPackageName(), R.layout.notification);
         mRemoteViews.setProgressBar(R.id.progressBar, 100, 0, false);
         mRemoteViews.setTextViewText(R.id.tvCurrentTimeNotify, String.format(Locale.ENGLISH,
-                "%02d:%02d", 0, 0));
+                FORMAT, 0, 0));
         mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
         float totalTime = mMediaPlayer.getDuration();
         mRemoteViews.setTextViewText(R.id.tvTotalTimeNotify, String.format(Locale.ENGLISH,
-                "%02d:%02d", (int) (totalTime / 1000) / 60, (int) (totalTime / 1000) % 60));
+                FORMAT, (int) (totalTime / 1000) / 60, (int) (totalTime / 1000) % 60));
         mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
         mRemoteViews.setTextColor(R.id.tvTotalTimeNotify, Color.BLACK);
 
@@ -166,11 +175,11 @@ public class MusicService extends Service implements IEventReceiverData {
         mRemoteViews.setProgressBar(R.id.progressBar, 100, progress, false);
         float currentTime = mMediaPlayer.getCurrentPosition();
         mRemoteViews.setTextViewText(R.id.tvCurrentTimeNotify, String.format(Locale.ENGLISH,
-                "%02d:%02d", (int) (currentTime / 1000) / 60, (int) (currentTime / 1000) % 60));
+                FORMAT, (int) (currentTime / 1000) / 60, (int) (currentTime / 1000) % 60));
         mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
         float totalTime = mMediaPlayer.getDuration();
         mRemoteViews.setTextViewText(R.id.tvTotalTimeNotify, String.format(Locale.ENGLISH,
-                "%02d:%02d", (int) (totalTime / 1000) / 60, (int) (totalTime / 1000) % 60));
+                FORMAT, (int) (totalTime / 1000) / 60, (int) (totalTime / 1000) % 60));
         mRemoteViews.setTextColor(R.id.tvCurrentTimeNotify, Color.BLACK);
         mRemoteViews.setTextColor(R.id.tvTotalTimeNotify, Color.BLACK);
         mNotificationBuilder.setContent(mRemoteViews);
@@ -200,7 +209,7 @@ public class MusicService extends Service implements IEventReceiverData {
         if (!mMediaPlayer.isPlaying()) {
             stopSelf();
         }
-        Log.e(TAG, "onDestroy: ");
+
     }
 
     @Override

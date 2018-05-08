@@ -28,7 +28,16 @@
         android:layout_height="30dp"
         android:layout_below="@+id/progressBar"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/custom_icon_play" />
+        android:alpha="0"/>
+
+    <ImageView
+        android:id="@+id/imgBtnPlay"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/btnPlay"
+        android:layout_alignRight="@id/btnPlay"
+        android:layout_alignTop="@id/btnPlay"
+        android:src="@drawable/custom_icon_play"/>
 
     <Button
         android:id="@+id/btnClose"
