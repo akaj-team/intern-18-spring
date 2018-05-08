@@ -27,11 +27,11 @@ public class MusicService extends Service implements IEventReceiverData {
     private Handler mHandler = new Handler();
     private static final int mNotifyId = 3;
     public static final String ACTION = "notification";
-    public static final String CURRENT_TIME = "current_time";
-    public static final String TOTAL_TIME = "total_time";
-    public static final String PAUSE = "Action_Pause";
-    public static final String CLOSE = "Action_Close";
-    public static final String PLAY = "Action_Play";
+    public static final String CURRENT_TIME = "currenttime";
+    public static final String TOTAL_TIME = "totaltime";
+    public static final String PAUSE = "ActionPause";
+    public static final String CLOSE = "ActionClose";
+    public static final String PLAY = "ActionPlay";
     public static final String ACTION_PAUSE = "android.hdx.action.PauseMusic";
     public static final String ACTION_CLOSE = "android.hdx.action.Close_Notification";
     private MyBroadCastReceiver mBroadCastReceiver = new MyBroadCastReceiver();
@@ -204,12 +204,6 @@ public class MusicService extends Service implements IEventReceiverData {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mMediaPlayer.stop();
-        mHandler.removeCallbacks(mRunnable);
-        if (!mMediaPlayer.isPlaying()) {
-            stopSelf();
-        }
-
     }
 
     @Override
