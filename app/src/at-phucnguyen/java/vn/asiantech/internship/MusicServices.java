@@ -152,11 +152,11 @@ public class MusicServices extends Service {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         Log.e(TAG, "onDestroy: ");
         mMedia.pause();
         mNotificationManager.cancel(IDNOTIMUSIC);
         removeUpdateTimeSong();
+        super.onDestroy();
     }
 
     private void removeUpdateTimeSong() {
