@@ -6,20 +6,24 @@ public class Song {
     private String path;
     private Long duration;
 
-    public String getDuration() {
-        int hours = (int) (duration / 3600);
-        int temp = (int) (duration - hours * 3600);
-        int mins = temp / 60;
-        int secs = temp - mins * 60;
+    public String getDurationMS() {
+        int hours = (int) (duration / 3600000);
+        int temp = (int) (duration - hours * 3600000);
+        int mins = temp / 60000;
+        int secs = (temp - mins * 60000)/1000;
         if (hours == 0){
-            return mins + ": " + secs;
+            return mins + ":" + secs;
         } else {
-            return hours + ": " + mins + ": " + secs;
+            return hours + ":" + mins + ":" + secs;
         }
     }
 
     public void setDuration(Long duration) {
-        this.duration = duration / 1000;
+        this.duration = duration;
+    }
+
+    public int getDuration() {
+        return duration.intValue();
     }
 
     public String getTitle() {

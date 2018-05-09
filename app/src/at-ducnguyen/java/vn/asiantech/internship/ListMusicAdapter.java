@@ -1,7 +1,6 @@
 package vn.asiantech.internship;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +12,11 @@ import vn.asiantech.internship.model.Song;
 
 public class ListMusicAdapter extends RecyclerView.Adapter<ListMusicAdapter.SongHolder> {
     private List<Song> mListSong;
+    private OnChooseSongListener mListener;
 
-    ListMusicAdapter(List<Song> listSong) {
+    ListMusicAdapter(List<Song> listSong, OnChooseSongListener listener) {
         this.mListSong = listSong;
+        mListener = listener;
     }
 
     @Override
@@ -53,7 +54,7 @@ public class ListMusicAdapter extends RecyclerView.Adapter<ListMusicAdapter.Song
                 @Override
                 public void onFocusChange(View view, boolean b) {
                     if (b) {
-                        Log.d("AAA", "onFocusChange: " + getAdapterPosition());
+                        mListener.onChooseSong(mListSong.get(getAdapterPosition()));
                     }
                 }
             });
@@ -64,7 +65,7 @@ public class ListMusicAdapter extends RecyclerView.Adapter<ListMusicAdapter.Song
             mTvPosition.setText(number);
             mTvTitle.setText(mListSong.get(position).getTitle());
             mTvArtist.setText(mListSong.get(position).getArtist());
-            mTvDuration.setText(mListSong.get(position).getDuration());
+            mTvDuration.setText(mListSong.get(position).getDurationMS());
         }
     }
 }

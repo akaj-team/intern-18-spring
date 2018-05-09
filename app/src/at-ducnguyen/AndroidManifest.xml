@@ -30,5 +30,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ArtistInfomationActivity" />
         <activity android:name=".MusicActivity" />
+
+        <service android:name=".MusicPlayerService" />
     </application>
 </manifest>
