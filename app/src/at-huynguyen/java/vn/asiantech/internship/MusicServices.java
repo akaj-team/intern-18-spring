@@ -46,27 +46,6 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
     private PendingIntent mIntentPause;
     private PendingIntent mIntentDelete;
 
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
-
-    private void playMusicNotification() {
-        mMediaPlayer.start();
-    }
-
-    private void pauseMusicNotification() {
-        mMediaPlayer.pause();
-    }
-
-    private void deleteMusicNotification() {
-        if (!mMediaPlayer.isPlaying()) {
-            stopForeground(true);
-            mNotificationManager.cancel(NOTIFICATION_ID);
-        }
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -97,6 +76,27 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
             }
         }
         return START_STICKY;
+    }
+
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    private void playMusicNotification() {
+        mMediaPlayer.start();
+    }
+
+    private void pauseMusicNotification() {
+        mMediaPlayer.pause();
+    }
+
+    private void deleteMusicNotification() {
+        if (!mMediaPlayer.isPlaying()) {
+            stopForeground(true);
+            mNotificationManager.cancel(NOTIFICATION_ID);
+        }
     }
 
     private void initView() {
