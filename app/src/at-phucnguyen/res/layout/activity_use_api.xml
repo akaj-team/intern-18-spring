@@ -5,16 +5,17 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/edtDataSearch"
+        android:id="@+id/edtDataSendRequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         tools:ignore="LabelFor" />
 
     <Button
+        android:id="@+id/btnSendRequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtDataSearch"
+        android:layout_below="@id/edtDataSendRequest"
         android:text="@string/search" />
 
 </RelativeLayout>

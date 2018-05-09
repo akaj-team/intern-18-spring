@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button mBtnPracticW1View;
     private Button mBtnPracticW1Intent;
     private Button mBtnPracticViewPage;
+    private Button mBtnUseApi;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,6 +89,13 @@ public class HomeActivity extends AppCompatActivity {
                 gotoRecyclerView();
             }
         });
+
+        mBtnUseApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoUseApi();
+            }
+        });
     }
 
     private void mappingView() {
@@ -98,6 +106,7 @@ public class HomeActivity extends AppCompatActivity {
         mBtnPracticResrouce = findViewById(R.id.btnResource);
         mBtnPracticEventAndListenes = findViewById(R.id.btnEventAndListenes);
         mBtnPracticViewPage = findViewById(R.id.btnViewPage);
+        mBtnUseApi = findViewById(R.id.btnUseApi);
     }
 
     public void gotoViewPage() {
@@ -117,6 +126,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void gotoEventAndListenes() {
         Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoUseApi() {
+        Intent intent = new Intent(HomeActivity.this, UseApiActivity.class);
         startActivity(intent);
     }
 }
