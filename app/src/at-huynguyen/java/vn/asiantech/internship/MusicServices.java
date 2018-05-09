@@ -26,7 +26,7 @@ import java.lang.ref.WeakReference;
 
 public class MusicServices extends Service implements View.OnClickListener, MediaPlayer.OnCompletionListener, SeekBar.OnSeekBarChangeListener {
     public static MediaPlayer mMediaPlayer;
-    private WeakReference<Button> mBtnPlay;
+    public static WeakReference<Button> mBtnPlay;
     public static WeakReference<TextView> mTvTimeSong;
     public static WeakReference<TextView> mTvTotalOfSong;
     public static WeakReference<SeekBar> mSeekbar;
@@ -34,6 +34,7 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
     private static final String NOTIFY_PAUSE = "vn.asiantech.internship.pause";
     private static final String NOTIFY_DELETE = "vn.asiantech.internship.delete";
     private static final int NOTIFICATION_ID = 1;
+    private static final String TAG = "Music_Services";
 
 
     static Handler mHandler = new Handler();
@@ -68,11 +69,11 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
 
     @Override
     public void onCreate() {
+        super.onCreate();
         mMediaPlayer = MediaPlayer.create(this, R.raw.music);
         mMediaPlayer.reset();
         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         initNotification();
-        super.onCreate();
     }
 
     @Override
@@ -110,8 +111,8 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         mMediaPlayer.stop();
+        super.onDestroy();
     }
 
     public void playSong() {
@@ -133,7 +134,7 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
             });
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
@@ -185,7 +186,7 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
                 changeImgBtnPauseNoti(mMediaPlayer.isPlaying());
                 mRemoteViews.setTextViewText(R.id.tvTimeSongNotification, Utility.milliSecondsToTimer(currentTime));
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.d(TAG, "" + e.getMessage());
             }
 
         }

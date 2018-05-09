@@ -1,10 +1,6 @@
 package vn.asiantech.internship;
 
-import android.annotation.SuppressLint;
-//import android.content.BroadcastReceiver;
-//import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +11,10 @@ import android.widget.TextView;
 
 
 public class ServicesActivity extends AppCompatActivity {
-    @SuppressLint("StaticFieldLeak")
+
     public static Button mBtnPlay;
-    @SuppressLint("StaticFieldLeak")
     public static SeekBar mSeekBar;
-    @SuppressLint("StaticFieldLeak")
     public static TextView mTvTimeSong;
-    @SuppressLint("StaticFieldLeak")
     public static TextView mTvTotalOfSong;
     private Intent mIntent;
 
