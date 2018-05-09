@@ -82,8 +82,8 @@ public class UseApiActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent = new Intent(this, InfoSingerActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString(String.valueOf(R.string.key_singername), singerInfo.getName());
-        bundle.putInt(String.valueOf(R.string.key_singertrack), singerInfo.getTracker_count());
-        bundle.putString(String.valueOf(R.string.key_singer_url_img), singerInfo.getImage_url());
+        bundle.putInt(String.valueOf(R.string.key_singertrack), singerInfo.getTrackerCount());
+        bundle.putString(String.valueOf(R.string.key_singer_url_img), singerInfo.getImageUrl());
         intent.putExtras(bundle);
         startActivity(intent);
     }

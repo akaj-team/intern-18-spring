@@ -40,59 +40,11 @@ public class SingerInfo {
         this.name = name;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getImage_url() {
+    public String getImageUrl() {
         return image_url;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
-    }
-
-    public String getThumb_url() {
-        return thumb_url;
-    }
-
-    public void setThumb_url(String thumb_url) {
-        this.thumb_url = thumb_url;
-    }
-
-    public String getFacebook_page_url() {
-        return facebook_page_url;
-    }
-
-    public void setFacebook_page_url(String facebook_page_url) {
-        this.facebook_page_url = facebook_page_url;
-    }
-
-    public String getMbid() {
-        return mbid;
-    }
-
-    public void setMbid(String mbid) {
-        this.mbid = mbid;
-    }
-
-    public int getTracker_count() {
+    public int getTrackerCount() {
         return tracker_count;
-    }
-
-    public void setTracker_count(int tracker_count) {
-        this.tracker_count = tracker_count;
-    }
-
-    public int getUpcoming_event_count() {
-        return upcoming_event_count;
-    }
-
-    public void setUpcoming_event_count(int upcoming_event_count) {
-        this.upcoming_event_count = upcoming_event_count;
     }
 }
