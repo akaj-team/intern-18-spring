@@ -37,8 +37,9 @@
     <string name="entername">Enter Name</string>
     <string name="malefemale">Male or Female</string>
     <string name="services">Services</string>
-    <string name="totalofsong">Tổng thời gian bài hát</string>
-    <string name="timesong">Thời gian nhạc chạy</string>
+    <string name="totalofsong">Total times</string>
+    <string name="timesong">Current times</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
+    <string name="namesong">Quan trọng là thần thái - OnlyC ft Karik</string>
 </resources>
