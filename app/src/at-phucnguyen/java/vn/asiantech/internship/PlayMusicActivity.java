@@ -144,9 +144,14 @@ public class PlayMusicActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
+    protected void onDestroy() {
+        unregisterReceiver(mIntentReceiver);
+        super.onDestroy();
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
-        unregisterReceiver(mIntentReceiver);
         Log.e(TAG, "onStop: ");
     }
 
