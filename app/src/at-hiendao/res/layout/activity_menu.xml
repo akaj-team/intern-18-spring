@@ -50,5 +50,13 @@
             android:text="@string/menu_viewpage"
             android:textSize="25dp"/>
 
+        <Button
+            android:id="@+id/btnService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_button_service"
+            android:textSize="25dp"/>
+
+
     </LinearLayout>
 </LinearLayout>

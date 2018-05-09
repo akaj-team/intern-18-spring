@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.asiantech.internship">
 
+    <permission android:name="android.permission.SEND_SMS" />
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -20,9 +21,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".ViewActivity" />
-        <activity android:name=".EventListenerActivity"/>
+        <activity android:name=".EventListenerActivity" />
         <activity android:name=".SendDataActivity" />
-        <activity android:name=".ListFriendActitivy"/>
-        <activity android:name=".ViewPageActivity"/>
+        <activity android:name=".ListFriendActitivy" />
+        <activity android:name=".ViewPageActivity" />
+        <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
+
+        <service
+            android:name=".service_and_broadcast_receiver.MusicService"
+            android:enabled="true" />
+        <receiver
+            android:name=".service_and_broadcast_receiver.MyBroadCastReceiver"
+            android:permission="android.permission.SEND_SMS">
+            <intent-filter>
+                <action android:name="android.hdx.action.Close_Notification" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hdx.action.PauseMusic" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
