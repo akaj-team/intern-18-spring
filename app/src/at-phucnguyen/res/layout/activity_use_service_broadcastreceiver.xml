@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_1dp">
+
+    <Button
+        android:id="@+id/btnPlayMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/play" />
+
+    <TextView
+        android:id="@+id/tvTimeCount"
+        android:layout_width="@dimen/sp_55"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnPlayMusic"
+        android:layout_alignParentLeft="true"
+        android:text="@string/_00_00"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tvTimeCountDown"
+        android:layout_width="@dimen/sp_55"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnPlayMusic"
+        android:layout_alignParentRight="true"
+        android:text="@string/_00_00"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tvNameSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seekbarTimeMusic"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imgSong"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_music_note_black_24dp" />
+
+    <SeekBar
+        android:id="@+id/seekbarTimeMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnPlayMusic"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/tvTimeCountDown"
+        android:layout_toRightOf="@id/tvTimeCount" />
+</RelativeLayout>
