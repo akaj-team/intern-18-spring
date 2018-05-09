@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
+import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
+
 import vn.asiantech.internship.api.ApiActivity;
 
 public class MenuActivity extends Activity {
@@ -57,6 +59,15 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnService = findViewById(R.id.btnService);
+        btnService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ServiceActivity.class);
                 startActivity(intent);
             }
         });

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.asiantech.internship">
 
+    <permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -28,5 +29,20 @@
         <activity android:name=".ListFriendActitivy" />
         <activity android:name=".ViewPageActivity" />
         <activity android:name=".api.ApiActivity" />
+        <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
+
+        <service
+            android:name=".service_and_broadcast_receiver.MusicService"
+            android:enabled="true" />
+        <receiver
+            android:name=".service_and_broadcast_receiver.MyBroadCastReceiver"
+            android:permission="android.permission.SEND_SMS">
+            <intent-filter>
+                <action android:name="android.hdx.action.Close_Notification" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hdx.action.PauseMusic" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

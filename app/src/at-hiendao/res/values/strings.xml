@@ -46,5 +46,9 @@
     <string name="test_number_tracker_api">30,000 Tracker</string>
     <string name="button_api_track">Track</string>
     <string name="Menu_API">API</string>
+    <string name="button_start">Start</string>
+    <string name="menu_button_service">Service</string>
+    <string name="button_pause">Pause</string>
+    <string name="notification_text">Notification</string>
 
 </resources>

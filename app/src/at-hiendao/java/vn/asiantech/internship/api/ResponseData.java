@@ -48,27 +48,27 @@ public class ResponseData {
         this.url = url;
     }
 
-    public String getImage_url() {
+    public String getImageUrl() {
         return image_url;
     }
 
-    public void setImage_url(String image_url) {
+    public void setImageUrl(String image_url) {
         this.image_url = image_url;
     }
 
-    public String getThumb_url() {
+    public String getThumbUrl() {
         return thumb_url;
     }
 
-    public void setThumb_url(String thumb_url) {
+    public void setThumbUrl(String thumb_url) {
         this.thumb_url = thumb_url;
     }
 
-    public String getFacebook_page_url() {
+    public String getFacebookPageUrl() {
         return facebook_page_url;
     }
 
-    public void setFacebook_page_url(String facebook_page_url) {
+    public void setFacebookPageUrl(String facebook_page_url) {
         this.facebook_page_url = facebook_page_url;
     }
 
@@ -80,19 +80,19 @@ public class ResponseData {
         this.mbid = mbid;
     }
 
-    public int getTracker_count() {
+    public int getTrackerCount() {
         return tracker_count;
     }
 
-    public void setTracker_count(int tracker_count) {
+    public void setTrackerCount(int tracker_count) {
         this.tracker_count = tracker_count;
     }
 
-    public int getUpcoming_event_count() {
+    public int getUpComingEventCount() {
         return upcoming_event_count;
     }
 
-    public void setUpcoming_event_count(int upcoming_event_count) {
+    public void setUpComingEventCount(int upcoming_event_count) {
         this.upcoming_event_count = upcoming_event_count;
     }
 }
