@@ -1,25 +1,20 @@
 package vn.asiantech.internship.api;
 
-import android.util.Log;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import vn.asiantech.internship.BuildConfig;
-
-import static vn.asiantech.internship.api.ArtistInfoFragment.TAG;
 
 public class ServiceApi {
     private static final int CONNECT_TIMEOUT_MILLS = 1000 * 120;
     private static ServiceApi sInstace;
     private static final String BASE_URL = "https://rest.bandsintown.com";
-    IEventRequest mRequest;
+    private IEventRequest mRequest;
 
     public static ServiceApi getInstance() {
         if (sInstace == null) {
@@ -28,7 +23,7 @@ public class ServiceApi {
         return sInstace;
     }
 
-    ServiceApi() {
+    private ServiceApi() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

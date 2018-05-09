@@ -10,9 +10,6 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import vn.asiantech.internship.R;
 
 import static vn.asiantech.internship.api.ArtistInfoFragment.TAG;
