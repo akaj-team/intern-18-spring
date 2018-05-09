@@ -40,5 +40,9 @@
     <string name="button_friend_text">Friend</string>
     <string name="button_unfriend_text">Unfriend</string>
     <string name="menu_viewpage">ViewPage</string>
+    <string name="button_start">Start</string>
+    <string name="menu_button_service">Service</string>
+    <string name="button_pause">Pause</string>
+    <string name="notification_text">Notification</string>
 
 </resources>
