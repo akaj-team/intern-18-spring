@@ -24,6 +24,7 @@
         <activity android:name=".SendDataActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".ArtistInfomationActivity" />
     </application>
 
 </manifest>

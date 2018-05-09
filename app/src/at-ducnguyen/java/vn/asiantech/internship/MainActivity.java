@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnListener = findViewById(R.id.btnListener);
         btnListener.setOnClickListener(this);
+
+        Button btnApi = findViewById(R.id.btnApi);
+        btnApi.setOnClickListener(this);
     }
 
     @Override
@@ -70,6 +73,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             }
+            case R.id.btnApi: {
+                goTo(ArtistInfomationActivity.class);
+                break;
+            }
         }
+    }
+
+    private void goTo(Class classMark) {
+        Intent intent = new Intent(MainActivity.this, classMark);
+        startActivity(intent);
     }
 }
