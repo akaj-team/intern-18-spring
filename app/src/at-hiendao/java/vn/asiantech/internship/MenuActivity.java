@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
+import vn.asiantech.internship.api.ApiActivity;
+
 public class MenuActivity extends Activity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +49,14 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ViewPageActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btnAPI = findViewById(R.id.btnAPI);
+        btnAPI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
                 startActivity(intent);
             }
         });

@@ -47,6 +47,10 @@ android {
         lintConfig file('lint.xml')
         xmlOutput file("${buildDir}/reports/lint-results.xml")
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -63,7 +67,9 @@ dependencies {
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.google.code.gson:gson:2.8.4'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 }
 
 apply from: "../ci-java.gradle"

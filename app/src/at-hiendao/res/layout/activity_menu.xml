@@ -48,7 +48,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/menu_viewpage"
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btnAPI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Menu_API"
+            android:textSize="25dp" />
 
     </LinearLayout>
 </LinearLayout>
