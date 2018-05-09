@@ -74,7 +74,7 @@ public class ArtistInfoFragment extends Fragment {
                 if (responseData != null) {
                     try {
                         mImgAvatar.setImageBitmap(mLoadImageAsync.execute(responseData.getImageUrl()).get());
-                        mTvNumOfTrack.setText(String.format(Locale.ENGLISH, "%d %s", responseData.getTrackerCount(), TEXT_TRACKER));
+                        mTvNumOfTrack.setText(String.format(Locale.ENGLISH, "%,d %s", responseData.getTrackerCount(), TEXT_TRACKER));
                         mTvNameArtist.setText(responseData.getName());
                         showLoadProgress(false);
 
