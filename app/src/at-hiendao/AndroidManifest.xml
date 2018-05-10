@@ -26,6 +26,7 @@
         <activity android:name=".ListFriendActitivy" />
         <activity android:name=".ViewPageActivity" />
         <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
+        <activity android:name=".unitest.LoginActivity"/>
 
         <service
             android:name=".service_and_broadcast_receiver.MusicService"

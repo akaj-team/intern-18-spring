@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
+import vn.asiantech.internship.unitest.LoginActivity;
 
 public class MenuActivity extends Activity {
     @Override
@@ -60,6 +61,13 @@ public class MenuActivity extends Activity {
                 Intent intent = new Intent(MenuActivity.this, ServiceActivity.class);
                 startActivity(intent);
             }
+        });
+
+        Button btnUnitTest = findViewById(R.id.btnUnitTest);
+        btnUnitTest.setOnClickListener((view)->
+        {
+            Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
 
     }

@@ -57,6 +57,14 @@
             android:text="@string/menu_button_service"
             android:textSize="25dp"/>
 
+        <Button
+            android:id="@+id/btnUnitTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_unit_test"
+            android:textSize="25dp"/>
+
+
 
     </LinearLayout>
 </LinearLayout>
