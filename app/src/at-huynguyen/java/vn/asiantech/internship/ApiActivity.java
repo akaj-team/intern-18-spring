@@ -74,9 +74,9 @@ public class ApiActivity extends AppCompatActivity {
     public void showInformationSinger(InformationSinger informationSinger) {
         Intent intent = new Intent(this, InformationSingerActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString(String.valueOf(R.string.imagesinger), informationSinger.getImage_url());
+        bundle.putString(String.valueOf(R.string.imagesinger), informationSinger.getImageUrl());
         bundle.putString(String.valueOf(R.string.singername), informationSinger.getName());
-        bundle.putInt(String.valueOf(R.string.numbertracker), informationSinger.getTracker_count());
+        bundle.putInt(String.valueOf(R.string.numbertracker), informationSinger.getTrackerCount());
         intent.putExtras(bundle);
         startActivity(intent);
     }

@@ -40,7 +40,7 @@ public class InformationSingerActivity extends AppCompatActivity {
                     .centerCrop()
                     .into(mImgSinger);
             mTvSingerName.setText(bundle.getString(String.valueOf(R.string.singername)));
-            mTvNumberTracker.setText(String.valueOf(bundle.getInt(String.valueOf(R.string.numbertracker))) + " Trackers");
+            mTvNumberTracker.setText(bundle.getInt(String.valueOf(R.string.numbertracker)) + " Trackers");
         }
     }
 }

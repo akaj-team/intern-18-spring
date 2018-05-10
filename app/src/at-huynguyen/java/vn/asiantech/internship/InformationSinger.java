@@ -40,11 +40,11 @@ public class InformationSinger {
         this.name = name;
     }
 
-    public String getImage_url() {
+    public String getImageUrl() {
         return image_url;
     }
 
-    public int getTracker_count() {
+    public int getTrackerCount() {
         return tracker_count;
     }
 }
