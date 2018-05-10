@@ -43,4 +43,6 @@
     <string name="search">Search</string>
     <string name="btnTrack">Track</string>
     <string name="w5_api">W5 Api</string>
+    <string name="login">Login</string>
+    <string name="w5_unit_test">W5 Unit Test</string>
 </resources>
