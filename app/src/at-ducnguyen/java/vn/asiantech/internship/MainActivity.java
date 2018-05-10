@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnViewAndViewGroup;
     public final static String KEY_TITLE = "KEY_TITLE";
+    public static final String TAG = "AAA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btnApi: {
                 goTo(ArtistInfomationActivity.class);
-                break;
             }
         }
     }
