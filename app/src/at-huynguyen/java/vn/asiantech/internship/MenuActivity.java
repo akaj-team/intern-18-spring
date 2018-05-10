@@ -3,6 +3,7 @@ package vn.asiantech.internship;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
@@ -60,6 +61,15 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnApi = findViewById(R.id.btnApi);
+        btnApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
                 startActivity(intent);
             }
         });

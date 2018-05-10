@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edtEnterNameSinger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/entersingername"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnInfoSinger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtEnterNameSinger"
+        android:layout_marginTop="10dp"
+        android:text="@string/searchsinger" />
+
+</RelativeLayout>
