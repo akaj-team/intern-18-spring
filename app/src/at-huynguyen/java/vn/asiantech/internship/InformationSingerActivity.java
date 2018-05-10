@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+
 public class InformationSingerActivity extends AppCompatActivity {
+    public static final String IMAGE_SINGER = "image_singer";
     public static final String SINGER_NAME = "singer_name";
     public static final String NUMBER_TRACKER = "number_tracker";
     private ImageView mImgSinger;
@@ -24,7 +26,7 @@ public class InformationSingerActivity extends AppCompatActivity {
         initInformationSinger();
     }
 
-    public void initViews() {
+    private void initViews() {
         mImgSinger = findViewById(R.id.imgSinger);
         mTvSingerName = findViewById(R.id.tvSingerName);
         mTvNumberTracker = findViewById(R.id.tvNumberTracker);
@@ -34,7 +36,7 @@ public class InformationSingerActivity extends AppCompatActivity {
     public void initInformationSinger() {
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
-            String imgSinger = bundle.getString(String.valueOf(R.string.imagesinger));
+            String imgSinger = bundle.getString(IMAGE_SINGER);
             Glide.
                     with(this)
                     .load(imgSinger)

@@ -40,7 +40,4 @@
     <string name="searchsinger">Search Singer</string>
     <string name="track">Track</string>
     <string name="api">API</string>
-    <string name="singername">Singer Name</string>
-    <string name="numbertracker">Number Tracker</string>
-    <string name="imagesinger">Image Singer</string>
 </resources>

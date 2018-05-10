@@ -16,6 +16,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ApiActivity extends AppCompatActivity {
+    public static final String IMAGE_SINGER = "image_singer";
+    public static final String SINGER_NAME = "singer_name";
+    public static final String NUMBER_TRACKER = "number_tracker";
     private static final String APP_ID = "10";
     private EditText mEdtEnterNameSinger;
     private Button mBtnInfoSinger;
@@ -24,29 +27,26 @@ public class ApiActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api);
-        initView();
+        initViews();
         mBtnInfoSinger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.btnInfoSinger: {
-                        String searchSinger = mEdtEnterNameSinger.getText().toString();
-                        if (!searchSinger.equals("")) {
-                            loadInformationSinger(searchSinger);
-                        }
-                        break;
+                if (view.getId() == R.id.btnInfoSinger) {
+                    String searchSinger = mEdtEnterNameSinger.getText().toString();
+                    if (!searchSinger.equals("")) {
+                        loadInformationSinger(searchSinger);
                     }
                 }
             }
         });
     }
 
-    public void initView() {
+    private void initViews() {
         mEdtEnterNameSinger = findViewById(R.id.edtEnterNameSinger);
         mBtnInfoSinger = findViewById(R.id.btnInfoSinger);
     }
 
-    public void loadInformationSinger(String name) {
+    private void loadInformationSinger(String name) {
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(ApiActivity.this);
         progressDialog.setIndeterminate(true);
@@ -56,7 +56,7 @@ public class ApiActivity extends AppCompatActivity {
         ApiServices.getApiServices().getIEventApi().getInformationSinger(name, APP_ID).enqueue(new Callback<InformationSinger>() {
             @Override
             public void onResponse(@NonNull Call<InformationSinger> call, @NonNull Response<InformationSinger> response) {
-                if (progressDialog.isShowing()) {
+                if (response.body() != null ) {
                     progressDialog.dismiss();
                     showInformationSinger(response.body());
                 }
@@ -64,9 +64,7 @@ public class ApiActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<InformationSinger> call, @NonNull Throwable t) {
-                if (progressDialog.isShowing()) {
                     progressDialog.dismiss();
-                }
             }
         });
     }
@@ -74,9 +72,9 @@ public class ApiActivity extends AppCompatActivity {
     public void showInformationSinger(InformationSinger informationSinger) {
         Intent intent = new Intent(this, InformationSingerActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString(String.valueOf(R.string.imagesinger), informationSinger.getImageUrl());
-        bundle.putString(String.valueOf(R.string.singername), informationSinger.getName());
-        bundle.putInt(String.valueOf(R.string.numbertracker), informationSinger.getTrackerCount());
+        bundle.putString(IMAGE_SINGER, informationSinger.getImageUrl());
+        bundle.putString(SINGER_NAME, informationSinger.getName());
+        bundle.putInt(NUMBER_TRACKER, informationSinger.getTrackerCount());
         intent.putExtras(bundle);
         startActivity(intent);
     }

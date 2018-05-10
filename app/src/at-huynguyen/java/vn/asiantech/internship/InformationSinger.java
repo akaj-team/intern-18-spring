@@ -1,5 +1,7 @@
 package vn.asiantech.internship;
 
+import com.google.gson.annotations.SerializedName;
+
 public class InformationSinger {
 
     /**
@@ -17,12 +19,17 @@ public class InformationSinger {
     private String id;
     private String name;
     private String url;
-    private String image_url;
-    private String thumb_url;
-    private String facebook_page_url;
+    @SerializedName("image_url")
+    private String imageUrl;
+    @SerializedName("thum_url")
+    private String thumbUrl;
+    @SerializedName("facebook_page_url")
+    private String facebookPageUrl;
     private String mbid;
-    private int tracker_count;
-    private int upcoming_event_count;
+    @SerializedName("tracker_count")
+    private int trackerCount;
+    @SerializedName("upcoming_event_count")
+    private int upcomingEventCount;
 
     public String getId() {
         return id;
@@ -41,10 +48,10 @@ public class InformationSinger {
     }
 
     public String getImageUrl() {
-        return image_url;
+        return imageUrl;
     }
 
     public int getTrackerCount() {
-        return tracker_count;
+        return trackerCount;
     }
 }
