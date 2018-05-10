@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class InformationSingerActivity extends AppCompatActivity {
+    public static final String SINGER_NAME = "singer_name";
+    public static final String NUMBER_TRACKER = "number_tracker";
     private ImageView mImgSinger;
     private TextView mTvSingerName;
     private TextView mTvNumberTracker;
@@ -18,11 +20,11 @@ public class InformationSingerActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showinformationsinger);
-        initView();
+        initViews();
         initInformationSinger();
     }
 
-    public void initView() {
+    public void initViews() {
         mImgSinger = findViewById(R.id.imgSinger);
         mTvSingerName = findViewById(R.id.tvSingerName);
         mTvNumberTracker = findViewById(R.id.tvNumberTracker);
@@ -39,8 +41,8 @@ public class InformationSingerActivity extends AppCompatActivity {
                     .override(250, 250)
                     .centerCrop()
                     .into(mImgSinger);
-            mTvSingerName.setText(bundle.getString(String.valueOf(R.string.singername)));
-            mTvNumberTracker.setText(bundle.getInt(String.valueOf(R.string.numbertracker)) + " Trackers");
+            mTvSingerName.setText(SINGER_NAME);
+            mTvNumberTracker.setText(NUMBER_TRACKER);
         }
     }
 }

@@ -27,7 +27,7 @@
         android:layout_alignLeft="@+id/imgSinger"
         android:layout_alignStart="@+id/imgSinger"
         android:layout_below="@+id/tvSingerName"
-        android:textColor="#9e9191"
+        android:textColor="@color/colorSelected"
         android:textSize="20dp" />
 
     <Button
@@ -38,8 +38,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="120dp"
         android:background="@color/colorBlue"
-        android:textStyle="bold"
+        android:text="@string/track"
         android:textColor="@color/colorPrimaryDark"
-        android:text="@string/track" />
+        android:textStyle="bold" />
 
 </RelativeLayout>
