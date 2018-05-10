@@ -44,7 +44,7 @@ public class ApiClient {
         return okHttpClientBuilder;
     }
 
-    public ApiInterface getmApiInterface() {
+    public ApiInterface getApiInterface() {
         return mApiInterface;
     }
 }

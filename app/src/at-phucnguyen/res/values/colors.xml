@@ -7,4 +7,6 @@
     <color name="colorFriends">#80000000</color>
     <color name="buttonFriendsPred">#804aae20</color>
     <color name="buttonFriendsNorm">#80afc8da</color>
+    <color name="black">#000000</color>
+    <color name="black8">#80000000</color>
 </resources>

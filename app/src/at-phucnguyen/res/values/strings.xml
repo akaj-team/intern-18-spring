@@ -75,8 +75,5 @@
     <string name="services_boardcast_receive">Services Boardcast Receive</string>
     <string name="search">Search</string>
     <string name="w5_api">W5 - Api</string>
-    <string name="key_singername">SingerName</string>
-    <string name="key_singertrack">SingerTrack</string>
-    <string name="key_singer_url_img">SingerImageUrl</string>
     <string name="track">Track</string>
 </resources>

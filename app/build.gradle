@@ -74,7 +74,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 
-    //Thu vien load anh tu internet
+    //Libary load image from internet
     implementation 'com.squareup.picasso:picasso:2.4.0'
 }
 
