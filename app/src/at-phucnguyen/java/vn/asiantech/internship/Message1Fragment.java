@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Message1Fragment extends Fragment {
+public class Message1Fragment extends Fragment implements View.OnClickListener {
     private OnFragmentManager mOnFmListener;
     private EditText mEdtData;
 
@@ -27,13 +27,15 @@ public class Message1Fragment extends Fragment {
             String pareDataFragment2 = getArguments().getString("keyDataFragment2");
             mTvDataFragment1.setText(pareDataFragment2);
         }
-        mBtnSendData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startFragmentSecond();
-            }
-        });
+        mBtnSendData.setOnClickListener(this);
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnSendDataFragment1) {
+            startFragmentSecond();
+        }
     }
 
     /**

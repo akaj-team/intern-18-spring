@@ -9,21 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class ResourceHomeFragment extends Fragment {
+public class ResourceHomeFragment extends Fragment implements View.OnClickListener {
     private OnFragmentResoureHome mOnFmListenesHome;
-    private Button mBtnComment;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_resource, container, false);
-        mBtnComment = view.findViewById(R.id.btnCommentResrouce);
-        mBtnComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openChatView();
-            }
-        });
+        Button mBtnComment = view.findViewById(R.id.btnCommentResrouce);
+        mBtnComment.setOnClickListener(this);
         return view;
     }
 
@@ -46,5 +40,12 @@ public class ResourceHomeFragment extends Fragment {
     public void openChatView() {
         mOnFmListenesHome.onSendEventBtnClick();
         mOnFmListenesHome.onSendEvent("Message on Resource Home");
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnCommentResrouce) {
+            openChatView();
+        }
     }
 }
