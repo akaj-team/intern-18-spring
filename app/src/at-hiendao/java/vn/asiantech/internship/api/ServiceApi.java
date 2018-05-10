@@ -12,9 +12,10 @@ import vn.asiantech.internship.BuildConfig;
 
 public class ServiceApi {
     private static final int CONNECT_TIMEOUT_MILLS = 1000 * 120;
-    private static ServiceApi sInstace;
     private static final String BASE_URL = "https://rest.bandsintown.com";
-    private IEventRequest mRequest;
+
+    private static ServiceApi sInstace;
+    private ApiRequest mRequest;
 
     public static ServiceApi getInstance() {
         if (sInstace == null) {
@@ -29,7 +30,7 @@ public class ServiceApi {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getOkHttpClientBuilder().build())
                 .build();
-        mRequest = retrofit.create(IEventRequest.class);
+        mRequest = retrofit.create(ApiRequest.class);
     }
 
     private OkHttpClient.Builder getOkHttpClientBuilder() {
@@ -46,7 +47,7 @@ public class ServiceApi {
         return okHttpClientBuilder;
     }
 
-    public IEventRequest getRequest() {
+    public ApiRequest getRequest() {
         return mRequest;
     }
 }

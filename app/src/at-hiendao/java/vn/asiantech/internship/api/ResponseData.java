@@ -1,5 +1,7 @@
 package vn.asiantech.internship.api;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ResponseData {
 
     /**
@@ -13,86 +15,98 @@ public class ResponseData {
      * tracker_count : 3581671
      * upcoming_event_count : 0
      */
+    @SerializedName("id")
+    private String mId;
+    @SerializedName("name")
+    private String mName;
+    @SerializedName("url")
+    private String mUrl;
+    @SerializedName("image_url")
+    private String mImageUrl;
+    @SerializedName("thumb_url")
+    private String mThumbUrl;
+    @SerializedName("facebook_page_url")
+    private String mFacebookPageUrl;
+    @SerializedName("mbid")
+    private String mBid;
+    @SerializedName("tracker_count")
+    private int mTrackerCount;
+    @SerializedName("upcoming_event_count")
+    private int mUpcomingEventCount;
 
-    private String id;
-    private String name;
-    private String url;
-    private String image_url;
-    private String thumb_url;
-    private String facebook_page_url;
-    private String mbid;
-    private int tracker_count;
-    private int upcoming_event_count;
+    public ResponseData(String mId) {
+        this.mId = mId;
+    }
 
     public String getId() {
-        return id;
+        return mId;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.mId = id;
     }
 
     public String getName() {
-        return name;
+        return mName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.mName = name;
     }
 
     public String getUrl() {
-        return url;
+        return mUrl;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        this.mUrl = url;
     }
 
     public String getImageUrl() {
-        return image_url;
+        return mImageUrl;
     }
 
     public void setImageUrl(String image_url) {
-        this.image_url = image_url;
+        this.mImageUrl = image_url;
     }
 
     public String getThumbUrl() {
-        return thumb_url;
+        return mThumbUrl;
     }
 
     public void setThumbUrl(String thumb_url) {
-        this.thumb_url = thumb_url;
+        this.mThumbUrl = thumb_url;
     }
 
     public String getFacebookPageUrl() {
-        return facebook_page_url;
+        return mFacebookPageUrl;
     }
 
     public void setFacebookPageUrl(String facebook_page_url) {
-        this.facebook_page_url = facebook_page_url;
+        this.mFacebookPageUrl = facebook_page_url;
     }
 
     public String getMbid() {
-        return mbid;
+        return mBid;
     }
 
     public void setMbid(String mbid) {
-        this.mbid = mbid;
+        this.mBid = mbid;
     }
 
     public int getTrackerCount() {
-        return tracker_count;
+        return mTrackerCount;
     }
 
     public void setTrackerCount(int tracker_count) {
-        this.tracker_count = tracker_count;
+        this.mTrackerCount = tracker_count;
     }
 
     public int getUpComingEventCount() {
-        return upcoming_event_count;
+        return mUpcomingEventCount;
     }
 
     public void setUpComingEventCount(int upcoming_event_count) {
-        this.upcoming_event_count = upcoming_event_count;
+        this.mUpcomingEventCount = upcoming_event_count;
     }
 }
