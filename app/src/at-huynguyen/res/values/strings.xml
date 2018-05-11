@@ -36,4 +36,5 @@
     <string name="showtext">Show Text</string>
     <string name="entername">Enter Name</string>
     <string name="malefemale">Male or Female</string>
+    <string name="login">Login</string>
 </resources>
