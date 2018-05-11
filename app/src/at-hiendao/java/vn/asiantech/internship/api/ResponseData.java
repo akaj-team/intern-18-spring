@@ -15,6 +15,7 @@ public class ResponseData {
      * tracker_count : 3581671
      * upcoming_event_count : 0
      */
+
     @SerializedName("id")
     private String mId;
     @SerializedName("name")
@@ -33,10 +34,6 @@ public class ResponseData {
     private int mTrackerCount;
     @SerializedName("upcoming_event_count")
     private int mUpcomingEventCount;
-
-    public ResponseData(String mId) {
-        this.mId = mId;
-    }
 
     public String getId() {
         return mId;

@@ -46,14 +46,13 @@ public class ArtistInfoFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public void onDestroyView() {
         Activity activity = getActivity();
         if (activity instanceof ApiActivity) {
-            ((ApiActivity) activity).showView(true);
+            ((ApiActivity) activity).showViews(true);
         }
         super.onDestroyView();
     }
@@ -64,7 +63,6 @@ public class ArtistInfoFragment extends Fragment {
         mTvNameArtist = view.findViewById(R.id.tvNameArtist);
         mLoadProgressLayout = view.findViewById(R.id.clLoadArtistInfo);
         mArtistLayout = view.findViewById(R.id.clArtistInfo);
-
     }
 
     private void loadData(String name) {
@@ -73,23 +71,23 @@ public class ArtistInfoFragment extends Fragment {
             @Override
             public void onResponse(@NonNull Call<ResponseData> call, @NonNull Response<ResponseData> response) {
                 ResponseData responseData = response.body();
-
+                showLoadProgress(false);
                 if (responseData != null) {
                     try {
                         mImgAvatar.setImageBitmap(mLoadImageAsync.execute(responseData.getImageUrl()).get());
-                        mTvNumOfTrack.setText(String.format(Locale.ENGLISH, "%,d %s", responseData.getTrackerCount(), TEXT_TRACKER));
-                        mTvNameArtist.setText(responseData.getName());
-                        showLoadProgress(false);
                     } catch (InterruptedException e) {
-                        Log.e(TAG, "onResponse: " + e.toString());
+                        Log.e(TAG, "InterruptedException: " + e.toString());
                     } catch (ExecutionException e) {
-                        Log.e(TAG, "onResponse: " + e.toString());
+                        Log.e(TAG, "ExecutionException: " + e.toString());
                     }
+                    mTvNumOfTrack.setText(String.format(Locale.ENGLISH, "%,d %s", responseData.getTrackerCount(), TEXT_TRACKER));
+                    mTvNameArtist.setText(responseData.getName());
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<ResponseData> call, @NonNull Throwable t) {
+                Log.e(TAG, "onFailure: ");
                 showLoadProgress(false);
             }
         });
@@ -97,11 +95,11 @@ public class ArtistInfoFragment extends Fragment {
 
     private void showLoadProgress(boolean isShow) {
         if (isShow) {
-            mLoadProgressLayout.setX(0);
+            mLoadProgressLayout.setAlpha(1);
             mArtistLayout.setX(-mArtistLayout.getWidth());
         } else {
-            mLoadProgressLayout.setX(-mLoadProgressLayout.getWidth());
             mArtistLayout.setX(0);
+            mLoadProgressLayout.setAlpha(0);
         }
     }
 }

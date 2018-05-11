@@ -16,9 +16,7 @@ public class LoadImageAsync extends AsyncTask<String, Integer, Bitmap> {
 
     @Override
     protected Bitmap doInBackground(String... strings) {
-
         String path = strings[0];
-        Log.e(TAG, "doInBackground: " + strings[0] );
         try {
             URL url = new URL(path);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -29,7 +27,7 @@ public class LoadImageAsync extends AsyncTask<String, Integer, Bitmap> {
             options.inPreferredConfig = Bitmap.Config.RGB_565;
             mBitmapImage = BitmapFactory.decodeStream(inputStream);
         } catch (IOException e) {
-            Log.e(TAG, "doInBackground: " + e.toString());
+            Log.e(TAG, "doInBackground - IOException" + e.toString());
         }
         return mBitmapImage;
     }

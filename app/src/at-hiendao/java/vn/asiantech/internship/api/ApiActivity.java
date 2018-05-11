@@ -30,13 +30,13 @@ public class ApiActivity extends Activity {
         mBtnCheck = findViewById(R.id.btnCheck);
         mEdtCheck = findViewById(R.id.edtArtistName);
         mLayout = findViewById(R.id.clEditFont);
-        showView(true);
+        showViews(true);
     }
 
     void setListenners() {
         mBtnCheck.setOnClickListener((view) -> {
             if (!TextUtils.isEmpty(mEdtCheck.getText().toString().trim())) {
-                showView(false);
+                showViews(false);
                 ArtistInfoFragment artistInfoFragment = new ArtistInfoFragment();
                 Bundle data = new Bundle();
                 data.putString(NAME_ARTIST, mEdtCheck.getText().toString());
@@ -48,7 +48,7 @@ public class ApiActivity extends Activity {
         });
     }
 
-    void showView(boolean isShow) {
+    void showViews(boolean isShow) {
         if (isShow) {
             mLayout.setX(0);
         } else {

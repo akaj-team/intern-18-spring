@@ -42,8 +42,8 @@
     <string name="menu_viewpage">ViewPage</string>
     <string name="hint_api_editext">Enter artist name</string>
     <string name="button_api_check">Check</string>
-    <string name="test_name_artist_api">Justin bieber</string>
-    <string name="test_number_tracker_api">30,000 Tracker</string>
+    <string name="test_name_artist_api">None</string>
+    <string name="test_number_tracker_api">0 Tracker</string>
     <string name="button_api_track">Track</string>
     <string name="Menu_API">API</string>
     <string name="button_start">Start</string>
