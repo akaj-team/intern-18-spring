@@ -1,4 +1,4 @@
-package vn.asiantech.internship;
+package vn.asiantech.internship.api;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -15,11 +15,8 @@ public class InformationSinger {
      * tracker_count : 2961
      * upcoming_event_count : 0
      */
-    @SerializedName("id")
     private String id;
-    @SerializedName("name")
     private String name;
-    @SerializedName("url")
     private String url;
     @SerializedName("image_url")
     private String imageUrl;
@@ -27,7 +24,6 @@ public class InformationSinger {
     private String thumbUrl;
     @SerializedName("facebook_page_url")
     private String facebookPageUrl;
-    @SerializedName("mbid")
     private String mbid;
     @SerializedName("tracker_count")
     private int trackerCount;

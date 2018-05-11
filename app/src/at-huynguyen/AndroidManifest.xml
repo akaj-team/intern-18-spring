@@ -4,8 +4,6 @@
     package="vn.asiantech.internship">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -29,15 +27,15 @@
             android:label="@string/app1_name" />
         <activity
             android:name=".UserActivity"
-            android:label="SignUpActivity" />
+            android:label="@string/signup_activity" />
         <activity android:name=".ViewViewGroupActivity" />
         <activity
             android:name=".PagerActivity"
             android:label="@string/favorite" />
         <activity android:name=".ListFriendActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ApiActivity" />
-        <activity android:name=".InformationSingerActivity" />
+        <activity android:name=".api.ApiActivity" />
+        <activity android:name=".api.InformationSingerActivity" />
     </application>
 
 </manifest>

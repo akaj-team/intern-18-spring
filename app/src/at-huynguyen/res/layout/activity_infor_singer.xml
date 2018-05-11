@@ -7,7 +7,6 @@
         android:id="@+id/imgSinger"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -41,5 +40,4 @@
         android:text="@string/track"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
-
 </RelativeLayout>

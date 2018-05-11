@@ -7,7 +7,7 @@
         android:id="@+id/edtEnterNameSinger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/entersingername"
+        android:hint="@string/enter_singer_name"
         android:inputType="text" />
 
     <Button
@@ -16,6 +16,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtEnterNameSinger"
         android:layout_marginTop="10dp"
-        android:text="@string/searchsinger" />
-
+        android:text="@string/search_singer" />
 </RelativeLayout>

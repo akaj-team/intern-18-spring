@@ -1,4 +1,4 @@
-package vn.asiantech.internship;
+package vn.asiantech.internship.api;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import vn.asiantech.internship.R;
 
 public class InformationSingerActivity extends AppCompatActivity {
     public static final String IMAGE_SINGER = "image_singer";
@@ -21,7 +22,7 @@ public class InformationSingerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_showinformationsinger);
+        setContentView(R.layout.activity_infor_singer);
         initViews();
         initInformationSinger();
     }
@@ -43,8 +44,8 @@ public class InformationSingerActivity extends AppCompatActivity {
                     .override(250, 250)
                     .centerCrop()
                     .into(mImgSinger);
-            mTvSingerName.setText(SINGER_NAME);
-            mTvNumberTracker.setText(NUMBER_TRACKER);
+            mTvSingerName.setText(bundle.getString(SINGER_NAME));
+            mTvNumberTracker.setText(String.valueOf(bundle.getInt(NUMBER_TRACKER)) + " Tracks");
         }
     }
 }
