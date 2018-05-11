@@ -6,14 +6,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ServiceApi {
     private static final String BASE_URL = "https://rest.bandsintown.com";
 
-    private static ServiceApi sInstace;
+    private static ServiceApi sInstance;
     private ApiRequest mRequest;
 
     public static ServiceApi getInstance() {
-        if (sInstace == null) {
-            sInstace = new ServiceApi();
+        if (sInstance == null) {
+            sInstance = new ServiceApi();
         }
-        return sInstace;
+        return sInstance;
     }
 
     private ServiceApi() {
