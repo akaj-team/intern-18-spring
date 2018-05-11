@@ -45,7 +45,7 @@ public class InformationSingerActivity extends AppCompatActivity {
                     .centerCrop()
                     .into(mImgSinger);
             mTvSingerName.setText(bundle.getString(SINGER_NAME));
-            mTvNumberTracker.setText(String.valueOf(bundle.getInt(NUMBER_TRACKER)) + " Tracks");
+            mTvNumberTracker.setText(bundle.getInt(NUMBER_TRACKER) + " Tracks");
         }
     }
 }
