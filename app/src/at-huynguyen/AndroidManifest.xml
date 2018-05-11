@@ -32,7 +32,7 @@
             android:label="@string/favorite" />
         <activity android:name=".ListFriendActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".UnitTestActvity" />
+        <activity android:name=".unittest.UnitTestActvity" />
     </application>
 
 </manifest>

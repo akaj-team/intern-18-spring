@@ -1,4 +1,4 @@
-package vn.asiantech.internship;
+package vn.asiantech.internship.unittest;
 
 public class UserUnitTest {
     private String mUserName;

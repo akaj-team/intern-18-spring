@@ -25,16 +25,17 @@
     <string name="female">Female</string>
     <string name="emailsubs">Email Subscriptions</string>
     <string name="allowemail">Allow email from other</string>
-    <string name="eventandlistener">Event and Listener</string>
-    <string name="viewviewgroup">View and View Group</string>
+    <string name="event_and_listener">Event and Listener</string>
+    <string name="view_viewgroup">View and View Group</string>
     <string name="resources">Resources</string>
-    <string name="viewpager">View Pager</string>
+    <string name="view_pager">View Pager</string>
     <string name="favorite">Favorite</string>
     <string name="unfavorite">Unfavorite</string>
-    <string name="recycleview">Recycle View</string>
+    <string name="recycle_view">Recycle View</string>
     <string name="fragment">Fragment</string>
     <string name="showtext">Show Text</string>
     <string name="entername">Enter Name</string>
     <string name="malefemale">Male or Female</string>
     <string name="login">Login</string>
+    <string name="unit_test">Unit Test</string>
 </resources>

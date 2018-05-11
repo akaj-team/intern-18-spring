@@ -1,4 +1,4 @@
-package vn.asiantech.internship;
+package vn.asiantech.internship.unittest;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import vn.asiantech.internship.R;
 
 public class UnitTestActvity extends AppCompatActivity {
     private EditText mEdtUsernameUnitTest;
