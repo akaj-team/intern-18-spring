@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btnUnitTest: {
                 goTo(LoginActivity.class);
-                break;
             }
             case R.id.btnApi: {
                 goTo(ArtistInfomationActivity.class);
