@@ -77,4 +77,6 @@
     <string name="w5_api">W5 - Api</string>
     <string name="track">Track</string>
     <string name="type_name_singer">Type Name Singer</string>
+    <string name="lable_api">API</string>
+    <string name="lable_infosinger">Info Singer</string>
 </resources>

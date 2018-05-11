@@ -1,4 +1,4 @@
-package vn.asiantech.internship.rest;
+package vn.asiantech.internship.api;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

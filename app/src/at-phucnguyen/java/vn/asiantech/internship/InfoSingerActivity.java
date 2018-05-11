@@ -10,9 +10,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class InfoSingerActivity extends AppCompatActivity {
-    public static final String KEY_SINGER_NAME = "SingerName";
-    public static final String KEY_SINGER_TRACK = "SingerTrack";
-    public static final String KEY_SINGER_IMGURL = "SingerImageUrl";
+    public static final String KEY_SINGER_NAME = "singer_name";
+    public static final String KEY_SINGER_TRACK = "singer_track";
+    public static final String KEY_SINGER_IMGURL = "singer_mage_url";
 
     private ImageView mImgSinger;
     private TextView mTvNameSinger;

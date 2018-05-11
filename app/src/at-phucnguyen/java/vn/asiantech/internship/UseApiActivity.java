@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +15,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import vn.asiantech.internship.model.SingerInfo;
-import vn.asiantech.internship.rest.ApiClient;
+import vn.asiantech.internship.api.ApiClient;
 
 public class UseApiActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String APP_ID = "1111";
@@ -63,6 +64,7 @@ public class UseApiActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onFailure(@NonNull Call<SingerInfo> call, @NonNull Throwable t) {
                         //call api fail
+                        mProgressDialog.dismiss();
                     }
                 });
     }
@@ -80,8 +82,8 @@ public class UseApiActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnSendRequest) {
-            String keySearch = mEdtNameSinger.getText().toString();
-            if (!keySearch.equals("")) {
+            String keySearch = mEdtNameSinger.getText().toString().trim();
+            if (!TextUtils.isEmpty(keySearch)) {
                 getJson(keySearch);
             }
         }
