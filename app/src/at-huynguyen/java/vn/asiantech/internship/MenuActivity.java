@@ -55,6 +55,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnRecycleView = findViewById(R.id.btnRecycleView);
         btnRecycleView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,5 +64,15 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnServices = findViewById(R.id.btnServices);
+        btnServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ServicesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
+

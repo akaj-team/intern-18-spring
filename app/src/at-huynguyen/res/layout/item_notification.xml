@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgNotification"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/img_music" />
+
+    <ImageButton
+        android:id="@+id/imgBtnPlayNotification"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/imgNotification"
+        android:layout_toRightOf="@+id/imgNotification" />
+
+    <TextView
+        android:id="@+id/tvTimeSongNotification"
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/colorBlack"
+        android:layout_toEndOf="@+id/imgBtnPlayNotification"
+        android:layout_toRightOf="@+id/imgBtnPlayNotification" />
+
+    <Button
+        android:id="@+id/btnDeleteNotification"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_clear_black" />
+
+</RelativeLayout>
