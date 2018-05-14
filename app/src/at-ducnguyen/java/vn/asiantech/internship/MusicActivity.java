@@ -1,10 +1,16 @@
 package vn.asiantech.internship;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +33,7 @@ public class MusicActivity extends AppCompatActivity implements
     public static final String DURATION_KEY = "DURATION KEY";
     public static final String DURATION_ACTION = "DURATION ACTION";
     public static final String DURATION_POSITION = "DURATION POSITION";
+    private static final int REQUEST_READ_EXTERNAL_STORAGE = 1;
     private Intent mServiceIntent;
     private SeekBar mSeekBarDuration;
     private BroadcastReceiver mDurationReceiver;
@@ -56,9 +63,7 @@ public class MusicActivity extends AppCompatActivity implements
         mTvPositionTime = findViewById(R.id.tvPositionTime);
         mTvPlayingSong = findViewById(R.id.tvPlayingSong);
 
-        LoadPlayListTask loadPlayListTask = new LoadPlayListTask(this);
-        loadPlayListTask.setOnLoadPlayListListener(this);
-        loadPlayListTask.execute();
+        askExternalStoragePermissionGranted();
 
         mDurationReceiver = new BroadcastReceiver() {
             @Override
@@ -91,7 +96,6 @@ public class MusicActivity extends AppCompatActivity implements
         RecyclerView recyclerViewListMusic = findViewById(R.id.recyclerViewListMusic);
         recyclerViewListMusic.setAdapter(listMusicAdapter);
         recyclerViewListMusic.setLayoutManager(new LinearLayoutManager(this));
-        mServiceIntent = new Intent(MusicActivity.this, MusicPlayerService.class);
     }
 
     @Override
@@ -107,14 +111,17 @@ public class MusicActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mServiceIntent.putExtra(DURATION_POSITION, mSeekBarDuration.getProgress());
-        startService(mServiceIntent);
+        if (mServiceIntent != null) {
+            mServiceIntent.putExtra(DURATION_POSITION, mSeekBarDuration.getProgress());
+            startService(mServiceIntent);
+        }
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mDurationReceiver);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mSongStateReceiver);
     }
 
     @Override
     public void onClick(View view) {
+        mServiceIntent = new Intent(MusicActivity.this, MusicPlayerService.class);
         if (mBtnPlayPause.getText().toString().equals(getString(R.string.play))) {
             if (!isPlaying(mSong.getPath())) {
                 mPositionDuration = 0;
@@ -173,5 +180,32 @@ public class MusicActivity extends AppCompatActivity implements
 
     private boolean isPlaying(String path) {
         return mPathOfSongPlaying != null && mPathOfSongPlaying.equals(path);
+    }
+
+    public void askExternalStoragePermissionGranted() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_READ_EXTERNAL_STORAGE);
+            } else {
+                LoadPlayListTask loadPlayListTask = new LoadPlayListTask(this);
+                loadPlayListTask.setOnLoadPlayListListener(this);
+                loadPlayListTask.execute();
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_READ_EXTERNAL_STORAGE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    LoadPlayListTask loadPlayListTask = new LoadPlayListTask(this);
+                    loadPlayListTask.setOnLoadPlayListListener(this);
+                    loadPlayListTask.execute();
+                }
+            }
+        }
     }
 }
