@@ -8,8 +8,8 @@ public class PasswordValidation {
         return userName.equals(password);
     }
 
-    public static boolean isSpecialCharacterNumber(String password) {
-        Pattern patternSpecialCharacterNumber = Pattern.compile("^[a-zA-z]$", Pattern.CASE_INSENSITIVE);
+    public static boolean isSpecialCharacterNumberPassword(String password) {
+        Pattern patternSpecialCharacterNumber = Pattern.compile("[^a-zA-Z]", Pattern.CASE_INSENSITIVE);
         return patternSpecialCharacterNumber.matcher(password).find();
     }
 
@@ -17,14 +17,14 @@ public class PasswordValidation {
         return password.length() >= 8;
     }
 
-    public static boolean isDontRepeatCharacterTwice(String password) {
-        int count = 0;
+    public static boolean isDontRepeatCharacterTwicePassword(String password) {
+        int countCharacterPassword = 0;
         String pass[] = password.split("");
         for (int i = 0; i < password.length(); i++) {
             for (int j = i + 1; j < password.length(); j++) {
                 if (pass[i].equals(pass[j])) {
-                    count++;
-                    if (count > 2) {
+                    countCharacterPassword++;
+                    if (countCharacterPassword > 2) {
                         return false;
                     }
                 }
@@ -33,12 +33,17 @@ public class PasswordValidation {
         return true;
     }
 
-    public static boolean isSpace(String password) {
+    public static boolean isSpacePassword(String password) {
         return !password.contains(" ");
     }
 
-    public static boolean isThreeUppercaseLetter(String userName) {
-        Pattern patternTwoUppercaseLetter = Pattern.compile("^[A-Z]{3,}$");
-        return patternTwoUppercaseLetter.matcher(userName).find();
+    public static boolean isThreeUppercaseLetterPassword(String userName) {
+        int countUppercaseLetterPassword = 0;
+        for (int i = 0; i < userName.length(); i++) {
+            if (Character.isUpperCase(userName.charAt(i))) {
+                countUppercaseLetterPassword++;
+            }
+        }
+        return countUppercaseLetterPassword >= 3;
     }
 }

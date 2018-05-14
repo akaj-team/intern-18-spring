@@ -38,4 +38,15 @@
     <string name="malefemale">Male or Female</string>
     <string name="login">Login</string>
     <string name="unit_test">Unit Test</string>
+    <string name="length_user_name">Độ dài Username phải lớn hơn 7 và nhỏ hơn 24 kí tự</string>
+    <string name="two_uppercase_letter">Username phải có ít nhất 2 kí tự viết hoa</string>
+    <string name="special_character_space">Username không chứa kí tự đặc biệt và space</string>
+    <string name="two_digit">Username phải có nhiều nhất 2 kí tự số</string>
+    <string name="password_different_username">Password phải khác Username</string>
+    <string name="special_character_number">Password phải có ít nhất một kí tự đặc biệt hoặc số</string>
+    <string name="length_password">Độ dài Password nhỏ nhất là 8 kí tự</string>
+    <string name="dont_repeat_character_twice">Password không được lặp một kí tự bất kì quá 2 lần</string>
+    <string name="space_password">Password không được chứa khoảng trắng</string>
+    <string name="three_uppercase_letter">Password phải có ít nhất 3 kí tự viết hoa</string>
+    <string name="login_success">Đăng nhập thành công !!!</string>
 </resources>
