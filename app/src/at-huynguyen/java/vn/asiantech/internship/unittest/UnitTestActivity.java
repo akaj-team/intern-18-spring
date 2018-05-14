@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import vn.asiantech.internship.R;
 
-public class UnitTestActvity extends AppCompatActivity {
+public class UnitTestActivity extends AppCompatActivity {
     private EditText mEdtUsernameUnitTest;
     private EditText mEdtPasswordUnitTest;
     private Button mBtnLoginUnitTest;
@@ -47,7 +47,7 @@ public class UnitTestActvity extends AppCompatActivity {
             Toast.makeText(this, R.string.special_character_space, Toast.LENGTH_LONG).show();
         } else if (!UsernameValidation.isTwoDigitUsername(mEdtUsernameUnitTest.getText().toString().trim())) {
             Toast.makeText(this, R.string.two_digit, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isPasswordDifferentUserName(mEdtUsernameUnitTest.getText().toString(), mEdtPasswordUnitTest.getText().toString())) {
+        } else if (PasswordValidation.isPasswordDifferentUserName(mEdtUsernameUnitTest.getText().toString(), mEdtPasswordUnitTest.getText().toString())) {
             Toast.makeText(this, R.string.password_different_username, Toast.LENGTH_LONG).show();
         } else if (!PasswordValidation.isSpecialCharacterNumberPassword(mEdtPasswordUnitTest.getText().toString().trim())) {
             Toast.makeText(this, R.string.special_character_number, Toast.LENGTH_LONG).show();
@@ -57,7 +57,7 @@ public class UnitTestActvity extends AppCompatActivity {
             Toast.makeText(this, R.string.dont_repeat_character_twice, Toast.LENGTH_LONG).show();
         } else if (!PasswordValidation.isSpacePassword(mEdtPasswordUnitTest.getText().toString().trim())) {
             Toast.makeText(this, R.string.space_password, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isThreeUppercaseLetterPassword(mEdtUsernameUnitTest.getText().toString().trim())) {
+        } else if (!PasswordValidation.isThreeUppercaseLetterPassword(mEdtPasswordUnitTest.getText().toString().trim())) {
             Toast.makeText(this, R.string.three_uppercase_letter, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, R.string.login_success, Toast.LENGTH_LONG).show();

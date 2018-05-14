@@ -8,10 +8,6 @@ public class UserUnitTest {
         return mUserName;
     }
 
-    public void setUserName(String userName) {
-        this.mUserName = userName;
-    }
-
     public String getPassword() {
         return mPassword;
     }
