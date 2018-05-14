@@ -15,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
     private TextView mTvValidate;
     private Button mBtnLogin;
 
-    private boolean mValidate;
     private String mValidateMessage;
 
     @Override
@@ -30,9 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private void initViews() {
         mEdtUserName = findViewById(R.id.edtUserName);
         mEdtPassword = findViewById(R.id.edtPassword);
-
         mTvValidate = findViewById(R.id.tvValidate);
-
         mBtnLogin = findViewById(R.id.btnLogin);
     }
 
@@ -43,65 +40,65 @@ public class LoginActivity extends AppCompatActivity {
                 User user = new User();
                 user.setUserName(mEdtUserName.getText().toString().trim());
                 user.setPassword(mEdtPassword.getText().toString().trim());
-                checkValidate(user.getUserName(), user.getPassword());
-                if (!mValidate) {
+                if (!isValidate(user.getUserName(), user.getPassword())) {
                     mTvValidate.setText(mValidateMessage);
                 }
             }
         });
     }
 
-    private void checkValidate(String userName, String password) {
+    private boolean isValidate(String userName, String password) {
         mValidateMessage = "";
-        mValidate = true;
-        if (UserValidation.userNameLengthValidate(userName)) {
+        boolean validate = true;
+        if (UserValidation.isUserNameLengthValidate(userName)) {
             mValidateMessage += getString(R.string.error_length_user_name) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.userNameCapitalValidate(userName)) {
+        if (UserValidation.isUserNameCapitalValidate(userName)) {
             mValidateMessage += getString(R.string.error_capital_user_name) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.userNameSpecialCharAndSpaceValidate(userName)) {
+        if (UserValidation.isUserNameSpecialCharAndSpaceValidate(userName)) {
             mValidateMessage += getString(R.string.error_special_char_and_space_user_name) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.userNameDigitNumberValidate(userName)) {
+        if (UserValidation.isUserNameDigitNumberValidate(userName)) {
             mValidateMessage += getString(R.string.error_digit_number_user_name) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.passwordDifferenceUserNameValidate(password, userName)) {
+        if (UserValidation.isPasswordSameUserNameValidate(password, userName)) {
             mValidateMessage += getString(R.string.error_difference_username_pass) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (!UserValidation.passwordSpecialCharOrNumberValidate(password)) {
+        if (!UserValidation.isPasswordSpecialCharOrNumberValidate(password)) {
             mValidateMessage += getString(R.string.error_special_char_or_number_pass) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.passwordLengthValidate(password)) {
+        if (UserValidation.isPasswordLengthValidate(password)) {
             mValidateMessage += getString(R.string.error_length_pass) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.passwordRepeatCharValidate(password)) {
+        if (UserValidation.isPasswordRepeatCharValidate(password)) {
             mValidateMessage += getString(R.string.error_repeat_char_pass) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.passwordSpaceValidate(password)) {
+        if (UserValidation.isPasswordSpaceValidate(password)) {
             mValidateMessage += getString(R.string.error_space_pass) + "\n";
-            mValidate = false;
+            validate = false;
         }
 
-        if (UserValidation.passwordCapitalValidate(password)) {
+        if (UserValidation.isPasswordCapitalValidate(password)) {
             mValidateMessage += getString(R.string.error_capital_pass) + "\n";
-            mValidate = false;
+            validate = false;
         }
+        return validate;
     }
 }
