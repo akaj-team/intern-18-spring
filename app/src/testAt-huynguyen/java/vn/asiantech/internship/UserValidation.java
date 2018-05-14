@@ -1,3 +1,5 @@
+package vn.asiantech.internship;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +11,6 @@ import vn.asiantech.internship.unittest.UserUnitTest;
 import vn.asiantech.internship.unittest.UsernameValidation;
 
 import static org.mockito.Mockito.when;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserValidation {
