@@ -64,10 +64,12 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
             switch (intent.getAction()) {
                 case NOTIFY_PLAY: {
                     playMusicNotification();
+                    mBtnPlay.get().setText(R.string.pause);
                     break;
                 }
                 case NOTIFY_PAUSE: {
                     pauseMusicNotification();
+                    mBtnPlay.get().setText(R.string.play);
                     break;
                 }
                 case NOTIFY_DELETE: {
@@ -140,6 +142,7 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
 
     @Override
     public void onClick(View view) {
+        changeImgBtnPauseNoti(mMediaPlayer.isPlaying());
         switch (view.getId()) {
             case R.id.btnPlay:
                 if (mMediaPlayer.isPlaying()) {
@@ -159,7 +162,6 @@ public class MusicServices extends Service implements View.OnClickListener, Medi
                     playSong();
                 }
         }
-
     }
 
     public void updateProgressBar() {
