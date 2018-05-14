@@ -1,6 +1,7 @@
 package vn.asiantech.internship;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,13 @@ import java.util.List;
 import vn.asiantech.internship.model.ItemDatabase;
 
 public class DatabaseAdapter extends RecyclerView.Adapter<DatabaseAdapter.ViewHolder> {
+    private final static String TAG = "DatabaseAdapter";
     private List<ItemDatabase> mListItemDatabase;
+    private IEventAdapterListener mListener;
 
-    DatabaseAdapter(List<ItemDatabase> listItemDatabase) {
+    DatabaseAdapter(List<ItemDatabase> listItemDatabase, IEventAdapterListener listener) {
         this.mListItemDatabase = listItemDatabase;
+        this.mListener = listener;
     }
 
     @Override
@@ -36,7 +40,7 @@ public class DatabaseAdapter extends RecyclerView.Adapter<DatabaseAdapter.ViewHo
         return mListItemDatabase.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView mTvNameDatabase;
         private final TextView mTvAgeDatabase;
 
@@ -44,6 +48,14 @@ public class DatabaseAdapter extends RecyclerView.Adapter<DatabaseAdapter.ViewHo
             super(itemView);
             mTvNameDatabase = itemView.findViewById(R.id.tvNameDatabase);
             mTvAgeDatabase = itemView.findViewById(R.id.tvAgeDatabase);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int mSelectSingleItem = getAdapterPosition();
+            mListener.onItemDatabaseSelect(getAdapterPosition());
+            Log.e(TAG, "onClick: " + mSelectSingleItem);
         }
     }
 }

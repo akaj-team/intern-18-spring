@@ -4,8 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.BaseColumns;
+import android.util.Log;
 
 import java.util.List;
 
@@ -13,14 +14,16 @@ import vn.asiantech.internship.model.ItemDatabase;
 
 public class DatabaseManager extends SQLiteOpenHelper {
 
+    private static final String TAG = "DabaseManager";
+    private final static String SQLDrop = "DROP TABLE IF EXISTS " + UserInformation.TABLE_NAME;
     private static final String DATABASE_NAME = "Manager_Information.db";
     private static final int VERSION = 1;
     private IEventChangeData mEventChangeData;
 
-    public static class UserInformation implements BaseColumns {
+    private final class UserInformation {
 
         static final String TABLE_NAME = "User";
-        static final String ID = "_ID";
+        static final String ID = "Id";
         static final String NAME = "Name";
         static final String AGE = "Age";
     }
@@ -29,8 +32,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
             UserInformation.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             UserInformation.NAME + " TEXT, " +
             UserInformation.AGE + " INTEGER)";
-
-    private final static String SQLDrop = "DROP TABLE IF EXISTS " + UserInformation.TABLE_NAME;
 
     DatabaseManager(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -62,11 +63,15 @@ public class DatabaseManager extends SQLiteOpenHelper {
         sqLiteDatabase.close();
     }
 
-    public void deleteItemDatabase(ItemDatabase itemDatabase) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        String selection = UserInformation.NAME + "= '" + itemDatabase.getNameDatabase() + "'";
-        sqLiteDatabase.delete(UserInformation.TABLE_NAME, selection, null);
-        mEventChangeData.onChangeData();
+    public void deleteItemDatabase(Integer id) {
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            sqLiteDatabase.delete(UserInformation.TABLE_NAME, UserInformation.ID + " = ?"
+                    , new String[]{Integer.toString(id)});
+            mEventChangeData.onChangeData();
+        } catch (SQLiteException sQLE) {
+            Log.e(TAG, "deleteItem: " + sQLE.toString());
+        }
     }
 
     public void updateItemDatabase(List<ItemDatabase> listItemDatabase) {
@@ -90,5 +95,4 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void setListenerChangeItem(IEventChangeData listenerChangeData) {
         mEventChangeData = listenerChangeData;
     }
-
 }
