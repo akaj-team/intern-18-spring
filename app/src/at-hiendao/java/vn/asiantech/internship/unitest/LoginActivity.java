@@ -15,20 +15,25 @@ public class LoginActivity extends Activity {
     private TextView mTvStatus;
     private UserValidation mValidation;
     private String mStatus;
+    private Button mBtnLogin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unit_test);
-        initView();
+        initViews();
+        setListeners();
     }
 
-    void initView() {
+    void initViews() {
         mEdtPassWord = findViewById(R.id.edtPasswordUnitTest);
         mEdtUserName = findViewById(R.id.edtUserNameUnitTest);
         mTvStatus = findViewById(R.id.tvStatus);
-        Button btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener((view) ->
+        mBtnLogin = findViewById(R.id.btnLogin);
+    }
+
+    void setListeners() {
+        mBtnLogin.setOnClickListener((view) ->
         {
             mValidation = new UserValidation(mEdtUserName.getText().toString(), mEdtPassWord.getText().toString());
             mStatus = mValidation.valid();

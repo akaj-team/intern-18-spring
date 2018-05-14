@@ -14,9 +14,17 @@ public class UserValidation {
     private static final String PASSWORD_LOG = "PassWord Does Not Matched";
     private static final String STATUS_OK = "Ok";
 
-    UserValidation(String username, String password) {
+    public UserValidation(String username, String password) {
         mUserName = username;
         mPassWord = password;
+    }
+
+    public String getPassWord() {
+        return mPassWord;
+    }
+
+    public String getUserName() {
+        return mUserName;
     }
 
     public String valid() {
@@ -29,7 +37,7 @@ public class UserValidation {
         return STATUS_OK;
     }
 
-    private boolean isValidUserName() {
+    public boolean isValidUserName() {
         int numOfUpperChar = numOfUpperChar(mUserName);
         int numOfDigit = numOfDigit(mUserName);
         return mUserName.length() >= 7 && mUserName.length() <= 24 && numOfUpperChar >= 2
@@ -43,7 +51,7 @@ public class UserValidation {
                 && mPassWord.length() >= 8 && isRepeatChar(mPassWord, 2);
     }
 
-    private int numOfUpperChar(String string) {
+    public int numOfUpperChar(String string) {
         int lenght = string.length();
         int numOfUpperChar = 0;
         for (int i = 0; i < lenght; i++) {

@@ -68,6 +68,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.android.support:support-compat:26.1.0'
     implementation 'org.mockito:mockito-android:2.18.3'
+    implementation 'junit:junit:4.12'
 }
 
 apply from: "../ci-java.gradle"
