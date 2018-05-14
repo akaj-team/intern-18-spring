@@ -77,7 +77,7 @@ public class UserValidation {
     public void checkLengthPassword() {
         when(mUserUnitTest.getPassword()).thenReturn("huy123");
         Assert.assertFalse(PasswordValidation.isLengthPassword(mUserUnitTest.getPassword()));
-        when(mUserUnitTest.getPassword()).thenReturn("nguyenhuy");
+        when(mUserUnitTest.getPassword()).thenReturn("nguyenhuyha123");
         Assert.assertTrue(PasswordValidation.isLengthPassword(mUserUnitTest.getPassword()));
     }
 
@@ -93,13 +93,13 @@ public class UserValidation {
     public void checkSpacePassword() {
         when(mUserUnitTest.getPassword()).thenReturn("nguyenhuy ");
         Assert.assertFalse(PasswordValidation.isSpacePassword(mUserUnitTest.getPassword()));
-        when(mUserUnitTest.getPassword()).thenReturn("nguyenhuy");
+        when(mUserUnitTest.getPassword()).thenReturn("nguyenhuyha456");
         Assert.assertTrue(PasswordValidation.isSpacePassword(mUserUnitTest.getPassword()));
     }
 
     @Test
     public void checkThreeUppercaseLetterPassword() {
-        when(mUserUnitTest.getPassword()).thenReturn("nguyenhuy");
+        when(mUserUnitTest.getPassword()).thenReturn("nguyenhuyha789");
         Assert.assertFalse(PasswordValidation.isThreeUppercaseLetterPassword(mUserUnitTest.getPassword()));
         when(mUserUnitTest.getPassword()).thenReturn("nguyenhuyAAA");
         Assert.assertTrue(PasswordValidation.isThreeUppercaseLetterPassword(mUserUnitTest.getPassword()));
