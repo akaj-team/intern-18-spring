@@ -73,4 +73,6 @@
     <string name="play">Play</string>
     <string name="_00_00">00:00</string>
     <string name="services_boardcast_receive">Services Boardcast Receive</string>
+    <string name="unit_test">Unit Test</string>
+    <string name="check">Check</string>
 </resources>

@@ -18,4 +18,12 @@
         android:layout_below="@id/edtUseNameUnitTest"
         android:hint="@string/hintPasswork"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnCheckLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtPasswordUnitTest"
+        android:text="@string/check" />
+
 </RelativeLayout>

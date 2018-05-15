@@ -85,4 +85,12 @@
         android:layout_below="@id/btnDatabase"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/services_boardcast_receive" />
+
+    <Button
+        android:id="@+id/btnUnitTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnServices"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/unit_test"/>
 </RelativeLayout>

@@ -30,5 +30,6 @@
         <activity android:name=".MyDatabaseActivity" android:label="Database Example"/>
         <activity android:name=".PlayMusicActivity" android:label="Service and Broadcast Receiver"/>
         <service android:name=".MusicServices"/>
+        <activity android:name=".LoginUnitTestActivity" android:label="@string/unit_test"/>
     </application>
 </manifest>

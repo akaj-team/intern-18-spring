@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnPracticMenu;
     private Button mBtnPracticDatabase;
     private Button mBtnPracticServices;
+    private Button mBtnPracticUnitTest;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticRecylerView.setOnClickListener(this);
         mBtnPracticDatabase.setOnClickListener(this);
         mBtnPracticServices.setOnClickListener(this);
+        mBtnPracticUnitTest.setOnClickListener(this);
     }
 
     @Override
@@ -84,6 +86,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 gotoServices();
                 break;
             }
+            case R.id.btnUnitTest: {
+                gotoUnitTest();
+                break;
+            }
         }
     }
 
@@ -98,6 +104,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticMenu = findViewById(R.id.btnMenuToolBar);
         mBtnPracticDatabase = findViewById(R.id.btnDatabase);
         mBtnPracticServices = findViewById(R.id.btnServices);
+        mBtnPracticUnitTest = findViewById(R.id.btnUnitTest);
     }
 
     public void gotoViewPage() {
@@ -159,6 +166,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void gotoServices() {
         Intent intent = new Intent(HomeActivity.this, PlayMusicActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoUnitTest() {
+        Intent intent = new Intent(HomeActivity.this, LoginUnitTestActivity.class);
         startActivity(intent);
     }
 }
