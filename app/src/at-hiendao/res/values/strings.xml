@@ -45,18 +45,4 @@
     <string name="notification_text">Notification</string>
     <string name="unit_test_login">Login</string>
     <string name="menu_unit_test">Unit Test</string>
-    <string name="status">
-        username:\n
-\t\t\tĐộ dài lớn hơn 7 và nhỏ hơn 24 kí tự\n
-\t\t\tCó ít nhất 2 kí tự viết hoa\n
-\t\t\tKhông chứa kí tự đặc biệt và space\n
-\t\t\tCó nhiều nhất 2 kí tự số\n
-\t\t\tKhông phân biệt kí tự hoa và thường\n
-password:\n
-\t\t\tKhác username, phân biệt kí tự hoa thường\n
-\t\t\tCó ít nhất một kí tự đặc biệt hoặc số\n
-\t\t\tĐộ dài nhỏ nhất là 8 kí tự và không được lặp 1 kí tự bất kì quá 2 lần\n
-\t\t\tKhông chứa space\n
-\t\t\tCó ít nhất 3 kí tự hoa
-    </string>
 </resources>

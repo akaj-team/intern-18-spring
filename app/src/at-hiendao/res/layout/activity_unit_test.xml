@@ -40,8 +40,11 @@
 
     <TextView
         android:id="@+id/tvStatus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="12dp"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@id/btnLogin"
+        app:layout_constraintRight_toRightOf="@id/btnLogin"
         app:layout_constraintBottom_toTopOf="@id/edtUserNameUnitTest" />
 </android.support.constraint.ConstraintLayout>
