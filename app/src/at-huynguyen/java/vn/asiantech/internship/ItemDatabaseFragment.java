@@ -85,7 +85,7 @@ public class ItemDatabaseFragment extends Fragment implements IEventChangeData, 
 
     public void insertTable() {
         String name = mEdtNameDatabase.getText().toString();
-        int age = Integer.valueOf(mEdtAgeDatabase.getText().toString());
+        int age = Integer.parseInt(mEdtAgeDatabase.getText().toString());
         if (!name.isEmpty() && !(String.valueOf(age)).isEmpty()) {
             mDatabaseManager.addItemDatabase(new ItemDatabase(name, age));
             onChangeData();
