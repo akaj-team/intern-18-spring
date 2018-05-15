@@ -16,7 +16,7 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
     private static final String TAG = LoginUnitTestActivity.class.getSimpleName();
     private static final String CHECKVALIDATIONPASS = "Pass";
     private EditText mEdtUserName;
-    private EditText mEdtPasswork;
+    private EditText mEdtPassword;
     private Button mBtnClickCheck;
     private UserValidation mUserValidation;
     private List<String> mListErrorUserName;
@@ -32,7 +32,6 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
         initListErrorString();
         initViews();
         initEventView();
-        Log.e(TAG, "onCreate: " + "đ".codePointAt(0));
     }
 
     private void initListErrorString() {
@@ -55,15 +54,15 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
 
     private void initViews() {
         mEdtUserName = findViewById(R.id.edtUseNameUnitTest);
-        mEdtPasswork = findViewById(R.id.edtPasswordUnitTest);
+        mEdtPassword = findViewById(R.id.edtPasswordUnitTest);
         mBtnClickCheck = findViewById(R.id.btnCheckLogin);
     }
 
-    private void userValudation() {
+    private void userValidation() {
         try {
             String userName = mEdtUserName.getText().toString().trim();
-            String passWork = mEdtPasswork.getText().toString().trim();
-            if (!userName.equals("") && !passWork.equals("")) {
+            String password = mEdtPassword.getText().toString().trim();
+            if (!userName.equals("") && !password.equals("")) {
                 switch (mUserValidation.checkUserName(userName)) {
                     case UserValidation.ERROR_1: {
                         Toast.makeText(this, mListErrorUserName.get(0), Toast.LENGTH_SHORT).show();
@@ -87,7 +86,7 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
                     }
                 }
 
-                switch (mUserValidation.checkPassword(userName, passWork)) {
+                switch (mUserValidation.checkPassword(userName, password)) {
                     case UserValidation.ERROR_1: {
                         Toast.makeText(this, mListErrorPassWork.get(0), Toast.LENGTH_SHORT).show();
                         break;
@@ -115,14 +114,14 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
                 }
             }
         } catch (Exception ex) {
-            Log.e(TAG, "userValudation: " + ex.toString());
+            Log.e(TAG, "userValidation: " + ex.getMessage());
         }
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnCheckLogin) {
-            userValudation();
+            userValidation();
         }
     }
 }

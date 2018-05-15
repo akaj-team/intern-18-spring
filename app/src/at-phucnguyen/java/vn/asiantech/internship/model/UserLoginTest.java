@@ -6,13 +6,13 @@ package vn.asiantech.internship.model;
 
 public class UserLoginTest {
     private String userName;
-    private String passWork;
+    private String password;
 
     public String getUserName() {
         return userName;
     }
 
-    public String getPassWork() {
-        return passWork;
+    public String getPassword() {
+        return password;
     }
 }

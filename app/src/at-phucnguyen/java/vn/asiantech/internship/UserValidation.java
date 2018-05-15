@@ -20,14 +20,14 @@ public class UserValidation {
      * ERROR 3: Does not contain special characters and spaces
      * ERROR 4: At most 2 digits
      */
-    public int checkUserName(String userName) {
+    static int checkUserName(String userName) {
         if (!countLengthString(userName, 7, 24)) {
             return ERROR_1;
         }
         if (!requiredNUpperCaseChar(userName, 2)) {
             return ERROR_2;
         }
-        if (isExistSpecialChar(userName) && isExistWhiteSpace(userName)) {
+        if (isExistSpecialChar(userName) || isExistWhiteSpace(userName)) {
             return ERROR_3;
         }
         if (!limitTwoNumber(userName)) {
@@ -43,14 +43,14 @@ public class UserValidation {
      * ERROR 4: Does not contain space
      * ERROR 5: There are at least 3 uppercase letters
      */
-    public int checkPassword(String useNameBest, String passWork) {
+    static int checkPassword(String useNameBest, String passWork) {
         if (useNameBest.equals(passWork)) {
             return ERROR_1;
         }
         if (!isExistNumbOrIsExistSpecialChar(passWork)) {
             return ERROR_2;
         }
-        if (!isLimitedNReplaceChar(passWork, 2) && !checkLengthPassWork(passWork)) {
+        if (isLimitedNReplaceChar(passWork, 2) || !checkLengthPassWork(passWork)) {
             return ERROR_3;
         }
         if (isExistWhiteSpace(passWork)) {
