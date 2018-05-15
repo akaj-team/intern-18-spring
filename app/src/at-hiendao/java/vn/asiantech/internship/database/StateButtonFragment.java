@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import vn.asiantech.internship.R;
@@ -27,6 +28,7 @@ public class StateButtonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_database_savestate_button, container, false);
         mSwState = view.findViewById(R.id.swSwitchDatabase);
+        mSwState.setOnCheckedChangeListener((buttonView, isChecked) -> saveData());
         loadData();
         return view;
     }
@@ -38,7 +40,6 @@ public class StateButtonFragment extends Fragment {
         if (mainActivity instanceof DatabaseActivity) {
             ((DatabaseActivity) mainActivity).showDatabaseLayout(true);
         }
-        saveData();
     }
 
     private void loadData() {

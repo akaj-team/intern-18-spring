@@ -46,30 +46,24 @@ public class SaveTableFragment extends Fragment implements IEventChangeData, IEv
         mAdapter = new TableAdapter(mData, this);
         recyclerViewTable.setAdapter(mAdapter);
         initViews(view);
-        setListeners(view);
+        setListeners();
         return view;
     }
 
-    private void setListeners(View view) {
-        mBtnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = mEdtName.getText().toString();
-                if (!name.isEmpty()) {
-                    Person person = new Person(name, 0);
-                    mEventTable.onDeleteTable(person);
-                }
+    private void setListeners() {
+        mBtnDelete.setOnClickListener(v -> {
+            String name = mEdtName.getText().toString();
+            if (!name.isEmpty()) {
+                Person person = new Person(name, 0);
+                mEventTable.onDeleteTable(person);
             }
         });
-        mBtnInsert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = mEdtName.getText().toString();
-                String age = mEdtAge.getText().toString();
-                if (!name.isEmpty() && !age.isEmpty()) {
-                    Person person = new Person(name, Integer.valueOf(age));
-                    mEventTable.onAddTabale(person);
-                }
+        mBtnInsert.setOnClickListener(v -> {
+            String name = mEdtName.getText().toString();
+            int age = Integer.valueOf(mEdtAge.getText().toString());
+            if (!name.isEmpty() && !(String.valueOf(age).isEmpty())) {
+                Person person = new Person(name, age);
+                mEventTable.onAddTabale(person);
             }
         });
     }
