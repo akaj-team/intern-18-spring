@@ -9,6 +9,8 @@ import android.widget.Button;
 
 import vn.asiantech.internship.database.DatabaseActivity;
 
+import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
+
 public class MenuActivity extends Activity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,6 +59,15 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, DatabaseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnService = findViewById(R.id.btnService);
+        btnService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ServiceActivity.class);
                 startActivity(intent);
             }
         });

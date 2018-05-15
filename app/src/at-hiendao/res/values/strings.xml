@@ -49,5 +49,9 @@
     <string name="database_button_save">Save</string>
     <string name="button_insert_database">Insert</string>
     <string name="button_delete_database">Delete</string>
+    <string name="button_start">Start</string>
+    <string name="menu_button_service">Service</string>
+    <string name="button_pause">Pause</string>
+    <string name="notification_text">Notification</string>
 
 </resources>
