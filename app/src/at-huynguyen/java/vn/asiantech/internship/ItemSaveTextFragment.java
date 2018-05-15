@@ -50,6 +50,7 @@ public class ItemSaveTextFragment extends Fragment implements View.OnClickListen
         mEdtText = view.findViewById(R.id.edtText);
         Button btnSaveText = view.findViewById(R.id.btnSaveText);
         mTvShowText = view.findViewById(R.id.tvShowText);
+        mTvShowText.setText(readFile());
         btnSaveText.setOnClickListener(this);
     }
 
