@@ -13,7 +13,6 @@ public class LoginActivity extends Activity {
     private EditText mEdtUserName;
     private EditText mEdtPassWord;
     private TextView mTvStatus;
-    private UserValidation mValidation;
     private String mStatus;
     private Button mBtnLogin;
 
@@ -35,8 +34,8 @@ public class LoginActivity extends Activity {
     void setListeners() {
         mBtnLogin.setOnClickListener((view) ->
         {
-            mValidation = new UserValidation(mEdtUserName.getText().toString(), mEdtPassWord.getText().toString());
-            mStatus = mValidation.valid();
+            User user = new User(mEdtUserName.getText().toString(), mEdtPassWord.getText().toString());
+            mStatus = UserValidation.valid(user);
             mTvStatus.setText(String.format("%s\n\n%s", getString(R.string.status), mStatus.toUpperCase()));
         });
     }

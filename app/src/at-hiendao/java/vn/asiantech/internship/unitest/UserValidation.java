@@ -1,57 +1,37 @@
 package vn.asiantech.internship.unitest;
 
-import android.util.Log;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static vn.asiantech.internship.service_and_broadcast_receiver.MusicService.TAG;
-
 public class UserValidation {
-    private final String mUserName;
-    private final String mPassWord;
-    private static final String USER_NAME_LOG = "UserName Does Not Matched";
-    private static final String PASSWORD_LOG = "PassWord Does Not Matched";
-    private static final String STATUS_OK = "Ok";
+    public static final String USER_NAME_LOG = "UserName Does Not Matched";
+    public static final String PASSWORD_LOG = "PassWord Does Not Matched";
+    public static final String STATUS_OK = "Ok";
+    private static final int MAX_NUM_REPEAT = 2;
 
-    public UserValidation(String username, String password) {
-        mUserName = username;
-        mPassWord = password;
-    }
-
-    public String getPassWord() {
-        return mPassWord;
-    }
-
-    public String getUserName() {
-        return mUserName;
-    }
-
-    public String valid() {
-        Log.e(TAG, "valid: " + isValidUserName());
-        if (!isValidUserName()) {
+    public static String valid(User user) {
+        if (!isValidUserName(user.getUserName())) {
             return USER_NAME_LOG;
-        } else if (!isValidPassWord()) {
+        } else if (!isValidPassWord(user.getUserName(), user.getPassword())) {
             return PASSWORD_LOG;
         }
         return STATUS_OK;
     }
 
-    public boolean isValidUserName() {
-        int numOfUpperChar = numOfUpperChar(mUserName);
-        int numOfDigit = numOfDigit(mUserName);
-        return mUserName.length() >= 7 && mUserName.length() <= 24 && numOfUpperChar >= 2
-                && !isContainsSpecialChar(mUserName, true) && numOfDigit <= 2 && numOfDigit != 0;
+    public static boolean isValidUserName(String userName) {
+        int numOfUpperChar = numOfUpperChar(userName);
+        int numOfDigit = numOfDigit(userName);
+        return userName.length() >= 7 && userName.length() <= 24 && numOfUpperChar >= 2
+                && !isContainsSpecialChar(userName, true) && numOfDigit <= 2 && numOfDigit > 0;
     }
 
-    private boolean isValidPassWord() {
-        Log.e(TAG, "isValidPassWord: " + isRepeatChar(mPassWord, 3));
-        return !mPassWord.contains(mUserName) && (isContainsSpecialChar(mPassWord, false)
-                || numOfDigit(mPassWord) != 0) && numOfUpperChar(mPassWord) >= 3 && !mPassWord.contains(" ")
-                && mPassWord.length() >= 8 && isRepeatChar(mPassWord, 2);
+    public static boolean isValidPassWord(String userName, String password) {
+        return !password.contains(userName) && (isContainsSpecialChar(password, false)
+                || numOfDigit(password) > 0) && numOfUpperChar(password) >= 3 && !password.contains(" ")
+                && password.length() >= 8 && !isRepeatChar(password);
     }
 
-    public int numOfUpperChar(String string) {
+    public static int numOfUpperChar(String string) {
         int lenght = string.length();
         int numOfUpperChar = 0;
         for (int i = 0; i < lenght; i++) {
@@ -62,20 +42,18 @@ public class UserValidation {
         return numOfUpperChar;
     }
 
-    private boolean isContainsSpecialChar(String string, boolean isUserName) {
+    public static boolean isContainsSpecialChar(String string, boolean isUserName) {
 
-        Pattern special = Pattern.compile("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
+        Pattern special = Pattern.compile("[^A-Za-z0-9]");
         Matcher isSpecialChar = special.matcher(string);
         if (isUserName) {
-
-            return string.contains(" ") || isSpecialChar.find();
+            return isSpecialChar.find();
         } else {
-            Log.e(TAG, "isContainsSpecialChar: " + isSpecialChar.find());
             return isSpecialChar.find();
         }
     }
 
-    private int numOfDigit(String string) {
+    public static int numOfDigit(String string) {
         int length = string.length();
         int numOfDigit = 0;
         for (int i = 0; i < length; i++) {
@@ -83,21 +61,20 @@ public class UserValidation {
                 numOfDigit++;
             }
         }
-        Log.e(TAG, "numOfDigit: " + numOfDigit);
         return numOfDigit;
     }
 
-    private boolean isRepeatChar(String string, int numOfRepeat) {
+    public static boolean isRepeatChar(String string) {
         if (!string.equals("")) {
             char key = string.charAt(0);
             int length = string.length();
             int countRepeat = 0;
+
             for (int i = 0; i < length - 1; i++) {
                 if (string.charAt(i + 1) == key) {
                     countRepeat++;
                 } else {
-                    if (countRepeat > numOfRepeat) {
-                        Log.e(TAG, "isRepeatChar: " + countRepeat + key );
+                    if (countRepeat >= MAX_NUM_REPEAT) {
                         return false;
                     } else {
                         key = string.charAt(i + 1);
@@ -105,7 +82,7 @@ public class UserValidation {
                     }
                 }
             }
-            return countRepeat > numOfRepeat;
+            return countRepeat >= MAX_NUM_REPEAT;
         } else {
             return false;
         }
