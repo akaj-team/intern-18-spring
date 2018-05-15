@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <EditText
         android:id="@+id/edtUserNameUnitTest"
         android:layout_width="match_parent"
@@ -31,20 +30,18 @@
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@+id/edtUserNameUnitTest"
-        app:layout_constraintRight_toRightOf="@id/edtUserNameUnitTest"
-        app:layout_constraintTop_toBottomOf="@id/edtPasswordUnitTest"
         android:background="@color/colorPrimaryDark"
         android:text="@string/unit_test_login"
-        android:textSize="25dp"
         android:textColor="@color/colorWhite"
-        />
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="@+id/edtUserNameUnitTest"
+        app:layout_constraintRight_toRightOf="@id/edtUserNameUnitTest"
+        app:layout_constraintTop_toBottomOf="@id/edtPasswordUnitTest" />
 
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@id/edtUserNameUnitTest"/>
-
+        app:layout_constraintBottom_toTopOf="@id/edtUserNameUnitTest" />
 </android.support.constraint.ConstraintLayout>

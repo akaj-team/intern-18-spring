@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 import vn.asiantech.internship.R;
 
 public class LoginActivity extends Activity {
@@ -36,7 +38,7 @@ public class LoginActivity extends Activity {
         {
             User user = new User(mEdtUserName.getText().toString(), mEdtPassWord.getText().toString());
             mStatus = UserValidation.valid(user);
-            mTvStatus.setText(String.format("%s\n\n%s", getString(R.string.status), mStatus.toUpperCase()));
+            mTvStatus.setText(String.format(Locale.ENGLISH, "%s\n\n%s", getString(R.string.status), mStatus.toUpperCase()));
         });
     }
 }
