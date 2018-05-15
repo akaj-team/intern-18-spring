@@ -20,6 +20,8 @@ import vn.asiantech.internship.R;
 public class SaveTableFragment extends Fragment implements IEventChangeData, IEventTable, IEventViewholderClick {
     private EditText mEdtName;
     private EditText mEdtAge;
+    private Button mBtnDelete;
+    private Button mBtnInsert;
     private IEventTable mEventTable;
     private TableAdapter mAdapter;
     private ReaderDbHelper mDatabase;
@@ -43,39 +45,41 @@ public class SaveTableFragment extends Fragment implements IEventChangeData, IEv
         recyclerViewTable.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAdapter = new TableAdapter(mData, this);
         recyclerViewTable.setAdapter(mAdapter);
-        initButton(view);
+        initViews(view);
+        setListeners(view);
         return view;
     }
 
-
-    private void initButton(View view) {
-        mEdtAge = view.findViewById(R.id.edtAgeDB);
-        mEdtName = view.findViewById(R.id.edtNameDB);
-        Button btnDelete = view.findViewById(R.id.btnDelete);
-        btnDelete.setOnClickListener(new View.OnClickListener() {
+    private void setListeners(View view) {
+        mBtnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mEdtName.getText().toString().isEmpty()) {
-                    String name = mEdtName.getText().toString();
+                String name = mEdtName.getText().toString();
+                if (!name.isEmpty()) {
                     Person person = new Person(name, 0);
                     mEventTable.onDeleteTable(person);
                 }
             }
         });
-        Button btnInsert = view.findViewById(R.id.btnInsert);
-        btnInsert.setOnClickListener(new View.OnClickListener() {
+        mBtnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mEdtName.getText().toString().isEmpty() && !mEdtAge.getText().toString().isEmpty()) {
-                    String name = mEdtName.getText().toString();
-                    int age = Integer.parseInt(mEdtAge.getText().toString());
-                    Person person = new Person(name, age);
+                String name = mEdtName.getText().toString();
+                String age = mEdtAge.getText().toString();
+                if (!name.isEmpty() && !age.isEmpty()) {
+                    Person person = new Person(name, Integer.valueOf(age));
                     mEventTable.onAddTabale(person);
                 }
             }
         });
     }
 
+    void initViews(View view) {
+        mEdtAge = view.findViewById(R.id.edtAgeDB);
+        mEdtName = view.findViewById(R.id.edtNameDB);
+        mBtnDelete = view.findViewById(R.id.btnDelete);
+        mBtnInsert = view.findViewById(R.id.btnInsert);
+    }
 
     @Override
     public void onDestroyView() {
@@ -104,7 +108,7 @@ public class SaveTableFragment extends Fragment implements IEventChangeData, IEv
 
     @Override
     public void onViewholderClick(Person person) {
-        mEdtAge.setText( String.valueOf(person.getAge()));
+        mEdtAge.setText(String.valueOf(person.getAge()));
         mEdtName.setText(person.getName());
     }
 }

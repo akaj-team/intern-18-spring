@@ -18,11 +18,11 @@ public class DatabaseActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
-        settingButtonListener();
+        initViews();
+        setListeners();
     }
 
-    private void settingButtonListener() {
-        mBtnSwitch = findViewById(R.id.btnSwitch);
+    private void setListeners() {
         mBtnSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,8 +32,6 @@ public class DatabaseActivity extends Activity {
                 showDatabaseLayout(false);
             }
         });
-
-        mBtnSaveText = findViewById(R.id.btnSaveText);
         mBtnSaveText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,8 +41,6 @@ public class DatabaseActivity extends Activity {
                 showDatabaseLayout(false);
             }
         });
-
-        mBtnSaveTable = findViewById(R.id.btnSaveTable);
         mBtnSaveTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +50,12 @@ public class DatabaseActivity extends Activity {
                 showDatabaseLayout(false);
             }
         });
+    }
+
+    void initViews() {
+        mBtnSaveTable = findViewById(R.id.btnSaveTable);
+        mBtnSaveText = findViewById(R.id.btnSaveText);
+        mBtnSwitch = findViewById(R.id.btnSwitch);
     }
 
     public void showDatabaseLayout(boolean isShow) {
@@ -67,6 +69,5 @@ public class DatabaseActivity extends Activity {
             mBtnSaveTable.setX(-mBtnSaveTable.getWidth());
         }
     }
-
 }
 

@@ -16,7 +16,6 @@ public class ReaderDbHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase mWriteableDb;
 
-
     public static class FeedEntry implements BaseColumns {
         static final String TABLE_NAME = "Person";
         static final String COLLUM_NAME = "Name";

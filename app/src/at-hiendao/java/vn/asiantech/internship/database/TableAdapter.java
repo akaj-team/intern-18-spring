@@ -20,7 +20,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.Viewholder> 
         mEventPerson = eventViewholderClick;
     }
 
-
     @Override
     public Viewholder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_database_person, parent, false);
@@ -40,7 +39,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.Viewholder> 
 
 
     /*
-        class viewholder in adapter
+     *  class viewholder in adapter
      */
 
     class Viewholder extends RecyclerView.ViewHolder {
@@ -55,13 +54,10 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.Viewholder> 
             mTvName = itemView.findViewById(R.id.tvNamePerson);
             mTvAge = itemView.findViewById(R.id.tvAgePerson);
             mImgBackground = itemView.findViewById(R.id.imgBackGroundPerson);
-            mImgBackground.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    Person person = mListPerson.get(position);
-                    mEventPerson.onViewholderClick(person);
-                }
+            mImgBackground.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                Person person = mListPerson.get(position);
+                mEventPerson.onViewholderClick(person);
             });
         }
 
@@ -69,8 +65,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.Viewholder> 
             mTvAge.setText(String.format("%s: %s", AGE, String.valueOf(person.getAge())));
             mTvName.setText(String.format("%s: %s", NAME, person.getName()));
         }
-
     }
-
 
 }
