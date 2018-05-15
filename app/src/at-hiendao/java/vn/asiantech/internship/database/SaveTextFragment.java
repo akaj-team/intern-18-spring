@@ -14,10 +14,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
-import java.io.File;
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 
 import vn.asiantech.internship.R;
 
@@ -57,8 +60,13 @@ public class SaveTextFragment extends Fragment {
         Activity myActivity = getActivity();
         try {
             outputStream = myActivity.openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
-            outputStream.write(data.getBytes());
-            outputStream.close();
+            BufferedWriter bufferedWriter;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
+                bufferedWriter.write(data);
+                bufferedWriter.close();
+            }
+
         } catch (IOException e) {
             Log.e(TAG, "saveStringData: " + e.toString());
         }
@@ -71,16 +79,20 @@ public class SaveTextFragment extends Fragment {
 
     private void loadStringData() {
         Activity myActivity = getActivity();
-        File file = new File(myActivity.getFilesDir(), FILE_NAME);
         StringBuilder text = new StringBuilder();
+        InputStream inputStream;
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                text.append(line);
-                text.append("\n");
+            inputStream = myActivity.openFileInput(FILE_NAME);
+            BufferedReader bufferedReader;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    text.append(line);
+                    text.append("\n");
+                }
+                bufferedReader.close();
             }
-            bufferedReader.close();
         } catch (IOException e) {
             Log.e(TAG, "loadStringData: " + e.toString());
         }
