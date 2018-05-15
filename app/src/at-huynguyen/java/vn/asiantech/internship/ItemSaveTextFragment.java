@@ -29,7 +29,6 @@ public class ItemSaveTextFragment extends Fragment implements View.OnClickListen
     private Context mContext;
     private File mMyInternalFile;
     private EditText mEdtText;
-    private Button mBtnSaveText;
     private TextView mTvShowText;
 
     @Override
@@ -44,18 +43,14 @@ public class ItemSaveTextFragment extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.item_save_text, container, false);
         initView(view);
-        initEventView();
         return view;
     }
 
     private void initView(View view) {
         mEdtText = view.findViewById(R.id.edtText);
-        mBtnSaveText = view.findViewById(R.id.btnSaveText);
+        Button btnSaveText = view.findViewById(R.id.btnSaveText);
         mTvShowText = view.findViewById(R.id.tvShowText);
-    }
-
-    private void initEventView() {
-        mBtnSaveText.setOnClickListener(this);
+        btnSaveText.setOnClickListener(this);
     }
 
     @Override
@@ -83,11 +78,11 @@ public class ItemSaveTextFragment extends Fragment implements View.OnClickListen
     }
 
     private void writeFile(String data) {
-        FileOutputStream fOS;
+        FileOutputStream fileOutputStream;
         try {
-            fOS = new FileOutputStream(mMyInternalFile);
-            fOS.write(data.getBytes(Charset.forName(CHARSET)));
-            fOS.close();
+            fileOutputStream = new FileOutputStream(mMyInternalFile);
+            fileOutputStream.write(data.getBytes(Charset.forName(CHARSET)));
+            fileOutputStream.close();
         } catch (IOException iOE) {
             Log.e(TAG, "writeFile: " + iOE.toString());
         }
@@ -109,7 +104,7 @@ public class ItemSaveTextFragment extends Fragment implements View.OnClickListen
             }
             dataInputStream.close();
         } catch (IOException iOE) {
-            Log.e(TAG, "writeFile: " + iOE.toString());
+            Log.e(TAG, "readFile: " + iOE.toString());
         }
         return dataRead.toString();
     }

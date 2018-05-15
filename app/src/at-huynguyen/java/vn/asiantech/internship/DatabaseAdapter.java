@@ -1,7 +1,6 @@
 package vn.asiantech.internship;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import java.util.List;
 import vn.asiantech.internship.model.ItemDatabase;
 
 public class DatabaseAdapter extends RecyclerView.Adapter<DatabaseAdapter.ViewHolder> {
-    private final static String TAG = "DatabaseAdapter";
     private List<ItemDatabase> mListItemDatabase;
     private IEventAdapterListener mListener;
 
@@ -53,9 +51,7 @@ public class DatabaseAdapter extends RecyclerView.Adapter<DatabaseAdapter.ViewHo
 
         @Override
         public void onClick(View view) {
-            int mSelectSingleItem = getAdapterPosition();
             mListener.onItemDatabaseSelect(getAdapterPosition());
-            Log.e(TAG, "onClick: " + mSelectSingleItem);
         }
     }
 }

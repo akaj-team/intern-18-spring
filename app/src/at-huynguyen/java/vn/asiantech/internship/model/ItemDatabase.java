@@ -13,7 +13,7 @@ public class ItemDatabase {
         this.mAgeDatabase = ageDatabase;
     }
 
-    ItemDatabase(int id, String nameDatabase, int ageDatabase) {
+    public ItemDatabase(int id, String nameDatabase, int ageDatabase) {
         this.mId = id;
         this.mNameDatabase = nameDatabase;
         this.mAgeDatabase = ageDatabase;
