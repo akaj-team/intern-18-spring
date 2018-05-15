@@ -59,7 +59,6 @@ public class UserValidation {
                 numOfUpperChar++;
             }
         }
-        Log.e(TAG, "numOfUpperChar: " + numOfUpperChar);
         return numOfUpperChar;
     }
 
