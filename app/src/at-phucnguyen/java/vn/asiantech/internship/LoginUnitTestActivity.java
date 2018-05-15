@@ -18,7 +18,6 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
     private EditText mEdtUserName;
     private EditText mEdtPassword;
     private Button mBtnClickCheck;
-    private UserValidation mUserValidation;
     private List<String> mListErrorUserName;
     private List<String> mListErrorPassWork;
 
@@ -26,7 +25,6 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_unittest);
-        mUserValidation = new UserValidation();
         mListErrorUserName = new ArrayList<>();
         mListErrorPassWork = new ArrayList<>();
         initListErrorString();
@@ -63,7 +61,7 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
             String userName = mEdtUserName.getText().toString().trim();
             String password = mEdtPassword.getText().toString().trim();
             if (!userName.equals("") && !password.equals("")) {
-                switch (mUserValidation.checkUserName(userName)) {
+                switch (UserValidation.checkUserName(userName)) {
                     case UserValidation.ERROR_1: {
                         Toast.makeText(this, mListErrorUserName.get(0), Toast.LENGTH_SHORT).show();
                         break;
@@ -86,7 +84,7 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
                     }
                 }
 
-                switch (mUserValidation.checkPassword(userName, password)) {
+                switch (UserValidation.checkPassword(userName, password)) {
                     case UserValidation.ERROR_1: {
                         Toast.makeText(this, mListErrorPassWork.get(0), Toast.LENGTH_SHORT).show();
                         break;
