@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
         {
             User user = new User(mEdtUserName.getText().toString(), mEdtPassWord.getText().toString());
             mStatus = UserValidation.valid(user);
-            mTvStatus.setText(mStatus.toUpperCase());
+            mTvStatus.setText(mStatus.toUpperCase(Locale.ENGLISH));
         });
     }
 }
