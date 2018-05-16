@@ -3,6 +3,7 @@ package vn.asiantech.internship.unitest;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,9 +34,13 @@ public class LoginActivity extends Activity {
 
     void setListeners() {
         mBtnLogin.setOnClickListener((view) -> {
-            User user = new User(mEdtUserName.getText().toString().trim(), mEdtPassWord.getText().toString().trim());
-            mStatus = UserValidation.valid(user);
-            mTvStatus.setText(mStatus);
+            String userName = mEdtUserName.getText().toString().trim();
+            String password = mEdtPassWord.getText().toString().trim();
+            if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(password)) {
+                User user = new User(userName, password);
+                mStatus = UserValidation.valid(user);
+                mTvStatus.setText(mStatus);
+            }
         });
     }
 }
