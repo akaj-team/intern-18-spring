@@ -24,7 +24,6 @@ public class InformationSinger {
     private String thumbUrl;
     @SerializedName("facebook_page_url")
     private String facebookPageUrl;
-    private String mbid;
     @SerializedName("tracker_count")
     private int trackerCount;
     @SerializedName("upcoming_event_count")

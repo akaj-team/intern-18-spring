@@ -38,8 +38,7 @@ public class InformationSingerActivity extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
             String imgSinger = bundle.getString(IMAGE_SINGER);
-            Glide.
-                    with(this)
+            Glide.with(this)
                     .load(imgSinger)
                     .override(250, 250)
                     .centerCrop()
