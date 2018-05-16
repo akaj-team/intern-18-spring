@@ -12,23 +12,22 @@ import java.util.List;
 import vn.asiantech.internship.model.ItemDatabase;
 
 public class DatabaseManager extends SQLiteOpenHelper {
-    private final static String SQLDrop = "DROP TABLE IF EXISTS " + UserInformation.TABLE_NAME;
+    private static final String SQLDrop = "DROP TABLE IF EXISTS " + UserInformation.TABLE_NAME;
     private static final String DATABASE_NAME = "Manager_Information.db";
     private static final int VERSION = 1;
     private IEventChangeData mEventChangeData;
-
-    private final class UserInformation implements BaseColumns {
-
-        static final String TABLE_NAME = "User";
-        static final String ID = "_id";
-        static final String NAME = "Name";
-        static final String AGE = "Age";
-    }
 
     private static final String SQLCreate = "CREATE TABLE " + UserInformation.TABLE_NAME + " (" +
             UserInformation.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             UserInformation.NAME + " TEXT, " +
             UserInformation.AGE + " INTEGER)";
+
+    private final class UserInformation implements BaseColumns {
+        static final String TABLE_NAME = "User";
+        static final String ID = "Id";
+        static final String NAME = "Name";
+        static final String AGE = "Age";
+    }
 
     DatabaseManager(Context context) {
         super(context, DATABASE_NAME, null, VERSION);

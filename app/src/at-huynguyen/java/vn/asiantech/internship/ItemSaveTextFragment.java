@@ -23,7 +23,6 @@ import java.nio.charset.Charset;
 
 public class ItemSaveTextFragment extends Fragment implements View.OnClickListener {
     private final static String TAG = "ItemSaveTextFragment";
-    private final static String FILE_PATH = "HuyNguyen";
     private final static String FILE_NAME = "savetext.txt";
     public static final String CHARSET = "UTF-8";
     private Context mContext;
@@ -74,7 +73,7 @@ public class ItemSaveTextFragment extends Fragment implements View.OnClickListen
     }
 
     private void initFile() {
-        File directory = mContext.getDir(FILE_PATH, Context.MODE_PRIVATE);
+        File directory = mContext.getFilesDir();
         mMyInternalFile = new File(directory, FILE_NAME);
     }
 
