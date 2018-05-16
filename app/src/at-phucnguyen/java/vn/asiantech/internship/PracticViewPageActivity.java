@@ -11,9 +11,9 @@ import com.viewpagerindicator.LinePageIndicator;
 import vn.asiantech.internship.model.ZoomOutPageTransformer;
 
 public class PracticViewPageActivity extends AppCompatActivity {
-    ViewPager mViewPage;
-    LinePageIndicator mLinePageIndicator;
-    TabLayout mTabLayout;
+    private ViewPager mViewPage;
+    private LinePageIndicator mLinePageIndicator;
+    private TabLayout mTabLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_1dp">
+
+    <TextView
+        android:id="@+id/tvPersonNameItem"
+        android:layout_width="@dimen/tvperson_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/personname"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tvPersonAgeItem"
+        android:layout_width="@dimen/tvperson_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/tvPersonNameItem"
+        android:text="@string/personage"
+        android:textSize="16dp" />
+</RelativeLayout>

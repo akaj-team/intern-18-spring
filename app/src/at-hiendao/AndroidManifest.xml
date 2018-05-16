@@ -4,6 +4,9 @@
     package="vn.asiantech.internship">
 
     <permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -25,6 +28,7 @@
         <activity android:name=".SendDataActivity" />
         <activity android:name=".ListFriendActitivy" />
         <activity android:name=".ViewPageActivity" />
+        <activity android:name=".api.ApiActivity" />
         <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
         <activity android:name=".unitest.LoginActivity"/>
 

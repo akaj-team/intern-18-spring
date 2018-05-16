@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_2dp">
+
+    <ImageView
+        android:id="@+id/imgSongNoti"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/padding_2dp"
+        android:src="@drawable/ic_music_note_black_24dp" />
+
+    <TextView
+        android:id="@+id/tvNameSongNoti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/imgBtnNotiPause"
+        android:layout_toRightOf="@id/imgSongNoti"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sp_18" />
+
+    <TextView
+        android:id="@+id/tvTimeCountNoti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNameSongNoti"
+        android:layout_toLeftOf="@id/imgBtnNotiPause"
+        android:layout_toRightOf="@id/imgSongNoti"
+        android:text="@string/_00_00"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sp_18" />
+
+    <ImageButton
+        android:id="@+id/imgBtnNotiPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/imgBtnNotiClose"
+        android:src="@drawable/ic_pause_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/imgBtnNotiClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_close_purple_800_24dp" />
+</RelativeLayout>
