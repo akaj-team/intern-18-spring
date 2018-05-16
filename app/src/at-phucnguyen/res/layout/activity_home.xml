@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:padding="@dimen/padding_2dp">
 
     <Button
         android:id="@+id/btnW1View"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_w1_view" />
@@ -14,7 +16,7 @@
     <Button
         android:id="@+id/btnW1Intent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnW1View"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
@@ -23,7 +25,7 @@
     <Button
         android:id="@+id/btnFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnW1Intent"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_w2_fragment" />
@@ -31,7 +33,7 @@
     <Button
         android:id="@+id/btnResource"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnFragment"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
@@ -40,7 +42,7 @@
     <Button
         android:id="@+id/btnViewPage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnRecyclerView"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_rectangle_white"
@@ -49,7 +51,7 @@
     <Button
         android:id="@+id/btnEventAndListenes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnResource"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/w2_event_and_listenes" />
@@ -57,7 +59,7 @@
     <Button
         android:id="@+id/btnRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnEventAndListenes"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/btn_recyclerview_text" />
@@ -73,7 +75,7 @@
     <Button
         android:id="@+id/btnDatabase"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnMenuToolBar"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/w5_d1_database" />
@@ -81,16 +83,24 @@
     <Button
         android:id="@+id/btnServices"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnDatabase"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/services_boardcast_receive" />
 
     <Button
-        android:id="@+id/btnUnitTest"
+        android:id="@+id/btnUseApi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_35"
         android:layout_below="@id/btnServices"
         android:background="@drawable/bg_button_rectangle_white"
-        android:text="@string/unit_test"/>
+        android:text="@string/w5_api" />
+
+    <Button
+        android:id="@+id/btnUnitTest"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:layout_below="@id/btnUseApi"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/unit_test" />
 </RelativeLayout>

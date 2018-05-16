@@ -73,6 +73,12 @@
     <string name="play">Play</string>
     <string name="_00_00">00:00</string>
     <string name="services_boardcast_receive">Services Boardcast Receive</string>
+    <string name="search">Search</string>
+    <string name="w5_api">W5 - Api</string>
+    <string name="track">Track</string>
+    <string name="type_name_singer">Type Name Singer</string>
+    <string name="lable_api">API</string>
+    <string name="lable_infosinger">Info Singer</string>
     <string name="unit_test">Unit Test</string>
     <string name="check">Check</string>
 </resources>
