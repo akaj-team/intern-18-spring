@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.Button;
 
 import vn.asiantech.internship.R;
@@ -23,32 +22,23 @@ public class DatabaseActivity extends Activity {
     }
 
     private void setListeners() {
-        mBtnSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StateButtonFragment stateButtonFragment = new StateButtonFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.clDatabase, stateButtonFragment).addToBackStack(null).commit();
-                showDatabaseLayout(false);
-            }
+        mBtnSwitch.setOnClickListener(v -> {
+            StateButtonFragment stateButtonFragment = new StateButtonFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.clDatabase, stateButtonFragment).addToBackStack(null).commit();
+            showDatabaseLayout(false);
         });
-        mBtnSaveText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SaveTextFragment saveTextFragment = new SaveTextFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.clDatabase, saveTextFragment).addToBackStack(null).commit();
-                showDatabaseLayout(false);
-            }
+        mBtnSaveText.setOnClickListener(v -> {
+            SaveTextFragment saveTextFragment = new SaveTextFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.clDatabase, saveTextFragment).addToBackStack(null).commit();
+            showDatabaseLayout(false);
         });
-        mBtnSaveTable.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SaveTableFragment saveTableFragment = new SaveTableFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.clDatabase, saveTableFragment).addToBackStack(null).commit();
-                showDatabaseLayout(false);
-            }
+        mBtnSaveTable.setOnClickListener(v -> {
+            SaveTableFragment saveTableFragment = new SaveTableFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.clDatabase, saveTableFragment).addToBackStack(null).commit();
+            showDatabaseLayout(false);
         });
     }
 

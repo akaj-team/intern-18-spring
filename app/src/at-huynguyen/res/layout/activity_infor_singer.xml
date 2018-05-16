@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgSinger"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tvSingerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgSinger"
+        android:layout_alignStart="@+id/imgSinger"
+        android:layout_below="@+id/imgSinger"
+        android:textColor="@color/colorBlack"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/tvNumberTracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgSinger"
+        android:layout_alignStart="@+id/imgSinger"
+        android:layout_below="@+id/tvSingerName"
+        android:textColor="@color/colorSelected"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnTrack"
+        android:layout_width="236dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120dp"
+        android:background="@color/colorBlue"
+        android:text="@string/track"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+</RelativeLayout>
