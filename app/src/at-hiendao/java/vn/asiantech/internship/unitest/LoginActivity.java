@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 import vn.asiantech.internship.R;
 
 public class LoginActivity extends Activity {
@@ -35,7 +37,7 @@ public class LoginActivity extends Activity {
         mBtnLogin.setOnClickListener((view) -> {
             User user = new User(mEdtUserName.getText().toString().trim(), mEdtPassWord.getText().toString().trim());
             mStatus = UserValidation.valid(user);
-            mTvStatus.setText(mStatus.toUpperCase());
+            mTvStatus.setText(mStatus.toUpperCase(Locale.ENGLISH));
         });
     }
 }

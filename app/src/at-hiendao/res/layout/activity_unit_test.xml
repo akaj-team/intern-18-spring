@@ -17,13 +17,13 @@
 
     <EditText
         android:id="@+id/edtPasswordUnitTest"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/edtUserNameUnitTest"
+        app:layout_constraintRight_toRightOf="@id/edtUserNameUnitTest"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -42,9 +42,9 @@
         android:id="@+id/tvStatus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="12dp"
         android:textAlignment="center"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/edtUserNameUnitTest"
         app:layout_constraintLeft_toLeftOf="@id/btnLogin"
-        app:layout_constraintRight_toRightOf="@id/btnLogin"
-        app:layout_constraintBottom_toTopOf="@id/edtUserNameUnitTest" />
+        app:layout_constraintRight_toRightOf="@id/btnLogin" />
 </android.support.constraint.ConstraintLayout>
