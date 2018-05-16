@@ -56,6 +56,13 @@
         android:id="@+id/btnUnitTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnViewPager"
+        android:layout_below="@+id/btnSharePreferences"
         android:text="@string/unit_test" />
+
+    <Button
+        android:id="@+id/btnApi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnUnitTest"
+        android:text="@string/api" />
 </RelativeLayout>

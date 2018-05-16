@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.asiantech.internship">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -25,7 +27,7 @@
             android:label="@string/app1_name" />
         <activity
             android:name=".UserActivity"
-            android:label="SignUpActivity" />
+            android:label="@string/signup_activity" />
         <activity android:name=".ViewViewGroupActivity" />
         <activity
             android:name=".PagerActivity"
@@ -33,6 +35,8 @@
         <activity android:name=".ListFriendActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".unittest.UnitTestActivity" />
+        <activity android:name=".api.ApiActivity" />
+        <activity android:name=".api.InformationSingerActivity" />
         <activity android:name=".SharePreferencesActivity" />
     </application>
 </manifest>

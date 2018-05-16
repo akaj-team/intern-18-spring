@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import vn.asiantech.internship.unittest.UnitTestActivity;
+import vn.asiantech.internship.api.ApiActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -84,6 +85,15 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, UnitTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnApi = findViewById(R.id.btnApi);
+        btnApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
                 startActivity(intent);
             }
         });

@@ -49,6 +49,11 @@
     <string name="space_password">Password không được chứa khoảng trắng</string>
     <string name="three_uppercase_letter">Password phải có ít nhất 3 kí tự viết hoa</string>
     <string name="login_success">Đăng nhập thành công !!!</string>
+    <string name="enter_singer_name">Enter Singer Name</string>
+    <string name="search_singer">Search Singer</string>
+    <string name="track">Track</string>
+    <string name="api">API</string>
+    <string name="signup_activity">SignUpActivity</string>
     <string name="sharepreferences">Share Preferences</string>
     <string name="savestatus">Save Status</string>
     <string name="savetext">Save Text</string>
