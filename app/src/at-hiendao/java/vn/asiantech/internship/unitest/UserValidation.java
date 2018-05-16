@@ -3,7 +3,7 @@ package vn.asiantech.internship.unitest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserValidation {
+public final class UserValidation {
     public static final String USER_NAME_LOG = "UserName Does Not Matched";
     public static final String PASSWORD_LOG = "PassWord Does Not Matched";
     public static final String STATUS_OK = "Ok";
@@ -43,7 +43,6 @@ public class UserValidation {
     }
 
     public static boolean isContainsSpecialChar(String string, boolean isUserName) {
-
         Pattern special = Pattern.compile("[^A-Za-z0-9]");
         Matcher isSpecialChar = special.matcher(string);
         if (isUserName) {

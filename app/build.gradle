@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "vn.asiantech.internship"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -78,8 +78,7 @@ dependencies {
     implementation "com.android.support:support-compat:26.1.0"
     implementation 'com.android.support:support-annotations:27.1.1'
     implementation 'com.android.support:support-compat:26.1.0'
-    implementation 'org.mockito:mockito-android:2.18.3'
-    implementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.18.3'
 }
 
 apply from: "../ci-java.gradle"
