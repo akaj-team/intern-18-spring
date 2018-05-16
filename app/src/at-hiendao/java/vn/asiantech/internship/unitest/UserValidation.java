@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class UserValidation {
-    public static final String USER_NAME_LOG = "UserName Does Not Matched";
-    public static final String PASSWORD_LOG = "PassWord Does Not Matched";
-    public static final String STATUS_OK = "Ok";
+    public static final String USER_NAME_LOG = "USERNAME DOES NOT MATCHED";
+    public static final String PASSWORD_LOG = "PASSWORD DOES NOT MATCHED";
+    public static final String STATUS_OK = "OK";
     private static final int MAX_NUM_REPEAT = 2;
 
     public static String valid(User user) {

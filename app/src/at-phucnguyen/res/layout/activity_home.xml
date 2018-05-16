@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_2dp">
 
     <Button
         android:id="@+id/btnW1View"
@@ -85,4 +86,12 @@
         android:layout_below="@id/btnDatabase"
         android:background="@drawable/bg_button_rectangle_white"
         android:text="@string/services_boardcast_receive" />
+
+    <Button
+        android:id="@+id/btnUseApi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnServices"
+        android:background="@drawable/bg_button_rectangle_white"
+        android:text="@string/w5_api" />
 </RelativeLayout>
