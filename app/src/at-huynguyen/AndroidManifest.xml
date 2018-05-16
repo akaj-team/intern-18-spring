@@ -36,6 +36,6 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".api.ApiActivity" />
         <activity android:name=".api.InformationSingerActivity" />
+        <activity android:name=".SharePreferencesActivity" />
     </application>
-
 </manifest>

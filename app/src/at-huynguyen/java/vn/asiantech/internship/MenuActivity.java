@@ -24,6 +24,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
         btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnResources = findViewById(R.id.btnResources);
         btnResources.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +42,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnViewPager = findViewById(R.id.btnViewPager);
         btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,11 +60,21 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnRecycleView = findViewById(R.id.btnRecycleView);
         btnRecycleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSharePreferences = findViewById(R.id.btnSharePreferences);
+        btnSharePreferences.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, SharePreferencesActivity.class);
                 startActivity(intent);
             }
         });
