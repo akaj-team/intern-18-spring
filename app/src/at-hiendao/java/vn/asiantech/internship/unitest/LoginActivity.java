@@ -35,7 +35,7 @@ public class LoginActivity extends Activity {
         mBtnLogin.setOnClickListener((view) -> {
             User user = new User(mEdtUserName.getText().toString().trim(), mEdtPassWord.getText().toString().trim());
             mStatus = UserValidation.valid(user);
-            mTvStatus.setText(mStatus.toUpperCase());
+            mTvStatus.setText(mStatus);
         });
     }
 }
