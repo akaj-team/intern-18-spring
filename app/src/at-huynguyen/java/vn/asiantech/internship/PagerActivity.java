@@ -15,7 +15,7 @@ public class PagerActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.viewpager);
+        setTitle(R.string.view_pager);
         setContentView(R.layout.activity_viewpage);
 
         ListFriendFragment listFriendFragment = new ListFriendFragment();
