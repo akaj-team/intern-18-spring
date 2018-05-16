@@ -20,7 +20,7 @@ public class UserValidation {
      * ERROR 3: Does not contain special characters and spaces
      * ERROR 4: At most 2 digits
      */
-    static int checkUserName(String userName) {
+    public static int checkUserName(String userName) {
         if (!countLengthString(userName, 7, 24)) {
             return ERROR_1;
         }
@@ -43,7 +43,7 @@ public class UserValidation {
      * ERROR 4: Does not contain space
      * ERROR 5: There are at least 3 uppercase letters
      */
-    static int checkPassword(String useNameBest, String passWork) {
+    public static int checkPassword(String useNameBest, String passWork) {
         if (useNameBest.equals(passWork)) {
             return ERROR_1;
         }
@@ -62,11 +62,11 @@ public class UserValidation {
         return CHECKPASS;
     }
 
-    static boolean requiredNUpperCaseChar(String s, int n) {
+    public static boolean requiredNUpperCaseChar(String s, int n) {
         return Pattern.compile("^.*(.*[A-Z]){" + n + ",}.*$").matcher(s).matches();
     }
 
-    static boolean limitTwoNumber(String s) {
+    public static boolean limitTwoNumber(String s) {
         int count = 0;
         for (int i = 0; i < s.length(); i++) {
             if (Character.isDigit(s.codePointAt(i))) {
@@ -79,12 +79,12 @@ public class UserValidation {
         return true;
     }
 
-    static boolean countLengthString(String s, int n, int m) {
+    public static boolean countLengthString(String s, int n, int m) {
         return (s.length() >= n && s.length() <= m);
     }
 
     //Check the existence of Whitespace in the string
-    static boolean isExistWhiteSpace(String s) {
+    public static boolean isExistWhiteSpace(String s) {
         for (int i = 0; i < s.length(); i++) {
             if (Character.isWhitespace(s.codePointAt(i))) {
                 return true;
@@ -93,11 +93,11 @@ public class UserValidation {
         return false;
     }
 
-    static boolean isExistSpecialChar(String s) {
+    public static boolean isExistSpecialChar(String s) {
         return Pattern.compile("[^A-Za-z0-9].*").matcher(s).find();
     }
 
-    static boolean isLimitedNReplaceChar(String s, int nReplace) {
+    public static boolean isLimitedNReplaceChar(String s, int nReplace) {
         int count;
         for (int i = 0; i < s.length(); i++) {
             count = 0;
@@ -113,11 +113,11 @@ public class UserValidation {
         return false;
     }
 
-    static boolean checkLengthPassWork(String s) {
+    public static boolean checkLengthPassWork(String s) {
         return s.length() >= 8;
     }
 
-    static boolean isExistNumbOrIsExistSpecialChar(String s) {
+    public static boolean isExistNumbOrIsExistSpecialChar(String s) {
         return Pattern.compile("[0-9].*|[^A-Za-z0-9].*").matcher(s).find();
     }
 }

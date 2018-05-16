@@ -1,7 +1,4 @@
-/*
- * Nguyen Van Phuc
- */
-package vn.asiantech.internship;
+package internship;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import vn.asiantech.internship.UserValidation;
 import vn.asiantech.internship.model.UserLoginTest;
 
 import static org.mockito.Mockito.when;
