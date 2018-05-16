@@ -46,6 +46,13 @@
         android:text="@string/view_pager" />
 
     <Button
+        android:id="@+id/btnSharePreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnViewPager"
+        android:text="@string/sharepreferences" />
+
+    <Button
         android:id="@+id/btnUnitTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

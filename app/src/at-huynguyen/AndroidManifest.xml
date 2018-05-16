@@ -33,6 +33,6 @@
         <activity android:name=".ListFriendActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".unittest.UnitTestActivity" />
+        <activity android:name=".SharePreferencesActivity" />
     </application>
-
 </manifest>
