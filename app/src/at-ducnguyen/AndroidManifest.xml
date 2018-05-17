@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.asiantech.internship">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -24,6 +26,7 @@
         <activity android:name=".SendDataActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".ArtistInfomationActivity" />
     </application>
 
 </manifest>

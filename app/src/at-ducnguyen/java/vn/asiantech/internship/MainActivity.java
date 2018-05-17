@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnViewAndViewGroup;
     public final static String KEY_TITLE = "KEY_TITLE";
+    public static final String TAG = "AAA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnListener = findViewById(R.id.btnListener);
         btnListener.setOnClickListener(this);
+
+        Button btnApi = findViewById(R.id.btnApi);
+        btnApi.setOnClickListener(this);
     }
 
     @Override
@@ -70,6 +74,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             }
+            case R.id.btnApi: {
+                goTo(ArtistInfomationActivity.class);
+            }
         }
+    }
+
+    private void goTo(Class classMark) {
+        Intent intent = new Intent(MainActivity.this, classMark);
+        startActivity(intent);
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp_5">
+
+    <ImageView
+        android:id="@+id/imgSinger"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_300"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvNameSinger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgSinger"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_30" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@id/imgSinger"
+        android:layout_toRightOf="@id/tvNameSinger"
+        android:src="@drawable/ic_check_circle_cyan_a200_18dp" />
+
+    <TextView
+        android:id="@+id/tvCountTrackers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNameSinger"
+        android:textColor="@color/black8"
+        android:textSize="@dimen/dp_16" />
+
+    <Button
+        android:id="@+id/btnTrack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCountTrackers"
+        android:background="@color/colorAccent"
+        android:text="@string/track" />
+</RelativeLayout>
