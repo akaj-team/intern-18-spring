@@ -2,7 +2,7 @@ package vn.asiantech.internship.unittest;
 
 import java.util.regex.Pattern;
 
-public class PasswordValidation {
+public final class PasswordValidation {
 
     public static boolean isPasswordDifferentUserName(String userName, String password) {
         return userName.equals(password);

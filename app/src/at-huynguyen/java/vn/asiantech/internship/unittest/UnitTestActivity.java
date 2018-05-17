@@ -39,25 +39,27 @@ public class UnitTestActivity extends AppCompatActivity {
     }
 
     private void validation() {
-        if (!UsernameValidation.isLengthUserName(mEdtUsernameUnitTest.getText().toString().trim())) {
+        String username = mEdtUsernameUnitTest.getText().toString().trim();
+        String password = mEdtPasswordUnitTest.getText().toString().trim();
+        if (!UsernameValidation.isValidLengthUserName(username)) {
             Toast.makeText(this, R.string.length_user_name, Toast.LENGTH_LONG).show();
-        } else if (!UsernameValidation.isTwoUppercaseLetterUsername(mEdtUsernameUnitTest.getText().toString().trim())) {
+        } else if (!UsernameValidation.isTwoUppercaseLetterUsername(username)) {
             Toast.makeText(this, R.string.two_uppercase_letter, Toast.LENGTH_LONG).show();
-        } else if (!UsernameValidation.isSpecialCharacterSpaceUsername(mEdtUsernameUnitTest.getText().toString().trim())) {
+        } else if (!UsernameValidation.isSpecialCharacterSpaceUsername(username)) {
             Toast.makeText(this, R.string.special_character_space, Toast.LENGTH_LONG).show();
-        } else if (!UsernameValidation.isTwoDigitUsername(mEdtUsernameUnitTest.getText().toString().trim())) {
+        } else if (!UsernameValidation.isTwoDigitUsername(username)) {
             Toast.makeText(this, R.string.two_digit, Toast.LENGTH_LONG).show();
-        } else if (PasswordValidation.isPasswordDifferentUserName(mEdtUsernameUnitTest.getText().toString(), mEdtPasswordUnitTest.getText().toString())) {
+        } else if (PasswordValidation.isPasswordDifferentUserName(username, password)) {
             Toast.makeText(this, R.string.password_different_username, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isSpecialCharacterNumberPassword(mEdtPasswordUnitTest.getText().toString().trim())) {
+        } else if (!PasswordValidation.isSpecialCharacterNumberPassword(password)) {
             Toast.makeText(this, R.string.special_character_number, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isLengthPassword(mEdtPasswordUnitTest.getText().toString().trim())) {
+        } else if (!PasswordValidation.isLengthPassword(password)) {
             Toast.makeText(this, R.string.length_password, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isDontRepeatCharacterTwicePassword(mEdtPasswordUnitTest.getText().toString().trim())) {
+        } else if (!PasswordValidation.isDontRepeatCharacterTwicePassword(password)) {
             Toast.makeText(this, R.string.dont_repeat_character_twice, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isSpacePassword(mEdtPasswordUnitTest.getText().toString().trim())) {
+        } else if (!PasswordValidation.isSpacePassword(password)) {
             Toast.makeText(this, R.string.space_password, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isThreeUppercaseLetterPassword(mEdtPasswordUnitTest.getText().toString().trim())) {
+        } else if (!PasswordValidation.isThreeUppercaseLetterPassword(password)) {
             Toast.makeText(this, R.string.three_uppercase_letter, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, R.string.login_success, Toast.LENGTH_LONG).show();

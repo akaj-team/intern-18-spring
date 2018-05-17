@@ -1,18 +1,18 @@
 package vn.asiantech.internship.unittest;
 
 public class UserUnitTest {
-    private String mUserName;
-    private String mPassword;
+    private String userName;
+    private String password;
 
     public String getUserName() {
-        return mUserName;
+        return userName;
     }
 
     public String getPassword() {
-        return mPassword;
+        return password;
     }
 
     public void setPassword(String password) {
-        this.mPassword = password;
+        this.password = password;
     }
 }

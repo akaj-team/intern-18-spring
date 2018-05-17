@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public final class UsernameValidation {
 
-    public static boolean isLengthUserName(String userName) {
+    public static boolean isValidLengthUserName(String userName) {
         return !(userName.length() < 7 || userName.length() > 24);
     }
 
