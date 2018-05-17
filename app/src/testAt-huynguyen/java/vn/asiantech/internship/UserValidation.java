@@ -20,11 +20,11 @@ public class UserValidation {
     @Test
     public void checkLengthUsername() {
         when(mUserUnitTest.getUserName()).thenReturn("huy");
-        Assert.assertFalse(UsernameValidation.isLengthUserName(mUserUnitTest.getUserName()));
+        Assert.assertFalse(UsernameValidation.isValidLengthUserName(mUserUnitTest.getUserName()));
         when(mUserUnitTest.getUserName()).thenReturn("huynguyen3");
-        Assert.assertTrue(UsernameValidation.isLengthUserName(mUserUnitTest.getUserName()));
+        Assert.assertTrue(UsernameValidation.isValidLengthUserName(mUserUnitTest.getUserName()));
         when(mUserUnitTest.getUserName()).thenReturn("huynguyen3huynguyen3huynguyen3");
-        Assert.assertFalse(UsernameValidation.isLengthUserName(mUserUnitTest.getUserName()));
+        Assert.assertFalse(UsernameValidation.isValidLengthUserName(mUserUnitTest.getUserName()));
     }
 
     @Test
