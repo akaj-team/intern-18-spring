@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnApi = findViewById(R.id.btnApi);
         btnApi.setOnClickListener(this);
+
+        Button btnUnitTest = findViewById(R.id.btnUnitTest);
+        btnUnitTest.setOnClickListener(this);
     }
 
     @Override
@@ -72,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnViewPagerListFriend: {
                 Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.btnUnitTest: {
+                goTo(LoginActivity.class);
                 break;
             }
             case R.id.btnApi: {
