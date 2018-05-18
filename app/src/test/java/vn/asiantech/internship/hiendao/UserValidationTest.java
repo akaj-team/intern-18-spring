@@ -14,7 +14,7 @@ import static junit.framework.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestUserValidation {
+public class UserValidationTest {
     @Mock
     private User mUser;
 
