@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnPracticMenu;
     private Button mBtnPracticDatabase;
     private Button mBtnPracticServices;
+    private Button mBtnUseApi;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticRecylerView.setOnClickListener(this);
         mBtnPracticDatabase.setOnClickListener(this);
         mBtnPracticServices.setOnClickListener(this);
+        mBtnUseApi.setOnClickListener(this);
     }
 
     @Override
@@ -84,6 +86,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 gotoServices();
                 break;
             }
+            case R.id.btnUseApi: {
+                gotoUseApi();
+            }
         }
     }
 
@@ -95,6 +100,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPracticResrouce = findViewById(R.id.btnResource);
         mBtnPracticEventAndListenes = findViewById(R.id.btnEventAndListenes);
         mBtnPracticViewPage = findViewById(R.id.btnViewPage);
+        mBtnUseApi = findViewById(R.id.btnUseApi);
         mBtnPracticMenu = findViewById(R.id.btnMenuToolBar);
         mBtnPracticDatabase = findViewById(R.id.btnDatabase);
         mBtnPracticServices = findViewById(R.id.btnServices);
@@ -117,6 +123,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void gotoEventAndListenes() {
         Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoUseApi() {
+        Intent intent = new Intent(HomeActivity.this, UseApiActivity.class);
         startActivity(intent);
     }
 

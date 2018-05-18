@@ -59,5 +59,6 @@
     <string name="menu_button_service">Service</string>
     <string name="button_pause">Pause</string>
     <string name="notification_text">Notification</string>
-
+    <string name="unit_test_login">Login</string>
+    <string name="menu_unit_test">Unit Test</string>
 </resources>

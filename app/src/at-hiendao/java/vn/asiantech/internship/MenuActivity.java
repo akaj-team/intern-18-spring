@@ -9,6 +9,7 @@ import android.widget.Button;
 import vn.asiantech.internship.database.DatabaseActivity;
 
 import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
+import vn.asiantech.internship.unitest.LoginActivity;
 
 import vn.asiantech.internship.api.ApiActivity;
 
@@ -43,11 +44,13 @@ public class MenuActivity extends Activity {
             Intent intent = new Intent(MenuActivity.this, ViewPageActivity.class);
             startActivity(intent);
         });
+
         Button btnDatabase = findViewById(R.id.btnDatabase);
         btnDatabase.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, DatabaseActivity.class);
             startActivity(intent);
         });
+
         Button btnAPI = findViewById(R.id.btnAPI);
         btnAPI.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
@@ -60,6 +63,11 @@ public class MenuActivity extends Activity {
             startActivity(intent);
         });
 
+        Button btnUnitTest = findViewById(R.id.btnUnitTest);
+        btnUnitTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
 
 }
