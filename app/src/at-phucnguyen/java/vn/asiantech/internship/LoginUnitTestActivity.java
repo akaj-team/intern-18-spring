@@ -3,7 +3,7 @@ package vn.asiantech.internship;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,20 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoginUnitTestActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = LoginUnitTestActivity.class.getSimpleName();
-    private static final String CHECKVALIDATIONPASS = "Pass";
     private EditText mEdtUserName;
     private EditText mEdtPassword;
     private Button mBtnClickCheck;
-    private List<String> mListErrorUserName;
-    private List<String> mListErrorPassWork;
+    private List<String> mListErrorUserName = new ArrayList<>();
+    private List<String> mListErrorPassWork = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_unittest);
-        mListErrorUserName = new ArrayList<>();
-        mListErrorPassWork = new ArrayList<>();
         initListErrorString();
         initViews();
         initEventView();
@@ -57,62 +53,50 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
     }
 
     private void userValidation() {
-        try {
-            String userName = mEdtUserName.getText().toString().trim();
-            String password = mEdtPassword.getText().toString().trim();
-            if (!userName.equals("") && !password.equals("")) {
-                switch (UserValidation.checkUserName(userName)) {
-                    case UserValidation.ERROR_1: {
-                        Toast.makeText(this, mListErrorUserName.get(0), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_2: {
-                        Toast.makeText(this, mListErrorUserName.get(1), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_3: {
-                        Toast.makeText(this, mListErrorUserName.get(2), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_4: {
-                        Toast.makeText(this, mListErrorUserName.get(3), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.CHECKPASS: {
-                        Toast.makeText(this, "UserName :" + CHECKVALIDATIONPASS, Toast.LENGTH_SHORT).show();
-                        break;
-                    }
+        String userName = mEdtUserName.getText().toString().trim();
+        String password = mEdtPassword.getText().toString().trim();
+        if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(password)) {
+            switch (UserValidation.checkUserName(userName)) {
+                case UserValidation.ERROR_1: {
+                    Toast.makeText(this, mListErrorUserName.get(0), Toast.LENGTH_SHORT).show();
+                    break;
                 }
-
-                switch (UserValidation.checkPassword(userName, password)) {
-                    case UserValidation.ERROR_1: {
-                        Toast.makeText(this, mListErrorPassWork.get(0), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_2: {
-                        Toast.makeText(this, mListErrorPassWork.get(1), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_3: {
-                        Toast.makeText(this, mListErrorPassWork.get(2), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_4: {
-                        Toast.makeText(this, mListErrorPassWork.get(3), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.ERROR_5: {
-                        Toast.makeText(this, mListErrorPassWork.get(4), Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    case UserValidation.CHECKPASS: {
-                        Toast.makeText(this, "Passwork: " + CHECKVALIDATIONPASS, Toast.LENGTH_SHORT).show();
-                        break;
-                    }
+                case UserValidation.ERROR_2: {
+                    Toast.makeText(this, mListErrorUserName.get(1), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case UserValidation.ERROR_3: {
+                    Toast.makeText(this, mListErrorUserName.get(2), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case UserValidation.ERROR_4: {
+                    Toast.makeText(this, mListErrorUserName.get(3), Toast.LENGTH_SHORT).show();
+                    break;
                 }
             }
-        } catch (Exception ex) {
-            Log.e(TAG, "userValidation: " + ex.getMessage());
+
+            switch (UserValidation.checkPassword(userName, password)) {
+                case UserValidation.ERROR_1: {
+                    Toast.makeText(this, mListErrorPassWork.get(0), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case UserValidation.ERROR_2: {
+                    Toast.makeText(this, mListErrorPassWork.get(1), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case UserValidation.ERROR_3: {
+                    Toast.makeText(this, mListErrorPassWork.get(2), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case UserValidation.ERROR_4: {
+                    Toast.makeText(this, mListErrorPassWork.get(3), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case UserValidation.ERROR_5: {
+                    Toast.makeText(this, mListErrorPassWork.get(4), Toast.LENGTH_SHORT).show();
+                    break;
+                }
+            }
         }
     }
 

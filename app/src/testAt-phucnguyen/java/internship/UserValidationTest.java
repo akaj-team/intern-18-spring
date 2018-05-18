@@ -13,40 +13,79 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserValidationTest extends UserValidation {
+    private static final String USENAME_PASS = "VanPhucNguyen97";
+    private static final String PASSWORD_PASS = "NguyenVanPhuc1";
 
     @Mock
     private UserLoginTest mUserLoginTest;
 
     @Test
-    public void testCheckUseName() {
+    public void testCheckUseNameIsError1() {
         when(mUserLoginTest.getUserName()).thenReturn("VanV");
         Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), ERROR_1);
+        when(mUserLoginTest.getUserName()).thenReturn(USENAME_PASS);
+        Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), CHECK_PASS);
+    }
+
+    public void testCheckUseNameIsError2() {
         when(mUserLoginTest.getUserName()).thenReturn("vanphucnguyen");
         Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), ERROR_2);
+        when(mUserLoginTest.getUserName()).thenReturn(USENAME_PASS);
+        Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), CHECK_PASS);
+    }
+
+    public void testCheckUseNameIsError3() {
         when(mUserLoginTest.getUserName()).thenReturn("VanPhuc%Nguyen");
         Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), ERROR_3);
+        when(mUserLoginTest.getUserName()).thenReturn(USENAME_PASS);
+        Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), CHECK_PASS);
+    }
+
+    public void testCheckUseNameIsError4() {
         when(mUserLoginTest.getUserName()).thenReturn("VanPhucNguyen0497");
         Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), ERROR_4);
-        when(mUserLoginTest.getUserName()).thenReturn("VanPhucNguyen97");
-        Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), CHECKPASS);
+        when(mUserLoginTest.getUserName()).thenReturn(USENAME_PASS);
+        Assert.assertEquals(checkUserName(mUserLoginTest.getUserName()), CHECK_PASS);
     }
 
     @Test
-    public void testCheckPassword() {
-        String useName = "PhucPhucPhuc";
-        when(mUserLoginTest.getUserName()).thenReturn("NguyenNguyenNguyen");
-        when(mUserLoginTest.getPassword()).thenReturn("NguyenNguyenNguyen");
-        Assert.assertEquals(checkPassword(mUserLoginTest.getUserName(), mUserLoginTest.getPassword()), ERROR_1);
-        when(mUserLoginTest.getPassword()).thenReturn("vanphucvanphuc");
-        Assert.assertEquals(checkPassword(useName, mUserLoginTest.getPassword()), ERROR_2);
-        when(mUserLoginTest.getPassword()).thenReturn("qwertyuiopppp97");
-        Assert.assertEquals(checkPassword(useName, mUserLoginTest.getPassword()), ERROR_3);
-        when(mUserLoginTest.getPassword()).thenReturn("qwerty@as dfg97");
-        Assert.assertEquals(checkPassword(useName, mUserLoginTest.getPassword()), ERROR_4);
-        when(mUserLoginTest.getPassword()).thenReturn("qwertyuiop97");
-        Assert.assertEquals(checkPassword(useName, mUserLoginTest.getPassword()), ERROR_5);
+    public void testCheckPasswordIsError1() {
         when(mUserLoginTest.getPassword()).thenReturn("VanPhucNguyen97");
-        Assert.assertEquals(checkPassword(useName, mUserLoginTest.getPassword()), CHECKPASS);
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), ERROR_1);
+        when(mUserLoginTest.getPassword()).thenReturn(PASSWORD_PASS);
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), CHECK_PASS);
+    }
+
+    @Test
+    public void testCheckPasswordIsError2() {
+        when(mUserLoginTest.getPassword()).thenReturn("vanphucvanphuc");
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), ERROR_2);
+        when(mUserLoginTest.getPassword()).thenReturn(PASSWORD_PASS);
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), CHECK_PASS);
+    }
+
+    @Test
+    public void testCheckPasswordIsError3() {
+        when(mUserLoginTest.getPassword()).thenReturn("qwertyuiopppp97");
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), ERROR_3);
+        when(mUserLoginTest.getPassword()).thenReturn(PASSWORD_PASS);
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), CHECK_PASS);
+    }
+
+    @Test
+    public void testCheckPasswordIsError4() {
+        when(mUserLoginTest.getPassword()).thenReturn("qwerty@as dfg97");
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), ERROR_4);
+        when(mUserLoginTest.getPassword()).thenReturn(PASSWORD_PASS);
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), CHECK_PASS);
+    }
+
+    @Test
+    public void testCheckPasswordIsError5() {
+        when(mUserLoginTest.getPassword()).thenReturn("qwertyuiop97");
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), ERROR_5);
+        when(mUserLoginTest.getPassword()).thenReturn(PASSWORD_PASS);
+        Assert.assertEquals(checkPassword(USENAME_PASS, mUserLoginTest.getPassword()), CHECK_PASS);
     }
 
     @Test
@@ -58,11 +97,11 @@ public class UserValidationTest extends UserValidation {
     }
 
     @Test
-    public void testCheckLengthPassword() {
+    public void testIsLimitLengthPassWork() {
         when(mUserLoginTest.getPassword()).thenReturn("PhucNguyen");
-        Assert.assertTrue(checkLengthPassWork(mUserLoginTest.getPassword()));
+        Assert.assertTrue(isLimitLengthPassWork(mUserLoginTest.getPassword()));
         when(mUserLoginTest.getPassword()).thenReturn("PhucNgu");
-        Assert.assertFalse(checkLengthPassWork(mUserLoginTest.getPassword()));
+        Assert.assertFalse(isLimitLengthPassWork(mUserLoginTest.getPassword()));
     }
 
     @Test
@@ -93,31 +132,31 @@ public class UserValidationTest extends UserValidation {
     }
 
     @Test
-    public void testCountLengthString() {
+    public void testIsLimitLengthString() {
         int n = 7;
         int m = 14;
         when(mUserLoginTest.getPassword()).thenReturn("PhucfNguyenVan");
-        Assert.assertTrue(countLengthString(mUserLoginTest.getPassword(), n, m));
+        Assert.assertTrue(isLimitLengthString(mUserLoginTest.getPassword(), n, m));
         when(mUserLoginTest.getPassword()).thenReturn("Phuc");
-        Assert.assertFalse(countLengthString(mUserLoginTest.getPassword(), n, m));
+        Assert.assertFalse(isLimitLengthString(mUserLoginTest.getPassword(), n, m));
         when(mUserLoginTest.getPassword()).thenReturn("PhucNguyenVanPhucNguyenVanPhuc");
-        Assert.assertFalse(countLengthString(mUserLoginTest.getPassword(), n, m));
+        Assert.assertFalse(isLimitLengthString(mUserLoginTest.getPassword(), n, m));
     }
 
     @Test
-    public void testLimitTwoNumber() {
+    public void testIsLimitTwoNumber() {
         when(mUserLoginTest.getPassword()).thenReturn("PhucNguyenu12");
-        Assert.assertTrue(limitTwoNumber(mUserLoginTest.getPassword()));
+        Assert.assertTrue(isLimitedTwoNumber(mUserLoginTest.getPassword()));
         when(mUserLoginTest.getPassword()).thenReturn("PhucNguyenVan123");
-        Assert.assertFalse(limitTwoNumber(mUserLoginTest.getPassword()));
+        Assert.assertFalse(isLimitedTwoNumber(mUserLoginTest.getPassword()));
     }
 
     @Test
-    public void testRequiredNUpperCaseChar() {
+    public void testIsHasUpperCaseChar() {
         int n = 3;
         when(mUserLoginTest.getPassword()).thenReturn("PhucNyguyenVan");
-        Assert.assertTrue(requiredNUpperCaseChar(mUserLoginTest.getPassword(), n));
+        Assert.assertTrue(isHasUpperCaseChar(mUserLoginTest.getPassword(), n));
         when(mUserLoginTest.getPassword()).thenReturn("Phucnguqyenvan");
-        Assert.assertFalse(requiredNUpperCaseChar(mUserLoginTest.getPassword(), n));
+        Assert.assertFalse(isHasUpperCaseChar(mUserLoginTest.getPassword(), n));
     }
 }

@@ -11,7 +11,7 @@ public class UserValidation {
     public static final int ERROR_3 = -3;
     public static final int ERROR_4 = -4;
     public static final int ERROR_5 = -5;
-    public static final int CHECKPASS = 1;
+    public static final int CHECK_PASS = 1;
 
     /**
      * UserName input Error
@@ -21,19 +21,19 @@ public class UserValidation {
      * ERROR 4: At most 2 digits
      */
     public static int checkUserName(String userName) {
-        if (!countLengthString(userName, 7, 24)) {
+        if (!isLimitLengthString(userName, 7, 24)) {
             return ERROR_1;
         }
-        if (!requiredNUpperCaseChar(userName, 2)) {
+        if (!isHasUpperCaseChar(userName, 2)) {
             return ERROR_2;
         }
         if (isExistSpecialChar(userName) || isExistWhiteSpace(userName)) {
             return ERROR_3;
         }
-        if (!limitTwoNumber(userName)) {
+        if (!isLimitedTwoNumber(userName)) {
             return ERROR_4;
         }
-        return CHECKPASS;
+        return CHECK_PASS;
     }
 
     /**
@@ -50,23 +50,23 @@ public class UserValidation {
         if (!isExistNumbOrIsExistSpecialChar(passWork)) {
             return ERROR_2;
         }
-        if (isLimitedNReplaceChar(passWork, 2) || !checkLengthPassWork(passWork)) {
+        if (isLimitedNReplaceChar(passWork, 2) || !isLimitLengthPassWork(passWork)) {
             return ERROR_3;
         }
         if (isExistWhiteSpace(passWork)) {
             return ERROR_4;
         }
-        if (!requiredNUpperCaseChar(passWork, 3)) {
+        if (!isHasUpperCaseChar(passWork, 3)) {
             return ERROR_5;
         }
-        return CHECKPASS;
+        return CHECK_PASS;
     }
 
-    public static boolean requiredNUpperCaseChar(String s, int n) {
+    public static boolean isHasUpperCaseChar(String s, int n) {
         return Pattern.compile("^.*(.*[A-Z]){" + n + ",}.*$").matcher(s).matches();
     }
 
-    public static boolean limitTwoNumber(String s) {
+    public static boolean isLimitedTwoNumber(String s) {
         int count = 0;
         for (int i = 0; i < s.length(); i++) {
             if (Character.isDigit(s.codePointAt(i))) {
@@ -79,7 +79,7 @@ public class UserValidation {
         return true;
     }
 
-    public static boolean countLengthString(String s, int n, int m) {
+    public static boolean isLimitLengthString(String s, int n, int m) {
         return (s.length() >= n && s.length() <= m);
     }
 
@@ -113,7 +113,7 @@ public class UserValidation {
         return false;
     }
 
-    public static boolean checkLengthPassWork(String s) {
+    public static boolean isLimitLengthPassWork(String s) {
         return s.length() >= 8;
     }
 
