@@ -52,6 +52,16 @@
             android:layout_height="match_parent"
             android:text="@string/w3_view_pager_list_friend" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/btnApi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/w5_api" />
 
+        <Button
+            android:id="@+id/btnUnitTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/w5_unit_test" />
+    </LinearLayout>
 </ScrollView>
