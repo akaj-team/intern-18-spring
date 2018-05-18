@@ -39,4 +39,26 @@
     <string name="unfriends">Unfriends</string>
     <string name="add_friends">Add Friends</string>
     <string name="recycler_view">W3 List Friend With Recycler View</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="search">Search</string>
+    <string name="btnTrack">Track</string>
+    <string name="w5_api">W5 Api</string>
+    <string name="login">Login</string>
+    <string name="w5_unit_test">W5 Unit Test</string>
+
+    <!--UserName validate-->
+    <string name="error_length_user_name">UserName length should be greater than 7 and
+        less than 24 characters
+    </string>
+    <string name="error_capital_user_name">UserName must have at least 2 characters in capitalization</string>
+    <string name="error_special_char_and_space_user_name">UserName does not contain special characters and spaces</string>
+    <string name="error_digit_number_user_name">UserName should have at most 2 digit numbers</string>
+
+    <!--Password validate-->
+    <string name="error_difference_username_pass">Password must be difference from username</string>
+    <string name="error_special_char_or_number_pass">Password should be have at least one special character or number</string>
+    <string name="error_length_pass">Password minimum length is 8 characters</string>
+    <string name="error_repeat_char_pass">Password must not repeat 1 character more than 2 times</string>
+    <string name="error_space_pass">Password does not contain space</string>
+    <string name="error_capital_pass">Password have at least 3 characters in capital</string>
 </resources>

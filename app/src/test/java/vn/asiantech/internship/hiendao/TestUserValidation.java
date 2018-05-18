@@ -1,9 +1,4 @@
-package vn.asiantech.internship.test;
-
-import static org.mockito.Mockito.when;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.assertFalse;
+package vn.asiantech.internship.hiendao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +7,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import vn.asiantech.internship.unitest.User;
 import vn.asiantech.internship.unitest.UserValidation;
+
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TestUserValidation {
