@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="@color/bg_item_drawer_layout"
+    android:viewportHeight="24.0"
+    android:viewportWidth="24.0"
+    tools:ignore="VectorRaster">
+    <path
+        android:fillColor="#7d7d7d"
+        android:pathData="M2.01,21L23,12 2.01,3 2,10l15,2 -15,2z" />
+</vector>
