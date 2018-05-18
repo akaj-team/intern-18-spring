@@ -71,7 +71,6 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
                 }
                 case UserValidation.ERROR_4: {
                     Toast.makeText(this, mListErrorUserName.get(3), Toast.LENGTH_SHORT).show();
-                    break;
                 }
             }
 
@@ -94,7 +93,6 @@ public class LoginUnitTestActivity extends AppCompatActivity implements View.OnC
                 }
                 case UserValidation.ERROR_5: {
                     Toast.makeText(this, mListErrorPassWork.get(4), Toast.LENGTH_SHORT).show();
-                    break;
                 }
             }
         }
