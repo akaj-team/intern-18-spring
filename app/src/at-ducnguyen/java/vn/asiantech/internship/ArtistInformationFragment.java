@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 
@@ -37,7 +38,8 @@ public class ArtistInformationFragment extends Fragment {
         Bundle bundle = getArguments();
         String url = bundle.getString(ArtistInfomationActivity.ARTIST_THUMB);
         if (url != null) {
-            Picasso.get().load(url)
+            Glide.with(getActivity())
+                    .load(url)
                     .placeholder(R.drawable.loading)
                     .error(R.drawable.error_loading)
                     .into(mImgThumb);
