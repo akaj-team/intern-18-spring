@@ -51,6 +51,13 @@
             android:textSize="25dp" />
 
         <Button
+            android:id="@+id/btnDrawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_drawerlayout"
+            android:textSize="25dp" />
+
+        <Button
             android:id="@+id/btnAPI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

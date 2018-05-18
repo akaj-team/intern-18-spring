@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.Button;
 
 import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
 import vn.asiantech.internship.unitest.LoginActivity;
 
 import vn.asiantech.internship.api.ApiActivity;
+
+import vn.asiantech.drawerlayout.DrawerLayoutActivity;
 
 public class MenuActivity extends Activity {
     @Override
@@ -56,9 +57,20 @@ public class MenuActivity extends Activity {
         });
 
         Button btnUnitTest = findViewById(R.id.btnUnitTest);
-        btnUnitTest.setOnClickListener((View v) -> {
+        btnUnitTest.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
             startActivity(intent);
         });
+        btnService.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, ServiceActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnDrawerLayout = findViewById(R.id.btnDrawerLayout);
+        btnDrawerLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, DrawerLayoutActivity.class);
+            startActivity(intent);
+        });
     }
+
 }
