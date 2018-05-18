@@ -30,7 +30,7 @@ import vn.asiantech.internship.R;
 public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, View.OnClickListener {
     public static final int REQUEST_CAPTURE_PICTURE = 999;
     public static final int REQUEST_OPEN_GALLERY = 666;
-    public static final String AVATAR_USER = "Avatar_user";
+    private static final String AVATAR_USER = "Avatar_user";
     private static final String TAG = DrawerLayout.class.getSimpleName();
 
     private ItemMailAdapter mAdapter;
