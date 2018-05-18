@@ -1,4 +1,4 @@
-package vn.asiantech.internship.hiendao;
+package vn.asiantech.internship;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
