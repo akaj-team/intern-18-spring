@@ -9,4 +9,5 @@
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_5">5dp</dimen>
     <dimen name="dp_300">300dp</dimen>
+    <dimen name="dp_35">40dp</dimen>
 </resources>

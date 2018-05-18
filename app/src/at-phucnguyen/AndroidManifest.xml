@@ -34,5 +34,6 @@
         <service android:name=".MusicServices"/>
         <activity android:name=".UseApiActivity" android:label="@string/lable_api"/>
         <activity android:name=".InfoSingerActivity" android:label="@string/lable_infosinger"/>
+        <activity android:name=".LoginUnitTestActivity" android:label="@string/unit_test"/>
     </application>
 </manifest>

@@ -79,4 +79,6 @@
     <string name="type_name_singer">Type Name Singer</string>
     <string name="lable_api">API</string>
     <string name="lable_infosinger">Info Singer</string>
+    <string name="unit_test">Unit Test</string>
+    <string name="check">Check</string>
 </resources>
