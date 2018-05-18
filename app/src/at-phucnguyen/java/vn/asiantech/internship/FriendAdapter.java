@@ -41,7 +41,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendsVie
     /**
      * Class is used to set ViewHolder to each row
      */
-    class FriendsViewHolder extends RecyclerView.ViewHolder {
+    class FriendsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView mTvNameFriends;
         private final TextView mTvCountFriends;
         private final ImageView mImgFriend;
@@ -54,17 +54,19 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendsVie
             mTvCountFriends = view.findViewById(R.id.tvCountFriends);
             mImgFriend = view.findViewById(R.id.imgFriends);
             mBtnUnFriend = view.findViewById(R.id.btnUnFriends);
-            mBtnUnFriend.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mBtnUnFriend.getText().equals("Friend")) {
-                        mStatus = "UnFriends";
-                    } else {
-                        mStatus = "Friend";
-                    }
-                    mBtnUnFriend.setText(mStatus);
+            mBtnUnFriend.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.btnUnFriends) {
+                if (mBtnUnFriend.getText().equals("Friend")) {
+                    mStatus = "UnFriends";
+                } else {
+                    mStatus = "Friend";
                 }
-            });
+                mBtnUnFriend.setText(mStatus);
+            }
         }
     }
 

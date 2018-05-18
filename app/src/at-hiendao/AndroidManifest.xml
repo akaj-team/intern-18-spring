@@ -3,10 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.asiantech.internship">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera"
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
+    <permission android:name="android.permission.SEND_SMS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -19,17 +26,30 @@
         <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ViewActivity" />
-        <activity android:name=".EventListenerActivity"/>
+        <activity android:name=".EventListenerActivity" />
         <activity android:name=".SendDataActivity" />
-        <activity android:name=".ListFriendActitivy"/>
-        <activity android:name=".ViewPageActivity"/>
-        <activity android:name="vn.asiantech.drawerlayout.DrawerLayoutActivity"/>
+        <activity android:name=".ListFriendActitivy" />
+        <activity android:name=".ViewPageActivity" />
+        <activity android:name="vn.asiantech.drawerlayout.DrawerLayoutActivity" />
+        <activity android:name=".api.ApiActivity" />
+        <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
 
+        <service
+            android:name=".service_and_broadcast_receiver.MusicService"
+            android:enabled="true" />
+        <receiver
+            android:name=".service_and_broadcast_receiver.MyBroadCastReceiver"
+            android:permission="android.permission.SEND_SMS">
+            <intent-filter>
+                <action android:name="android.hdx.action.Close_Notification" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hdx.action.PauseMusic" />
+            </intent-filter>
+        </receiver>
     </application>
-
 </manifest>

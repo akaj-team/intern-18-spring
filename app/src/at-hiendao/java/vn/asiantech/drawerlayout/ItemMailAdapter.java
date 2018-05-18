@@ -2,7 +2,6 @@ package vn.asiantech.drawerlayout;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 
@@ -114,12 +113,9 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
             mImgIcon = itemView.findViewById(R.id.imgIconItem);
             mTvName = itemView.findViewById(R.id.tvItemMail);
             mImgBackground = itemView.findViewById(R.id.imgBackGroundItem);
-            mImgBackground.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mListItemMail.get(getAdapterPosition()).setIsSelected(true);
-                    mEventItemMail.onItemMailClick(getAdapterPosition());
-                }
+            mImgBackground.setOnClickListener(v -> {
+                mListItemMail.get(getAdapterPosition()).setIsSelected(true);
+                mEventItemMail.onItemMailClick(getAdapterPosition());
             });
             initListImage();
         }
@@ -164,36 +160,25 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
         UserInfo(View itemView) {
             super(itemView);
             mImgAvatar = itemView.findViewById(R.id.imgAvatarUser);
-            mImgAvatar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onAvatarClick();
-                }
-            });
+            mImgAvatar.setOnClickListener(v -> onAvatarClick());
         }
 
         private void onAvatarClick() {
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setMessage(mContext.getResources().getString(R.string.title_dialog_drawer)).setTitle(DIALOG);
 
-            builder.setNeutralButton(mContext.getResources().getString(R.string.text_dialog_select_image), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent();
-                    intent.setType("image/*");
-                    intent.setAction(Intent.ACTION_GET_CONTENT);
-                    if (mContext instanceof DrawerLayoutActivity) {
-                        ((DrawerLayoutActivity) mContext).startActivityForResult(intent, DrawerLayoutActivity.REQUEST_OPEN_GALLERY);
-                    }
+            builder.setNeutralButton(mContext.getResources().getString(R.string.text_dialog_select_image), (dialog, which) -> {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                if (mContext instanceof DrawerLayoutActivity) {
+                    ((DrawerLayoutActivity) mContext).startActivityForResult(intent, DrawerLayoutActivity.REQUEST_OPEN_GALLERY);
                 }
             });
-            builder.setPositiveButton(mContext.getResources().getString(R.string.text_dialog_use_camera), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    if (mContext instanceof DrawerLayoutActivity) {
-                        ((DrawerLayoutActivity) mContext).startActivityForResult(intent, DrawerLayoutActivity.REQUEST_CAPTURE_PICTURE);
-                    }
+            builder.setPositiveButton(mContext.getResources().getString(R.string.text_dialog_use_camera), (dialog, which) -> {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (mContext instanceof DrawerLayoutActivity) {
+                    ((DrawerLayoutActivity) mContext).startActivityForResult(intent, DrawerLayoutActivity.REQUEST_CAPTURE_PICTURE);
                 }
             });
             AlertDialog dialog = builder.create();

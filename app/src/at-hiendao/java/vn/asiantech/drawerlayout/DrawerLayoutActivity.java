@@ -28,15 +28,16 @@ import java.util.List;
 import vn.asiantech.internship.R;
 
 public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, View.OnClickListener {
+    public static final int REQUEST_CAPTURE_PICTURE = 999;
+    public static final int REQUEST_OPEN_GALLERY = 666;
+    private static final String AVATAR_USER = "Avatar_user";
+    private static final String TAG = "test";
+
     private ItemMailAdapter mAdapter;
     private LinearLayout mMainlayout;
     private RecyclerView mRecyclerViewMenu;
     private DrawerLayout mDrawerLayout;
-    public static final int REQUEST_CAPTURE_PICTURE = 999;
-    public static final int REQUEST_OPEN_GALLERY = 666;
     private List<ItemMail> mListData;
-    static final String AVATAR_USER = "Avatar_user";
-    private static final String TAG = "test";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +54,6 @@ public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLay
         mDrawerLayout.addDrawerListener(this);
         Button btnMenu = findViewById(R.id.btnMenu);
         btnMenu.setOnClickListener(this);
-
     }
 
     private void onOpenMenu(int distange) {

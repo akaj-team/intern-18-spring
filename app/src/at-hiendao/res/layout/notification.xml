@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:id="@+id/imgIconNotify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/custom_circle" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/btnClose"
+        android:layout_toRightOf="@id/imgIconNotify"
+        android:progress="25" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:alpha="0"/>
+
+    <ImageView
+        android:id="@+id/imgBtnPlay"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/btnPlay"
+        android:layout_alignRight="@id/btnPlay"
+        android:layout_alignTop="@id/btnPlay"
+        android:src="@drawable/custom_icon_play"/>
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/custom_icon_close" />
+
+    <TextView
+        android:id="@+id/tvCurrentTimeNotify"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_alignLeft="@+id/progressBar"
+        android:layout_below="@id/progressBar"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTotalTimeNotify"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_alignRight="@+id/progressBar"
+        android:layout_below="@id/progressBar"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+</RelativeLayout>

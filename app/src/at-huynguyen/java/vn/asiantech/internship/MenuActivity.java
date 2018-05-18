@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import vn.asiantech.internship.api.ApiActivity;
+
 public class MenuActivity extends AppCompatActivity {
 
     @Override
@@ -22,6 +24,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnViewViewGroup = findViewById(R.id.btnViewViewGroup);
         btnViewViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnResources = findViewById(R.id.btnResources);
         btnResources.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +42,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnViewPager = findViewById(R.id.btnViewPager);
         btnViewPager.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +60,30 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btnRecycleView = findViewById(R.id.btnRecycleView);
         btnRecycleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, ListFriendActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSharePreferences = findViewById(R.id.btnSharePreferences);
+        btnSharePreferences.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, SharePreferencesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnApi = findViewById(R.id.btnApi);
+        btnApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
                 startActivity(intent);
             }
         });

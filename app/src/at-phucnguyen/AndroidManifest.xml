@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vn.asiantech.internship">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,5 +28,11 @@
         <activity android:name=".PracticViewPageActivity" android:label="W3 - ViewPage"/>
         <activity android:name=".SignupActivity" android:label="W2 - Event and Listenes"/>
         <activity android:name=".RecyclerViewExampleActivity" android:label="W3-D1-RecyclerView"/>
+        <activity android:name=".UserMenuActivity" android:label="W4 - Memu and ToolBar"/>
+        <activity android:name=".MyDatabaseActivity" android:label="Database Example"/>
+        <activity android:name=".PlayMusicActivity" android:label="Service and Broadcast Receiver"/>
+        <service android:name=".MusicServices"/>
+        <activity android:name=".UseApiActivity" android:label="@string/lable_api"/>
+        <activity android:name=".InfoSingerActivity" android:label="@string/lable_infosinger"/>
     </application>
 </manifest>
