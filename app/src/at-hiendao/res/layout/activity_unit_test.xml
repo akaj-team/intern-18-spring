@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edtUserNameUnitTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/username_hint"
+        android:inputType="textPersonName"
+        android:maxLength="24"
+        app:layout_constraintBottom_toTopOf="@+id/edtPasswordUnitTest" />
+
+    <EditText
+        android:id="@+id/edtPasswordUnitTest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/edtUserNameUnitTest"
+        app:layout_constraintRight_toRightOf="@id/edtUserNameUnitTest"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/unit_test_login"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="@+id/edtUserNameUnitTest"
+        app:layout_constraintRight_toRightOf="@id/edtUserNameUnitTest"
+        app:layout_constraintTop_toBottomOf="@id/edtPasswordUnitTest" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/edtUserNameUnitTest"
+        app:layout_constraintLeft_toLeftOf="@id/btnLogin"
+        app:layout_constraintRight_toRightOf="@id/btnLogin" />
+</android.support.constraint.ConstraintLayout>

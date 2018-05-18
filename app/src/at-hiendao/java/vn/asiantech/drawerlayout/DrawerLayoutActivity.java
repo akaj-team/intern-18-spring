@@ -30,8 +30,8 @@ import vn.asiantech.internship.R;
 public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, View.OnClickListener {
     public static final int REQUEST_CAPTURE_PICTURE = 999;
     public static final int REQUEST_OPEN_GALLERY = 666;
-    private static final String AVATAR_USER = "Avatar_user";
-    private static final String TAG = "test";
+    public static final String AVATAR_USER = "Avatar_user";
+    private static final String TAG = DrawerLayout.class.getSimpleName();
 
     private ItemMailAdapter mAdapter;
     private LinearLayout mMainlayout;
@@ -63,6 +63,9 @@ public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLay
     private void initListData() {
         mListData = new ArrayList<>();
         ItemMail userInfo = new ItemMail(ItemMail.ItemMailType.UserInfo, null);
+        if (isExistAvatar()) {
+            userInfo.setUri(Uri.fromFile(getAvatarFilePath()));
+        }
         mListData.add(userInfo);
         ItemMail inbox = new ItemMail(ItemMail.ItemMailType.Inbox, null);
         mListData.add(inbox);
@@ -119,23 +122,28 @@ public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLay
         mDrawerLayout.openDrawer(Gravity.LEFT);
     }
 
-    File getAvatarFilePath() {
+    private File getAvatarFilePath() {
         String path = getFilesDir() + File.separator + AVATAR_USER + ".jpg";
         File imgFilePath = new File(path);
-        boolean isCreateFile = false;
+        boolean isCreate = true;
         if (!imgFilePath.exists()) {
             try {
-                isCreateFile = imgFilePath.createNewFile();
-
+                isCreate = imgFilePath.createNewFile();
             } catch (Exception e) {
                 Log.e(TAG, "getAvatarFilePath: " + e.toString());
             }
         }
-        if (!isCreateFile) {
+        if (isCreate) {
             return imgFilePath;
         } else {
             return null;
         }
+    }
+
+    private boolean isExistAvatar() {
+        String path = getFilesDir() + File.separator + AVATAR_USER + ".jpg";
+        File imgFilePath = new File(path);
+        return imgFilePath.exists();
     }
 
     private void saveAvatar(Intent data, boolean isCapturePicture) {
@@ -155,23 +163,25 @@ public class DrawerLayoutActivity extends AppCompatActivity implements DrawerLay
         }
         File path = getAvatarFilePath();
         FileOutputStream outputStream = null;
-        try {
-            outputStream = new FileOutputStream(path);
-            if (bitmap != null) {
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "saveAvatar: " + e.toString());
-        } finally {
+        if (path != null) {
             try {
-                if (outputStream != null) {
-                    outputStream.flush();
-                    outputStream.close();
+                outputStream = new FileOutputStream(path);
+                if (bitmap != null) {
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
                 }
             } catch (Exception e) {
                 Log.e(TAG, "saveAvatar: " + e.toString());
+            } finally {
+                try {
+                    if (outputStream != null) {
+                        outputStream.flush();
+                        outputStream.close();
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "saveAvatar: " + e.toString());
+                }
             }
+            mListData.get(ItemMailAdapter.TYPE_USER_INFO).setUri(Uri.fromFile(path));
         }
-        mListData.get(0).setUri(Uri.fromFile(path));
     }
 }

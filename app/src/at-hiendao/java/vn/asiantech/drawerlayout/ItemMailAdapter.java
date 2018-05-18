@@ -23,7 +23,7 @@ public class ItemMailAdapter extends RecyclerView.Adapter implements IEventItemM
     private List<ItemMail> mListItemMail;
     private final int mNumOfItem = 5;
     private final Context mContext;
-    private static final String TAG = "test";
+    private static final String TAG = ItemMailAdapter.class.getSimpleName();
     private static final int TYPE_ITEM_MAIL = 1;
     public static final int TYPE_USER_INFO = 0;
 

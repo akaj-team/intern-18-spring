@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.widget.Button;
 
 import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
+import vn.asiantech.internship.unitest.LoginActivity;
 
 import vn.asiantech.internship.api.ApiActivity;
 
@@ -50,6 +51,16 @@ public class MenuActivity extends Activity {
         });
 
         Button btnService = findViewById(R.id.btnService);
+        btnService.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, ServiceActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnUnitTest = findViewById(R.id.btnUnitTest);
+        btnUnitTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
         btnService.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, ServiceActivity.class);
             startActivity(intent);

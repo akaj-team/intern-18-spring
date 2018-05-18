@@ -37,6 +37,7 @@
         <activity android:name="vn.asiantech.drawerlayout.DrawerLayoutActivity" />
         <activity android:name=".api.ApiActivity" />
         <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
+        <activity android:name=".unitest.LoginActivity"/>
 
         <service
             android:name=".service_and_broadcast_receiver.MusicService"
