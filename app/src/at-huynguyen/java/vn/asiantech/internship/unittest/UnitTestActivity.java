@@ -53,7 +53,7 @@ public class UnitTestActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.password_different_username, Toast.LENGTH_LONG).show();
         } else if (!PasswordValidation.isSpecialCharacterNumberPassword(password)) {
             Toast.makeText(this, R.string.special_character_number, Toast.LENGTH_LONG).show();
-        } else if (!PasswordValidation.isLengthPassword(password)) {
+        } else if (!PasswordValidation.isValidLengthPassword(password)) {
             Toast.makeText(this, R.string.length_password, Toast.LENGTH_LONG).show();
         } else if (!PasswordValidation.isDontRepeatCharacterTwicePassword(password)) {
             Toast.makeText(this, R.string.dont_repeat_character_twice, Toast.LENGTH_LONG).show();

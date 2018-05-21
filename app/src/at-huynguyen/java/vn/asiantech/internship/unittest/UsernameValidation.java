@@ -3,6 +3,8 @@ package vn.asiantech.internship.unittest;
 import java.util.regex.Pattern;
 
 public final class UsernameValidation {
+    private UsernameValidation() {
+    }
 
     public static boolean isValidLengthUserName(String userName) {
         return !(userName.length() < 7 || userName.length() > 24);

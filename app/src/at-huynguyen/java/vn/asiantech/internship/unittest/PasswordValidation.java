@@ -3,6 +3,8 @@ package vn.asiantech.internship.unittest;
 import java.util.regex.Pattern;
 
 public final class PasswordValidation {
+    private PasswordValidation() {
+    }
 
     public static boolean isPasswordDifferentUserName(String userName, String password) {
         return userName.equals(password);
@@ -13,7 +15,7 @@ public final class PasswordValidation {
         return patternSpecialCharacterNumber.matcher(password).find();
     }
 
-    public static boolean isLengthPassword(String password) {
+    public static boolean isValidLengthPassword(String password) {
         return password.length() >= 8;
     }
 
