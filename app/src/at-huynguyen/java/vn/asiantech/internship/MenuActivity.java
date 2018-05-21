@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import vn.asiantech.internship.unittest.UnitTestActivity;
 import vn.asiantech.internship.api.ApiActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -75,6 +76,15 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, SharePreferencesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnUnitTest = findViewById(R.id.btnUnitTest);
+        btnUnitTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, UnitTestActivity.class);
                 startActivity(intent);
             }
         });
