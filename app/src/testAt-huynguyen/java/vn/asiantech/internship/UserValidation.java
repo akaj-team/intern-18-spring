@@ -76,9 +76,9 @@ public class UserValidation {
     @Test
     public void checkLengthPassword() {
         when(mUserUnitTest.getPassword()).thenReturn("huy123");
-        Assert.assertFalse(PasswordValidation.isLengthPassword(mUserUnitTest.getPassword()));
+        Assert.assertFalse(PasswordValidation.isValidLengthPassword(mUserUnitTest.getPassword()));
         when(mUserUnitTest.getPassword()).thenReturn("nguyenhuyha123");
-        Assert.assertTrue(PasswordValidation.isLengthPassword(mUserUnitTest.getPassword()));
+        Assert.assertTrue(PasswordValidation.isValidLengthPassword(mUserUnitTest.getPassword()));
     }
 
     @Test
