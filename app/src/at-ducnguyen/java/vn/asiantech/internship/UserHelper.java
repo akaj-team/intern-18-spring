@@ -17,7 +17,6 @@ public class UserHelper extends SQLiteOpenHelper {
     private static final String ID = "ID";
     private static final String NAME = "NAME";
     private static final String AGE = "AGE";
-    private List<Person> mListUser = new ArrayList<>();
 
     UserHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -52,7 +51,7 @@ public class UserHelper extends SQLiteOpenHelper {
 
     public List<Person> getAllUser() {
         String selectQuery = "SELECT  * FROM " + TABLE_NAME;
-
+        List<Person> listUser = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
@@ -61,12 +60,12 @@ public class UserHelper extends SQLiteOpenHelper {
                 user.setId(cursor.getInt(0));
                 user.setName(cursor.getString(1));
                 user.setAge(cursor.getInt(2));
-                mListUser.add(user);
+                listUser.add(user);
             } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
-        return mListUser;
+        return listUser;
     }
 
     public void resetDatabase() {

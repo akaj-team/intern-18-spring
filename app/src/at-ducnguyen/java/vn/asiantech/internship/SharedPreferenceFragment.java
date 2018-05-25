@@ -8,11 +8,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class SharedPreferenceFragment extends Fragment {
-    public static final String SWITCH_STATE_KEY = "SWITCH SHARED PREFERENCE";
+    private static final String SWITCH_STATE_KEY = "SWITCH SHARED PREFERENCE";
 
     @Nullable
     @Override
@@ -21,13 +20,10 @@ public class SharedPreferenceFragment extends Fragment {
         final SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         Switch swSharedPreference = view.findViewById(R.id.swSharedPreference);
         swSharedPreference.setChecked(sharedPreferences.getBoolean(SWITCH_STATE_KEY, false));
-        swSharedPreference.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(SWITCH_STATE_KEY, b);
-                editor.apply();
-            }
+        swSharedPreference.setOnCheckedChangeListener((compoundButton, b) -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(SWITCH_STATE_KEY, b);
+            editor.apply();
         });
         return view;
     }

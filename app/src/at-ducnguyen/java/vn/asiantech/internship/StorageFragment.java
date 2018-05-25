@@ -5,14 +5,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -21,16 +20,15 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
 
 public class StorageFragment extends Fragment implements View.OnClickListener {
     public static final String FILE_NAME = "nmduc.txt";
     public static final String CHARSET = "UTF-8";
-    private List<String> mListInternal;
-    private List<String> mListExternal;
-    private StorageAdapter mStorageAdapter;
+    private String mInternalData = "";
+    private String mExternalData = "";
     private EditText mEdtInput;
+    private TextView mTvDataInternal;
+    private TextView mTvDataExternal;
 
     @Nullable
     @Override
@@ -50,30 +48,27 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
         Button btnClearExternal = view.findViewById(R.id.btnClearExternal);
         btnClearExternal.setOnClickListener(this);
 
+        mTvDataInternal = view.findViewById(R.id.tvDataInternal);
+        mTvDataExternal = view.findViewById(R.id.tvDataExternal);
+
         getDataFromInternal();
         getDataFromExternal();
-
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        mStorageAdapter = new StorageAdapter(mListInternal, mListExternal);
-        recyclerView.setAdapter(mStorageAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return view;
     }
 
     private void getDataFromInternal() {
         try {
-            mListInternal = new ArrayList<>();
-            mListInternal.add(getString(R.string.internal));
             FileInputStream inputStream = getActivity().openFileInput(FILE_NAME);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName(CHARSET)));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                mListInternal.add(line);
+                mInternalData = mInternalData.concat(line);
             }
             inputStream.close();
             bufferedReader.close();
+            mTvDataInternal.setText(mInternalData);
         } catch (Exception e) {
-            Log.e(MainActivity.TAG, MainActivity.MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e);
         }
     }
 
@@ -82,18 +77,17 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
         String path = extStore.getPath() + "/" + FILE_NAME;
         File file = new File(path);
         try {
-            mListExternal = new ArrayList<>();
-            mListExternal.add(getString(R.string.external));
             FileInputStream fileInputStream = new FileInputStream(file);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, Charset.forName(CHARSET)));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                mListExternal.add(line);
+                mExternalData = mExternalData.concat(line);
             }
             fileInputStream.close();
             bufferedReader.close();
+            mTvDataExternal.setText(mExternalData);
         } catch (Exception e) {
-            Log.e(MainActivity.TAG, MainActivity.MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e);
         }
     }
 
@@ -101,23 +95,20 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
         FileOutputStream outputStream;
         try {
             outputStream = getActivity().openFileOutput(FILE_NAME, Context.MODE_APPEND);
-            outputStream.write((data + "\n").getBytes(Charset.forName(CHARSET)));
+            outputStream.write((data).getBytes(Charset.forName(CHARSET)));
             outputStream.close();
-            mListInternal.add(data);
-            mStorageAdapter.notifyDataSetChanged();
+            mInternalData += data;
+            mTvDataInternal.setText(mInternalData);
         } catch (Exception e) {
-            Log.e(MainActivity.TAG, MainActivity.MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e);
         }
-
     }
 
     public void onInternalClear() {
         File directory = getActivity().getFilesDir();
         File file = new File(directory, FILE_NAME);
         if (file.delete()) {
-            mListInternal.clear();
-            mListInternal.add(getString(R.string.internal));
-            mStorageAdapter.notifyDataSetChanged();
+            mTvDataInternal.setText("");
             Toast.makeText(getActivity(), R.string.clear_success, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), R.string.clear_cancel, Toast.LENGTH_SHORT).show();
@@ -127,9 +118,7 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
     public void onExternalSave(String data) {
         File extStore = Environment.getExternalStorageDirectory();
         String path = extStore.getPath() + "/" + FILE_NAME;
-
         File file = new File(path);
-
         try {
             if (file.createNewFile()) {
                 Toast.makeText(getActivity(), R.string.make_new_file, Toast.LENGTH_SHORT).show();
@@ -137,10 +126,10 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
             FileOutputStream fileOutputStream = new FileOutputStream(file, true);
             fileOutputStream.write(data.getBytes(Charset.forName(CHARSET)));
             fileOutputStream.close();
-            mListExternal.add(data);
-            mStorageAdapter.notifyDataSetChanged();
+            mExternalData += data;
+            mTvDataExternal.setText(mExternalData);
         } catch (Exception e) {
-            Log.e(MainActivity.TAG, MainActivity.MSG, e );
+            Log.e(MainActivity.TAG, MainActivity.MSG, e);
         }
     }
 
@@ -149,9 +138,7 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
         String path = extStore.getPath() + "/" + FILE_NAME;
         File file = new File(path);
         if (file.delete()) {
-            mListExternal.clear();
-            mListExternal.add(getString(R.string.external));
-            mStorageAdapter.notifyDataSetChanged();
+            mTvDataExternal.setText("");
             Toast.makeText(getActivity(), R.string.clear_success, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), R.string.clear_cancel, Toast.LENGTH_SHORT).show();
@@ -177,7 +164,6 @@ public class StorageFragment extends Fragment implements View.OnClickListener {
             }
             case R.id.btnClearExternal: {
                 onExternalClear();
-                break;
             }
         }
     }

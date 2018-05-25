@@ -17,9 +17,6 @@ import android.widget.Button;
 public class DatabaseActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int REQUEST_READ_EXTERNAL_STORAGE = 1;
     private FragmentManager mFragmentManager;
-    private SharedPreferenceFragment mSharedPreferenceFragment;
-    private StorageFragment mStorageFragment;
-    private SqliteFragment mSqliteFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +34,9 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
         mFragmentManager = getFragmentManager();
 
-        mSharedPreferenceFragment = new SharedPreferenceFragment();
-        mStorageFragment = new StorageFragment();
-        mSqliteFragment = new SqliteFragment();
+        SharedPreferenceFragment sharedPreferenceFragment = new SharedPreferenceFragment();
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.flFragment, mSharedPreferenceFragment);
+        fragmentTransaction.replace(R.id.flFragment, sharedPreferenceFragment);
         fragmentTransaction.commit();
     }
 
@@ -50,7 +45,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnSharedPreference: {
-                showFragment(mSharedPreferenceFragment);
+                SharedPreferenceFragment sharedPreferenceFragment = new SharedPreferenceFragment();
+                showFragment(sharedPreferenceFragment);
                 break;
             }
             case R.id.btnStorage: {
@@ -58,7 +54,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                 break;
             }
             case R.id.btnSqlLite: {
-                showFragment(mSqliteFragment);
+                SqliteFragment sqliteFragment = new SqliteFragment();
+                showFragment(sqliteFragment);
                 break;
             }
         }
@@ -77,7 +74,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         REQUEST_READ_EXTERNAL_STORAGE);
             } else {
-                showFragment(mStorageFragment);
+                StorageFragment storageFragment = new StorageFragment();
+                showFragment(storageFragment);
             }
         }
     }
@@ -87,7 +85,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         switch (requestCode) {
             case REQUEST_READ_EXTERNAL_STORAGE: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    showFragment(mStorageFragment);
+                    StorageFragment storageFragment = new StorageFragment();
+                    showFragment(storageFragment);
                 }
             }
         }
