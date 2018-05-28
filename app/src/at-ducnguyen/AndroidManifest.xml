@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.asiantech.internship">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -28,5 +29,8 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ArtistInfomationActivity" />
+        <activity android:name=".MusicActivity" />
+
+        <service android:name=".MusicPlayerService" />
     </application>
 </manifest>

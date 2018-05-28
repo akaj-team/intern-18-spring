@@ -39,6 +39,11 @@
     <string name="unfriends">Unfriends</string>
     <string name="add_friends">Add Friends</string>
     <string name="recycler_view">W3 List Friend With Recycler View</string>
+    <string name="w5_services_broadcast_receiver">W5 Services broadcast receiver</string>
+    <string name="loading_playlist">Loading Playlist</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="song_save">songsave</string>
     <string name="artist_name">Artist Name</string>
     <string name="search">Search</string>
     <string name="btnTrack">Track</string>

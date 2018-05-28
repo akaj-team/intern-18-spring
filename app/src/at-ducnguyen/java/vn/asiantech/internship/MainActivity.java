@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnListener = findViewById(R.id.btnListener);
         btnListener.setOnClickListener(this);
 
+        Button btnMusicPlayer = findViewById(R.id.btnMusicPlayer);
+        btnMusicPlayer.setOnClickListener(this);
+
         Button btnApi = findViewById(R.id.btnApi);
         btnApi.setOnClickListener(this);
 
@@ -46,35 +49,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnViewAndViewGroup: {
-                Intent intent = new Intent(MainActivity.this, UserActivity.class);
-                String result = mBtnViewAndViewGroup.getText().toString();
-                intent.putExtra(KEY_TITLE, result);
-                startActivity(intent);
+                String title = mBtnViewAndViewGroup.getText().toString();
+                goTo(UserActivity.class, title);
                 break;
             }
             case R.id.btnListener: {
-                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                goTo(SignUpActivity.class, null);
                 break;
             }
             case R.id.btnResource: {
-                Intent intent = new Intent(MainActivity.this, UserActivity.class);
-                startActivity(intent);
+                goTo(UserActivity.class);
                 break;
             }
             case R.id.btnListFriend: {
-                Intent intent = new Intent(MainActivity.this, ListFriendActivity.class);
-                startActivity(intent);
+                goTo(ListFriendActivity.class);
                 break;
             }
             case R.id.btnActivityAndFragment: {
-                Intent intent = new Intent(MainActivity.this, SendDataActivity.class);
-                startActivity(intent);
+                goTo(SendDataActivity.class);
                 break;
             }
             case R.id.btnViewPagerListFriend: {
-                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
-                startActivity(intent);
+                goTo(ViewPagerActivity.class);
+                break;
+            }
+            case R.id.btnMusicPlayer: {
+                goTo(MusicActivity.class);
                 break;
             }
             case R.id.btnUnitTest: {
@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 goTo(ArtistInfomationActivity.class);
             }
         }
+    }
+
+    private void goTo(Class classMark, String title) {
+        Intent intent = new Intent(MainActivity.this, classMark);
+        intent.putExtra(KEY_TITLE, title);
+        startActivity(intent);
     }
 
     private void goTo(Class classMark) {
