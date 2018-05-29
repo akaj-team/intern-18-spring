@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edtInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtHint"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnSaveInternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtInput"
+        android:text="@string/btnSaveInternal" />
+
+    <Button
+        android:id="@+id/btnClearInternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtInput"
+        android:layout_toRightOf="@id/btnSaveInternal"
+        android:text="@string/btnClearInternal" />
+
+    <Button
+        android:id="@+id/btnSaveExternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSaveInternal"
+        android:text="@string/btnSaveExternal" />
+
+    <Button
+        android:id="@+id/btnClearExternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSaveInternal"
+        android:layout_toRightOf="@+id/btnSaveExternal"
+        android:text="@string/btnClearExternal" />
+
+
+    <TextView
+        android:id="@+id/tvTitleInternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSaveExternal"
+        android:text="@string/internal"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvDataInternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitleInternal"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvTitleExternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDataInternal"
+        android:text="@string/external"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvDataExternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitleExternal"
+        android:textAlignment="center" />
+</RelativeLayout>

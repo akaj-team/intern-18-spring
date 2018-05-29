@@ -8,8 +8,9 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnViewAndViewGroup;
+    public static final String TAG = "EXCEPTION";
+    public static final String MSG = "OPS! FOUND EXCEPTION";
     public final static String KEY_TITLE = "KEY_TITLE";
-    public static final String TAG = "AAA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnListener = findViewById(R.id.btnListener);
         btnListener.setOnClickListener(this);
+
+        Button btnDatabase = findViewById(R.id.btnDatabase);
+        btnDatabase.setOnClickListener(this);
 
         Button btnApi = findViewById(R.id.btnApi);
         btnApi.setOnClickListener(this);
@@ -74,6 +78,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btnViewPagerListFriend: {
                 Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btnDatabase: {
+                Intent intent = new Intent(MainActivity.this, DatabaseActivity.class);
                 startActivity(intent);
                 break;
             }
