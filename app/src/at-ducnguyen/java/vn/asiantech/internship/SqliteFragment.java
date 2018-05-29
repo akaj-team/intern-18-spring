@@ -48,7 +48,6 @@ public class SqliteFragment extends Fragment implements View.OnClickListener, On
         RecyclerView recyclerViewTableUser = view.findViewById(R.id.recyclerViewTableUser);
         recyclerViewTableUser.setAdapter(mAdapter);
         recyclerViewTableUser.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         return view;
     }
 

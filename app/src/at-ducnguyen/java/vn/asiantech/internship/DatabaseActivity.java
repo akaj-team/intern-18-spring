@@ -40,7 +40,6 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         fragmentTransaction.commit();
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -67,7 +66,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         fragmentTransaction.commit();
     }
 
-    public void askExternalStoragePermissionGranted() {
+    private void askExternalStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
