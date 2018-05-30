@@ -26,8 +26,9 @@
         <activity android:name=".ViewActivity" />
         <activity android:name=".EventListenerActivity" />
         <activity android:name=".SendDataActivity" />
-        <activity android:name=".ListFriendActitivy" />
-        <activity android:name=".ViewPageActivity" />
+        <activity android:name=".ListFriendActitivy"/>
+        <activity android:name=".ViewPageActivity"/>
+        <activity android:name=".database.DatabaseActivity"/>
         <activity android:name=".api.ApiActivity" />
         <activity android:name=".service_and_broadcast_receiver.ServiceActivity" />
         <activity android:name=".unitest.LoginActivity"/>

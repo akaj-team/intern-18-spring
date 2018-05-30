@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.Button;
+
+import vn.asiantech.internship.database.DatabaseActivity;
 
 import vn.asiantech.internship.service_and_broadcast_receiver.ServiceActivity;
 import vn.asiantech.internship.unitest.LoginActivity;
@@ -43,6 +44,13 @@ public class MenuActivity extends Activity {
             Intent intent = new Intent(MenuActivity.this, ViewPageActivity.class);
             startActivity(intent);
         });
+
+        Button btnDatabase = findViewById(R.id.btnDatabase);
+        btnDatabase.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, DatabaseActivity.class);
+            startActivity(intent);
+        });
+
         Button btnAPI = findViewById(R.id.btnAPI);
         btnAPI.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, ApiActivity.class);
@@ -56,9 +64,10 @@ public class MenuActivity extends Activity {
         });
 
         Button btnUnitTest = findViewById(R.id.btnUnitTest);
-        btnUnitTest.setOnClickListener((View v) -> {
+        btnUnitTest.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
             startActivity(intent);
         });
     }
+
 }
