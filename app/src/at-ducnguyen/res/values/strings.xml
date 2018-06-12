@@ -85,4 +85,7 @@
     <string name="error_repeat_char_pass">Password must not repeat 1 character more than 2 times</string>
     <string name="error_space_pass">Password does not contain space</string>
     <string name="error_capital_pass">Password have at least 3 characters in capital</string>
+
+    <!--Kotlin String-->
+    <string name="view__and_view_group">View And View Group</string>
 </resources>
